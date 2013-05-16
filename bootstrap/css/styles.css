@@ -3,18 +3,15 @@ header{
 }
 
 img{
-	height: 60px;
+	height: 400px;
 }
 
-body{
-	padding-top: 60px;
-	padding-bottom: 40px;
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
-.sidebar-nav{
-	padding: 9px;
-}
-
+/*responsive header additions */
 @media (max-width: 980px) {
 /* Enable use of floated navbar text */
 	.navbar-text.pull-right {
@@ -22,4 +19,35 @@ body{
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+	body
+	{
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
 }
+
+
+/* Sidebar additions */
+.sidebar-nav-fixed {
+     position:fixed;
+     top:60px;
+     width:14%;
+ }
+
+#SideNav li
+{
+	height: 44px;
+}
+
+ @media (max-width: 767px) {
+     .sidebar-nav-fixed {
+         width:auto;
+     }
+ }
+
+ @media (max-width: 979px) {
+     .sidebar-nav-fixed {
+         position:static;
+        width: auto;
+     }
+ }
