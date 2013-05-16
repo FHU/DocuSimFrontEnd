@@ -3,7 +3,7 @@ header{
 }
 
 img{
-	height: 400px;
+	height: 40px;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 .sidebar-nav-fixed {
      position:fixed;
      top:60px;
-     width:14%;
+     width:20%;
  }
 
 #SideNav li
@@ -39,15 +39,15 @@ body {
 	height: 44px;
 }
 
- @media (max-width: 767px) {
-     .sidebar-nav-fixed {
-         width:auto;
-     }
- }
+@media (max-width: 767px) {
+    .sidebar-nav-fixed {
+        position:static;
+        width:auto;
+    }
+}
 
- @media (max-width: 979px) {
-     .sidebar-nav-fixed {
-         position:static;
-        width: auto;
-     }
- }
+@media (max-width: 979px) {
+    .sidebar-nav-fixed {
+        top:70px;
+    }
+}
