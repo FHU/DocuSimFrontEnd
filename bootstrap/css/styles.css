@@ -1,14 +1,9 @@
-header{
-	/*background: black;*/
-}
-
 section{
 	padding-top: 60px;
 }
 
 #SideNav{
 	padding-top: 60px;
-	position: fixed;
 	width: 23.404255319148934%;
 	*width: 23.351063829787233%;
 }
@@ -21,12 +16,20 @@ section{
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #ffffff;
-  background-color: #0088cc;
+  background-color: #1abc9c;
 }
 
-#PatientPic{
-	margin-right: 10px;
-	margin-bottom: 10px;
+.nav-icon{
+	height: 3em;
+}
+
+hr{
+	height: 2px;
+	background-color: #1abc9c;
+}
+
+.hero-unit{
+	padding:20px;
 }
 
 
@@ -58,14 +61,8 @@ section{
 		width: 100%;
 	}
 
-	#PatientPic{
-		width: 200px;
+	*#PatientPic{
+		width: 250px;
 		float: left;
-	}
-}
-
-@media (max-width: 480px) {
-	#PatientPic{
-		float:none;
 	}
 }
