@@ -9,7 +9,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
-	<body>
+	<body data-spy="scroll" data-target="#SideBar">
 		<header class="navbar navbar-inverse navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
@@ -40,7 +40,7 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<!-- Side Navigation -->
-				<div class="span3">
+				<div id="SideBar" class="span3">
             		<ul id="SideNav" class="nav nav-tabs nav-stacked">
             			<li class="active"><a href="#scenario">Scenario</a></li>
             			<li><a href="#vitals">Vitals</a></li>
@@ -334,5 +334,6 @@
 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>
