@@ -2,6 +2,16 @@ section{
 	padding-top: 60px;
 }
 
+input[type="text"]{
+	width: 50px;
+	height: 44px;
+	margin-bottom: 0;
+}
+
+#neurological .assessmentArea table tr td:nth-child(2){
+	min-width: 200px;
+}
+
 #SideNav{
 	padding-top: 60px;
 	width: 23.404255319148934%;
@@ -37,6 +47,12 @@ hr{
 	width: 100%;
 	overflow-x: auto;
 }
+@media (max-width: 1024px){
+	.btn{
+	height: 44px;
+	line-height: 44px;
+	}
+}
 
 @media (max-width: 980px) {
 /* Enable use of floated navbar text */
@@ -53,6 +69,11 @@ hr{
 	#scenario{
 		padding:0px;
 	}
+	
+	.btn{
+	height: 44px;
+	line-height: 44px;
+	}
 }
 
 @media (max-width: 767px) {
@@ -61,8 +82,9 @@ hr{
 		width: 100%;
 	}
 
-	*#PatientPic{
+	#PatientPic{
 		width: 250px;
 		float: left;
 	}
+	
 }
