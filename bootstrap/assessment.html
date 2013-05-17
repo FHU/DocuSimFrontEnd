@@ -9,7 +9,7 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
-	<body data-spy="scroll" data-target="#SideBar">
+	<body data-spy="scroll" data-target="#SideBar" data-offset-top:"70">
 		<header class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
@@ -41,16 +41,16 @@
 			<div class="row-fluid">
 				<!-- Side Navigation -->
 				<div id="SideBar" class="span3">
-            		<ul id="SideNav" class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-left="5">
-            			<li class="active"><a href="#scenario">Scenario<img class="nav-icon pull-right" src="img/medicoicons/hospital.png"></a></li>
-            			<li><a href="#vitals">Vitals<img class="nav-icon pull-right" src="img/medicoicons/blood pressure.png"></a></li>
-            			<li><a href="#neurological">Neurological<img class="nav-icon pull-right" src="img/medicoicons/ecg.png"></a></li>
-	           			<li><a href="#cardio">Cardio<img class="nav-icon pull-right" src="img/medicoicons/heart.png"></a></li>
-    	       			<li><a href="#respiratory">Respiratory<img class="nav-icon pull-right" src="img/medicoicons/inhaler.png"></a></li>
-						<li><a href="#daily">Daily<img class="nav-icon pull-right" src="img/medicoicons/clipboard.png"></a></li>
-       			    	<li><a href="#safety">Safety<img class="nav-icon pull-right" src="img/medicoicons/biohazard.png"></a></li>
-       			    	<li><a href="#gu">GU<img class="nav-icon pull-right" src="img/medicoicons/bandage.png"></a></li>
-       		    		<li><a href="#gi">GI<img class="nav-icon pull-right" src="img/medicoicons/iv bag.png"></a></li>
+            		<ul id="SideNav" class="nav nav-tabs nav-stacked">
+            			<li class="active"><a href="#scenario"><img class="nav-icon" src="img/medicoicons/hospital.png"> Scenario</a></li>
+            			<li><a href="#vitals"><img class="nav-icon" src="img/medicoicons/blood pressure.png"> Vitals</a></li>
+            			<li><a href="#neurological"><img class="nav-icon" src="img/medicoicons/ecg.png"> Neurological</a></li>
+	           			<li><a href="#cardio"><img class="nav-icon" src="img/medicoicons/heart.png"> Cardio</a></li>
+    	       			<li><a href="#respiratory"><img class="nav-icon" src="img/medicoicons/inhaler.png"> Respiratory</a></li>
+						<li><a href="#daily"><img class="nav-icon" src="img/medicoicons/clipboard.png"> Daily</a></li>
+       			    	<li><a href="#safety"><img class="nav-icon" src="img/medicoicons/biohazard.png"> Safety</a></li>
+       			    	<li><a href="#gu"><img class="nav-icon" src="img/medicoicons/bandage.png"> GU</a></li>
+       		    		<li><a href="#gi"><img class="nav-icon" src="img/medicoicons/iv bag.png"> GI</a></li>
 	           		</ul>
         		</div>
         		<!-- Side Nav End -->
@@ -63,7 +63,7 @@
 						</div>
 						<hr>
 						<div class="row-fluid">
-							<img id="PatientPic" class="span3" src="img/male, hispanic, 50's.jpg">
+							<img id="PatientPic" class="span4" src="img/male, hispanic, 50's.jpg">
 							<div class="span8">
 								<table class="table table-condensed">
 									<tbody>
@@ -1556,9 +1556,12 @@
 					<button class="btn btn-success span2 ">Sign</button>
 					<button class="btn btn-warning span2 ">Clear</button>
 				</section>
-				</div>
 			</div>
 		</div>
+		
+		<footer class="footer">
+			<div class="container"></div>
+		</footer>
 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
