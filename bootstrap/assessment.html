@@ -4,13 +4,13 @@
 		<title>Patient Assessment</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap_flatly.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
 	<body data-spy="scroll" data-target="#SideBar">
-		<header class="navbar navbar-inverse navbar-fixed-top">
+		<header class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -46,7 +46,7 @@
             			<li><a href="#vitals">Vitals</a></li>
             			<li><a href="#neurological">Neurological</a></li>
 	           			<li><a href="#cardio">Cardio</a></li>
-    	       			<li><a href="#respiratory">Respritory</a></li>
+    	       			<li><a href="#respiratory">Respiratory</a></li>
 						<li><a href="#daily">Daily</a></li>
        			    	<li><a href="#safety">Safety</a></li>
        			    	<li><a href="#gu">GU</a></li>
@@ -71,6 +71,7 @@
               			<thead>
 			                <tr>
 	            			    <th></th>
+								<th></th>
 				                <th>8:00</th>
 				                <th>7:45</th>
                 				<th>7:30</th>
@@ -81,6 +82,21 @@
 						<tbody>
                 			<tr>
                 				<td>Temp</td>
+								<td>
+								<input type="text"/>
+								    <div class="btn-group">
+										<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+										Route
+										<span class="caret"></span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Oral</a></li>
+											<li><a href="#">Rectal</a></li>
+											<li><a href="#">Axillary</a></li>
+											<li><a href="#">Tympanic</a></li>
+										</ul>
+									</div>
+								</td>
                 				<td>98.6</td>
 				                <td>99.4</td>
 				                <td>100.2</td>
@@ -89,6 +105,7 @@
 			                </tr>
 			                <tr>
 				                <td>HR</td>
+								<td><input type="text"/></td>
 				                <td>90</td>
 				                <td>75</td>
                 				<td>87</td>
@@ -97,6 +114,7 @@
                 			</tr>
                 			<tr>
                 				<td>R</td>
+								<td><input type="text"/></td>
                 				<td>40</td>
                 				<td>20</td>
                 				<td>32</td>
@@ -105,6 +123,7 @@
                 			</tr>
 							<tr>
                 				<td>BP(systolic)</td>
+								<td><input type="text"/></td>
                 				<td>120</td>
                 				<td>110</td>
                 				<td>115</td>
@@ -113,6 +132,7 @@
                 			</tr>
 							<tr>
                 				<td>BP(diastolic)</td>
+								<td><input type="text"/></td>
                 				<td>80</td>
                 				<td>90</td>
                 				<td>85</td>
@@ -121,6 +141,7 @@
                 			</tr>
 							<tr>
                 				<td>SpO2</td>
+								<td><input type="text"/></td>
                 				<td>80%</td>
                 				<td>60%</td>
                 				<td>70%</td>
@@ -129,6 +150,8 @@
                 			</tr>
               			</tbody>
             		</table>
+					<button class="btn btn-success span2 ">Sign</button>
+					<button class="btn btn-reset span2 ">Clear</button>
 				</section>
 				<section id="neurological" class="span9 offset3">
 					<h1>Neurological</h1>
@@ -136,10 +159,11 @@
               			<thead>
 			                <tr>
 								<th></th>
-	            			    <th>8:00</th>
+								<th></th>
+				                <th>8:00</th>
 				                <th>7:45</th>
-				                <th>7:30</th>
-                				<th>7:15</th>
+                				<th>7:30</th>
+								<th>7:15</th>
 								<th>7:00</th>
                 			</tr>
             			</thead>
@@ -265,10 +289,11 @@
               			<thead>
 			                <tr>
 								<th></th>
-	            			    <th>8:00</th>
+								<th></th>
+				                <th>8:00</th>
 				                <th>7:45</th>
-				                <th>7:30</th>
-                				<th>7:15</th>
+                				<th>7:30</th>
+								<th>7:15</th>
 								<th>7:00</th>
                 			</tr>
             			</thead>
@@ -378,10 +403,11 @@
               			<thead>
 			                <tr>
 								<th></th>
-	            			    <th>8:00</th>
+								<th></th>
+				                <th>8:00</th>
 				                <th>7:45</th>
-				                <th>7:30</th>
-                				<th>7:15</th>
+                				<th>7:30</th>
+								<th>7:15</th>
 								<th>7:00</th>
                 			</tr>
             			</thead>
@@ -467,10 +493,11 @@
               			<thead>
 			                <tr>
 								<th></th>
-	            			    <th>8:00</th>
+								<th></th>
+				                <th>8:00</th>
 				                <th>7:45</th>
-				                <th>7:30</th>
-                				<th>7:15</th>
+                				<th>7:30</th>
+								<th>7:15</th>
 								<th>7:00</th>
                 			</tr>
             			</thead>
@@ -643,11 +670,17 @@
 					<table class="table">
               			<thead>
 			                <tr>
+<<<<<<< HEAD
 	            			    <th></th>
 	            			    <th>8:00</th>
+=======
+								<th></th>
+								<th></th>
+				                <th>8:00</th>
+>>>>>>> origin/Luke
 				                <th>7:45</th>
-				                <th>7:30</th>
-                				<th>7:15</th>
+                				<th>7:30</th>
+								<th>7:15</th>
 								<th>7:00</th>
                 			</tr>
             			</thead>
