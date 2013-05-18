@@ -1,17 +1,70 @@
+/*Css for assessment.html */
+
+/* Header ------------------------*/
+@media (max-width: 699px) {
+	/* Responsive Login/User */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+/*--------------------------------*/
+
+
+/* Body --------------------------*/
 section{
 	padding-top: 60px;
 }
 
-input[type="text"]{
-	width: 50px;
-	height: 44px;
-	margin-bottom: 0;
+@media (max-width: 768px) {
+	#scenario{
+		padding:0px;
+	}
 }
 
-#neurological .assessmentArea table tr td:nth-child(2){
+.assessmentArea {
+	width: 100%;
+	overflow-x: auto;
+}
+
+#neuological .assessmentArea table tr td:nth-child(2){
 	min-width: 200px;
 }
 
+/*----- Input --------------------*/
+input[type="text"]{
+	width: 60px;
+	margin-bottom: 0;
+}
+
+@media (max-width: 1024px){
+	.btn{
+		height: 44px;
+		line-height: 44px;
+	}
+
+	input[type="text"]{
+		width: 60px;
+		height: 44px;
+	}
+}
+
+@media (max-width: 768px) {	
+	.btn{
+		height: 44px;
+		line-height: 44px;
+	}
+
+	input[type="text"]{
+		width: 60px;
+		height: 44px;
+	}
+}
+/*--------------------------------*/
+
+
+/* Side Navagation ---------------*/
 #SideNav{
 	padding-top: 60px;
 	position: fixed;
@@ -23,6 +76,10 @@ input[type="text"]{
 	height: 44px;
 }
 
+.nav-icon{
+	height: 30px;
+}
+
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
@@ -30,73 +87,17 @@ input[type="text"]{
   background-color: #1abc9c;
 }
 
-.nav-icon{
-	height: 30px;
-}
-
-hr{
-	height: 2px;
-	background-color: #1abc9c;
-}
-
-.hero-unit{
-	padding:20px;
-}
-
-
-.assessmentArea {
-	width: 100%;
-	overflow-x: auto;
-}
-
-.footer {
-text-align: center;
-padding: 15px 0;
-margin-top: 30px;
-border-top: 1px solid #1abc9c;
-background-color: #f5f5f5;
-}
-
-@media (max-width: 1024px){
-	.btn{
-	height: 44px;
-	line-height: 44px;
-	}
-}
-
 @media (max-width: 768px) {
-/* Enable use of floated navbar text */
 	#SideNav{
 		padding-top: 0px;
-	}
-
-	#scenario{
-		padding:0px;
-	}
-	
-	.btn{
-	height: 44px;
-	line-height: 44px;
 	}
 }
 
 @media (max-width: 699px) {
-	.navbar-text.pull-right {
-		float: none;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
 	#SideNav{
 		position:static;
 		width: 100%;
 	}
-
-	#PatientPic{
-		width: 250px;
-		float: left;
-	}
-	
 }
 
 @media (max-height: 610px){
@@ -107,3 +108,35 @@ background-color: #f5f5f5;
 		height: 17px;
 	}
 }
+/*--------------------------------*/
+
+
+/* Patient Info Box --------------*/
+hr{
+	height: 2px;
+	background-color: #1abc9c;
+}
+
+.hero-unit{
+	padding:20px;
+}
+
+@media (max-width: 699px) {
+	#PatientPic{
+		width: 250px;
+		float: left;
+	}
+}
+/*--------------------------------*/
+
+
+/* Footer ------------------------*/
+.footer {
+text-align: center;
+padding: 15px 0;
+margin-top: 30px;
+border-top: 1px solid #1abc9c;
+background-color: #f5f5f5;
+}
+/*--------------------------------*/
+
