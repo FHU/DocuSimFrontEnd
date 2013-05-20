@@ -230,10 +230,20 @@ input[type="text"]{
 	}
 }
 
-@media (max-height: 700px){
+@media (max-height: 699px){
 	#SideNav li a{
 		height: 30px;
 		padding-top: 15px;
+	}
+	.nav-icon{
+		height: 22px;
+	}
+}
+
+@media (max-height: 480px){
+		#SideNav li a{
+		height: 20px;
+		padding-top: 5px;
 	}
 	.nav-icon{
 		height: 18px;
