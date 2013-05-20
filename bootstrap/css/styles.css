@@ -70,51 +70,68 @@ select{
 	}
 }
 
+/*----- tables -------------------*/
 .assessmentArea {
 	width: 100%;
 	overflow-x: auto;
 }
 
-/*----- tables -------------------*/
-.assessmentArea table tr td{
-	width: 50px;
+.assessmentArea td{
+	max-width: 50px;
 }
 
-.assessmentArea table tr td:nth-child(1){
-	width: 50px;
+.assessmentArea tr td:nth-child(1){
+	width: 170px;
+	min-width: 170px;
+	max-width: 170px;
 }
 
-#vitals .assessmentArea table tr td:nth-child(2){
-	min-width:200px;
+#vitals .assessmentArea td:nth-child(2){
+	width: 177px;
+	min-width: 177px;
+	max-width: 177px;
 }
 
-#neurological .assessmentArea table tr td:nth-child(2){
-	min-width:300px;
+#neurological .assessmentArea td:nth-child(2){
+	width: 197px;
+	min-width: 197px;
+	max-width: 197px;
 }
 
-#cardio .assessmentArea table tr td:nth-child(2){
-	min-width:200px;
+#cardio .assessmentArea td:nth-child(2){
+	width: 145px;
+	min-width: 145px;
+	max-width: 145px;
 }
 
-#respiratory .assessmentArea table tr td:nth-child(2){
-	min-width: 200px;
+#respiratory .assessmentArea td:nth-child(2){
+	width: 77px;
+	min-width: 77px;
+	max-width: 77px;
 }
 
-#dialy .assessmentArea table tr td:nth-child(2){
-	min-width:200px;
+#daily .assessmentArea td:nth-child(2){
+	width: 137px;
+	min-width: 137px;
+	max-width: 137px;
 }
 
-#safety .assessmentArea table tr td:nth-child(2){
-	min-width: 200px;
+#safety .assessmentArea td:nth-child(2){
+	width: 84px;
+	min-width: 84px;
+	max-width: 84px;
 }
 
-#gu .assessmentArea table tr td:nth-child(2){
-	min-width:200px;
+#gu .assessmentArea td:nth-child(2){
+	width: 111px;
+	min-width: 111px;
+	max-width: 111px;
 }
 
-#gi .assessmentArea table tr td:nth-child(2){
-	min-width: 200px;
-
+#gi .assessmentArea td:nth-child(2){
+	width: 153px;
+	min-width: 153px;
+	max-width: 153px;
 }
 
 .assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2) {
