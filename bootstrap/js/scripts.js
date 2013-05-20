@@ -1,4 +1,6 @@
-$('.selectpicker').selectpicker({
-	style: 'btn',
-	width: auto
+$(document).ready(function() {	
+
+	$('.selectpicker').selectpicker( {
+	});
+
 });

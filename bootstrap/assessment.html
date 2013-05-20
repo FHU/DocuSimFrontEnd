@@ -6,6 +6,7 @@
 		<!-- Bootstrap -->
 		<link href="css/bootstrap_flatly.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="css/bootstrap-select.css" rel="stylesheet" >
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
@@ -125,11 +126,11 @@
 											<li><a href="#">Tympanic</a></li>
 										</ul>
 									</div>-->
-									<select class="selectpicker">
-										<option>Oral<span class="caret"></span></option>
-										<option>Rectal<span class="caret"></span></option>
-										<option>Axillary<span class="caret"></span></option>
-										<option>Tympanic<span class="caret"></span></option>
+									<select class="selectpicker ">
+										<option>Oral</option>
+										<option>Rectal</option>
+										<option>Axillary</option>
+										<option>Tympanic</option>
 									</select>
 								</td>
                 				<td>98.6</td>
@@ -1308,8 +1309,14 @@
             			</thead>
             			<tbody>
                 			<tr>
-                				<td>Void</td>
-                				<td><input type="text" /></td>
+                				<td>Elimination Pattern</td>
+                				<td>
+                					<select class="selectpicker"> 
+	                					<option> Void  </option> 
+	                					<option> Catheter </option>
+	                					<option> Incontinent </option>
+                					</select>
+                				</td>
 				                <td>4000 mL</td>
 								<td>2500 mL</td>
 								<td>5000 mL</td>
@@ -1633,7 +1640,8 @@
 		</footer>
 
 		<script src="http://code.jquery.com/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>		
+		<script src="js/bootstrap.js"></script>	
+		<script src="js/bootstrap-select.js"></script>			
 		<script src="js/scripts.js"></script>
 	</body>
 </html>

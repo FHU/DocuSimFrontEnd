@@ -23,12 +23,12 @@ table{
 	font-size: 1.3em;
 }
 
-select{
+/*select{
 	width: auto;
 	background: #D0D5D9;
 	-webkit-appearance: none;
 	color: white;
-}
+}*/
 
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
@@ -175,12 +175,12 @@ input[type="text"]{
 		height: 44px;
 	}
 	
-	select{
+	/*select{
 		height: 60px;
 		margin-bottom: 0;
 		-webkit-appearance: none;
 		color: white;
-	}
+	}*/
 }
 
 @media (max-width: 768px) {		

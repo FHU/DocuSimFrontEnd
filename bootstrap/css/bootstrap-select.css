@@ -29,7 +29,7 @@
 }
 
 .bootstrap-select .btn {
-    width: auto;
+    /*width: auto;*/
 }
 
 .bootstrap-select.show-menu-arrow.open .btn {
@@ -44,14 +44,14 @@
 
 .bootstrap-select.btn-group .btn .filter-option {
     overflow:hidden; 
-    position:absolute;
+    /*position:absolute; */
     left:12px; 
     right:25px;
     text-align:left;
 }
 
 .bootstrap-select.btn-group .btn .caret {
-    position:absolute;
+    /*position:absolute;*/
     right:12px;
 }
 
