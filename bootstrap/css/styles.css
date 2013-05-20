@@ -22,6 +22,8 @@ table{
 
 	font-size: 1.3em;
 }
+
+
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
     width: 13px;
@@ -69,8 +71,18 @@ table{
 	overflow-x: auto;
 }
 
+
 #neurological .assessmentArea table tr td:nth-child(2){
 	min-width: 200px;
+
+}
+
+.assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2) {
+	text-align: left;
+}
+
+.assessmentArea td, .assessmentArea th {
+	text-align: right;
 }
 
 /*----- Input --------------------*/
@@ -175,6 +187,10 @@ hr{
 
 
 /* Patient Scenario Table --------------*/
+
+.patientsTable tbody tr {
+	height: 2.3em;
+}
 
 .patientsTable tbody tr td a {
   display: block;
