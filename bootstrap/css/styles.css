@@ -26,6 +26,8 @@ table{
 select{
 	width: auto;
 	background: #D0D5D9;
+	-webkit-appearance: none;
+	color: white;
 }
 
 /* Turn on a 13x13 scrollbar */
@@ -169,6 +171,8 @@ input[type="text"]{
 	select{
 		height: 60px;
 		margin-bottom: 0;
+		-webkit-appearance: none;
+		color: white;
 	}
 }
 
