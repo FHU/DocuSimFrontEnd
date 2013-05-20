@@ -90,9 +90,9 @@ table{
 }
 
 #vitals .assessmentArea td:nth-child(2){
-	width: 177px;
-	min-width: 177px;
-	max-width: 177px;
+	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
 }
 
 #neurological .assessmentArea td:nth-child(2){
