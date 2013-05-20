@@ -71,7 +71,6 @@ table{
 	overflow-x: auto;
 }
 
-<<<<<<< HEAD
 /*----- tables -------------------*/
 .assessmentArea table tr td{
 	width: 50px;
@@ -84,8 +83,6 @@ table{
 #vitals .assessmentArea table tr td:nth-child(2){
 	min-width:200px;
 }
-=======
->>>>>>> 71bde668e799266bafdef858a2f9ca8bc77d79d7
 
 #neurological .assessmentArea table tr td:nth-child(2){
 	min-width:300px;
