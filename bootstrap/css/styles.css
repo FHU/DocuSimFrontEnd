@@ -165,6 +165,11 @@ input[type="text"]{
 		width: 60px;
 		height: 44px;
 	}
+	
+	select{
+		height: 60px;
+		margin-bottom: 0;
+	}
 }
 
 @media (max-width: 768px) {		
@@ -184,7 +189,7 @@ input[type="text"]{
 }
 
 #SideNav li a{
-	height: 44px;
+	height: 34px;
 	padding-top: 20px;
 }
 
