@@ -67,7 +67,44 @@ table{
 	overflow-x: auto;
 }
 
+/*----- tables -------------------*/
+.assessmentArea table tr td{
+	width: 50px;
+}
+
+.assessmentArea table tr td:nth-child(1){
+	width: 50px;
+}
+
+#vitals .assessmentArea table tr td:nth-child(2){
+	min-width:200px;
+}
+
 #neurological .assessmentArea table tr td:nth-child(2){
+	min-width:300px;
+}
+
+#cardio .assessmentArea table tr td:nth-child(2){
+	min-width:200px;
+}
+
+#respiratory .assessmentArea table tr td:nth-child(2){
+	min-width: 200px;
+}
+
+#dialy .assessmentArea table tr td:nth-child(2){
+	min-width:200px;
+}
+
+#safety .assessmentArea table tr td:nth-child(2){
+	min-width: 200px;
+}
+
+#gu .assessmentArea table tr td:nth-child(2){
+	min-width:200px;
+}
+
+#gi .assessmentArea table tr td:nth-child(2){
 	min-width: 200px;
 }
 
@@ -114,10 +151,13 @@ input[type="text"]{
 
 #SideNav li a{
 	height: 44px;
+	padding-top: 20px;
 }
 
 .nav-icon{
 	height: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .nav-tabs > .active > a,
@@ -143,9 +183,10 @@ input[type="text"]{
 @media (max-height: 610px){
 	#SideNav li a{
 		height: 20px;
+		padding-top: 2px;
 	}
 	.nav-icon{
-		height: 17px;
+		height: 18px;
 	}
 }
 /*--------------------------------*/
@@ -169,10 +210,7 @@ hr{
 /*--------------------------------*/
 
 
-
-
-
-/* Patient Scenario Table --------------*/
+/* Patient Scenario Table --------*/
 
 table tbody tr td a {
   display: block;
