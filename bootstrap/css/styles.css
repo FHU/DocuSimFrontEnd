@@ -19,6 +19,8 @@ section{
 table{
 	overflow-x:scroll;
 	overflow-y:hidden;
+
+	font-size: 1.3em;
 }
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
