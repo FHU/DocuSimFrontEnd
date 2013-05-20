@@ -77,7 +77,8 @@ select{
 }
 
 .assessmentArea td{
-	max-width: 50px;
+	min-width: 80px;
+	max-width: 80px;
 }
 
 .assessmentArea tr td:nth-child(1){
@@ -129,6 +130,12 @@ select{
 }
 
 #gi .assessmentArea td:nth-child(2){
+	width: 111px;
+	min-width: 111px;
+	max-width: 111px;
+}
+
+#io .assessmentArea td:nth-child(2){
 	width: 153px;
 	min-width: 153px;
 	max-width: 153px;
@@ -219,10 +226,10 @@ input[type="text"]{
 	}
 }
 
-@media (max-height: 610px){
+@media (max-height: 700px){
 	#SideNav li a{
-		height: 20px;
-		padding-top: 2px;
+		height: 25px;
+		padding-top: 10px;
 	}
 	.nav-icon{
 		height: 18px;
