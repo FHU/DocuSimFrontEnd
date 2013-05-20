@@ -232,8 +232,8 @@ input[type="text"]{
 
 @media (max-height: 700px){
 	#SideNav li a{
-		height: 25px;
-		padding-top: 10px;
+		height: 30px;
+		padding-top: 15px;
 	}
 	.nav-icon{
 		height: 18px;
