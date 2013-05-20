@@ -71,8 +71,6 @@ input[type="text"]{
 #SideNav{
 	padding-top: 60px;
 	position: fixed;
-	width: 23.404255319148934%;
-	*width: 23.351063829787233%;
 }
 
 #SideNav li a{
