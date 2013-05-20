@@ -43,6 +43,13 @@ input[type="text"]{
 		height: 44px;
 		line-height: 44px;
 	}
+	.btn-success{
+		line-height: 0;
+	}
+	
+	.btn-warning{
+		line-height: 0;
+	}
 
 	input[type="text"]{
 		width: 60px;
@@ -50,11 +57,7 @@ input[type="text"]{
 	}
 }
 
-@media (max-width: 768px) {	
-	.btn{
-		height: 44px;
-		line-height: 44px;
-	}
+@media (max-width: 768px) {		
 
 	input[type="text"]{
 		width: 60px;
