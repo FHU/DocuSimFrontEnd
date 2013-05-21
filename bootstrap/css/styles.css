@@ -13,6 +13,7 @@ html, body {
     height: 120px;
 }
 
+
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
@@ -133,6 +134,13 @@ table{
 .assessmentArea td, .assessmentArea th {
 	text-align: right;
 }
+
+.assessmentArea .btn.active {
+	background: #33485d;
+	color: #fff;
+}
+
+
 
 /*----- Input --------------------*/
 
