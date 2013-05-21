@@ -13,7 +13,10 @@ html, body {
     height: 120px;
 }
 
-
+[class^="icon-"], [class*=" icon-"] {
+    width: auto;
+    vertical-align: baseline;
+}
 
 /* Header ------------------------*/
 
@@ -103,7 +106,8 @@ table{
 }
 
 .assessmentArea td .noteButton{
-	font-size: 20px;
+	font-size: 25px;
+	line-height: 25px;
 	float:right;
 }
 
@@ -197,6 +201,15 @@ label{
 		min-height: 35px;
 		line-height: 35px;
 	}
+
+	/*.noteButton {
+		width: 30px;
+		height:30px;
+		line-height: 30px;
+		vertical-align: bottom;
+	}*/
+
+
 	
 	/*select{
 		height: 60px;
