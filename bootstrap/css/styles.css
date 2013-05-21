@@ -16,9 +16,6 @@ html, body {
 
 
 /* Header ------------------------*/
-nav p a{
-	/*margin-right: 20px;*/
-}
 
 #patientsLink {
 	margin-right: 40px;
@@ -103,6 +100,11 @@ table{
 	width: 200px;
 	min-width: 200px;
 	max-width: 200px;
+}
+
+.assessmentArea td .noteButton{
+	font-size: 20px;
+	float:right;
 }
 
 #vitals .assessmentArea td:nth-child(2){

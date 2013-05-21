@@ -8,6 +8,7 @@
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="css/bootstrap-select.css" rel="stylesheet">
 		<link href="css/bootstrap-slider.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
@@ -172,7 +173,7 @@
 								<td>100</td>
                 			</tr>
 							<tr>
-                				<td>SpO2</td>
+                				<td>SpO<sub>2</sub></td>
 								<td><input type="text"/></td>
                 				<td>80%</td>
                 				<td>60%</td>
@@ -194,6 +195,46 @@
 									Nurse's Note:
 									<textarea class="nurseNote"> </textarea>
 								</td>
+								<td>
+									<a href="#noteModal" role="button" class="btn noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 
+
+									<!-- Modal -->
+									<div id="noteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									  <div class="modal-header">
+									    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+									    <h3 id="myModalLabel">Nurse's Note</h3>
+									  </div>
+									  <div class="modal-body">
+									    <p>The patient's bp was incredibly high. Is that bad?</p>
+									  </div>
+									  <div class="modal-footer">
+									    <button class="btn" data-dismiss="modal" aria-hidden="true"> Close </button>
+									    <button class="btn btn-primary" data-dismiss="modal"> OK </button>
+									  </div>
+									</div>
+
+								</td>
+								<td> </td>
+								<td> </td>
+								<td> 
+									<a href="#noteModal2" role="button" class="btn noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 
+
+									<!-- Modal -->
+									<div id="noteModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									  <div class="modal-header">
+									    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+									    <h3 id="myModalLabel">Nurse's Note</h3>
+									  </div>
+									  <div class="modal-body">
+									    <p>The patient's heart rate was 1 bpm. We should check back on them.</p>
+									  </div>
+									  <div class="modal-footer">
+									    <button class="btn" data-dismiss="modal" aria-hidden="true"> Close </button>
+									    <button class="btn btn-primary" data-dismiss="modal"> OK </button>
+									  </div>
+									</div>
+								</td>
+								<td> </td>
 							</tr>
               			</tbody>
             		</table>
