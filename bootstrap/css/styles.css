@@ -97,6 +97,8 @@ table{
 
 .assessmentArea td:nth-child(n+3){
 	width: auto;
+	min-width: 80px;
+	max-width: 120px;
 }
 
 .assessmentArea tr td:nth-child(1){
@@ -109,10 +111,6 @@ table{
 	font-size: 30px;
 	line-height: 30px;
 	float:right;
-}
-
-#vitals .assessmentArea td:nth-child(2){
-	max-width: 205;
 }
 
 #io .assessmentArea td:nth-child(2){
@@ -135,6 +133,10 @@ table{
 }
 
 .btn-warning{
+	margin-top: 25px;
+}
+
+.btn-danger{
 	margin-top: 25px;
 }
 
