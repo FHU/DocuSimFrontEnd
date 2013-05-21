@@ -12,29 +12,36 @@
 	</head>
 
 	<body data-spy="scroll" data-target="#SideBar" data-offset-top:"70">
+		<div class="wrapper" >
+
 		<header class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container-fluid">
-					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<div class="row-fluid" >
+
+					<!-- Logo -->
+					<a class="brand span3" href="patients.html">DocuSim</a>
+					
+ 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<!-- Logo -->
-					<a class="brand" href="patients.html">DocuSim</a>
-					
+
 					<!-- Top-Level Nav -->
-					<nav class="nav-collapse collapse">
+					<nav class="nav-collapse collapse span9 ">
 						<!-- User/Logout -->
 						<p class="navbar-text pull-right">
-							<a class="navbar-text" href="patients.html">Patient Selection</a>
+							<a class="navbar-text" href="patients.html" id="patientsLink">Patients</a>
 							Logged in as <a href="#" class="navbar-link">Chris White</a>
 						</p>
 						<ul class="nav">
 							<li class="active"><a href="assessment.html">Assessments</a></li>
-							<li><a href="#">History</a></li>
+							<li><a href="orders.html">Orders</a></li>
+							<li><a href="history.html">History</a></li>
 						</ul>
 					</nav>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -183,9 +190,9 @@
 								<td>160</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -455,9 +462,9 @@
                 				<td>7</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -687,9 +694,9 @@
                 				<td>elastic</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -883,9 +890,9 @@
 				                <td></td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1170,9 +1177,9 @@
 				                <td>yes</td>
 			                </tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1245,9 +1252,9 @@
 			                	<td>yes</td>
 			                </tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1324,9 +1331,9 @@
                 				<td>BLDY</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1440,9 +1447,9 @@
                 				<td>++</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
                 		</tbody>
@@ -1565,9 +1572,9 @@
                 				<td>750 mL</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1578,7 +1585,11 @@
 				</section>
 			</div>
 			<!-- End I/O -->
-		</div>
+		</div> <!--end row-fluid -->
+
+		<div class="push"><!--//--></div>
+
+		</div> <!--end wrapper -->
 		
 		<footer class="footer">
 			<div class="container-fluid">&copy; Freed Hardeman University</div>

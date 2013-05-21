@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Patients</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap_flatly.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+
+	<body data-spy="scroll" data-target="#SideBar" data-offset-top:"70">
+		<div class="wrapper" >
+					<header class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<div class="row-fluid" >
+
+					<!-- Logo -->
+					<a class="brand span3" href="patients.html">DocuSim</a>
+					
+ 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<!-- Top-Level Nav -->
+					<nav class="nav-collapse collapse span9 ">
+						<!-- User/Logout -->
+						<p class="navbar-text pull-right">
+							<a class="navbar-text" href="patients.html" id="patientsLink">Patients</a>
+							Logged in as <a href="#" class="navbar-link">Chris White</a>
+						</p>
+						<ul class="nav">
+							<li ><a href="assessment.html">Assessments</a></li>
+							<li class="active"><a href="orders.html">Orders</a></li>
+							<li><a href="history.html">History</a></li>
+						</ul>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+			
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<!-- Side Navigation -->
+					<div id="SideBar" class="span3">
+	            		<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
+	            			<li class="active"><a href="#orders"> Physican Orders </a></li>
+	            			<li><a href="#labs"> Labs </a></li>	           			
+		           		</ul>
+	        		</div>
+	        		<!-- Side Nav End -->
+
+					<!-- Patient/Scenario Block -->
+					<section id="scenario" class="span9 ">
+						<div class="hero-unit">
+							<div class="row-fluid">
+								<h2>Carl Shapiro<span class="pull-right">0639</span></h2>
+							</div>
+							<hr>
+							<div class="row-fluid">
+								<img id="PatientPic" class="span4" src="img/male, hispanic, 50's.jpg">
+								<div class="span8">
+									<table class="table table-condensed">
+										<tbody>
+	            							<tr>
+	            								<td><strong>Age:</strong> 54</td>
+	            								<td><strong>Height:</strong> 69 in</td>
+	    	        						</tr>
+		        	    					<tr>
+	    	        							<td><strong>Gender:</strong> Male</td>
+	            								<td><strong>Weight:</strong> 110 kg</td>
+	            							</tr>
+	            							<tr>
+	            						</tbody>
+	            					</table>
+	            				</div>
+	            			</div>
+	            			<br>
+	        	    		<div>
+	    	        			<p>Carl Shapiro is a 54-year-old male who travels frequently on business. He is seeking care in the local Emergency Department with complaints of dull aching chest pain and shortness of breath. He is out of state with no local physician. He smokes less than half a pack of cigarettes a day and drinks alcohol occasionally. He describes his work as stressful</p>
+			        		</div>
+		        		</div>
+					</section>
+				</div>
+					<!-- Patient/Scenario End -->
+			
+					<!-- Patient Orders Content -->
+				<div class="row-fluid">
+					<section id="orders" class="span9 offset3">
+						<h1>Physican Orders</h1>
+						<ul class="ordersList">
+							<li> Emergency Department Orders: </li>
+							<li> 12-lead ECG </li>
+							<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
+							<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
+							<li> Cardiac monitoring </li>
+							<li> Aspirin 325 mg poo (chewed) </li>
+							<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
+							<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
+
+						</ul>
+							
+					</section>
+				</div>
+
+				<div class="row-fluid">
+					<section id="labs" class="span9 offset3">
+						<h1>Labs</h1>
+						<ul class="ordersList">
+							<li>Cardiac enzymes (CK-MB, troponin) </li>
+							<li>Chemitry profile</li>
+							<li>CBC</li>	
+							<li>Chest X-ray</li>						
+						</ul>
+
+					</section>
+				</div>
+
+			</div> <!--end of row-fluid -->
+
+			<div class="push"><!--//--></div>
+
+		</div> <!--end of wrapper -->
+
+		<footer class="footer">
+			<div class="container-fluid">&copy; Freed Hardeman University</div>
+		</footer>
+
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>
