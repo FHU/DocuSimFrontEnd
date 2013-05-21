@@ -13,12 +13,12 @@ html, body {
     height: 120px;
 }
 
-
+[class^="icon-"], [class*=" icon-"] {
+    width: auto;
+    vertical-align: baseline;
+}
 
 /* Header ------------------------*/
-nav p a{
-	/*margin-right: 20px;*/
-}
 
 #patientsLink {
 	margin-right: 40px;
@@ -103,6 +103,12 @@ table{
 	width: 200px;
 	min-width: 200px;
 	max-width: 200px;
+}
+
+.assessmentArea td .noteButton{
+	font-size: 30px;
+	line-height: 30px;
+	float:right;
 }
 
 #vitals .assessmentArea td:nth-child(2){
@@ -224,6 +230,20 @@ textarea.nurseNote{
 		min-height: 35px;
 		line-height: 35px;
 	}
+
+	.assessmentArea td .noteButton{
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	/*.noteButton {
+		width: 30px;
+		height:30px;
+		line-height: 30px;
+		vertical-align: bottom;
+	}*/
+
+
 	
 	/*select{
 		height: 60px;
