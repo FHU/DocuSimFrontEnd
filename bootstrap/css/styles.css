@@ -1,4 +1,19 @@
-/*Css for assessment.html */
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -71px;
+}
+
+.push {
+    height: 120px;
+}
+
+
 
 /* Header ------------------------*/
 @media (max-width: 699px) {
@@ -16,6 +31,15 @@
 section{
 	padding-top: 60px;
 }
+
+section h1 {
+	font-size: 2.5em;
+}
+
+/*section p {
+	font-size: 1.2em;
+	line-height: 1.7em;
+}*/
 
 table{
 	overflow-x:scroll;
@@ -261,11 +285,33 @@ hr{
 /*--------------------------------*/
 
 
+/* Orders --------*/
+
+.ordersList {
+	list-style: none;
+	margin: 0;
+	font-size: 1.2em;  
+}
+
+.ordersList li {
+	height: 2.0em;
+}
+
+.ordersList li:before {
+	content: "-";
+}
+
+/*--------------------------------*/
+
+
+
 /* Footer ------------------------*/
 .footer {
 padding-top: 15px;
 padding-bottom: 15px;
-margin-top: 100px;
+height: 40px;
+line-height: 40px;
+/*margin-top: 50px;*/
 border-top: 1px solid #1abc9c;
 background-color: #f5f5f5;
 width: 100%;
