@@ -246,7 +246,7 @@
 			                <tr>
 				                <td>Pupils - Left</td>
 								<td>
-									<input type="text" class="slider" value="" data-slider-min="2" data-slider-max="9" data-slider-step="1" data-slider-value="2" data-slider-orientation="horizontal" data-slider-selection="after">
+									<input type="text" class="slide-input" value="" data-slider-min="2" data-slider-max="9" data-slider-step="1" data-slider-value="2" data-slider-orientation="horizontal">
 									<div class="btn-group" data-toggle="buttons-radio">
   										<button class="btn">+</button>
   										<button class="btn">-</button>
@@ -1567,9 +1567,9 @@
                 				<td>750 mL</td>
                 			</tr>
 							<tr>
-								<td>Nurse's Note</td>
-								<td>									
-									<input type="text" class="nurseNote"/>
+								<td colspan="2">
+									Nurse's Note:
+									<textarea class="nurseNote"> </textarea>
 								</td>
 							</tr>
               			</tbody>
@@ -1593,6 +1593,7 @@
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.js"></script>	
 		<script src="js/bootstrap-select.js"></script>
+		<script src="js/modernizr.js"></script>
 		<script src="js/bootstrap-slider.js"></script>		
 		<script src="js/scripts.js"></script>
 	</body>

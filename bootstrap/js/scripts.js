@@ -3,5 +3,5 @@ $(document).ready(function() {
 	$('.selectpicker').selectpicker( {
 	});
 
-	$('.slider').slider();
+	$('.slide-input').slider();
 });
