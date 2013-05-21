@@ -6,7 +6,8 @@
 		<!-- Bootstrap -->
 		<link href="css/bootstrap_flatly.css" rel="stylesheet" media="screen">
 		<link href="css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="css/bootstrap-select.css" rel="stylesheet" >
+		<link href="css/bootstrap-select.css" rel="stylesheet">
+		<link href="css/bootstrap-slider.css" rel="stylesheet">
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 
@@ -20,16 +21,16 @@
 						<span class="icon-bar"></span>
 					</button>
 					<!-- Logo -->
-					<a class="brand" href="#">DocuSim</a>
+					<a class="brand" href="patients.html">DocuSim</a>
 					
 					<!-- Top-Level Nav -->
 					<nav class="nav-collapse collapse">
 						<!-- User/Logout -->
 						<p class="navbar-text pull-right">
+							<a class="navbar-text" href="patients.html">Patient Selection</a>
 							Logged in as <a href="#" class="navbar-link">User</a>
 						</p>
 						<ul class="nav">
-							<li><a href="patients.html">Patients</a></li>
 							<li class="active"><a href="assessment.html">Assessments</a></li>
 							<li><a href="#">History</a></li>
 						</ul>
@@ -115,10 +116,10 @@
 								<td>
 									<input type="text"/>
 									<select class="selectpicker">
-										<option>Oral<span class="caret"></span></option>
-										<option>Rectal<span class="caret"></span></option>
-										<option>Axillary<span class="caret"></span></option>
-										<option>Tympanic<span class="caret"></span></option>
+										<option>Oral</option>
+										<option>Rectal</option>
+										<option>Axillary</option>
+										<option>Tympanic</option>
 									</select>
 								</td>
                 				<td>98.6</td>
@@ -222,10 +223,10 @@
 										<option>8</option>
 										<option>9</option>
 									</select>
-									<select class="selectpicker">
-										<option>+</option>
-										<option>-</option>
-									</select>
+									<div class="btn-group" data-toggle="buttons-radio">
+  										<button class="btn">+</button>
+  										<button class="btn">-</button>
+									</div>
 								</td>
                 				<td>8PP, +</td>
 				                <td>6PP, -</td>
@@ -236,20 +237,11 @@
 			                <tr>
 				                <td>Pupils - Left</td>
 								<td>
-									<select class="selectpicker">
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-									</select>
-									<select class="selectpicker">
-										<option>+</option>
-										<option>-</option>
-									</select>
+									<input type="text" class="slider" value="" data-slider-min="2" data-slider-max="9" data-slider-step="1" data-slider-value="2" data-slider-orientation="horizontal" data-slider-selection="after">
+									<div class="btn-group" data-toggle="buttons-radio">
+  										<button class="btn">+</button>
+  										<button class="btn">-</button>
+									</div>
 								</td>
 				                <td>8PP, +</td>
 				                <td>6PP, -</td>
@@ -274,13 +266,13 @@
 							<tr>
                 				<td>RU</td>
 								<td>
-									<select class="selectpicker">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-									</select>
+									<div class="btn-group" data-toggle="buttons-radio">
+  										<button class="btn">1</button>
+  										<button class="btn">2</button>
+  										<button class="btn">3</button>
+  										<button class="btn">4</button>
+  										<button class="btn">5</button>
+									</div>
 								</td>
                 				<td>5</td>
 								<td>4</td>
@@ -918,7 +910,12 @@
 			                </tr>
 			                <tr>
 				                <td>Oral Care/Suction</td>
-								<td><input type="checkbox"></td>
+								<td>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+								</td>
 				                <td>yes</td>
 				                <td>yes</td>
 				                <td>no</td>
@@ -941,7 +938,12 @@
                 			</tr>
 							<tr>
 				                <td>Linen</td>
-								<td><input type="checkbox"></td>
+								<td>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+								</td>
 				                <td>yes</td>
 				                <td>yes</td>
 				                <td>no</td>
@@ -969,8 +971,8 @@
                 				<td>ROM</td>
 								<td>
 									<select class="selectpicker">
-										<li><a href="#">A - Active</a></li>
-										<li><a href="#">P - Passive</a></li>
+										<Option>A - Active</option>
+										<Option>P - Passive</option>
 									</select>
 								</td>
                 				<td>A</td>
@@ -990,7 +992,12 @@
 			                </tr>
 							<tr>
                 				<td>Skin - Dsg</td>
-								<td><input type="checkbox"></td>
+								<td>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+								</td>
                 				<td>yes</td>
 				                <td>no</td>
 				                <td>no</td>
@@ -999,7 +1006,12 @@
 			                </tr>
 							<tr>
                 				<td>Skin - Incision</td>
-								<td><input type="checkbox"></td>
+								<td>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+								</td>
                 				<td>yes</td>
 				                <td>no</td>
 				                <td>no</td>
@@ -1028,9 +1040,9 @@
                 				<td>Skin - Dsg. Drainage Amt.</td>
 								<td>
 									<select class="selectpicker">
-										<option href="#">Small</option>
-										<optoin href="#">Medium</option>
-										<option href="#">Large</option>
+										<option>Small</option>
+										<option>Medium</option>
+										<option>Large</option>
 									</select>
 								</td>
                 				<td>small</td>
@@ -1096,7 +1108,12 @@
 			                </tr>
 							<tr>
                 				<td>Skin - Primed</td>
-								<td><input type="checkbox"></td>
+								<td>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+								</td>
                 				<td>yes</td>
 				                <td>no</td>
 				                <td>yes</td>
@@ -1170,7 +1187,12 @@
 			                </tr>
 			                <tr>
 			                	<td>Call Light Within Reach</td>
-			                	<td><input type="checkbox"></td>
+			                	<td>
+			                		<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+			                	</td>
 			                	<td>yes</td>
 			                	<td>yes</td>
 			                	<td>yes</td>
@@ -1179,7 +1201,12 @@
 			                </tr>
 			                <tr>
 			                	<td>Bed in Low Position</td>
-			                	<td><input type="checkbox"></td>
+			                	<td>
+			                		<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">Yes</button>
+										<button class="btn">No</button>
+									</div>
+			                	</td>
 			                	<td>yes</td>
 			                	<td>yes</td>
 			                	<td>yes</td>
@@ -1504,7 +1531,8 @@
 
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.js"></script>	
-		<script src="js/bootstrap-select.js"></script>			
+		<script src="js/bootstrap-select.js"></script>
+		<script src="js/bootstrap-slider.js"></script>		
 		<script src="js/scripts.js"></script>
 	</body>
 </html>
