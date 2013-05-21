@@ -13,6 +13,8 @@ html, body {
     height: 120px;
 }
 
+/* vetically center icons from font-awesome */
+/*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
     width: auto;
     vertical-align: baseline;
@@ -93,6 +95,10 @@ table{
 .assessmentArea {
 	width: 100%;
 	overflow-x: auto;
+}
+
+.assessmentArea td {
+	vertical-align: middle;
 }
 
 .assessmentArea td:nth-child(n+3){
