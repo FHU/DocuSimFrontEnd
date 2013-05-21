@@ -17,7 +17,11 @@ html, body {
 
 /* Header ------------------------*/
 nav p a{
-	margin-right: 20px;
+	/*margin-right: 20px;*/
+}
+
+#patientsLink {
+	margin-right: 40px;
 }
 
 @media (max-width: 699px) {
