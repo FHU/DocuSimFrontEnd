@@ -3,8 +3,8 @@ $(document).ready(function() {
 	$('.selectpicker').selectpicker( {
 	});
 
-	$('.slide-input').slider()
+	$('.slider').slider()
 		.on('slide', function(ev){
-			$('#slide-output').text(ev.value);
+			$(this).parent().prev().text(ev.value);
 		});
 });

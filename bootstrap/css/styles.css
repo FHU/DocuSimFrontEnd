@@ -106,13 +106,7 @@ table{
 }
 
 #vitals .assessmentArea td:nth-child(2){
-	min-width: auto;
-	max-width: 197px;
-	width: auto;
-}
-
-#vitals tr:first-child td{
-	white-space: nowrap;
+	max-width: 205;
 }
 
 #io .assessmentArea td:nth-child(2){
@@ -154,13 +148,40 @@ textarea.nurseNote{
 	height: 100px;
 }
 
-label{
-	margin-bottom: 0px;
+.slide-container{
+	width:auto;
+    display: inline-block;
+	*display: inline;
+	padding: 4px 8px;
+	margin-bottom: 0;
+	*margin-left: .3em;
+	font-size: 15px;
+	line-height: 21px;
+	color: #ffffff;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: #bfc6cb;
+	*background-color: #d0d5d9;
+	background-repeat: repeat-x;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.slide-output{
+	margin-bottom: -5px;
 }
 
 .slider{
 	margin-left: 5px;
 	margin-right: 5px;
+	min-width:80px;
+}
+
+#vitals .slider{
+	min-width:200px;
 }
 
 /*select{
@@ -171,7 +192,15 @@ label{
 }*/
 
 @media (max-width: 1024px){
+	.slide-output{
+		margin-top:10px;
+		padding-bottom: 5px;
+	}
 
+	.slide-container{
+		height: 60px;
+		padding: 0px 8px;
+	}
 
 	.btn{
 		height: 60px;
