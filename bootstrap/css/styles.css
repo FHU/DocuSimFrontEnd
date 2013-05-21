@@ -135,6 +135,11 @@ input[type="text"]{
 		width: 60px;
 		height: 44px;
 	}
+
+	.bootstrap-select.btn-group .dropdown-menu li > a {
+		min-height: 35px;
+		line-height: 35px;
+	}
 	
 	/*select{
 		height: 60px;
