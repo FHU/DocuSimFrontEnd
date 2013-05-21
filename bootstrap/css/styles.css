@@ -16,6 +16,10 @@ html, body {
 
 
 /* Header ------------------------*/
+nav p a{
+	margin-right: 20px;
+}
+
 @media (max-width: 699px) {
 	/* Responsive Login/User */
 	.navbar-text.pull-right {
@@ -47,6 +51,12 @@ table{
 	font-size: 1.3em;
 }
 
+input[type="text"].nurseNote{
+	width: 100%;
+	padding: 0;
+	height: 100px;
+}
+
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
     width: 13px;
@@ -67,11 +77,11 @@ table{
  
 /* Track below and above */
 ::-webkit-scrollbar-track-piece {
-    background-color: #F5F5F5;;
+    background-color: #f5f5f5;;
 }
 
 ::-webkit-scrollbar-thumb{
-	background: #D0D5D9;
+	background: #d0d5d9;
 	border-radius: 15px;
 }
 
@@ -99,6 +109,7 @@ table{
 
 #vitals .assessmentArea td:nth-child(2){
 	min-width: auto;
+	max-width: 197px;
 	width: auto;
 }
 
@@ -132,6 +143,11 @@ table{
 input[type="text"]{
 	width: 60px;
 	margin-bottom: 0;
+}
+
+.btn-group{
+	margin-left: 0px;
+}
 }
 
 /*select{
