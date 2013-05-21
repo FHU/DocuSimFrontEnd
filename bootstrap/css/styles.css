@@ -23,6 +23,12 @@ table{
 	font-size: 1.3em;
 }
 
+input[type="text"].nurseNote{
+	width: 100%;
+	padding: 0;
+	height: 100px;
+}
+
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
     width: 13px;
