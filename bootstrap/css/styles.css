@@ -16,19 +16,12 @@
 section{
 	padding-top: 60px;
 }
+
 table{
 	overflow-x:scroll;
 	overflow-y:hidden;
-
 	font-size: 1.3em;
 }
-
-/*select{
-	width: auto;
-	background: #D0D5D9;
-	-webkit-appearance: none;
-	color: white;
-}*/
 
 /* Turn on a 13x13 scrollbar */
 ::-webkit-scrollbar {
@@ -58,14 +51,6 @@ table{
 	border-radius: 15px;
 }
 
-.btn-success{
-	margin-top: 25px;
-}
-
-.btn-warning{
-	margin-top: 25px;
-}
-
 @media (max-width: 767px) {
 	#scenario{
 		padding:0px;
@@ -78,69 +63,28 @@ table{
 	overflow-x: auto;
 }
 
-.assessmentArea td{
-	min-width: 80px;
-	max-width: 80px;
+.assessmentArea td:nth-child(n+3){
+	width: auto;
 }
 
 .assessmentArea tr td:nth-child(1){
-	width: 170px;
-	min-width: 170px;
-	max-width: 170px;
+	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
 }
 
 #vitals .assessmentArea td:nth-child(2){
-	width: 200px;
-	min-width: 200;
-	max-width: 200;
+	min-width: auto;
+	width: auto;
 }
 
-#neurological .assessmentArea td:nth-child(2){
-	width: 197px;
-	min-width: 197px;
-	max-width: 197px;
-}
-
-#cardio .assessmentArea td:nth-child(2){
-	width: 145px;
-	min-width: 145px;
-	max-width: 145px;
-}
-
-#respiratory .assessmentArea td:nth-child(2){
-	width: 77px;
-	min-width: 77px;
-	max-width: 77px;
-}
-
-#daily .assessmentArea td:nth-child(2){
-	width: 137px;
-	min-width: 137px;
-	max-width: 137px;
-}
-
-#safety .assessmentArea td:nth-child(2){
-	width: 84px;
-	min-width: 84px;
-	max-width: 84px;
-}
-
-#gu .assessmentArea td:nth-child(2){
-	width: 111px;
-	min-width: 111px;
-	max-width: 111px;
-}
-
-#gi .assessmentArea td:nth-child(2){
-	width: 111px;
-	min-width: 111px;
-	max-width: 111px;
+#vitals td{
+	white-space: nowrap;
 }
 
 #io .assessmentArea td:nth-child(2){
-	width: 153px;
-	min-width: 153px;
-	max-width: 153px;
+	min-width: 152px;
+	width: 152px;
 }
 
 .assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2) {
@@ -152,16 +96,33 @@ table{
 }
 
 /*----- Input --------------------*/
+
+.btn-success{
+	margin-top: 25px;
+}
+
+.btn-warning{
+	margin-top: 25px;
+}
+
 input[type="text"]{
 	width: 60px;
 	margin-bottom: 0;
 }
 
+/*select{
+	width: auto;
+	background: #D0D5D9;
+	-webkit-appearance: none;
+	color: white;
+}*/
+
 @media (max-width: 1024px){
 	.btn{
-		height: 44px;
+		height: 60px;
 		line-height: 44px;
 	}
+
 	.btn-success{
 		line-height: 0;
 	}
@@ -230,7 +191,7 @@ input[type="text"]{
 	}
 }
 
-@media (max-height: 699px){
+@media (max-height: 767px){
 	#SideNav li a{
 		height: 30px;
 		padding-top: 15px;
@@ -240,7 +201,7 @@ input[type="text"]{
 	}
 }
 
-@media (max-height: 480px){
+@media (max-height: 600px){
 		#SideNav li a{
 		height: 20px;
 		padding-top: 5px;
