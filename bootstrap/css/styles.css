@@ -106,8 +106,8 @@ table{
 }
 
 .assessmentArea td .noteButton{
-	font-size: 25px;
-	line-height: 25px;
+	font-size: 30px;
+	line-height: 30px;
 	float:right;
 }
 
@@ -200,6 +200,11 @@ label{
 	.bootstrap-select.btn-group .dropdown-menu li > a {
 		min-height: 35px;
 		line-height: 35px;
+	}
+
+	.assessmentArea td .noteButton{
+		font-size: 40px;
+		line-height: 40px;
 	}
 
 	/*.noteButton {
