@@ -13,6 +13,10 @@ html, body {
     height: 120px;
 }
 
+.modal-footer .btn-primary{
+	margin: 0;
+}
+
 
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
@@ -274,6 +278,10 @@ textarea.nurseNote{
 	input[type="text"]{
 		width: 60px;
 		height: 44px;
+	}
+	
+	.btn-large{
+		padding: 0;
 	}
 }
 /*--------------------------------*/
