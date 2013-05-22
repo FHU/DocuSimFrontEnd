@@ -233,7 +233,7 @@ textarea.nurseNote{
 		line-height: 44px;
 	}
 
-	.btn-success{
+	.btn-primary{
 		line-height: 0;
 	}
 	
@@ -278,6 +278,10 @@ textarea.nurseNote{
 	input[type="text"]{
 		width: 60px;
 		height: 44px;
+	}
+	
+	.btn-large{
+		padding: 0;
 	}
 }
 /*--------------------------------*/
