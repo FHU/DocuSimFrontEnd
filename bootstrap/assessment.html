@@ -141,7 +141,7 @@
 								<td>
 									<div class="slide-container">
 										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="70" data-slider-orientation="horizontal" data-slider-tooltip="hide">
+										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
 									</div>
 								</td>
 				                <td>90</td>
@@ -155,7 +155,7 @@
 								<td>
 									<div class="slide-container">
 										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="70" data-slider-orientation="horizontal" data-slider-tooltip="hide">
+										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
 									</div>
 								</td>
                 				<td>40</td>
@@ -169,7 +169,7 @@
 								<td>
 									<div class="slide-container">
 										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="70" data-slider-orientation="horizontal" data-slider-tooltip="hide">
+										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
 									</div>
 								</td>
                 				<td>120</td>
@@ -183,7 +183,7 @@
 								<td>
 									<div class="slide-container">
 										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="70" data-slider-orientation="horizontal" data-slider-tooltip="hide">
+										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
 									</div>
 								</td>
                 				<td>80</td>
@@ -197,7 +197,7 @@
 								<td>
 									<div class="slide-container">
 										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="70" data-slider-orientation="horizontal" data-slider-tooltip="hide">
+										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
 									</div>
 								</td>
                 				<td>80%</td>
@@ -342,13 +342,13 @@
 							<tr>
                 				<td>RU</td>
 								<td>
-									<div class="btn-group" data-toggle="buttons-radio">
-  										<button class="btn">1</button>
-  										<button class="btn">2</button>
-  										<button class="btn">3</button>
-  										<button class="btn">4</button>
-  										<button class="btn">5</button>
-									</div>
+									<select class="selectpicker">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
 								</td>
                 				<td>5</td>
 								<td>4</td>
@@ -532,8 +532,8 @@
               			</tbody>
             		</table>
 					</div>
-					<button class="btn btn-danger span2 ">Sign</button>
-					<button class="btn btn-success span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Neurological -->
@@ -764,8 +764,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Cardio-->
@@ -935,7 +935,21 @@
                 			</tr>
 							<tr>
                 				<td>Oxygenation(Type)</td>
-								<td><input type="text" /></td>
+								<td>
+									<select class="selectpicker">
+										<option>BN - BiNasal Oxygen</option>
+										<option>SM - Simple Mask</option>
+										<option>AFM - Aeorsol Face Mask</option>
+										<option>HFBN - High flow Binasal Cannula</option>
+										<option>VM - Venturi Mask</option>
+										<option>PRB - Partial Rebreather</option>
+										<option>NRB - Non-Rebreather</option>
+										<option>ATP - Aerosol T-Piece</option>
+										<option>AFT - Aerosol Face Tent</option>
+										<option>CPAP - Continuous Positive Airway Pressure</option>
+										<option>BPAP - Binasal Positive Airway Pressure</option>
+									</select>
+								</td>
                 				<td></td>
 				                <td></td>
 				                <td></td>
@@ -960,8 +974,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Respiratory -->
@@ -1247,8 +1261,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Daily -->
@@ -1274,10 +1288,10 @@
                 			<tr>
                 				<td>Side Rails Up</td>
 								<td>
-									<select class="selectpicker">
-										<option>x2</option>
-										<option>x4</option>
-									</select>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">x2</button>
+										<button class="btn">x4</button>
+									</div>
 								</td>
                 				<td>x2</td>
 				                <td>x2</td>
@@ -1322,8 +1336,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Safety -->
@@ -1401,8 +1415,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End GU -->
@@ -1517,8 +1531,8 @@
                 		</tbody>
                 	</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End GI -->
@@ -1642,8 +1656,8 @@
               			</tbody>
             		</table>
             		</div>
-					<button class="btn btn-success span2 ">Sign</button>
-					<button class="btn btn-warning span2 ">Clear</button>
+					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End I/O -->

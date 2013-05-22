@@ -120,6 +120,10 @@ table{
 	float:right;
 }
 
+#neurological .assessmentArea tr:nth-child(2) td:nth-child(2){
+	white-space: nowrap;
+}
+
 #io .assessmentArea td:nth-child(2){
 	min-width: 152px;
 	width: 152px;
@@ -134,7 +138,7 @@ table{
 }
 
 .assessmentArea .btn.active {
-	background: #33485d;
+	background: #1abc9c;
 	color: #fff;
 }
 
@@ -150,16 +154,8 @@ table{
 	margin-top: 25px;
 }
 
-.btn-danger{
-	margin-top: 25px;
-}
-
 .btn-primary{
 	margin-top: 25px;
-}
-
-.btn-group{
-	margin-left: 0px;
 }
 
 input[type="text"]{
@@ -233,7 +229,7 @@ textarea.nurseNote{
 		line-height: 44px;
 	}
 
-	.btn-success{
+	.btn-primary{
 		line-height: 0;
 	}
 	
