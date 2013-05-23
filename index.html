@@ -33,13 +33,13 @@
 					<nav class="nav-collapse collapse span9 ">
 						<!-- User/Logout -->
 						<p class="navbar-text pull-right">
-							<a class="navbar-text" href="patients.html" id="patientsLink">Patients</a>
+							<a class="navbar-text" href="patients.html" id="patientsLink" data-ng-class="{'active':getClass('/patients')}">Patients</a>
 							Logged in as <a href="#" class="navbar-link">Chris White</a>
 						</p>
 						<ul class="nav">
-							<li class="active"><a href="assessment.html">Assessments</a></li>
-							<li><a href="orders.html">Orders</a></li>
-							<li><a href="history.html">History</a></li>
+							<li data-ng-class="{'active':getClass('/assessments')}"><a href="assessment.html">Assessments</a></li>
+							<li data-ng-class="{'active':getClass('/orders')}"><a href="orders.html">Orders</a></li>
+							<li data-ng-class="{'active':getClass('/history')}"><a href="history.html">History</a></li>
 						</ul>
 					</nav>
 					</div>
