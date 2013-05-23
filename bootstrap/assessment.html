@@ -111,7 +111,7 @@
 			                <tr>
 	            			    <th></th>
 								<th ng-controller="MyClock">{{time | date:'h:mm, M/d/yy'}}</th>
-				                <th data-ng-repeat="vital in vitals">{{vital.time | date:'M/d/yy, h:mm'}}</th>
+				                <th data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.time | date:'M/d/yy, h:mm'}}</th>
                 			</tr>
             			</thead> 
 						<tbody>
@@ -127,21 +127,21 @@
 										<option>Tympanic</option>
 									</select>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.temp}}</td>
+                				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
 			                </tr>
 			                <tr>
 				                <td>HR</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.heartRate"/>
 								</td>
-				                <td data-ng-repeat="vital in vitals">{{vital.heartRate}}</td>
+				                <td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.heartRate}}</td>
                 			</tr>
                 			<tr>
                 				<td>R</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.rate"/>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.rate}}</td>
+                				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.rate}}</td>
                 			</tr>
 							<tr>
                 				<td>BP(systolic/diastolic)</td>
@@ -149,19 +149,19 @@
 									<input type="text" data-ng-model="newVitals.bpSystolic"/>
 									<input type="text" data-ng-model="newVitals.bpDiastolic"/>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}} / {{vital.bpDiastolic}}</td>
+                				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.bpSystolic}} / {{vital.bpDiastolic}}</td>
                 			</tr>
 							<tr>
                 				<td>SpO<sub>2</sub></td>
 								<td>
 									<input type="text" data-ng-model="newVitals.spO2"/>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.spO2}}</td>
+                				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.spO2}}</td>
                 			</tr>
                 			<tr>
 				                <td>Weight</td>
 								<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.weight"/></td>
-				                <td data-ng-repeat="vital in vitals">{{vital.weight}}</td>
+				                <td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.weight}}</td>
                 			</tr>
 							<tr>
 								<td colspan="2">
