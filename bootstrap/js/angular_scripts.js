@@ -32,6 +32,16 @@ docuSimApp.config(function ($routeProvider) {
 });
 
 
+app.controller('NavbarController', function ($scope, $location) {
+    $scope.getClass = function (path) {
+        if ($location.path().substr(0, path.length) == path) {
+            return true
+        } else {
+            return false;
+        }
+    }
+});
+
 //myApp.directive('myDirective', function() {});
 function MyClock($scope, $timeout) {
     $scope.time = new Date();
