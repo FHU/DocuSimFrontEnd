@@ -1,5 +1,16 @@
 var docuSimApp = angular.module('docuSim', []);
 
+//myApp.directive('myDirective', function() {});
+function MyClock($scope, $timeout) {
+    $scope.time = new Date();
+    
+    $scope.$watch('time', function(){
+        $timeout(function(){
+            $scope.time = new Date();
+        },1000);
+    });
+}
+
 docuSimApp.controller('vitalsController', function($scope, vitalsService){
     init();
 
@@ -26,6 +37,18 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
         $scope.newVitals.temp = '';
         $scope.newVitals.weight = '';
         init();
+    };
+
+    $scope.clearVitals = function () {
+        $scope.newVitals.temp_num = '';
+        $scope.newVitals.temp_type = '';
+        $scope.newVitals.heartRate = '';
+        $scope.newVitals.rate = '';
+        $scope.newVitals.temp = '';
+        $scope.newVitals.heartRate ='';
+        $scope.newVitals.rate = '';
+        $scope.newVitals.temp = '';
+        $scope.newVitals.weight = '';
     };
 });
 

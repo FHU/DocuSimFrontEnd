@@ -110,7 +110,7 @@
               			<thead>
 			                <tr>
 	            			    <th></th>
-								<th></th>
+								<th ng-controller="MyClock">{{time | date:'mediumTime'}}</th>
 				                <th data-ng-repeat="vital in vitals">{{vital.time | date:'shortTime'}}</th>
                 			</tr>
             			</thead> 
@@ -144,18 +144,12 @@
                 				<td data-ng-repeat="vital in vitals">{{vital.rate}}</td>
                 			</tr>
 							<tr>
-                				<td>BP(systolic)</td>
+                				<td>BP(systolic/diastolic)</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.bpSystolic"/>
-								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}}</td>
-                			</tr>
-							<tr>
-                				<td>BP(diastolic)</td>
-								<td>
 									<input type="text" data-ng-model="newVitals.bpDiastolic"/>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.bpDiastolic}}</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.bpDiastolic}} / {{vital.bpSystolic}}</td>
                 			</tr>
 							<tr>
                 				<td>SpO<sub>2</sub></td>
@@ -219,7 +213,7 @@
             		</table>
 					</div>
 					<button class="btn btn-large btn-warning span3" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
-					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+					<button class="btn btn-primary offset1 span2" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
 			<!-- End Vitals -->
@@ -246,7 +240,7 @@
                 			<tr>
                 				<td>Pupils - Right</td>
 								<td>
-									<<input type="text"/>
+									<input type="text"/>
 									<div class="btn-group" data-toggle="buttons-radio">
   										<button class="btn">+</button>
   										<button class="btn">-</button>

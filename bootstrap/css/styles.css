@@ -136,7 +136,7 @@ table{
 	width: 152px;
 }
 
-.assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2) {
+.assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2), .assessmentArea th:nth-child(2) {
 	text-align: left;
 }
 
