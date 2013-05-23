@@ -7,7 +7,7 @@ docuSimApp.controller('ordersController', function($scope, ordersFactory){
     init();
 
     function init() {
-        $scope.patients = ordersFactory.getOrders();
+        $scope.orders = ordersFactory.getOrders();
     }
 
 });

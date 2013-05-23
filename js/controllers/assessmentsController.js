@@ -2,7 +2,7 @@
 
 
 docuSimApp.controller('assessmentsController', function($scope, assessmentsFactory){
-    $scope.orders = [];
+    $scope.assessments = [];
 
     init();
 
