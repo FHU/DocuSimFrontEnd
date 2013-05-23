@@ -25,14 +25,14 @@ docuSimApp.config(function ($routeProvider) {
             })
         .when('/history',
             {
-                controller: 'historyController',
+                controller: 'historyViewController',
                 templateUrl: partialViewsUrlBase +'historyView.html'
             })
         .otherwise({ redirectTo: '/patients' });
 });
 
 
-app.controller('NavbarController', function ($scope, $location) {
+docuSimApp.controller('NavbarController', function ($scope, $location) {
     $scope.getClass = function (path) {
         if ($location.path().substr(0, path.length) == path) {
             return true
