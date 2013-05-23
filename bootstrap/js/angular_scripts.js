@@ -11,7 +11,7 @@ docuSimApp.config(function ($routeProvider) {
                 templateUrl: partialViewsUrlBase + 'patientsView.html'
             })
         //Define a route that has a route parameter in it (:customerID)
-        .when('/assessment/:patientID',
+        .when('/assessments/:patientID',
             {
                 controller: 'assessmentsController',
                 templateUrl: partialViewsUrlBase +'assessmentView.html'
