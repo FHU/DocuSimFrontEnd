@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="docuSim">
 	<head>
 		<title>Patients</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +69,7 @@
 				<section id="coreCases" class="span9 offset3">
 					<h1>Nursing Medical Core Cases</h1>
 
-					<table class="table patientsTable">
+					<table class="table patientsTable" data-ng-controller="patientsController">
 						<thead>
 			                <tr>
 	            			    <th>Name</th>
@@ -83,49 +83,13 @@
 		
 						<tbody>
 
-    						<tr>
-								<td> <a href="assessment.html" > Richard Schapiro </a> </td>
-								<td> <a href="assessment.html" >0639 </a></td>
-								<td> <a href="assessment.html" >Male </a></td>
-								<td> <a href="assessment.html" >54 years old</a></td>
-								<td> <a href="assessment.html" >69" </a></td>
-								<td> <a href="assessment.html" >110 kg </a></td>
-    						</tr> 
-
-    						<tr>
-								<td> <a href="assessment.html" > Doris Bowman </a> </td>
-								<td> <a href="assessment.html" >0639 </a></td>
-								<td> <a href="assessment.html" >Female </a></td>
-								<td> <a href="assessment.html" >39 years old</a></td>
-								<td> <a href="assessment.html" >66" </a></td>
-								<td> <a href="assessment.html" >60 kg </a></td>
-    						</tr> 
-
-    						<tr>
-								<td> <a href="assessment.html" > Jennifer Hoffman </a> </td>
-								<td> <a href="assessment.html" >0639 </a></td>
-								<td> <a href="assessment.html" >Female </a></td>
-								<td> <a href="assessment.html" >33 years old</a></td>
-								<td> <a href="assessment.html" >61" </a></td>
-								<td> <a href="assessment.html" >45 kg </a></td>
-    						</tr> 
-
-    						<tr>
-								<td> <a href="assessment.html" > Kenneth Bronson</a> </td>
-								<td> <a href="assessment.html" >0639 </a></td>
-								<td> <a href="assessment.html" >Male </a></td>
-								<td> <a href="assessment.html" >27 years old</a></td>
-								<td> <a href="assessment.html" >72" </a></td>
-								<td> <a href="assessment.html" >74 kg </a></td>
-    						</tr> 
-
-							<tr>
-								<td> <a href="assessment.html" > Lloyd Bennett </a> </td>
-								<td> <a href="assessment.html" >0639 </a></td>
-								<td> <a href="assessment.html" >Male </a></td>
-								<td> <a href="assessment.html" >76 years old</a></td>
-								<td> <a href="assessment.html" >70" </a></td>
-								<td> <a href="assessment.html" >75 kg </a></td>
+    						<tr data-ng-repeat="patient in patients">
+								<td> <a href="assessment.html" > {{patient.firstName}} {{patient.lastName}} </a> </td>
+								<td> <a href="assessment.html" > {{patient.id}} </a></td>
+								<td> <a href="assessment.html" > {{patient.gender}} </a></td>
+								<td> <a href="assessment.html" > {{patient.age}} </a></td>
+								<td> <a href="assessment.html" > {{patient.height}}" </a></td>
+								<td> <a href="assessment.html" > {{patient.weight}} kg </a></td>
     						</tr> 
 	    					
 						</tbody>
@@ -219,5 +183,8 @@
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
+		<script src="js/modernizr.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/angular_scripts.js"></script>
 	</body>
 </html>

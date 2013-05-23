@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Patients</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="css/bootstrap_flatly.css" rel="stylesheet" media="screen">
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+
+	<body data-spy="scroll" data-target="#SideBar" data-offset-top:"70">
+		<div class="wrapper" >
+			<header class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<div class="row-fluid" >
+
+					<!-- Logo -->
+					<a class="brand span3" href="patients.html">DocuSim</a>
+					
+ 					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<!-- Top-Level Nav -->
+					<nav class="nav-collapse collapse span9 ">
+						<!-- User/Logout -->
+						<p class="navbar-text pull-right">
+							<a class="navbar-text active" href="patients.html" id="patientsLink">Patients</a>
+							Logged in as <a href="assessment.html" class="navbar-link">Chris White</a>
+						</p>
+						<ul class="nav">
+							<li ><a href="assessment.html">Assessments</a></li>
+							<li><a href="orders.html">Orders</a></li>
+							<li><a href="history.html">History</a></li>
+						</ul>
+					</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+
+		<div data-ng-view=""> 
+
+
+		</div >
+
+
+		<div class="push"><!--//--></div>
+
+		</div> <!--end wrapper -->
+		
+
+
+		<footer class="footer">
+			<div class="container-fluid">&copy; Freed Hardeman University</div>
+		</footer>
+
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>
