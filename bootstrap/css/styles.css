@@ -123,6 +123,15 @@ table{
 	float:right;
 }
 
+.assessmentArea .time {
+	font-size: 1.1em;
+}
+
+.assessmentArea .date {
+	font-size: 0.75em;
+	font-weight: normal;
+}
+
 #vitals .assessmentArea tr:nth-child(1) td:nth-child(2){
 	white-space: nowrap;
 }

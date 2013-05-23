@@ -110,8 +110,16 @@
               			<thead>
 			                <tr>
 	            			    <th></th>
-								<th ng-controller="MyClock">{{time | date:'h:mm, M/d/yy'}}</th>
-				                <th data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.time | date:'M/d/yy, h:mm'}}</th>
+								<th ng-controller="MyClock"> 
+									<span class="time" >{{time | date:'H:mm'}}  </span> 
+									<br />  
+									<span class="date" >{{time | date:'M/d/yy'}}
+								</th>
+				                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+				                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+									<br />  
+									<span class="date" >{{vital.time | date:'M/d/yy'}}
+				                </th>
                 			</tr>
             			</thead> 
 						<tbody>
