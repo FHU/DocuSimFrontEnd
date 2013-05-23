@@ -132,50 +132,35 @@
 			                <tr>
 				                <td>HR</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" data-ng-model="newVitals.heartRate"/>
 								</td>
 				                <td data-ng-repeat="vital in vitals">{{vital.heartRate}}</td>
                 			</tr>
                 			<tr>
                 				<td>R</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" data-ng-model="newVitals.rate"/>
 								</td>
                 				<td data-ng-repeat="vital in vitals">{{vital.rate}}</td>
                 			</tr>
 							<tr>
                 				<td>BP(systolic)</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" data-ng-model="newVitals.bpSystolic"/>
 								</td>
                 				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}}</td>
                 			</tr>
 							<tr>
                 				<td>BP(diastolic)</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="300" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" data-ng-model="newVitals.bpDiastolic"/>
 								</td>
                 				<td data-ng-repeat="vital in vitals">{{vital.bpDiastolic}}</td>
                 			</tr>
 							<tr>
                 				<td>SpO<sub>2</sub></td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" data-ng-model="newVitals.spO2"/>
 								</td>
                 				<td data-ng-repeat="vital in vitals">{{vital.spO2}}</td>
                 			</tr>
@@ -261,10 +246,7 @@
                 			<tr>
                 				<td>Pupils - Right</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="2" data-slider-max="9" data-slider-step="1" data-slider-value="2" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<<input type="text"/>
 									<div class="btn-group" data-toggle="buttons-radio">
   										<button class="btn">+</button>
   										<button class="btn">-</button>
@@ -279,10 +261,7 @@
 			                <tr>
 				                <td>Pupils - Left</td>
 								<td>
-									<div class="slide-container">
-										<label class="slide-output">0</label>
-										<input type="text" class="slider" value="" data-slider-min="2" data-slider-max="9" data-slider-step="1" data-slider-value="2" data-slider-orientation="horizontal" data-slider-tooltip="hide">
-									</div>
+									<input type="text" />
 									<div class="btn-group" data-toggle="buttons-radio">
   										<button class="btn">+</button>
   										<button class="btn">-</button>
