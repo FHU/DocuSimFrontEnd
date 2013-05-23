@@ -1,6 +1,6 @@
 var docuSimApp = angular.module('docuSim', []);
 
-var urlBase = '/'
+var partialViewsUrlBase = '/partialViews/'
 
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider) {
@@ -8,24 +8,24 @@ docuSimApp.config(function ($routeProvider) {
         .when('/patients',
             {
                 controller: 'patientsController',
-                templateUrl: urlBase + 'patientsView.html'
+                templateUrl: partialViewsUrlBase + 'patientsView.html'
             })
         //Define a route that has a route parameter in it (:customerID)
         .when('/assessment/:patientID',
             {
                 controller: 'assessmentsController',
-                templateUrl: 'assessmentsView.html'
+                templateUrl: partialViewsUrlBase +'assessmentsView.html'
             })
         //Define a route that has a route parameter in it (:customerID)
         .when('/orders',
             {
                 controller: 'ordersController',
-                templateUrl: 'ordersView.html'
+                templateUrl: partialViewsUrlBase +'ordersView.html'
             })
         .when('/history',
             {
                 controller: 'historyController',
-                templateUrl: 'historyView.html'
+                templateUrl: partialViewsUrlBase +'historyView.html'
             })
         .otherwise({ redirectTo: '/patients' });
 });
