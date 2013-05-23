@@ -109,7 +109,6 @@ table{
 .assessmentArea td:nth-child(n+3){
 	width: auto;
 	min-width: 80px;
-	max-width: 120px;
 }
 
 .assessmentArea tr td:nth-child(1){

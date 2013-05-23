@@ -103,23 +103,23 @@
 			<!-- Table Content -->
 			<!-- Vitals -->
 			<div class="row-fluid">
-				<section id="vitals" class="span9 offset3">
+				<section id="vitals" class="span9 offset3" data-ng-controller="vitalsController">
 					<h1>Vitals</h1>
-					<div class="assessmentArea" data-ng-controller="vitalsController">
+					<div class="assessmentArea">
 					<table class="table">
               			<thead>
 			                <tr>
 	            			    <th></th>
 								<th></th>
-				                <th data-ng-repeat="vital in vitals">{{vital.time}}</th>
+				                <th data-ng-repeat="vital in vitals">{{vital.time | date:'shortTime'}}</th>
                 			</tr>
             			</thead> 
 						<tbody>
                 			<tr>
                 				<td>Temp</td>
 								<td>
-									<input type="text"/>
-									<select class="selectpicker">
+									<input type="text" data-ng-model="newVitals.temp_num"/>
+									<select class="selectpicker" data-ng-model="newVitals.temp_type">
 										<option></option>
 										<option>Oral</option>
 										<option>Rectal</option>
@@ -181,7 +181,7 @@
                 			</tr>
                 			<tr>
 				                <td>Weight</td>
-								<td><input type="text" pattern="[0-9]*"/></td>
+								<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.weight"/></td>
 				                <td data-ng-repeat="vital in vitals">{{vital.weight}}</td>
                 			</tr>
 							<tr>
@@ -233,7 +233,7 @@
               			</tbody>
             		</table>
 					</div>
-					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-warning span3" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
 					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
