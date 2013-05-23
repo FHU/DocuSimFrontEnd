@@ -124,6 +124,10 @@ table{
 	float:right;
 }
 
+#vitals .assessmentArea tr:nth-child(1) td:nth-child(2){
+	white-space: nowrap;
+}
+
 #neurological .assessmentArea tr:nth-child(2) td:nth-child(2){
 	white-space: nowrap;
 }
