@@ -146,16 +146,10 @@
 							<tr>
                 				<td>BP(systolic)</td>
 								<td>
-									<input type="text" data-ng-model="newVitals.bpSystolic"/>
-								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}}</td>
-                			</tr>
-							<tr>
-                				<td>BP(diastolic)</td>
-								<td>
+									<input type="text" data-ng-model="newVitals.bpSystolic"/> /
 									<input type="text" data-ng-model="newVitals.bpDiastolic"/>
 								</td>
-                				<td data-ng-repeat="vital in vitals">{{vital.bpDiastolic}}</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}} / {{vital.bpDiastolic}}</td>
                 			</tr>
 							<tr>
                 				<td>SpO<sub>2</sub></td>
