@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="docuSim">
 	<head>
 		<title>Patient Assessment</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@
 			<!-- Table Content -->
 			<!-- Vitals -->
 			<div class="row-fluid">
-				<section id="vitals" class="span9 offset3">
+				<section id="vitals" class="span9 offset3" data-ng-controller="vitalsController">
 					<h1>Vitals</h1>
 					<div class="assessmentArea">
 					<table class="table">
@@ -111,19 +111,15 @@
 			                <tr>
 	            			    <th></th>
 								<th></th>
-				                <th>8:00</th>
-				                <th>7:45</th>
-                				<th>7:30</th>
-								<th>7:15</th>
-								<th>7:00</th>
+				                <th data-ng-repeat="vital in vitals">{{vital.time | date:'shortTime'}}</th>
                 			</tr>
             			</thead> 
 						<tbody>
                 			<tr>
                 				<td>Temp</td>
 								<td>
-									<input type="text"/>
-									<select class="selectpicker">
+									<input type="text" data-ng-model="newVitals.temp_num"/>
+									<select class="selectpicker" data-ng-model="newVitals.temp_type">
 										<option></option>
 										<option>Oral</option>
 										<option>Rectal</option>
@@ -131,75 +127,47 @@
 										<option>Tympanic</option>
 									</select>
 								</td>
-                				<td>98.6</td>
-				                <td>99.4</td>
-				                <td>100.2</td>
-								<td>98.5</td>
-								<td>98.3</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.temp}}</td>
 			                </tr>
 			                <tr>
 				                <td>HR</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.heartRate"/>
 								</td>
-				                <td>90</td>
-				                <td>75</td>
-                				<td>87</td>
-								<td>60</td>
-								<td>70</td>
+				                <td data-ng-repeat="vital in vitals">{{vital.heartRate}}</td>
                 			</tr>
                 			<tr>
                 				<td>R</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.rate"/>
 								</td>
-                				<td>40</td>
-                				<td>20</td>
-                				<td>32</td>
-								<td>42</td>
-								<td>22</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.rate}}</td>
                 			</tr>
 							<tr>
                 				<td>BP(systolic)</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.bpSystolic"/>
 								</td>
-                				<td>120</td>
-                				<td>110</td>
-                				<td>115</td>
-								<td>100</td>
-								<td>98</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.bpSystolic}}</td>
                 			</tr>
 							<tr>
                 				<td>BP(diastolic)</td>
 								<td>
 									<input type="text" data-ng-model="newVitals.bpDiastolic"/>
 								</td>
-                				<td>80</td>
-                				<td>90</td>
-                				<td>85</td>
-								<td>70</td>
-								<td>100</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.bpDiastolic}}</td>
                 			</tr>
 							<tr>
                 				<td>SpO<sub>2</sub></td>
 								<td>
 									<input type="text" data-ng-model="newVitals.spO2"/>
 								</td>
-                				<td>80%</td>
-                				<td>60%</td>
-                				<td>70%</td>
-								<td>98%</td>
-								<td>23%</td>
+                				<td data-ng-repeat="vital in vitals">{{vital.spO2}}</td>
                 			</tr>
                 			<tr>
 				                <td>Weight</td>
-								<td><input type="text" pattern="[0-9]*"/></td>
-				                <td>157</td>
-				                <td>162</td>
-                				<td>159</td>
-								<td>164</td>
-								<td>160</td>
+								<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.weight"/></td>
+				                <td data-ng-repeat="vital in vitals">{{vital.weight}}</td>
                 			</tr>
 							<tr>
 								<td colspan="2">
@@ -250,7 +218,7 @@
               			</tbody>
             		</table>
 					</div>
-					<button class="btn btn-large btn-warning span3"><i class="icon-pencil"></i> Sign</button>
+					<button class="btn btn-large btn-warning span3" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
 					<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
 				</section>
 			</div>
@@ -959,7 +927,7 @@
 							<tr>
                 				<td>Oxygenation(Type)</td>
 								<td>
-									<select class="selectpicker dropup">
+									<select class="selectpicker">
 										<option></option>
 										<option>BN - BiNasal Oxygen</option>
 										<option>SM - Simple Mask</option>
@@ -1329,11 +1297,10 @@
                 			<tr>
                 				<td>Side Rails Up</td>
 								<td>
-									<select class="selectpicker">
-										<option></option>
-										<option>x2</option>
-										<option>x4</option>
-									</select>
+									<div class="btn-group" data-toggle="buttons-radio">
+										<button class="btn">x2</button>
+										<button class="btn">x4</button>
+									</div>
 								</td>
                 				<td>x2</td>
 				                <td>x2</td>
@@ -1747,5 +1714,7 @@
 		<script src="js/modernizr.js"></script>
 		<script src="js/bootstrap-slider.js"></script>		
 		<script src="js/scripts.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/angular_scripts.js"></script>
 	</body>
 </html>
