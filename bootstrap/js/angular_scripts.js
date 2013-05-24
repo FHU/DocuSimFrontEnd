@@ -114,7 +114,7 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 
     //***** DropDowns **********************
     $scope.tempOptions = [
-        {id: '', name: ''},
+        {id: ' ', name: ''},
         {id: 'Oral', name: 'Oral'},
         {id: 'Rectal', name: 'Rectal'},
         {id: 'Axillary', name: 'Axillary'},
@@ -205,7 +205,7 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
      {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
      {id: '5' , name: '5 - Full power against examiner resistance'}
     ];
-    $scope.newNeurological = {ru: ''};
+    $scope.newNeurological.ru = '';
 
     $scope.luOptions = [
      {id: '', name: ''},
