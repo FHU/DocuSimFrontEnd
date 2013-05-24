@@ -20,8 +20,9 @@
 
 			<h2>{{patientInfo.FirstName}}</h2>
 
-			<ul data-ng-repeat="vital in vitals" >
+			<ul data-ng-repeat="vital in patientInfo.Vitals" >
 			<li>
+				{{vital.TimeStamp}}
 				<ul > 
 					<li> {{ vital.Weight }} </li>
 					<li> {{ vital.NurseNote }} </li>
