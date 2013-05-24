@@ -107,7 +107,7 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 
     function init() {
         $scope.vitals = vitalsService.getVitals();
-        $scope.vitalsOpts = vitalsOpts;
+        $scope.vitalsOpts = vitalsService.getVitalsOpts();
         $scope.newVitals = { temp_type: ''};
     }
 
@@ -129,23 +129,13 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
         $scope.newVitals= '';
         $('#vitals select').selectpicker('val','');
     };
-
-    //***** DropDowns **********************
-    var vitalsOpts = [{}
-        temp:[
-            {id: '', name: ''},
-            {id: 'Oral', name: 'Oral'},
-            {id: 'Rectal', name: 'Rectal'},
-            {id: 'Axillary', name: 'Axillary'},
-            {id: 'Tympanic', name: 'Tympanic'}
-        ]
-    }];
-
-    $scope.vitalsOp.temp = temp;
-
 });
 
 docuSimApp.service('vitalsService', function () {
+    this.getVitalsOpts = function () {
+        return vitalsOpts;
+    };
+
     this.getVitals = function () {
         return vitals;
     };
@@ -172,6 +162,17 @@ docuSimApp.service('vitalsService', function () {
 		{id: 4 , temp: "98.5" , heartRate: "60" , rate: "42" , bpSystolic: "100" , bpDiastolic: "70" , spO2: "98", weight: "164" , time: 1288270800006 - 15 * 60 * 1000},
 		{id: 5 , temp: "98.3" , heartRate: "70" , rate: "22" , bpSystolic: "98" , bpDiastolic: "70" , spO2: "23", weight: "160" , time: 1288270800006}
 	];
+
+    //***** DropDowns **********************
+    var vitalsOpts = [{
+        temp:[
+            {id: '', name: ''},
+            {id: 'Oral', name: 'Oral'},
+            {id: 'Rectal', name: 'Rectal'},
+            {id: 'Axillary', name: 'Axillary'},
+            {id: 'Tympanic', name: 'Tympanic'}
+        ]
+    }];
 });
 
 
