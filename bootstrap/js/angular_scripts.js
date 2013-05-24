@@ -158,7 +158,7 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
 
     $scope.insertNeurological = function () {
         var ppRight = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
-        var ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sighn;
+        var ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
         var eom = $scope.newNeurological.eom;
         var ru = $scope.newNeurological.ru;
         var lu = $scope.newNeurological.lu;

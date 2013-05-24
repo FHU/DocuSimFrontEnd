@@ -257,7 +257,7 @@
         			</tr>
 					<tr>
         				<td>Coma Scale - Motor</td>
-						<td><select ng-model="newNeurological.comaScale_motor" ng-options="value.id as value.name for (key, value) in comaScale_motorOPtions" bt-select></select></td>
+						<td><select ng-model="newNeurological.comaScale_motor" ng-options="value.id as value.name for (key, value) in comaScale_motorOptions" bt-select></select></td>
         				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
