@@ -252,12 +252,10 @@ docuSimApp.service('neurologicalService', function () {
     //***** DropDowns ********************
     var optArray = {
         eom: [
-            {id: '', name: ''},
             {id: 'present', name: 'present'},
             {id: 'none', name: 'none'}
         ],
         ru: [
-         {id: '', name: ''},
          {id: '0' , name: '0 - No muscle contractions'},
          {id: '1' , name: '1 - Flicker or trace of voluntary'},
          {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
@@ -267,7 +265,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         lu: [
-         {id: '', name: ''},
          {id: '0' , name: '0 - No muscle contractions'},
          {id: '1' , name: '1 - Flicker or trace of voluntary'},
          {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
@@ -277,7 +274,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         rl: [
-         {id: '', name: ''},
          {id: '0' , name: '0 - No muscle contractions'},
          {id: '1' , name: '1 - Flicker or trace of voluntary'},
          {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
@@ -287,7 +283,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         ll: [
-         {id: '', name: ''},
          {id: '0' , name: '0 - No muscle contractions'},
          {id: '1' , name: '1 - Flicker or trace of voluntary'},
          {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
@@ -297,7 +292,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
                                         
         behavior: [
-         {id: '', name: ''},
          {id: 'AX' , name: 'AX Anxious'},
          {id: 'AG' , name: 'AG Agitated'},
          {id: 'H' , name: 'H Hostile'},
@@ -309,7 +303,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         speech: [
-         {id: '', name: ''},
          {id: 'CL' , name: 'CL Clear'},
          {id: 'S' , name: 'S Slurred'},
          {id: 'A' , name: 'A Absent'},
@@ -318,7 +311,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         mental: [
-         {id: '', name: ''},
          {id: '1' , name: '1 - Alert'},
          {id: '2' , name: '2 - Lethargic'},
          {id: '3' , name: '3 - Sedated'},
@@ -329,7 +321,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         comaScale_eyes: [
-         {id: '', name: ''},
          {id: 4 , name: '4 - Spontatneous'},
          {id: 3 , name: '3 - To Speech'},
          {id: 2 , name: '2 - To Pain'},
@@ -337,7 +328,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         comaScale_verbal: [
-         {id: '', name: ''},
          {id: 5 , name:  '5 - Oriented'},
          {id: 4 , name:  '4 - Confused'},
          {id: 3 , name:  '3 - Inappropriate Words'},
@@ -430,7 +420,6 @@ docuSimApp.service('cardioService', function () {
     //***** DropDowns ********************
     var optArray = {
         heartIntensity: [
-            {id: '', name: ''},
             {id: 'S', name: 'S - Strong'},
             {id: 'D', name: 'D - Distant'},
             {id: 'M', name: 'M - Muffled'},
@@ -438,13 +427,11 @@ docuSimApp.service('cardioService', function () {
         ],
 
         heartRegularity: [
-            {id: '', name: ''},
             {id: 'Regular', name: 'Regular'},
             {id: 'Irregular', name: 'Irregular'}
         ],
 
         cardiacRhythm: [
-            {id: '', name: ''},
             {id: 'NSR', name: 'NSR - Sinus'},
             {id: 'ST', name: 'ST - Sinus Tach'},
             {id: 'SB', name: 'SB - Sinus Brady'},
@@ -458,7 +445,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         skin:[
-            {id: '', name: ''},
             {id: 'W', name: 'W - Warm'},
             {id: 'C', name: 'C - Cool'},
             {id: 'CD', name: 'CD - Cold'},
@@ -469,7 +455,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         skinColor: [
-            {id: '', name: ''},
             {id: 'FL', name: 'FL - Flushed'},
             {id: 'G', name: 'G - Good/Pink'},
             {id: 'P', name: 'DSK - Dusky'},
@@ -480,7 +465,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         nailBeds: [
-            {id: '', name: ''},
             {id: 'FL', name: 'FL - Flushed'},
             {id: 'G', name: 'G - Good/Pink'},
             {id: 'P', name: 'DSK - Dusky'},
@@ -491,13 +475,11 @@ docuSimApp.service('cardioService', function () {
         ],
 
         capillaryRefill: [
-            {id: '', name: ''},
             {id: 'Normal', name: '< 3 seconds - Normal'},
             {id: 'Sluggish', name: '> 3 seconds - Sluggish'}
         ],
 
         edemaUE: [
-            {id: '', name: ''},
             {id: '1+', name: '1+ Capable of being pitted'},
             {id: '2+', name: '2+ Area not tense, 30 second pitting'},
             {id: '3+', name: '3+ Area Tense, one minute pitting'},
@@ -507,7 +489,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         edemaLE: [
-            {id: '', name: ''},
             {id: '1+', name: '1+ Capable of being pitted'},
             {id: '2+', name: '2+ Area not tense, 30 second pitting'},
             {id: '3+', name: '3+ Area Tense, one minute pitting'},
@@ -517,7 +498,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         pulseRadial: [
-            {id: '', name: ''},
             {id: '1+', name: '1+ Intermittent'},
             {id: '2+', name: '2+ Weak'},
             {id: '3+', name: '3+ Normal'},
@@ -525,7 +505,6 @@ docuSimApp.service('cardioService', function () {
         ],
 
         darsalisPedis: [
-            {id: '', name: ''},
             {id: '1+', name: 'Intermittent'},
             {id: '2+', name: 'Weak'},
             {id: '3+', name: 'Normal'},
@@ -603,7 +582,6 @@ docuSimApp.service('respiratoryService', function () {
     //***** DropDowns ********************
     var optArray = {
         respiration: [
-            {id: '', name: ''},
             {id: 'R', name: 'R-Regular'},
             {id: 'S', name: 'S-Shallow'},
             {id: 'V', name: 'V-Vent'},
@@ -612,7 +590,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
         
         breathRUL: [
-            {id: '', name: ''},
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -626,7 +603,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
 
         breathRML: [
-            {id: '', name: ''},
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -640,7 +616,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
 
         breathRLL: [
-            {id: '', name: ''},
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -654,7 +629,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
 
         breathLUL: [
-            {id: '', name: ''},
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -668,7 +642,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
 
         breathLLL: [
-            {id: '', name: ''},
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -682,7 +655,6 @@ docuSimApp.service('respiratoryService', function () {
         ],
 
         oxygenation: [
-            {id: '', name: ''},
             {id: 'BN', name: 'BN - BiNasal Oxygen'},
             {id: 'SM', name: 'SM - Simple Mask'},
             {id: 'AFM', name: 'AFM - Aeorsol Face Mask'},
@@ -708,6 +680,7 @@ docuSimApp.controller('dailyController', function($scope, dailyService){
 
     function init() {
         $scope.daily = dailyService.getDaily();
+        $scope.dailyOpts = dailyService.getOptArray();
     }
 
     $scope.insertDaily = function () {
@@ -741,78 +714,13 @@ docuSimApp.controller('dailyController', function($scope, dailyService){
         $scope.newDaily= '';
         $('#daily select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.isolationPrecautionsOptions = [
-        {id: '', name: ''},
-        {id: 'Universal', name: 'Universal'},
-        {id: 'Contact', name: 'Contact'},
-        {id: 'Droplet', name: 'Droplet'},
-        {id: 'Airborne', name: 'Airborne'},
-        {id: 'Reverse', name: 'Reverse'},
-        {id: 'C-diff', name: 'C-diff'}
-    ];
-    $scope.newDaily = {isolationPrecautions: ''};
-
-    $scope.bathOptions = [
-        {id: '', name: ''},
-        {id: 'Part', name: 'Part'},
-        {id: 'Complete', name: 'Complete'}
-    ];
-    $scope.newDaily = {bath: ''};
-
-    $scope.turnShiftOptions = [
-        {id: '', name: ''},
-        {id: 'P', name: 'P - Prone'},
-        {id: 'S', name: 'S - Supine'},
-        {id: 'R', name: 'R - Right'},
-        {id: 'L', name: 'L - Left'},
-        {id: 'Self', name: 'Self'},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''}
-    ];
-    $scope.newDaily = {turnShift: ''};
-
-    $scope.romOptions = [
-        {id: '', name: ''},
-        {id: 'A', name: 'A - Active'},
-        {id: 'P', name: 'P - Passive'}
-    ];
-    $scope.newDaily = {rom: ''};
-
-    $scope.skinDsgDrainageOptions = [
-        {id: '', name: ''},
-        {id: 'Small', name: 'Small'},
-        {id: 'Medium', name: 'Medium'},
-        {id: 'Large', name: 'Large'}
-    ];
-    $scope.newDaily = {skinDsgDrainage: ''};
-
-    $scope.skinColorOptions = [
-        {id: '', name: ''},
-        {id: 'FL', name: 'FL - Flushed'},
-        {id: 'G', name: 'G - Good/Pink'},
-        {id: 'P', name: 'P - Pale'},
-        {id: 'DSK', name: 'DSK - Dusky'},
-        {id: 'C', name: 'C - Cyanotic'},
-        {id: 'J', name: 'J - Jandiced'},
-        {id: 'A', name: 'A - Ashen'}
-    ];
-    $scope.newDaily = {skinColor: ''};
-
-    $scope.ivSiteOptions = [
-        {id: '', name: ''},
-        {id: 'Yes', name: 'Yes'},
-        {id: 'No', name: 'No'},
-        {id: 'Abnormal', name: 'Abnormal'}
-    ];
-    $scope.newDaily = {ivSite: ''};
 });
 
 docuSimApp.service('dailyService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getDaily = function () {
         return daily;
     };
@@ -848,6 +756,59 @@ docuSimApp.service('dailyService', function () {
     var daily = [
         {}
     ];
+
+
+    //***** DropDowns ********************
+    var optArray = {
+        isolationPrecautions: [ 
+            {id: 'Universal', name: 'Universal'},
+            {id: 'Contact', name: 'Contact'},
+            {id: 'Droplet', name: 'Droplet'},
+            {id: 'Airborne', name: 'Airborne'},
+            {id: 'Reverse', name: 'Reverse'},
+            {id: 'C-diff', name: 'C-diff'}
+        ],
+
+        bath: [
+            {id: 'Part', name: 'Part'},
+            {id: 'Complete', name: 'Complete'}
+        ],
+
+        turnShift: [
+            {id: 'P', name: 'P - Prone'},
+            {id: 'S', name: 'S - Supine'},
+            {id: 'R', name: 'R - Right'},
+            {id: 'L', name: 'L - Left'},
+            {id: 'Self', name: 'Self'}    ];
+        $,
+
+        rom: [ 
+            {id: 'A', name: 'A - Active'},
+            {id: 'P', name: 'P - Passive'}
+        ],
+
+        skinDsgDrainage: [ 
+            {id: 'Small', name: 'Small'},
+            {id: 'Medium', name: 'Medium'},
+            {id: 'Large', name: 'Large'}
+        ],
+
+        skinColor: [ 
+            {id: 'FL', name: 'FL - Flushed'},
+            {id: 'G', name: 'G - Good/Pink'},
+            {id: 'P', name: 'P - Pale'},
+            {id: 'DSK', name: 'DSK - Dusky'},
+            {id: 'C', name: 'C - Cyanotic'},
+            {id: 'J', name: 'J - Jandiced'},
+            {id: 'A', name: 'A - Ashen'}
+        ],
+
+        ivSite: [
+            {id: 'Yes', name: 'Yes'},
+            {id: 'No', name: 'No'},
+            {id: 'Abnormal', name: 'Abnormal'}
+        ]
+    };
 });
 
 
@@ -860,6 +821,7 @@ docuSimApp.controller('safetyController', function($scope, safetyService){
 
     function init() {
         $scope.safety = safetyService.getSafety();
+        $scope.safetyOpts = safetyService.getOptArray();
     }
 
     $scope.insertSafety = function () {
@@ -876,12 +838,13 @@ docuSimApp.controller('safetyController', function($scope, safetyService){
         $scope.newSafety= '';
         $('#safety select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    //none
 });
 
 docuSimApp.service('safetyService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getSafety = function () {
         return safety;
     };
@@ -900,6 +863,11 @@ docuSimApp.service('safetyService', function () {
     var safety =[
         {}
     ];
+
+    //***** DropDowns ********************
+    var = optArray{
+
+    };
 });
 
 
@@ -912,6 +880,7 @@ docuSimApp.controller('guController', function($scope, guService){
 
     function init() {
         $scope.gu = guService.getGu();
+        $scope.guOpts = guService.getOptArray();
     }
 
     $scope.insertGu = function () {
@@ -928,35 +897,13 @@ docuSimApp.controller('guController', function($scope, guService){
         $scope.newGu= '';
         $('#gu select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.eliminationOptions = [
-        {id: '', name: ''},
-        {id: 'Void', name: 'Void'},
-        {id: 'Catheter', name: 'Catheter'},
-        {id: 'Incontinent', name: 'Incontinent'}
-    ];
-    $scope.newGu = {isolationPrecautions: ''};
-
-    $scope.catheterOptions = [
-        {id: '', name: ''},
-        {id: 'Foley', name: 'Foley'},
-        {id: 'Texas', name: 'Texas'}
-    ];
-    $scope.newGu = {catheter: ''};
-
-    $scope.colorConsistencyOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL - Clear'},
-        {id: 'Y', name: 'Y - Yellow'},
-        {id: 'CLDY', name: 'CLDY - Cloudy'},
-        {id: 'AMB', name: 'AMB - Amber'},
-        {id: 'BLDY', name: 'BLDY - Bloody'}
-    ];
-    $scope.newGu= {colorConsistency: ''};
 });
 
 docuSimApp.service('guService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getGu = function () {
         return gu;
     };
@@ -975,6 +922,28 @@ docuSimApp.service('guService', function () {
     var gu = [
         {}
     ];
+
+    //***** DropDowns ********************
+    var optArray = {
+        elimination:[ 
+            {id: 'Void', name: 'Void'},
+            {id: 'Catheter', name: 'Catheter'},
+            {id: 'Incontinent', name: 'Incontinent'}
+        ],
+
+        catheterOptions: [ 
+            {id: 'Foley', name: 'Foley'},
+            {id: 'Texas', name: 'Texas'}
+        ],
+
+        colorConsistency: [
+            {id: 'CL', name: 'CL - Clear'},
+            {id: 'Y', name: 'Y - Yellow'},
+            {id: 'CLDY', name: 'CLDY - Cloudy'},
+            {id: 'AMB', name: 'AMB - Amber'},
+            {id: 'BLDY', name: 'BLDY - Bloody'}
+        ]
+    };
 });
 
 
@@ -987,6 +956,7 @@ docuSimApp.controller('giController', function($scope, giService){
 
     function init() {
         $scope.gi = giService.getGi();
+        $scope.giOpts = giService.getOptArray();
     }
 
     $scope.insertGi = function () {
@@ -1005,58 +975,13 @@ docuSimApp.controller('giController', function($scope, giService){
         $scope.newGi= '';
         $('#gi select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.abdomenOptinos = [
-        {id: '', name: ''},
-        {id: 'Flat', name: 'Flat'},
-        {id: 'Soft', name: 'Soft'},
-        {id: 'DIS', name: 'DIS - Distended'},
-        {id: 'Firm', name: 'Firm'},
-        {id: 'LG', name: 'LG - Large'},
-        {id: 'RG', name: 'RG - Rigid'},
-        {id: 'TEN', name: 'TEN - Tender'}
-    ];
-    $scope.Gi = {abdomen: ''};
-
-    $scope.bsRUQOptions = [
-        {id: '', name: ''},
-        {id: 'A', name: 'A - Absent'},
-        {id: '+0', name: '+0 - Hypoactive'},
-        {id: '+-', name: '+- - Present'},
-        {id: '++', name: '++ - Hyperactive'}
-    ];
-    $scope.Gi = {bsRUQ: ''};
-
-    $scope.bsRLQOptions = [
-        {id: '', name: ''},
-        {id: 'A', name: 'A - Absent'},
-        {id: '+0', name: '+0 - Hypoactive'},
-        {id: '+-', name: '+- - Present'},
-        {id: '++', name: '++ - Hyperactive'}
-    ];
-    $scope.Gi = {bsRLQ: ''};
-
-    $scope.bsLUQOptions = [
-        {id: '', name: ''},
-        {id: 'A', name: 'A - Absent'},
-        {id: '+0', name: '+0 - Hypoactive'},
-        {id: '+-', name: '+- - Present'},
-        {id: '++', name: '++ - Hyperactive'}
-    ];
-    $scope.Gi = {bsLUQ: ''};
-
-    $scope.bsLLQOptions = [
-        {id: '', name: ''},
-        {id: 'A', name: 'A - Absent'},
-        {id: '+0', name: '+0 - Hypoactive'},
-        {id: '+-', name: '+- - Present'},
-        {id: '++', name: '++ - Hyperactive'}
-    ];
-    $scope.newGi = {bsLLQ: ''};
 });
 
 docuSimApp.service('giService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getGi = function () {
         return gi;
     };
@@ -1077,6 +1002,47 @@ docuSimApp.service('giService', function () {
     var gi =[
         {}
     ];
+
+    //***** DropDowns ********************
+    var optArray = {
+        abdomenOptinos: [
+            {id: 'Flat', name: 'Flat'},
+            {id: 'Soft', name: 'Soft'},
+            {id: 'DIS', name: 'DIS - Distended'},
+            {id: 'Firm', name: 'Firm'},
+            {id: 'LG', name: 'LG - Large'},
+            {id: 'RG', name: 'RG - Rigid'},
+            {id: 'TEN', name: 'TEN - Tender'}
+        ],
+
+        bsRUQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsRLQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsLUQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsLLQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ]
+    };
 });
 
 
@@ -1089,6 +1055,7 @@ docuSimApp.controller('ioController', function($scope, ioService){
 
     function init() {
         $scope.io = ioService.getIo();
+        $scope.ioOpts = ioService.getOptArray();
     }
 
     $scope.insertIo = function () {
@@ -1109,12 +1076,13 @@ docuSimApp.controller('ioController', function($scope, ioService){
         $scope.newIo= '';
         $('#io select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    //none
 });
 
 docuSimApp.service('ioService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getIo = function () {
         return io;
     };
@@ -1137,5 +1105,10 @@ docuSimApp.service('ioService', function () {
     var io = [
         {}
     ];
+
+        //***** DropDowns ********************
+    var = optArray{
+
+    };
 });
 

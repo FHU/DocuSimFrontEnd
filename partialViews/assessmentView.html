@@ -484,7 +484,7 @@
 
 	<!-- Daily -->
 	<div class="row-fluid">
-		<section id="daily" class="span9 offset3">
+		<section id="daily" class="span9 offset3" data-ng-controller="dailyController">
 			<h1>Daily</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -496,131 +496,64 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="day in daily | orderBy:'id':true">
+		                	<span class="time" >{{day.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{day.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Isolation Precautions</td>
-						<td>
-							<select ng-model="newDaily.isolationPrecautions" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Universal</option>
-								<option>Contact</option>
-								<option>Droplet</option>
-								<option>Airborne</option>
-								<option>Reverse</option>
-								<option>C-diff</option>
-							</select>
-						</td>
-        				<td>Contact</td>
-		                <td>Droplet</td>
-		                <td>Airborne</td>
-						<td>Reverse</td>
-		                <td>Universal</td>
+						<td><select ng-model="newDaily.isolationPrecautions" ng-options="value.id as value.name for (key, value) in dailyOpts.isolationPrecautions" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.isolationPrecautions}}</td>
 	                </tr>
 	                <tr>
 		                <td>Oral Care/Suction</td>
-						<td>
-							<div class="btn-group" ng-model="newDaily.oral" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
-							</div>
-						</td>
-		                <td>yes</td>
-		                <td>yes</td>
-		                <td>no</td>
-						<td>yes</td>
-		                <td>yes</td>
+						<td><div class="btn-group" ng-model="newDaily.oral" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="Yes">No</button>
+							</div></td>
+		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.oral}}</td>
         			</tr>
         			<tr>
         				<td>Bath</td>
-						<td>
-							<select ng-model="newDaily.bath" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>part</option>
-								<option>complete</option>
-							</select>
-						</td>
-        				<td>part</td>
-		                <td>part</td>
-		                <td>complete</td>
-						<td>none</td>
-		                <td>none</td>
+						<td><select ng-model="newDaily.bath" ng-options="value.id as value.name for (key, value) in dailyOpts.bath" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.bath}}</td>
         			</tr>
 					<tr>
 		                <td>Linen</td>
-						<td>
-							<div class="btn-group" ng-model="newDaily.linen" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
-							</div>
-						</td>
-		                <td>yes</td>
-		                <td>yes</td>
-		                <td>no</td>
-						<td>yes</td>
-		                <td>yes</td>
+						<td><div class="btn-group" ng-model="newDaily.linen" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div></td>
+		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.linen}}</td>
         			</tr>
 					<tr>
         				<td>Turn/Shift</td>
-						<td>
-							<select ng-model="newDaily.turnShift" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>P - Prone</option>
-								<option>S - Supine</option>
-								<option>R - Right</option>
-								<option>L - Left</option>
-								<option>Self</option>
-							</select>
-						</td>
-        				<td>P</td>
-		                <td>S</td>
-		                <td>R</td>
-						<td>L</td>
-		                <td>Self</td>
+						<td><select ng-model="newDaily.turnShift" ng-options="value.id as value.name for (key, value) in dailyOpts.turnShift" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.turnShift}}</td>
 	                </tr>
 					<tr>
         				<td>ROM</td>
-						<td>
-							<select ng-model="newDaily.rom" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>A - Active</option>
-								<option>P - Passive</option>
-							</select>
-						</td>
-        				<td>A</td>
-		                <td>A</td>
-		                <td>P</td>
-						<td>A</td>
-		                <td>A</td>
+						<td><select ng-model="newDaily.rom" ng-options="value.id as value.name for (key, value) in dailyOpts.rom" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.rom}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Site</td>
 						<td><input type="text" ng-model="newDaily.skinSite"/></td>
-        				<td>normal</td>
-		                <td>rash</td>
-		                <td>ringworm</td>
-						<td>dry</td>
-		                <td>normal</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skin}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Dsg</td>
 						<td>
 							<div class="btn-group" ng-model="newDaily.skinDsg" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
 							</div>
 						</td>
-        				<td>yes</td>
-		                <td>no</td>
-		                <td>no</td>
-						<td>yes</td>
-		                <td>yes</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDsg}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Incision</td>
@@ -630,164 +563,87 @@
 								<button class="btn">No</button>
 							</div>
 						</td>
-        				<td>yes</td>
-		                <td>no</td>
-		                <td>no</td>
-						<td>yes</td>
-		                <td>yes</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinIncision}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Dry and Intact</td>
 						<td><input type="text" ng-model="newDaily.skinDryIntact"></td>
-        				<td>yes</td>
-		                <td>no</td>
-		                <td>no</td>
-						<td>yes</td>
-		                <td>yes</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDryIntact}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - No change at</td>
 						<td><input type="text" ng-model="newDaily.skinNoChange"/></td>
-        				<td></td>
-		                <td></td>
-		                <td></td>
-						<td></td>
-		                <td></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinNoChange}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Dsg. Drainage Amt.</td>
-						<td>
-							<select ng-model="newDaily.skinDsgDrainage" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Small</option>
-								<option>Medium</option>
-								<option>Large</option>
-							</select>
-						</td>
-        				<td>small</td>
-		                <td>medium</td>
-		                <td>large</td>
-						<td>medium</td>
-		                <td>small</td>
+						<td><select ng-model="newDaily.skinDsgDrainage" ng-options="value.id as value.name for (key, value) in dailyOpts.skinDsgDrainage" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDsgDrainage}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Color</td>
-						<td>
-							<select ng-model="newDaily.skinColor" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>FL - Flushed</option>
-								<option>G - Good/Pink</option>
-								<option>P - Pale</option>
-								<option>DSK - Dusky</option>
-								<option>C - Cyanotic</option>
-								<option>J - Jandiced</option>
-								<option>A - Ashen</option>
-							</select>
-						</td>
-        				<td>FL</td>
-		                <td>G</td>
-		                <td>P</td>
-						<td>DSK</td>
-		                <td>C</td>
+						<td><select ng-model="newDaily.skinColor" ng-options="value.id as value.name for (key, value) in dailyOpts.skinColor" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinColor}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Odor</td>
 						<td><input type="text" ng-model="newDaily.skinOder"/></td>
-        				<td>text box</td>
-		                <td>text box</td>
-		                <td>text box</td>
-						<td>text box</td>
-		                <td>text box</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinOdor}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Appearance</td>
 						<td><input type="text" ng-model="newDaily.skinAppearance"/></td>
-        				<td>text box</td>
-		                <td>text box</td>
-		                <td>text box</td>
-						<td>text box</td>
-		                <td>text box</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinAppearance}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Size</td>
 						<td><input type="text" ng-model="newDaily.skinSize"/></td>
-        				<td>text box</td>
-		                <td>text box</td>
-		                <td>text box</td>
-						<td>text box</td>
-		                <td>text box</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinSize}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Drain</td>
 						<td><input type="text" ng-model="newDaily.skinDrain"/></td>
-        				<td>text box</td>
-		                <td>text box</td>
-		                <td>text box</td>
-						<td>text box</td>
-		                <td>text box</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDrain}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Primed</td>
 						<td>
 							<div class="btn-group" ng-model="newDaily.skinPrimed" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
 							</div>
 						</td>
-        				<td>yes</td>
-		                <td>no</td>
-		                <td>yes</td>
-						<td>no</td>
-		                <td>yes</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinPrimed}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Comments</td>
 						<td><input type="text" ng-model="newDaily.skinComments"/></td>
-        				<td>text box</td>
-		                <td>text box</td>
-		                <td>text box</td>
-						<td>text box</td>
-		                <td>text box</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinComments}}</td>
 	                </tr>
 					<tr>
         				<td>Peripheral/Central IV site</td>
-						<td>
-							<select ng-model="newDaily.ivSite" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Yes</option>
-								<option>No</option>
-								<option>Abnormal</option>
-							</select>
-						</td>
-        				<td>yes</td>
-		                <td>no</td>
-		                <td>abnormal</td>
-						<td>no</td>
-		                <td>yes</td>
+						<td><select ng-model="newDaily.ivSite" ng-options="value.id as value.name for (key, value) in dailyOpts.ivSite" bt-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.ivSite}}</td>
 	                </tr>
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
 							<textarea class="nurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.isolationPrecautions}}</td>
 					</tr>
       			</tbody>
     		</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertDaily()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearDaily()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End Daily -->
 
 	<!-- Safety -->
 	<div class="row-fluid">
-		<section id="safety" class="span9 offset3">
+		<section id="safety" class="span9 offset3" data-ng-controller="safetyController">
 			<h1>Safety</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -799,10 +655,10 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="safe in safety | orderBy:'id':true">
+		                	<span class="time" >{{safe.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{safe.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
@@ -811,43 +667,31 @@
         				<td>Side Rails Up</td>
 						<td>
 							<div class="btn-group" ng-model="newSafety.sideRails" bs-buttons-radio>
-								<button class="btn">x2</button>
-								<button class="btn">x4</button>
+								<button class="btn" value="x2">x2</button>
+								<button class="btn" value="x4">x4</button>
 							</div>
 						</td>
-        				<td>x2</td>
-		                <td>x2</td>
-		                <td>x4</td>
-						<td>x2</td>
-		                <td>x4</td>
+        				<td data-ng-repeat="safe in safety | orderBy:'id':true">{{safe.sideRails}}</td>
 	                </tr>
 	                <tr>
 	                	<td>Call Light Within Reach</td>
 	                	<td>
 	                		<div class="btn-group" ng-model="newSafety.callLight" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
 							</div>
 	                	</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'id':true">{{safe.callLight}}</td>
 	                </tr>
 	                <tr>
 	                	<td>Bed in Low Position</td>
 	                	<td>
 	                		<div class="btn-group" ng-model="newSafety.bedPosition" bs-buttons-radio>
-								<button class="btn">Yes</button>
-								<button class="btn">No</button>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
 							</div>
 	                	</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
-	                	<td>yes</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'id':true">{{safe.bedPosition}}</td>
 	                </tr>
 					<tr>
 						<td colspan="2">
@@ -863,15 +707,15 @@
       			</tbody>
     		</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertSafety()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearSafety()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End Safety -->
 
 	<!-- GU -->
 	<div class="row-fluid">
-		<section id="gu" class="span9 offset3">
+		<section id="gu" class="span9 offset3" data-ng-controller="guController">
 			<h1>GU</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -883,62 +727,29 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="g in gu | orderBy:'id':true">
+		                	<span class="time" >{{g.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{g.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Elimination Pattern</td>
-        				<td>
-						 	<select ng-model="newGu.elimination" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-            					<option>Void </option>
-            					<option>Catheter</option>
-            					<option>Incontinent</option>
-        					</select>
-        				</td>
-		                <td>Void</td>
-						<td>Catheter</td>
-						<td>Incontinent</td>
-						<td>Void</td>
-		                <td>Void</td>
+        				<td><select ng-model="newGu.elimination" ng-options="value.id as value.name for (key, value) in guOpt.elimination" bt-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'id':true">{{g.elimination}}</td>
 	                </tr>
 	                <tr>
 		                <td>Catheter</td>
-						<td>
-							<select ng-model="newGu.catheter" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Foley</option>
-								<option>Texas</option>
-							</select>
-						</td>
-		                <td>Foley</td>
-		                <td>Texas</td>
-        				<td>Texas</td>
-						<td>Foley</td>
-		                <td>Texas</td>
+						<td><select ng-model="newGu.catheter" ng-options="value.id as value.name for (key, value) in guOpt.elimination" bt-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'id':true">{{g.catheter}}</td>
         			</tr>
         			<tr>
         				<td>Color/Consistency</td>
-						<td>
-							<select ng-model="newGu.colorConsistency" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>CL - Clear</option>
-								<option>Y - Yellow</option>
-								<option>CLDY - Cloudy</option>
-								<option>AMB - Amber</option>
-								<option>BLDY - Bloody</option>
-							</select>
+						<td><select ng-model="newGu.colorConsistency" ng-options="value.id as value.name for (key, value) in guOpt.colorConsistency" bt-select></select>
 						</td>
-						<td>CL</td>
-		                <td>Y</td>
-        				<td>CLDY</td>
-        				<td>AMB</td>
-        				<td>BLDY</td>
+						<td data-ng-repeat="g in gu | orderBy:'id':true">{{g.colorConsistency}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
@@ -954,15 +765,15 @@
       			</tbody>
     		</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertGu()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearGu()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End GU -->
 
 	<!-- GI -->
 	<div class="row-fluid">
-		<section id="gi" class="span9 offset3">
+		<section id="gi" class="span9 offset3" data-ng-controller="giController">
 			<h1>GI</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -974,101 +785,38 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="g in gi | orderBy:'id':true">
+		                	<span class="time" >{{g.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{g.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Abdomen</td>
-						<td>
-							<select ng-model="newGi.abdomen" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Flat</option>
-								<option>Soft</option>
-								<option>DIS - Distended</option>
-								<option>Firm</option>
-								<option>LG - Large</option>
-								<option>RG - Rigid</option>
-								<option>TEN - Tender</option>
-							</select>
-						</td>
-        				<td>Flat</td>
-		                <td>Soft</td>
-		                <td>DIS</td>
-						<td>Firm</td>
-		                <td>LG</td>
+						<td><select ng-model="newGi.abdomen" ng-options="value.id as value.name for (key, value) in giOpt.abdomen" bt-select></select></td>
+        				<td data-ng-repeat="g in gi | orderBy:'id':true">{{g.abdomen}}</td>
 	                </tr>
 	                <tr>
 		                <td>Bowel Sounds - RUQ</td>
-						<td>
-							<select ng-model="newGi.bsRUQ" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>A - Absent</option>
-								<option>+0 - Hypoactive</option>
-								<option>+- - Present</option>
-								<option>++ - Hyperactive</option>
-							</select>
-						</td>
-		                <td>A</td>
-		                <td>+0</td>
-        				<td>+-</td>
-						<td>++</td>
-        				<td>++</td>
+						<td><select ng-model="newGi.bsRUQ" ng-options="value.id as value.name for (key, value) in giOpt.bsRUQ" bt-select></select></td>
+        				<td data-ng-repeat="g in gi | orderBy:'id':true">{{g.bsRUQ}}</td>
         			</tr>
         			<tr>
 		                <td>Bowel Sounds - RLQ</td>
-						<td>
-							<select ng-model="newGi.bsRLQ" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>A - Absent</option>
-								<option>+0 - Hypoactive</option>
-								<option>+- - Present</option>
-								<option>++ - Hyperactive</option>
-							</select>
-						</td>
-		                <td>A</td>
-		                <td>+0</td>
-        				<td>+-</td>
-						<td>++</td>
-        				<td>++</td>
+						<td><select ng-model="newGi.bsRLQ" ng-options="value.id as value.name for (key, value) in giOpt.bsRLQ" bt-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'id':true">{{g.bsRLQ}}</td>
         			</tr>
 					<tr>
 		                <td>Bowel Sounds - LUQ</td>
-						<td>
-							<select ng-model="newGi.bsLUQ" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>A - Absent</option>
-								<option>+0 - Hypoactive</option>
-								<option>+- - Present</option>
-								<option>++ - Hyperactive</option>
-							</select>
-						</td>
-		                <td>A</td>
-		                <td>+0</td>
-        				<td>+-</td>
-						<td>++</td>
-        				<td>++</td>
+						<td><select ng-model="newGi.bsLUQ" ng-options="value.id as value.name for (key, value) in giOpt.bsLUQ" bt-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'id':true">{{g.bsLUQ}}</td>
         			</tr>
 					<tr>
 		                <td>Bowel Sounds - LLQ</td>
-						<td>
-							<select ng-model="newGi.bsLLQ" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>A - Absent</option>
-								<option>+0 - Hypoactive</option>
-								<option>+- - Present</option>
-								<option>++ - Hyperactive</option>
-							</select>
-						</td>
-		                <td>A</td>
-		                <td>+0</td>
-        				<td>+-</td>
-						<td>++</td>
-        				<td>++</td>
+						<td><select ng-model="newGi.bsLLQ" ng-options="value.id as value.name for (key, value) in giOpt.bsLLQ" bt-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'id':true">{{g.bsLLQ}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
@@ -1084,15 +832,15 @@
         		</tbody>
         	</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertGi()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearGi()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End GI -->
 
 	<!-- I/O -->
 	<div class="row-fluid">
-		<section id="io" class="span9 offset3">
+		<section id="io" class="span9 offset3" data-ng-controller="ioController">
 			<h1>I's/O's</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -1104,10 +852,10 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="i in io | orderBy:'id':true">
+		                	<span class="time" >{{i.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{i.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
@@ -1115,94 +863,52 @@
 					<tr>
 		                <td>Intake - PO</td>
 						<td><input type="text" ng-model="newIo.intakePO"/></td>
-		                <td>300 mL</td>
-		                <td>200 mL</td>
-        				<td>350 mL</td>
-						<td>400 mL</td>
-        				<td>121 mL</td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakePO}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - Tube</td>
-						<td><input type="text" ng-model="newIo.intakeTube_1"/><input type="text"/></td>
-		                <td>tube, 250 mL</td>
-		                <td>tube, 200 mL</td>
-        				<td>tube, 150 mL</td>
-						<td>tube, 450 mL</td>
-        				<td>tube, 750 mL</td>
+						<td><input type="text" ng-model="newIo.intakeTube"/>
+							<input type="text"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakeTube}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - IV(s)</td>
-						<td>
-							<input type="text" ng-model="newIo.intakeIV"/><input type="text" />
-							<input type="text" /><input type="text" />
-						</td>
-		                <td></td>
-		                <td></td>
-        				<td></td>
-						<td></td>
-        				<td></td>
+						<td><input type="text" ng-model="newIo.intakeIV"/>
+							<input type="text" />
+							<input type="text" />
+							<input type="text" /></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakeIV}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - Total</td>
 						<td></td>
-						<td>550 mL</td>
-		                <td>400 mL</td>
-		                <td>500 mL</td>
-        				<td>850 mL</td>
-						<td>871 mL</td>                				
+						<td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakePO + i.intakeTube + i.intakeIV}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Emesis</td>
-						<td>
-							<input type="text" ng-model="newIo.outputEmesis"/><input type="text" />
-						</td>
-		                <td>200 mL, none</td>
-		                <td>300 mL, none</td>
-        				<td>280 mL, changed</td>
-						<td>491 mL, none</td>
-        				<td>230 mL, changed</td>
+						<td><input type="text" ng-model="newIo.outputEmesis"/>
+							<input type="text" /></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputEmesis}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Urine</td>
-						<td>
-							<input type="text" ng-model="newIo.outpuetUrine"/>
-						</td>
-		                <td>500 mL</td>
-		                <td>5000 mL</td>
-        				<td>400 mL</td>
-						<td>120 mL</td>
-        				<td>750 mL</td>
+						<td><input type="text" ng-model="newIo.outpuetUrine"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputUrine}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Stool Colostomy/Fecal Pouch</td>
-						<td>
-							<input type="text" ng-model="newIo.outputStool"/>
-						</td>
-		                <td>500 mL</td>
-		                <td>5000 mL</td>
-        				<td>400 mL</td>
-						<td>120 mL</td>
-        				<td>750 mL</td>
+						<td><input type="text" ng-model="newIo.outputStool"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputStool}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Chest Tube Drainage</td>
-						<td>
-							<input type="text" ng-model="newIo.outputChestTube"/>
-						</td>
-		                <td>500 mL</td>
-		                <td>5000 mL</td>
-        				<td>400 mL</td>
-						<td>120 mL</td>
-        				<td>750 mL</td>
+						<td><input type="text" ng-model="newIo.outputChestTube"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputChestTube}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Total</td>
 						<td></td>
-						<td>500 mL</td>
-		                <td>5000 mL</td>
-        				<td>400 mL</td>
-						<td>120 mL</td>
-        				<td>750 mL</td>
+						<td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputEmesis + i.outputUrine + i.outputStool + i.outputChestTube}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
@@ -1218,8 +924,8 @@
       			</tbody>
     		</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertIo()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearIo()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End I/O -->
