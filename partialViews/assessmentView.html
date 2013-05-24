@@ -77,7 +77,7 @@
         			<tr>
         				<td>Temp</td>
 						<td><input type="text" data-ng-model="newVitals.temp_num"/>
-							<select ng-model="new" ng-options="value.id as value.name for (key, value) in tempOptions" ng-model="newVitals.temp_type" bt-select></select>{{newVitals.temp_type | json}}</td>
+							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in tempOptions"  bt-select></select>{{newVitals.temp_type | json}}</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
 	                </tr>
 	                <tr>
