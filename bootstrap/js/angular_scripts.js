@@ -52,7 +52,7 @@ docuSimApp.controller('restController', function($scope, Restangular) {
         , function errorCallback() {
             console.log("Oops error from server :(");
         })
-    });
+    })
 
     //$scope.patients = basePatients.getList();
 
@@ -64,7 +64,7 @@ docuSimApp.controller('restController', function($scope, Restangular) {
 
     }, function errorCallback() {
         console.log("Oops error from server :(");
-    });
+    })
 
 });
 
