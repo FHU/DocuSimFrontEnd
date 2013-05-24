@@ -40,11 +40,19 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
 
 docuSimApp.controller('restController', function($scope, Restangular) {
 
-    $scope.patientInfo = Restangular.one("patient", 4).get();
+    //$scope.patientInfo = Restangular.one("patient", 4).get();
+    //console.log($scope.patientInfo);
+    //$scope.vitals = $scope.patientInfo.Vitals; 
 
-    console.log($scope.patientInfo);
+    Restangular.one("patient", 4).get().then( function(patient) {
 
-    $scope.vitals = $scope.patientInfo.Vitals; 
+            $scope.patientInfo = patient;
+            $scope.vitals = patient.Vitals;
+        }
+        , function errorCallback() {
+            console.log("Oops error from server :(");
+        })
+    });
 
     //$scope.patients = basePatients.getList();
 
@@ -56,7 +64,7 @@ docuSimApp.controller('restController', function($scope, Restangular) {
 
     }, function errorCallback() {
         console.log("Oops error from server :(");
-    })
+    });
 
 });
 
