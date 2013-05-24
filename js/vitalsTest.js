@@ -46,18 +46,24 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular){
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
     }*/
-	var id=4;
 	
-	onePatient = Restangular.one("patient", id);
-	onePatient.get().then( function(patient) {
-		
-		//var vitals = patient.Vitals;
-		$scope.patientInfo = patient;
-		$scope.vitals = patient.Vitals;
-		
-	}, function errorCallback() {
-			console.log("Oops error from server :(");
-	});
+
+    init();
+
+
+    function init() {
+        var id=4;
+    	
+    	onePatient = Restangular.one("patient", id);
+    	onePatient.get().then( function(patient) {
+        	//var vitals = patient.Vitals;
+        	$scope.patientInfo = patient;
+        	$scope.vitals = patient.Vitals;
+        		
+        	}, function errorCallback() {
+        			console.log("Oops error from server :(");
+        	});
+    }
 
     /*$scope.insertVitals = function () {
         var temp = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;

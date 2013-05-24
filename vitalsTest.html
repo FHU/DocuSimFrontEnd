@@ -74,6 +74,28 @@
 		</div>
 		</div>
 
+		<section id="scenario" class="span9" data-ng-controller="restController">
+
+			<h1>Restangular Test</h1>
+
+			<ul data-ng-repeat="patient in patients"> 
+				<li> {{ patient.FirstName }} {{patient.Weight}} </li>
+			</ul>
+
+			<h2>{{patientInfo.FirstName}}</h2>
+
+			<ul data-ng-repeat="vital in patientInfo.Vitals" >
+			<li>
+				{{vital.TimeStamp}}
+				<ul > 
+					<li> {{ vital.Weight }} </li>
+					<li> {{ vital.NurseNote }} </li>
+				</ul> 
+			</li>
+			<ul>
+
+		</section>
+
 
 		<div class="push"><!--//--></div>
 
