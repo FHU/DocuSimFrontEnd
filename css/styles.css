@@ -1,0 +1,436 @@
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -71px;
+}
+
+.push {
+    height: 120px;
+}
+
+.modal-footer .btn-primary{
+	margin: 0;
+}
+
+
+/* vetically center icons from font-awesome */
+/*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
+[class^="icon-"], [class*=" icon-"] {
+    width: auto;
+    vertical-align: baseline;
+}
+
+/* Header ------------------------*/
+
+#patientsLink {
+	margin-right: 40px;
+}
+
+@media (max-width: 699px) {
+	/* Responsive Login/User */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+/*--------------------------------*/
+
+
+/* Body --------------------------*/
+section{
+	padding-top: 60px;
+}
+
+section h1 {
+	font-size: 2.5em;
+}
+
+/*section p {
+	font-size: 1.2em;
+	line-height: 1.7em;
+}*/
+
+table{
+	overflow-x:scroll;
+	overflow-y:hidden;
+	font-size: 1.3em;
+}
+
+/* Turn on a 13x13 scrollbar */
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+ 
+/* Turn on single button up on top, and down on bottom */
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+}
+ 
+/* Turn off the down area up on top, and up area on bottom */
+::-webkit-scrollbar-button:vertical:start:increment,
+::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+ 
+/* Track below and above */
+::-webkit-scrollbar-track-piece {
+    background-color: #f5f5f5;;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #d0d5d9;
+	border-radius: 15px;
+}
+
+@media (max-width: 767px) {
+	#scenario{
+		padding:0px;
+	}
+}
+
+/*----- tables -------------------*/
+.assessmentArea {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.assessmentArea td {
+	vertical-align: middle;
+}
+
+.assessmentArea td:nth-child(n+3){
+	width: auto;
+	min-width: 80px;
+}
+
+.assessmentArea tr td:nth-child(1){
+	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
+}
+
+.assessmentArea td .noteButton{
+	font-size: 30px;
+	line-height: 30px;
+	float:right;
+}
+
+.assessmentArea .time {
+	font-size: 1.1em;
+}
+
+.assessmentArea .date {
+	font-size: 0.75em;
+	font-weight: normal;
+}
+
+#vitals .assessmentArea tr:nth-child(1) td:nth-child(2){
+	white-space: nowrap;
+}
+
+#neurological .assessmentArea tr:nth-child(2) td:nth-child(2){
+	white-space: nowrap;
+}
+
+#io .assessmentArea td:nth-child(2){
+	min-width: 152px;
+	width: 152px;
+}
+
+.assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2), .assessmentArea th:nth-child(2) {
+	text-align: left;
+}
+
+.assessmentArea td, .assessmentArea th {
+	text-align: right;
+}
+
+.assessmentArea .btn.active {
+	background: #1abc9c;
+	color: #fff;
+}
+
+
+
+/*----- Input --------------------*/
+
+.btn-success{
+	margin-top: 25px;
+}
+
+.btn-warning{
+	margin-top: 25px;
+}
+
+.btn-primary{
+	margin-top: 25px;
+}
+
+input[type="text"]{
+	width: 60px;
+	margin-bottom: 0;
+}
+
+textarea.nurseNote{
+	margin-top: 10px;
+	width: 100%;
+	padding: 0;
+	height: 100px;
+}
+
+.slide-container{
+	width:auto;
+    display: inline-block;
+	*display: inline;
+	padding: 4px 8px;
+	margin-bottom: 0;
+	*margin-left: .3em;
+	font-size: 15px;
+	line-height: 21px;
+	color: #ffffff;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: #bfc6cb;
+	*background-color: #d0d5d9;
+	background-repeat: repeat-x;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.slide-output{
+	margin-bottom: -5px;
+}
+
+.slider{
+	margin-left: 5px;
+	margin-right: 5px;
+	min-width:80px;
+}
+
+#vitals .slider{
+	min-width:200px;
+}
+
+/*select{
+	width: auto;
+	background: #D0D5D9;
+	-webkit-appearance: none;
+	color: white;
+}*/
+
+@media (max-width: 1024px){
+	.slide-output{
+		margin-top:10px;
+		padding-bottom: 5px;
+	}
+
+	.slide-container{
+		height: 60px;
+		padding: 0px 8px;
+	}
+
+	.btn{
+		height: 60px;
+		line-height: 44px;
+	}
+
+	.btn-primary{
+		line-height: 0;
+	}
+	
+	.btn-warning{
+		line-height: 0;
+	}
+
+	input[type="text"]{
+		width: 60px;
+		height: 44px;
+	}
+
+	.bootstrap-select.btn-group .dropdown-menu li > a {
+		min-height: 35px;
+		line-height: 35px;
+	}
+
+	.assessmentArea td .noteButton{
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+	/*.noteButton {
+		width: 30px;
+		height:30px;
+		line-height: 30px;
+		vertical-align: bottom;
+	}*/
+
+
+	
+	/*select{
+		height: 60px;
+		margin-bottom: 0;
+		-webkit-appearance: none;
+		color: white;
+	}*/
+}
+
+@media (max-width: 768px) {		
+
+	input[type="text"]{
+		width: 60px;
+		height: 44px;
+	}
+	
+	.btn-large{
+		padding: 0;
+	}
+}
+/*--------------------------------*/
+
+
+/* Side Navagation ---------------*/
+#SideNav{
+	padding-top: 60px;
+	position: fixed;
+}
+
+#SideNav li a{
+	height: 34px;
+	padding-top: 20px;
+}
+
+.nav-icon{
+	height: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover,
+.nav-tabs > .active > a:focus {
+  color: #ffffff;
+  background-color: #1abc9c;
+}
+
+@media (max-width: 767px) {
+	#SideNav{
+		padding-top: 0px;
+	}
+}
+
+@media (max-width: 699px) {
+	#SideNav{
+		position:static;
+		width: 100%;
+	}
+}
+
+@media (max-height: 767px){
+	#SideNav li a{
+		height: 30px;
+		padding-top: 15px;
+	}
+	.nav-icon{
+		height: 22px;
+	}
+}
+
+@media (max-height: 600px){
+		#SideNav li a{
+		height: 20px;
+		padding-top: 5px;
+	}
+	.nav-icon{
+		height: 18px;
+	}
+}
+/*--------------------------------*/
+
+
+/* Patient Info Box --------------*/
+hr{
+	height: 2px;
+	background-color: #1abc9c;
+}
+
+.hero-unit{
+	padding:20px;
+}
+
+@media (max-width: 699px) {
+	#PatientPic{
+		width: 250px;
+	}
+}
+/*--------------------------------*/
+
+
+/* Patient Scenario Table --------*/
+
+.patientsTable tbody tr {
+	height: 2.3em;
+}
+
+.patientsTable tbody tr td a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #2c3e50;
+}
+
+.patientsTable tbody tr td a:hover {
+	color: #2c3e50;
+	text-decoration: none;
+}
+
+.patientsTable tbody tr:hover {
+	background: #f5f5f5;
+}
+
+/*--------------------------------*/
+
+
+/* Orders --------*/
+
+.ordersList {
+	list-style: none;
+	margin: 0;
+	font-size: 1.2em;  
+}
+
+.ordersList li {
+	height: 2.0em;
+}
+
+.ordersList li:before {
+	content: "-";
+}
+
+/*--------------------------------*/
+
+
+
+/* Footer ------------------------*/
+.footer {
+padding-top: 15px;
+padding-bottom: 15px;
+height: 40px;
+line-height: 40px;
+/*margin-top: 50px;*/
+border-top: 1px solid #1abc9c;
+background-color: #f5f5f5;
+width: 100%;
+}
+/*--------------------------------*/
+
