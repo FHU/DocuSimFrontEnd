@@ -160,7 +160,7 @@ docuSimApp.service('vitalsService', function () {
 	];
 
     //***** DropDowns **********************
-    var temp: [
+    var temp = [
         {id: '', name: ''},
         {id: 'Oral', name: 'Oral'},
         {id: 'Rectal', name: 'Rectal'},
