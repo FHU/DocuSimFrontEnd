@@ -140,6 +140,9 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
             {id: 'Tympanic', name: 'Tympanic'}
         ]
     ];
+
+    $scope.vitalsOp.temp = temp;
+
 });
 
 docuSimApp.service('vitalsService', function () {
