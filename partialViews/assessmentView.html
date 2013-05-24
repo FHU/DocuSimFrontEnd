@@ -188,9 +188,9 @@
         				<td>Pupils - Right</td>
 						<td><input type="text" ng-model="newNeurological.ppRight_num"/>
 							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
-									<button class="btn" value="+">+</button>
-									<button class="btn" value="+">-</button>
-							</div>
+									<button type="button" class="btn" value="+">+</button>
+									<button type="button" class="btn" value="+">-</button>
+							</div>{{newNeurological.ppRight_sign}}
 						</td>
 		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ppRight}}</td>
 	                </tr>
