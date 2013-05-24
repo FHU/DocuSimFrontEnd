@@ -184,6 +184,7 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
 
     function init() {
         $scope.neurological = neurologicalService.getNeurological();
+        $scope.neurologicalOpts = neurologicalService.getOptArray();
     }
 
     $scope.insertNeurological = function () {
@@ -210,126 +211,13 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
         $scope.newNeurological= '';
         $('#neurological select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.eomOptions = [
-        {id: '', name: ''},
-        {id: 'present', name: 'present'},
-        {id: 'none', name: 'none'}
-    ];
-    $scope.newNeurological = { eom: ''};
-
-    $scope.ruOptions = [
-     {id: '', name: ''},
-     {id: '0' , name: '0 - No muscle contractions'},
-     {id: '1' , name: '1 - Flicker or trace of voluntary'},
-     {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-     {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-     {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-     {id: '5' , name: '5 - Full power against examiner resistance'}
-    ];
-    $scope.newNeurological.ru = '';
-
-    $scope.luOptions = [
-     {id: '', name: ''},
-     {id: '0' , name: '0 - No muscle contractions'},
-     {id: '1' , name: '1 - Flicker or trace of voluntary'},
-     {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-     {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-     {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-     {id: '5' , name: '5 - Full power against examiner resistance'}
-    ];
-    $scope.newNeurological = {lu: ''};
-
-    $scope.rlOptions = [
-     {id: '', name: ''},
-     {id: '0' , name: '0 - No muscle contractions'},
-     {id: '1' , name: '1 - Flicker or trace of voluntary'},
-     {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-     {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-     {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-     {id: '5' , name: '5 - Full power against examiner resistance'}
-    ];
-    $scope.newNeurological = {rl: ''};
-
-    $scope.llOptions = [
-     {id: '', name: ''},
-     {id: '0' , name: '0 - No muscle contractions'},
-     {id: '1' , name: '1 - Flicker or trace of voluntary'},
-     {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-     {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-     {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-     {id: '5' , name: '5 - Full power against examiner resistance'}
-    ];
-    $scope.newNeurological = {ll: ''};
-                                    
-    $scope.behaviorOptions = [
-     {id: '', name: ''},
-     {id: 'AX' , name: 'AX Anxious'},
-     {id: 'AG' , name: 'AG Agitated'},
-     {id: 'H' , name: 'H Hostile'},
-     {id: 'CB' , name: 'CB Combative'},
-     {id: 'C' , name: 'C Calm'},
-     {id: 'RS' , name: 'RS Restless'},
-     {id: 'W' , name: 'W Withdrawn'},
-     {id: 'R' , name: 'R Refusing'}
-    ];
-    $scope.newNeurological = {behavior: ''};
-
-    $scope.speechOptions = [
-     {id: '', name: ''},
-     {id: 'CL' , name: 'CL Clear'},
-     {id: 'S' , name: 'S Slurred'},
-     {id: 'A' , name: 'A Absent'},
-     {id: 'T' , name: 'T Trach'},
-     {id: 'ET' , name: 'ET Entubation Tube'}
-    ];
-    $scope.newNeurological = {speech: ''};
-
-    $scope.mentalOptions = [
-     {id: '', name: ''},
-     {id: '1' , name: '1 - Alert'},
-     {id: '2' , name: '2 - Lethargic'},
-     {id: '3' , name: '3 - Sedated'},
-     {id: '4' , name: '4 - Obtunded'},
-     {id: '5' , name: '5 - Confused'},
-     {id: '6' , name: '6 - Combative'},
-     {id: '7' , name: '7 - Comatose'}
-    ];
-    $scope.newNeurological = {mental: ''};
-
-    $scope.comaScale_eyesOptions = [
-     {id: '', name: ''},
-     {id: 4 , name: '4 - Spontatneous'},
-     {id: 3 , name: '3 - To Speech'},
-     {id: 2 , name: '2 - To Pain'},
-     {id: 1 , name: '1 - None'}
-    ];
-    $scope.newNeurological = {comaScale_eyes: ''};
-
-    $scope.comaScale_verbalOptions = [
-     {id: '', name: ''},
-     {id: 5 , name:  '5 - Oriented'},
-     {id: 4 , name:  '4 - Confused'},
-     {id: 3 , name:  '3 - Inappropriate Words'},
-     {id: 2 , name:  '2 - Incomprehensible sounds'},
-     {id: 1 , name:  '1 - None'}
-    ];
-    $scope.newNeurological = {comaScale_verbal: ''};
-
-    $scope.comaScale_motorOptions = [
-     {id: 0, name: ''},
-     {id: 6 , name: '6 - Obeys Commands'},
-     {id: 5 , name: '5 - Localizes Pain'},
-     {id: 4 , name: '4 - Withdrawl'},
-     {id: 3 , name: '3 - Flexion to pain (decorticate)'},
-     {id: 2 , name: '2 - Extension to pain (decerbrate)'},
-     {id: 1 , name: '1 - None'}
-    ];
-    $scope.newNeurological = {comaScale_motor: ''};
 });
 
 docuSimApp.service('neurologicalService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getNeurological = function () {
         return neurological;
     };
@@ -362,6 +250,113 @@ docuSimApp.service('neurologicalService', function () {
         {id: 1, ppRight: "8PP, +", ppLeft: "8PP, +", eom: "present", ru: 2, lu: 2, rl: 2, ll: 2, behavior: "CB", speech: "T", mental: 7, comaScale_eyes: 3, comaScale_verbal: 2, comaScale_motor: 3, time: 1288270800006 - 60 * 60 * 1000},
         {id: 1, ppRight: "6PP, -", ppLeft: "6PP, -", eom: "none", ru: 1, lu: 1, rl: 1, ll: 1, behavior: "CX", speech: "ET", mental: 1, comaScale_eyes: 3, comaScale_verbal: 3, comaScale_motor: 2, time: 1288270800006},
     ];
+
+    //***** DropDowns ********************
+    var optArray = {
+        eom: [
+            {id: '', name: ''},
+            {id: 'present', name: 'present'},
+            {id: 'none', name: 'none'}
+        ],
+        ru: [
+         {id: '', name: ''},
+         {id: '0' , name: '0 - No muscle contractions'},
+         {id: '1' , name: '1 - Flicker or trace of voluntary'},
+         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
+         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: '5' , name: '5 - Full power against examiner resistance'}
+        ],
+
+        lu: [
+         {id: '', name: ''},
+         {id: '0' , name: '0 - No muscle contractions'},
+         {id: '1' , name: '1 - Flicker or trace of voluntary'},
+         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
+         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: '5' , name: '5 - Full power against examiner resistance'}
+        ],
+
+        rl: [
+         {id: '', name: ''},
+         {id: '0' , name: '0 - No muscle contractions'},
+         {id: '1' , name: '1 - Flicker or trace of voluntary'},
+         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
+         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: '5' , name: '5 - Full power against examiner resistance'}
+        ],
+
+        ll: [
+         {id: '', name: ''},
+         {id: '0' , name: '0 - No muscle contractions'},
+         {id: '1' , name: '1 - Flicker or trace of voluntary'},
+         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
+         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: '5' , name: '5 - Full power against examiner resistance'}
+        ],
+                                        
+        behavior: [
+         {id: '', name: ''},
+         {id: 'AX' , name: 'AX Anxious'},
+         {id: 'AG' , name: 'AG Agitated'},
+         {id: 'H' , name: 'H Hostile'},
+         {id: 'CB' , name: 'CB Combative'},
+         {id: 'C' , name: 'C Calm'},
+         {id: 'RS' , name: 'RS Restless'},
+         {id: 'W' , name: 'W Withdrawn'},
+         {id: 'R' , name: 'R Refusing'}
+        ],
+
+        speech: [
+         {id: '', name: ''},
+         {id: 'CL' , name: 'CL Clear'},
+         {id: 'S' , name: 'S Slurred'},
+         {id: 'A' , name: 'A Absent'},
+         {id: 'T' , name: 'T Trach'},
+         {id: 'ET' , name: 'ET Entubation Tube'}
+        ],
+
+        mental: [
+         {id: '', name: ''},
+         {id: '1' , name: '1 - Alert'},
+         {id: '2' , name: '2 - Lethargic'},
+         {id: '3' , name: '3 - Sedated'},
+         {id: '4' , name: '4 - Obtunded'},
+         {id: '5' , name: '5 - Confused'},
+         {id: '6' , name: '6 - Combative'},
+         {id: '7' , name: '7 - Comatose'}
+        ],
+
+        comaScale_eyes: [
+         {id: '', name: ''},
+         {id: 4 , name: '4 - Spontatneous'},
+         {id: 3 , name: '3 - To Speech'},
+         {id: 2 , name: '2 - To Pain'},
+         {id: 1 , name: '1 - None'}
+        ],
+
+        comaScale_verbal: [
+         {id: '', name: ''},
+         {id: 5 , name:  '5 - Oriented'},
+         {id: 4 , name:  '4 - Confused'},
+         {id: 3 , name:  '3 - Inappropriate Words'},
+         {id: 2 , name:  '2 - Incomprehensible sounds'},
+         {id: 1 , name:  '1 - None'}
+        ],
+
+        comaScale_motor: [
+         {id: 0, name: ''},
+         {id: 6 , name: '6 - Obeys Commands'},
+         {id: 5 , name: '5 - Localizes Pain'},
+         {id: 4 , name: '4 - Withdrawl'},
+         {id: 3 , name: '3 - Flexion to pain (decorticate)'},
+         {id: 2 , name: '2 - Extension to pain (decerbrate)'},
+         {id: 1 , name: '1 - None'}
+        ]
+    };
 });
 
 
