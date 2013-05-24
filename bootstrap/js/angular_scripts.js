@@ -638,6 +638,7 @@ docuSimApp.service('respiratoryService', function () {
             fiO2: fiO2,
             time: time
         });
+    });
 
     var = respiratory [
         {}
@@ -789,6 +790,7 @@ docuSimApp.service('dailyService', function () {
             ivSite: ivSite,
             time: time
         });
+    });
 
     var = daily [
         {}
@@ -840,6 +842,7 @@ docuSimApp.service('safetyService', function () {
             bedPosition: bedPosition,
             time: time
         });
+    });
 
     var = safety [
         {}
@@ -913,8 +916,9 @@ docuSimApp.service('guService', function () {
             catheter: catheter,
             colorConsistency: colorConsistency,
             time: time
+        });
     });
-
+    
     var = gu [
         {}
     ];
@@ -1015,8 +1019,9 @@ docuSimApp.service('giService', function () {
             bsLUQ: bsLUQ,
             bsLLQ: bsLLQ,
             time: time
+        });
     });
-    
+
     var = gi [
         {}
     ];
@@ -1075,7 +1080,8 @@ docuSimApp.service('ioService', function () {
             outputChestTube: outputChestTube,
             time: time
         });
-    
+    });
+
     var = io [
         {}
     ];
