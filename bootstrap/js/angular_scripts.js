@@ -86,6 +86,7 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 
     function init() {
         $scope.vitals = vitalsService.getVitals();
+        $scope.clearVitals();
     }
 
     $scope.insertVitals = function () {
@@ -308,7 +309,7 @@ docuSimApp.service('neurologicalService', function () {
 
     this.insertNeurological= function (ppRight, ppLeft, eom, ru, lu, rl, ll, behavior, speech, mental, comaScale_eyes, comaScale_verbal, comaScale_motor, time) {
         var topID = neurological.length + 1;
-        vitals.push({
+        neurological.push({
             id: topID,
             ppRight: ppRight,
             ppLeft: ppLeft,
