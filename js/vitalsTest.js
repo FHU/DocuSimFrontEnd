@@ -1,4 +1,4 @@
-var vitalsTestApp= angular.module('vitalsTest', ['restangular']);
+var vitalsTestApp= angular.module('vitalsTest', ['restangular', '$strap.directives']);
 
 
 vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
@@ -39,13 +39,25 @@ vitalsTestApp.controller('restController', function($scope, Restangular) {
 
 
 //***** VITALS SECTION *********************************************************************************
-vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-    init();
+vitalsTestApp.controller('vitalsController', function($scope, Restangular){
+    /*init();
 
     function init() {
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
-    }
+    }*/
+	var id=4;
+	
+	onePatient = Restangular.one("patient", id);
+	onePatient.get().then( function(patient) {
+		
+		//var vitals = patient.Vitals;
+		$scope.patientInfo = patient;
+		$scope.vitals = patient.Vitals;
+		
+	}, function errorCallback() {
+			console.log("Oops error from server :(");
+	});
 
     /*$scope.insertVitals = function () {
         var temp = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
@@ -82,7 +94,7 @@ vitalsTestApp.service('vitalsService', function (Restangular) {
 		});
     };
 
-    this.insertVitalsForPatient = function (id, temp, heartRate, rate, bpSystolic, bpDiastolic, spO2, weight, time) {
+    /*this.insertVitalsForPatient = function (id, temp, heartRate, rate, bpSystolic, bpDiastolic, spO2, weight, time) {
         //var topID = vitals.length + 1;
         vitals.push({
             id: topID,
@@ -95,7 +107,7 @@ vitalsTestApp.service('vitalsService', function (Restangular) {
             weight: weight,
             time: time
         });
-    };
+    };*/
 
    	/*var vitals = [
 		{id: 1 , temp: "98.6" , heartRate: "90" , rate: "40" , bpSystolic: "120" , bpDiastolic: "80" , spO2: "80", weight: "157" , time: 1288270800006 - 60 * 60 * 1000},
