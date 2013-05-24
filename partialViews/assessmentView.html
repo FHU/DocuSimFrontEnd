@@ -319,182 +319,57 @@
         			</tr>
         			<tr>
         				<td>Cardiac Rhythm</td>
-						<td>
-							<select ng-model="newCardio.cardiacRhythm" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>NSR - Sinus</option>
-								<option>ST - Sinus Tach</option>
-								<option>SB - Sinus Brady</option>
-								<option>SA - Sinus Arrhythmia</option>
-								<option>AFL - Atrial Flutter</option>
-								<option>Afib - Atrial Fibrillation</option>
-								<option>JUNC - Junctional</option>
-								<option>VT - Ventricular Tach</option>
-								<option>VF - Ventricular Fib</option>
-								<option>SVT - Supraventricular Tach</option>
-							</select>
+						<td><select ng-model="newCardio.cardiacRhythm" ng-options="value.id as value.name for (key, value) in cardiacRhythmOptions" bt-select></select>
 						</td>
-        				<td>NSR</td>
-        				<td>ST</td>
-        				<td>SB</td>
-						<td>SVT</td>
-        				<td>JUNC</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.cardiacRhythm}}</td>
         			</tr>
 					<tr>
         				<td>Skin</td>
-						<td>
-							<select ng-model="newCardio.skin" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>W - Warm</option>
-								<option>C - Cool</option>
-								<option>CD - Cold</option>
-								<option>H - Hot</option>
-								<option>DIA - Diaphoretic</option>
-								<option>CLA - Clammy</option>
-								<option>DR - Dry</option>
-							</select>
-						</td>
-        				<td>W</td>
-        				<td>C</td>
-        				<td>H</td>
-						<td>CLA</td>
-        				<td>DR</td>
+						<td><select ng-model="newCardio.skin" ng-options="value.id as value.name for (key, value) in SkinOptions" bt-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.skin}}</td>
         			</tr>
 					<tr>
         				<td>Skin Color</td>
-						<td>
-							<select ng-model="newCardio.skinColor" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>FL - Flushed</option>
-								<option>G - Good/Pink</option>
-								<option>P - Pale</option>
-								<option>DSK - Dusky</option>
-								<option>C - Cyanotic</option>
-								<option>J - Jandiced</option>
-								<option>A - Ashen</option>
-							</select>
+						<td><select ng-model="newCardio.skinColor" ng-options="value.id as value.name for (key, value) in skinColorOptions" bt-select></select>
 						</td>
-        				<td>FL</td>
-        				<td>G</td>
-        				<td>DSK</td>
-						<td>C</td>
-        				<td>J</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.skinColor}}</td>
         			</tr>
 					<tr>
         				<td>Nail Beds</td>
-						<td>
-							<select ng-model="newCardio.nailBeds" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>FL - Flushed</option>
-								<option>G - Good/Pink</option>
-								<option>P - Pale</option>
-								<option>DSK - Dusky</option>
-								<option>C - Cyanotic</option>
-								<option>J - Jandiced</option>
-								<option>A - Ashen</option>
-							</select>
+						<td><select ng-model="newCardio.nailBeds" ng-options="value.id as value.name for (key, value) in nailBedsOptions" bt-select></select>
 						</td>
-        				<td>FL</td>
-        				<td>G</td>
-        				<td>DSK</td>
-						<td>C</td>
-        				<td>J</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.nailBeds}}</td>
         			</tr>
 					<tr>
         				<td>Capillary Refill</td>
-						<td>
-							<select ng-model="newCardio.capillayrRefill" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>&lt; 3 Seconds - Normal</option>
-								<option>&gt; 3 Seconds - Sluggish</option>
-							</select>
+						<td><select ng-model="newCardio.capillayrRefill" ng-options="value.id as value.name for (key, value) in capillaryRefillOptnios" bt-select></select>
 						</td>
-        				<td>Normal</td>
-        				<td>Sluggish</td>
-        				<td>Normal</td>
-						<td>Normal</td>
-        				<td>Normal</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.capillaryRefill}}</td>
         			</tr>
 					<tr>
         				<td>Edema - RUE/LUE</td>
-						<td>
-							<select ng-model="newCardio.edemaUE" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>1+ Capable of being pitted</option>
-								<option>2+ Area not tense; 30 second pitting</option>
-								<option>3+ Area Tense; one (1) minute pitting</option>
-								<option>4+ Skin Cracked, tense, may be weeping</option>
-								<option>GEN - Generalized</option>
-								<option>P - Periorbital</option>
-							</select>
-						</td>
-        				<td>2</td>
-        				<td>GEN</td>
-        				<td>1</td>
-						<td>2</td>
-        				<td>P</td>
+						<td><select ng-model="newCardio.edemaUE" ng-options="value.id as value.name for (key, value) in edemaUEOptions " bt-select></select></td>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.edemaUE}}</td>
         			</tr>
 					<tr>
         				<td>Edema - RLE/LLE</td>
-						<td>
-							<select ng-model="newCardio.edemaLE" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>1+ Capable of being pitted</option>
-								<option>2+ Area not tense; 30 second pitting</option>
-								<option>3+ Area Tense; one (1) minute pitting</option>
-								<option>4+ Skin Cracked, tense, may be weeping</option>
-								<option>GEN - Generalized</option>
-								<option>P - Periorbital</option>
-							</select>
-						</td>
-        				<td>2</td>
-        				<td>3</td>
-        				<td>1</td>
-						<td>2</td>
-        				<td>4</td>
+						<td><select ng-model="newCardio.edemaLE" ng-options="value.id as value.name for (key, value) in edemaUEOptions" bt-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.edemaLE}}</td>
         			</tr>
 					<tr>
         				<td>Pulses Radial - R/L</td>
-						<td>
-							<select ng-model="newCardio.pulseRadial" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>1+ Intermittent</option>
-								<option>2+ Weak</option>
-								<option>3+ Normal</option>
-								<option>4+ Strong</option>
-							</select>
-						</td>
-        				<td>2</td>
-        				<td>3</td>
-        				<td>1</td>
-						<td>2</td>
-        				<td>4</td>
+						<td><select ng-model="newCardio.pulseRadial" ng-options="value.id as value.name for (key, value) in pulseRadialOptions" bt-select></select>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.pulseRadial}}</td>
         			</tr>
 					<tr>
         				<td>Darsalis Pedis - R/L</td>
-						<td>
-							<select ng-model="newCardio.darsaliPedis" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>1+ Intermittent</option>
-								<option>2+ Weak</option>
-								<option>3+ Normal</option>
-								<option>4+ Strong</option>
-							</select>
-						</td>
-        				<td>2</td>
-        				<td>3</td>
-        				<td>1</td>
-						<td>2</td>
-        				<td>4</td>
+						<td><select ng-model="newCardio.darsaliPedis" ng-options="value.id as value.name for (key, value) in darsalisPedisOptions" bt-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.darsalisPedis}}</td>
         			</tr>
 					<tr>
         				<td>TED Hose Device</td>
 						<td><input type="text" ng-model="newCardio.TED"/></td>
-        				<td>compression</td>
-        				<td>elastic</td>
-        				<td>constraint</td>
-						<td>compression</td>
-        				<td>elastic</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Ted}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
@@ -510,8 +385,8 @@
       			</tbody>
     		</table>
     		</div>
-			<button class="btn btn-large btn-warning span5"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertCardio()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearCardio()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End Cardio-->
