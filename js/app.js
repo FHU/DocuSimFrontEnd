@@ -779,8 +779,8 @@ docuSimApp.service('dailyService', function () {
             {id: 'S', name: 'S - Supine'},
             {id: 'R', name: 'R - Right'},
             {id: 'L', name: 'L - Left'},
-            {id: 'Self', name: 'Self'}    ];
-        $,
+            {id: 'Self', name: 'Self'}
+        ]
 
         rom: [ 
             {id: 'A', name: 'A - Active'},
