@@ -299,7 +299,7 @@ docuSimApp.service('neurologicalService', function () {
             comaScale_eyes: comaScale_eyes,
             comaScale_verbal: comaScale_verbal,
             comaScale_motor: comaScale_motor,
-            time, time
+            time: time
         });
     };
 
@@ -964,62 +964,38 @@ docuSimApp.controller('giController', function($scope, giService){
 
     $scope.bsRUQOptions = [
         {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''}
+        {id: 'A', name: 'A - Absent'},
+        {id: '+0', name: '+0 - Hypoactive'},
+        {id: '+-', name: '+- - Present'},
+        {id: '++', name: '++ - Hyperactive'}
     ];
     $scope.Gi = {bsRUQ: ''};
 
     $scope.bsRLQOptions = [
         {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''}
+        {id: 'A', name: 'A - Absent'},
+        {id: '+0', name: '+0 - Hypoactive'},
+        {id: '+-', name: '+- - Present'},
+        {id: '++', name: '++ - Hyperactive'}
     ];
     $scope.Gi = {bsRLQ: ''};
 <tr>
 
     $scope.bsLUQOptions = [
         {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''}
+        {id: 'A', name: 'A - Absent'},
+        {id: '+0', name: '+0 - Hypoactive'},
+        {id: '+-', name: '+- - Present'},
+        {id: '++', name: '++ - Hyperactive'}
     ];
     $scope.Gi = {bsLUQ: ''};
 
     $scope.bsLLQOptions = [
         {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''},
-        {id: '', name: ''}
+        {id: 'A', name: 'A - Absent'},
+        {id: '+0', name: '+0 - Hypoactive'},
+        {id: '+-', name: '+- - Present'},
+        {id: '++', name: '++ - Hyperactive'}
     ];
     $scope.newGi = {bsLLQ: ''};
 });
