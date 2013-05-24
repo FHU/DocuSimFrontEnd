@@ -78,7 +78,7 @@
         				<td>Temp</td>
 						<td><input type="text" data-ng-model="newVitals.temp_num"/>
 							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bt-select></select>{{vitalsOpts.temp}}</td>
-        				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp[1]}}</td>
 	                </tr>
 	                <tr>
 		                <td>HR</td>
