@@ -865,7 +865,7 @@ docuSimApp.service('safetyService', function () {
     ];
 
     //***** DropDowns ********************
-    var = optArray{
+    var optArray = {
 
     };
 });
@@ -1107,7 +1107,7 @@ docuSimApp.service('ioService', function () {
     ];
 
         //***** DropDowns ********************
-    var = optArray{
+    var optArray = {
 
     };
 });
