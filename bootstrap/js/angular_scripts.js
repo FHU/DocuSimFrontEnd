@@ -35,12 +35,12 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
             })
         .otherwise({ redirectTo: '/patients' });
 
-        RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api/');
+        RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
 docuSimApp.controller('restController', function($scope, Restangular) {
 
-    basePatients = Restangular.all('patients');
+    basePatients = Restangular.all('patient');
 
     $scope.patients = basePatients.getList();
 
