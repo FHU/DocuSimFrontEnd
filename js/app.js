@@ -164,15 +164,17 @@ docuSimApp.service('vitalsService', function () {
 	];
 
     //***** DropDowns **********************
-    var vitalsOpts = [{
-        temp:[
-            {id: '', name: ''},
-            {id: 'Oral', name: 'Oral'},
-            {id: 'Rectal', name: 'Rectal'},
-            {id: 'Axillary', name: 'Axillary'},
-            {id: 'Tympanic', name: 'Tympanic'}
-        ]
-    }];
+    var vitalsOpts = [
+        {
+            temp:[
+                {id: '', name: ''},
+                {id: 'Oral', name: 'Oral'},
+                {id: 'Rectal', name: 'Rectal'},
+                {id: 'Axillary', name: 'Axillary'},
+                {id: 'Tympanic', name: 'Tympanic'}
+            ]
+        }
+    ];
 });
 
 
