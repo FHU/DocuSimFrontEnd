@@ -40,10 +40,12 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
 
 docuSimApp.controller('restController', function($scope, Restangular) {
 
+    $scope.patientInfo = Restangular.one("patient", 4).get();
+
     basePatients = Restangular.all('patient');
     //$scope.patients = basePatients.getList();
 
-    basePatients.getList().then(function (patients) {
+    basePatients.get(.then(function (patients) {
 
         $scope.patients = patients;
 
