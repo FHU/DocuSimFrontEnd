@@ -325,7 +325,7 @@
         			</tr>
 					<tr>
         				<td>Skin</td>
-						<td><select ng-model="newCardio.skin" ng-options="value.id as value.name for (key, value) in SkinOptions" bt-select></select></td>
+						<td><select ng-model="newCardio.skin" ng-options="value.id as value.name for (key, value) in skinOptions" bt-select></select></td>
         				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.skin}}</td>
         			</tr>
 					<tr>
@@ -342,7 +342,7 @@
         			</tr>
 					<tr>
         				<td>Capillary Refill</td>
-						<td><select ng-model="newCardio.capillayrRefill" ng-options="value.id as value.name for (key, value) in capillaryRefillOptnios" bt-select></select>
+						<td><select ng-model="newCardio.capillayrRefill" ng-options="value.id as value.name for (key, value) in capillaryRefillOptions" bt-select></select>
 						</td>
         				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.capillaryRefill}}</td>
         			</tr>

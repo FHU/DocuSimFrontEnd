@@ -375,7 +375,7 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
         var darsalisPedis = $scope.newCardio.darsalisPedis;
         var TED = $scope.newCardio.TED;
         var time = new Date().getTime();
-        cardioService.insertCardio(heartIntensity, heartRegularity, cardiacRhythm, skin, skinColor, nailBeds, capillaryRefill, edemaUE, edemaLE, pulseRadial, darsalisPedis, TED);
+        cardioService.insertCardio(heartIntensity, heartRegularity, cardiacRhythm, skin, skinColor, nailBeds, capillaryRefill, edemaUE, edemaLE, pulseRadial, darsalisPedis, TED, time);
         $scope.clearCardio();
         init();
     };
@@ -443,10 +443,22 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
 
     $scope.nailBedsOptions = [
         {id: '', name: ''},
+        {id: 'FL', name: 'FL - Flushed'},
+        {id: 'G', name: 'G - Good/Pink'},
+        {id: 'P', name: 'DSK - Dusky'},
+        {id: 'DSK', name: 'P - Pale'},
+        {id: 'C', name: 'C - Cyanotic'},
+        {id: 'J', name: 'J - Jandiced'},
+        {id: 'A', name: 'A - Ashen'}
+    ];
+    $scope.newCardio = {nailBeds: ''};
+
+    $scope.capillaryRefillOptions = [
+        {id: '', name: ''},
         {id: 'Normal', name: '< 3 seconds - Normal'},
         {id: 'Sluggish', name: '> 3 seconds - Sluggish'}
     ];
-    $scope.newCardio = {nailBeds: ''};
+    $scope.newCardio = {capillaryRefill: ''};
 
     $scope.edemaUEOptions = [
         {id: '', name: ''},
@@ -494,7 +506,7 @@ docuSimApp.service('cardioService', function () {
         return vitals;
     };
 
-    this.insertCardio = function (heartIntensity, heartRegularity, cardiacRhythm, skin, skinColor, nailBeds, capillaryRefill, edemaUE, edemaLE, pulseRadial, darsalisPedis, TED) {
+    this.insertCardio = function (heartIntensity, heartRegularity, cardiacRhythm, skin, skinColor, nailBeds, capillaryRefill, edemaUE, edemaLE, pulseRadial, darsalisPedis, TED, time) {
         var topID = cardio.length + 1;
         cardio.push({
             id: topID,
