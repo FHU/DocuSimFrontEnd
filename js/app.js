@@ -107,7 +107,7 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 
     function init() {
         $scope.vitals = vitalsService.getVitals();
-        $scope.vitalsOpts.temp = vitalsService.getTemp();
+        $scope.tempOptions = vitalsService.getTemp();
         $scope.newVitals = { temp_type: ''};
     }
 
