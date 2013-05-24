@@ -177,9 +177,9 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="neuro in neurological | orderBy:'id':true">
-		                	<span class="time" >{{neurological.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{neuro.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{neurological.time | date:'M/d/yy'}}
+							<span class="date" >{{neuro.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
@@ -192,7 +192,7 @@
 									<button class="btn" value="+">-</button>
 							</div>
 						</td>
-		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.ppRight}}</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ppRight}}</td>
 	                </tr>
 	                <tr>
 		                <td>Pupils - Left</td>
@@ -203,67 +203,67 @@
 									<button class="btn" value="-">-</button>
 							</div>
 						</td>
-		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.ppLeft}}</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ppLeft}}</td>
         			</tr>
         			<tr>
         				<td>EOM</td>
 						<td><select ng-model="newNeurological.eom" ng-options="value.id as value.name for (key, value) in eomOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.eom}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.eom}}</td>
         			</tr>
 					<tr>
         				<td>RU</td>
 						<td><select ng-model="newNeurological.ru" ng-options="value.id as value.name for (key, value) in ruOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.ru}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ru}}</td>
         			</tr>
 					<tr>
         				<td>LU</td>
 						<td><select ng-model="newNeurological.lu" ng-options="value.id as value.name for (key, value) in luOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.lu}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.lu}}</td>
         			</tr>
 					<tr>
         				<td>RL</td>
 						<td><select ng-model="newNeurological.rl" ng-options="value.id as value.name for (key, value) in rlOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.rl}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.rl}}</td>
         			</tr>
 					<tr>
 						<td>LL</td>
 						<td><select ng-model="newNeurological.ll" ng-options="value.id as value.name for (key, value) in llOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.ll}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ll}}</td>
         			</tr>
 					<tr>
         				<td>Behavior</td>
 						<td><select ng-model="newNeurological.behavior" ng-options="value.id as value.name for (key, value) in behaviorOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.behavior}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.behavior}}</td>
         			</tr>
 					<tr>
         				<td>Speech</td>
 						<td><select ng-model="newNeurological.speech" ng-options="value.id as value.name for (key, value) in speechOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.speech}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.speech}}</td>
         			</tr>
 					<tr>
         				<td>Mental Status</td>
 						<td><select ng-model="newNeurological.mental" ng-options="value.id as value.name for (key, value) in mentalOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.mental}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.mental}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Eyes</td>
 						<td><select ng-model="newNeurological.comaScale_eyes" ng-options="value.id as value.name for (key, value) in comaScale_eyesOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.comaScale_eyes}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_eyes}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Verbal</td>
 						<td><select ng-model="newNeurological.comaScale_verbal" ng-options="value.id as value.name for (key, value) in comaScale_verbalOptions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.comaScale_verbal}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_verbal}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Motor</td>
 						<td><select ng-model="newNeurological.comaScale_motor" ng-options="value.id as value.name for (key, value) in comaScale_motorOPtions" bt-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.comaScale_motor}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Total</td>
 						<td></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neurological.comaScale_eyes + neurological.comaScale_verbal + neurological.comaScale_motor}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_eyes + neuro.comaScale_verbal + neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
@@ -279,8 +279,8 @@
       			</tbody>
     		</table>
 			</div>
-			<button class="btn btn-large btn-warning span5" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
-			<button class="btn btn-large btn-primary span3" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertNeurological()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearNeurological()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End Neurological -->
