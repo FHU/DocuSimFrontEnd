@@ -107,7 +107,7 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 
     function init() {
         $scope.vitals = vitalsService.getVitals();
-        $scope.vitalsOptions = vitalsService.temp;
+        $scope.vitalsOpts = vitalsService.getOptArray();
         $scope.newVitals = { temp_type: ''};
     }
 
@@ -132,6 +132,10 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
 });
 
 docuSimApp.service('vitalsService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getVitals = function () {
         return vitals;
     };
@@ -160,13 +164,15 @@ docuSimApp.service('vitalsService', function () {
 	];
 
     //***** DropDowns **********************
-    var temp = [
-        {id: '', name: ''},
-        {id: 'Oral', name: 'Oral'},
-        {id: 'Rectal', name: 'Rectal'},
-        {id: 'Axillary', name: 'Axillary'},
-        {id: 'Tympanic', name: 'Tympanic'}
-    ];
+    var optArray = {
+        temp = [
+            {id: '', name: ''},
+            {id: 'Oral', name: 'Oral'},
+            {id: 'Rectal', name: 'Rectal'},
+            {id: 'Axillary', name: 'Axillary'},
+            {id: 'Tympanic', name: 'Tympanic'}
+        ];
+    };
 });
 
 
