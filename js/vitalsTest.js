@@ -2,7 +2,15 @@ var vitalsTestApp= angular.module('vitalsTest', ['restangular', '$strap.directiv
 
 
 vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
-	RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+	
+    $routeProvider
+        .when('/test',
+            {
+                controller: 'restController',
+                templateUrl: '/vitalsTest.html'
+            })
+
+    RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
 
