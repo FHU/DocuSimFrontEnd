@@ -4,7 +4,7 @@ vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
     RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
-vitalsTestApp.controller('restController', function($scope, Restangular) {
+vitalsTestApp.controller('restController', function($scope, Restangular, vitalsService) {
 
     //$scope.patientInfo = Restangular.one("patient", 4).get();
     //console.log($scope.patientInfo);
@@ -38,9 +38,9 @@ vitalsTestApp.controller('restController', function($scope, Restangular) {
 
 //***** VITALS SECTION *********************************************************************************
 vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-    /*init();
+    
 
-    function init() {
+    /*function init() {
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
     }*/
@@ -48,7 +48,18 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular, vital
     init();
 
     function init() {
-        $scope.vitals = vitalsService.getVitalsForPatient(4);
+
+        id = 4;
+        var onePatient = Restangular.one("patient", id).get().then(function(patient) {
+            $scope.vitals =  patient.Vitals;
+        }); 
+        
+        // WHY WON'T THIS WORK?
+        // the array isn't passed back from the service.
+        // Does it have to do with promises?
+        //$scope.vitals = vitalsService.getVitals(id);
+        
+        $scope.newVitals = { temp_type: ''};
     }
 
     /*$scope.insertVitals = function () {
@@ -74,17 +85,19 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular, vital
 
 vitalsTestApp.service('vitalsService', function (Restangular) {
 
-
     this.getVitalsForPatient = function (id) {
+        console.log(id);
         onePatient = Restangular.one("patient", id);
 		onePatient.get().then( function(patient) {
-			
-			var vitals = patient.Vitals;
-			return vitals;
+            
+            return patient.Vitals;
+
 		}, function errorCallback() {
-				console.log("Oops error from server :(");
-		});
+            console.log("Oops error from server :(");
+            return null;
+        });
     };
+
 
     /*this.insertVitalsForPatient = function (id, temp, heartRate, rate, bpSystolic, bpDiastolic, spO2, weight, time) {
         //var topID = vitals.length + 1;
@@ -101,7 +114,7 @@ vitalsTestApp.service('vitalsService', function (Restangular) {
         });
     };*/
 
-   	/*var vitals = [
+   	/*var vitalsArray = [
 		{id: 1 , temp: "98.6" , heartRate: "90" , rate: "40" , bpSystolic: "120" , bpDiastolic: "80" , spO2: "80", weight: "157" , time: 1288270800006 - 60 * 60 * 1000},
 		{id: 2 , temp: "99.4" , heartRate: "75" , rate: "20" , bpSystolic: "110" , bpDiastolic: "90" , spO2: "60", weight: "162" , time: 1288270800006 - 45 * 60 * 1000},
 		{id: 3 , temp: "100.2" , heartRate: "87" , rate: "32" , bpSystolic: "115" , bpDiastolic: "85" , spO2: "70", weight: "159" , time: 1288270800006 - 30 * 60 * 1000},
