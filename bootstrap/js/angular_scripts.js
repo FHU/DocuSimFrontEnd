@@ -30,7 +30,8 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
             })
         .when('/rest', 
         {
-            RestangularProvider
+            controller: 'restController',
+            templateUrl: partialViewsUrlBase +'restangularView.html'
         })
         .otherwise({ redirectTo: '/patients' });
 
