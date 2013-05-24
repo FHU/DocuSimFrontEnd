@@ -602,7 +602,7 @@ docuSimApp.service('respiratoryService', function () {
     ];
 
     //***** DropDowns ********************
-    var optArray = {}
+    var optArray = {
         respiration: [
             {id: '', name: ''},
             {id: 'R', name: 'R-Regular'},
