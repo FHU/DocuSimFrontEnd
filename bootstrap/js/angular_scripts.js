@@ -1,6 +1,6 @@
 var docuSimApp = angular.module('docuSim', ['restangular']);
 
-var partialViewsUrlBase = '/partialViews/'
+var partialViewsUrlBase = '/partialViews/' ;
 
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, RestangularProvider) {
@@ -29,16 +29,16 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
                 templateUrl: partialViewsUrlBase +'historyView.html'
             })
         .when('/rest', 
-        {
-            controller: 'restController',
-            templateUrl: partialViewsUrlBase +'restangularView.html'
-        })
+            {
+                controller: 'restController',
+                templateUrl: partialViewsUrlBase +'restangularView.html'
+            })
         .otherwise({ redirectTo: '/patients' });
 
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api/');
 });
 
-docuSim.controller('restController', function($scope, Restangular) {
+docuSimApp.controller('restController', function($scope, Restangular) {
 
     basePatients = Restangular.all('patients');
 
