@@ -503,7 +503,7 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
 
 docuSimApp.service('cardioService', function () {
     this.getCardio = function () {
-        return vitals;
+        return cardio;
     };
 
     this.insertCardio = function (heartIntensity, heartRegularity, cardiacRhythm, skin, skinColor, nailBeds, capillaryRefill, edemaUE, edemaLE, pulseRadial, darsalisPedis, TED, time) {
@@ -994,7 +994,7 @@ docuSimApp.controller('giController', function($scope, giService){
         var bsLLQ = $scope.newGi.bsLLQ;
         var time = new Date().getTime();
         giService.insertGi(abdomen, bsRUQ, bsRLQ, bsLUQ, bsLLQ, time);
-        $scope.clearVitals();
+        $scope.clearGi();
         init();
     };
 
