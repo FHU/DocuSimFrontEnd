@@ -213,65 +213,65 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
                                     
     $scope.behaviorOptions = [
      {id: '', name: ''},
-     {id: 'AX' , name: 'AX Anxious'}
-     {id: 'AG' , name: 'AG Agitated'}
-     {id: 'H' , name: 'H Hostile'}
-     {id: 'CB' , name: 'CB Combative'}
-     {id: 'C' , name: 'C Calm'}
-     {id: 'RS' , name: 'RS Restless'}
-     {id: 'W' , name: 'W Withdrawn'}
+     {id: 'AX' , name: 'AX Anxious'},
+     {id: 'AG' , name: 'AG Agitated'},
+     {id: 'H' , name: 'H Hostile'},
+     {id: 'CB' , name: 'CB Combative'},
+     {id: 'C' , name: 'C Calm'},
+     {id: 'RS' , name: 'RS Restless'},
+     {id: 'W' , name: 'W Withdrawn'},
      {id: 'R' , name: 'R Refusing'}
     ];
     $scope.newNeurological = {behavior: ''};
 
     $scope.speechOptions = [
      {id: '', name: ''},
-     {id: 'CL' , name: 'CL Clear'}
-     {id: 'S' , name: 'S Slurred'}
-     {id: 'A' , name: 'A Absent'}
-     {id: 'T' , name: 'T Trach'}
+     {id: 'CL' , name: 'CL Clear'},
+     {id: 'S' , name: 'S Slurred'},
+     {id: 'A' , name: 'A Absent'},
+     {id: 'T' , name: 'T Trach'},
      {id: 'ET' , name: 'ET Entubation Tube'}
     ];
     $scope.newNeurological = {speech: ''};
 
     $scope.mentalOptions = [
      {id: '', name: ''},
-     {id: '1' , name: '1 - Alert'}
-     {id: '2' , name: '2 - Lethargic'}
-     {id: '3' , name: '3 - Sedated'}
-     {id: '4' , name: '4 - Obtunded'}
-     {id: '5' , name: '5 - Confused'}
-     {id: '6' , name: '6 - Combative'}
+     {id: '1' , name: '1 - Alert'},
+     {id: '2' , name: '2 - Lethargic'},
+     {id: '3' , name: '3 - Sedated'},
+     {id: '4' , name: '4 - Obtunded'},
+     {id: '5' , name: '5 - Confused'},
+     {id: '6' , name: '6 - Combative'},
      {id: '7' , name: '7 - Comatose'}
     ];
     $scope.newNeurological = {mental: ''};
 
     $scope.comaScale_eyesOptions = [
      {id: '', name: ''},
-     {id: 4 , name: '4 - Spontatneous'}
-     {id: 3 , name: '3 - To Speech'}
-     {id: 2 , name: '2 - To Pain'}
+     {id: 4 , name: '4 - Spontatneous'},
+     {id: 3 , name: '3 - To Speech'},
+     {id: 2 , name: '2 - To Pain'},
      {id: 1 , name: '1 - None'}
     ];
     $scope.newNeurological = {comaScale_eyes: ''};
 
     $scope.comaScale_verbalOptions = [
      {id: '', name: ''},
-     {id: 5 , name:  '5 - Oriented'}
-     {id: 4 , name:  '4 - Confused'}
-     {id: 3 , name:  '3 - Inappropriate Words'}
-     {id: 2 , name:  '2 - Incomprehensible sounds'}
+     {id: 5 , name:  '5 - Oriented'},
+     {id: 4 , name:  '4 - Confused'},
+     {id: 3 , name:  '3 - Inappropriate Words'},
+     {id: 2 , name:  '2 - Incomprehensible sounds'},
      {id: 1 , name:  '1 - None'}
     ];
     $scope.newNeurological = {comaScale_verbal: ''};
 
     $scope.comaScale_motorOptions = [
      {id: 0, name: ''},
-     {id: 6 , name: '6 - Obeys Commands'}
-     {id: 5 , name: '5 - Localizes Pain'}
-     {id: 4 , name: '4 - Withdrawl'}
-     {id: 3 , name: '3 - Flexion to pain (decorticate)'}
-     {id: 2 , name: '2 - Extension to pain (decerbrate)'}
+     {id: 6 , name: '6 - Obeys Commands'},
+     {id: 5 , name: '5 - Localizes Pain'},
+     {id: 4 , name: '4 - Withdrawl'},
+     {id: 3 , name: '3 - Flexion to pain (decorticate)'},
+     {id: 2 , name: '2 - Extension to pain (decerbrate)'},
      {id: 1 , name: '1 - None'}
     ];
     $scope.newNeurological = {comaScale_motor: ''};
@@ -382,11 +382,11 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
     $scope.skinOptinos = [
         {id: '', name: ''},
         {id: 'W', name: 'W - Warm'},
-        {id: 'C', name: 'C - Cool'}
-        {id: 'CD', name: 'CD - Cold'}
-        {id: 'H', name: 'H - Hot'}
-        {id: 'DIA', name: 'DIA - Diaphoretic'}
-        {id: 'CLA', name: 'CLA - Clammy'}
+        {id: 'C', name: 'C - Cool'},
+        {id: 'CD', name: 'CD - Cold'},
+        {id: 'H', name: 'H - Hot'},
+        {id: 'DIA', name: 'DIA - Diaphoretic'},
+        {id: 'CLA', name: 'CLA - Clammy'},
         {id: 'DR', name: 'DR - Dry'}
     ];
     $scope.newCardio = {skin: ''};
