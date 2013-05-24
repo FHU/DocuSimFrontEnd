@@ -1,18 +1,8 @@
 var vitalsTestApp= angular.module('vitalsTest', ['restangular', '$strap.directives']);
 
-
 vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
-	
-    $routeProvider
-        .when('/test',
-            {
-                controller: 'restController',
-                templateUrl: '/vitalsTest.html'
-            })
-
     RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
-
 
 vitalsTestApp.controller('restController', function($scope, Restangular) {
 
@@ -47,7 +37,7 @@ vitalsTestApp.controller('restController', function($scope, Restangular) {
 
 
 //***** VITALS SECTION *********************************************************************************
-vitalsTestApp.controller('vitalsController', function($scope, Restangular){
+vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
     /*init();
 
     function init() {
@@ -57,19 +47,8 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular){
 
     init();
 
-
     function init() {
-        var id=4;
-    	
-    	onePatient = Restangular.one("patient", id);
-    	onePatient.get().then( function(patient) {
-        	//var vitals = patient.Vitals;
-        	$scope.patientInfo = patient;
-        	$scope.vitals = patient.Vitals;
-        		
-        	}, function errorCallback() {
-        			console.log("Oops error from server :(");
-        	});
+        $scope.vitals = vitalsService.getVitalsForPatient(4);
     }
 
     /*$scope.insertVitals = function () {
