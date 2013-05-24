@@ -77,7 +77,7 @@
         			<tr>
         				<td>Temp</td>
 						<td><input type="text" data-ng-model="newVitals.temp_num"/>
-							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in tempOptions"  bt-select></select>{{newVitals.temp_type}}</td>
+							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in options.temp"  bt-select></select>{{newVitals.temp_type}}</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
 	                </tr>
 	                <tr>
@@ -393,7 +393,7 @@
 
 	<!-- Respiratory -->
 	<div class="row-fluid">
-		<section id="respiratory" class="span9 offset3">
+		<section id="respiratory" class="span9 offset3" data-ng-controller="respiratoryController">
 			<h1>Respiratory</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -405,31 +405,18 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="resp in respiratory | orderBy:'id':true">
+		                	<span class="time" >{{resp.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{resp.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
     				<tr>
     					<td>Respiration</td>
-    					<td>
-    						<select ng-model="newRespiratory.respiration" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-    							<option>R-Regular</option>
-    							<option>S-Shallow</option>
-    							<option>V-Vent</option>
-    							<option>I-Irregular</option>
-    							<option>L-Labored</option>
-    						</select>
-    					</td>
-    					<td>R</td>
-    					<td>S</td>
-    					<td>V</td>
-    					<td>I</td>
-    					<td>L</td>
+    					<td><select ng-model="newRespiratory.respiration" ng-options="value.id as value.name for (key, value) in respiratoinOptions" bt-select></select></td>
+    					<td data-ng-repeat="resp in respiratory | orderBy:'id':true">{{resp.respiration}}</td>
     				</tr>
         			<tr>
         				<td>Breath - RUL</td>

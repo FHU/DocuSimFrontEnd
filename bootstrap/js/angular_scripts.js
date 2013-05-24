@@ -417,7 +417,7 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
     ];
     $scope.newCardio = {cardiacRhythm: ''};
 
-    $scope.skinOptinos = [
+    $scope.skinOptions = [
         {id: '', name: ''},
         {id: 'W', name: 'W - Warm'},
         {id: 'C', name: 'C - Cool'},
