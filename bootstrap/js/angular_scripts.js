@@ -48,7 +48,7 @@ docuSimApp.controller('restController', function($scope, Restangular) {
         $scope.patients = patients;
 
     }, function errorCallback() {
-        alert("Oops error from server :(");
+        console.log("Oops error from server :(");
     })
 
 });
