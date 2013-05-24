@@ -42,8 +42,11 @@ docuSimApp.controller('restController', function($scope, Restangular) {
 
     $scope.patientInfo = Restangular.one("patient", 4).get();
 
-    basePatients = Restangular.all('patient');
+    $scope.vitals = $scope.patientInfo.vitals; 
+
     //$scope.patients = basePatients.getList();
+
+    basePatients = Restangular.all('patient');
 
     basePatients.getList().then(function (patients) {
 
