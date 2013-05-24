@@ -165,7 +165,7 @@ docuSimApp.service('vitalsService', function () {
 
     //***** DropDowns **********************
     var optArray = {
-        temp = [
+        temp: [
             {id: '', name: ''},
             {id: 'Oral', name: 'Oral'},
             {id: 'Rectal', name: 'Rectal'},
