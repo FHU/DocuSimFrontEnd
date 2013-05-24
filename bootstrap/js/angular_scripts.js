@@ -171,7 +171,7 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
         var comaScale_verbal = $scope.newNeurological.comaScale_verbal;
         var comaScale_motor = $scope.newNeurological.comaScale_motor;
         var time = new Date().getTime();
-        nuerologicalService.insertNeurological(ppRight, ppLeft, eom, ru, lu, rl, ll, behavior, speech, mental, comaScale_eyes, comaScale_verbal, comaScale_motor);
+        nuerologicalService.insertNeurological(ppRight, ppLeft, eom, ru, lu, rl, ll, behavior, speech, mental, comaScale_eyes, comaScale_verbal, comaScale_motor, time);
         $scope.clearNeurological();
         init();
     };
@@ -304,7 +304,7 @@ docuSimApp.service('neurologicalService', function () {
         return neurological;
     };
 
-    this.insertNeurological= function (ppRight, ppLeft, eom, ru, lu, rl, ll, behavior, speech, mental, comaScale_eyes, comaScale_verbal, comaScale_motor) {
+    this.insertNeurological= function (ppRight, ppLeft, eom, ru, lu, rl, ll, behavior, speech, mental, comaScale_eyes, comaScale_verbal, comaScale_motor, time) {
         var topID = neurological.length + 1;
         vitals.push({
             id: topID,
