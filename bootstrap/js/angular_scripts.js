@@ -41,8 +41,15 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
 docuSimApp.controller('restController', function($scope, Restangular) {
 
     basePatients = Restangular.all('patient');
+    //$scope.patients = basePatients.getList();
 
-    $scope.patients = basePatients.getList();
+    basePatients.getList().then(function (patients) {
+
+        $scope.patients = basePatients.getList();
+
+    }, function errorCallback() {
+        alert("Oops error from server :(");
+    })
 
 });
 
