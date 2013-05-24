@@ -387,6 +387,7 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
 
     //***** DropDowns ********************
     $scope.heartIntensityOptions = [
+        {id: '', name: ''},
         {id: 'S', name: 'S - Strong'},
         {id: 'D', name: 'D - Distant'},
         {id: 'M', name: 'M - Muffled'},
@@ -526,7 +527,7 @@ docuSimApp.service('cardioService', function () {
     };
 
     var cardio = [
-        {}
+        {id: 1, heartIntensity:"", heartRegularity:"", cardiacRhythm:"", skin:"", skinColor:"", nailBeds:"", capillaryRefill:"", edemaUE:"", edemaLE:"", pulseRadial:"", darsalisPedis:"", TED:"", time: 0}
     ];
 });
 
