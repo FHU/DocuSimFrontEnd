@@ -155,11 +155,11 @@ docuSimApp.service('vitalsService', function () {
     };
 
    	var vitals = [
-		{id: 1 , temp: "98.6" , heartRate: "90" , rate: "40" , bpSystolic: "120" , bpDiastolic: "80" , spO2: "80", weight: "157" , time: 1288270800006 - 60 * 60 * 1000},
-		{id: 2 , temp: "99.4" , heartRate: "75" , rate: "20" , bpSystolic: "110" , bpDiastolic: "90" , spO2: "60", weight: "162" , time: 1288270800006 - 45 * 60 * 1000},
-		{id: 3 , temp: "100.2" , heartRate: "87" , rate: "32" , bpSystolic: "115" , bpDiastolic: "85" , spO2: "70", weight: "159" , time: 1288270800006 - 30 * 60 * 1000},
-		{id: 4 , temp: "98.5" , heartRate: "60" , rate: "42" , bpSystolic: "100" , bpDiastolic: "70" , spO2: "98", weight: "164" , time: 1288270800006 - 15 * 60 * 1000},
-		{id: 5 , temp: "98.3" , heartRate: "70" , rate: "22" , bpSystolic: "98" , bpDiastolic: "70" , spO2: "23", weight: "160" , time: 1288270800006}
+		{id: 1 , temp: 98.6 , heartRate: 90 , rate: 40 , bpSystolic: 120 , bpDiastolic: 80 , spO2: 80, weight: 157 , time: 1288270800006 - 60 * 60 * 1000},
+		{id: 2 , temp: 99.4 , heartRate: 75 , rate: 20 , bpSystolic: 110 , bpDiastolic: 90 , spO2: 60, weight: 162 , time: 1288270800006 - 45 * 60 * 1000},
+		{id: 3 , temp: 100.2 , heartRate: 87 , rate: 32 , bpSystolic: 115 , bpDiastolic: 85 , spO2: 70, weight: 159 , time: 1288270800006 - 30 * 60 * 1000},
+		{id: 4 , temp: 98.5 , heartRate: 60 , rate: 42 , bpSystolic: 100 , bpDiastolic: 70 , spO2: 98, weight: 164 , time: 1288270800006 - 15 * 60 * 1000},
+		{id: 5 , temp: 98.3 , heartRate: 70 , rate: 20 , bpSystolic: 98 , bpDiastolic: 70 , spO2: 23, weight: 160 , time: 1288270800006}
 	];
 
     //***** DropDowns **********************
@@ -256,39 +256,39 @@ docuSimApp.service('neurologicalService', function () {
             {id: 'none', name: 'none'}
         ],
         ru: [
-         {id: '0' , name: '0 - No muscle contractions'},
-         {id: '1' , name: '1 - Flicker or trace of voluntary'},
-         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-         {id: '5' , name: '5 - Full power against examiner resistance'}
+         {id: 0 , name: '0 - No muscle contractions'},
+         {id: 1 , name: '1 - Flicker or trace of voluntary'},
+         {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: 3 , name: '3 - Active movement against gravity but not against resistance'},
+         {id: 4 , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
         lu: [
-         {id: '0' , name: '0 - No muscle contractions'},
-         {id: '1' , name: '1 - Flicker or trace of voluntary'},
-         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-         {id: '5' , name: '5 - Full power against examiner resistance'}
+         {id: 0 , name: '0 - No muscle contractions'},
+         {id: 1 , name: '1 - Flicker or trace of voluntary'},
+         {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: 3 , name: '3 - Active movement against gravity but not against resistance'},
+         {id: 4 , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
         rl: [
-         {id: '0' , name: '0 - No muscle contractions'},
-         {id: '1' , name: '1 - Flicker or trace of voluntary'},
-         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-         {id: '5' , name: '5 - Full power against examiner resistance'}
+         {id: 0 , name: '0 - No muscle contractions'},
+         {id: 1 , name: '1 - Flicker or trace of voluntary'},
+         {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: 3 , name: '3 - Active movement against gravity but not against resistance'},
+         {id: 4 , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
         ll: [
-         {id: '0' , name: '0 - No muscle contractions'},
-         {id: '1' , name: '1 - Flicker or trace of voluntary'},
-         {id: '2' , name: '2 - Active movement with gravity eliminated coordination'},
-         {id: '3' , name: '3 - Active movement against gravity but not against resistance'},
-         {id: '4' , name: '4 - Active movement against gravity and resistance, but not full strength'},
-         {id: '5' , name: '5 - Full power against examiner resistance'}
+         {id: 0 , name: '0 - No muscle contractions'},
+         {id: 1 , name: '1 - Flicker or trace of voluntary'},
+         {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
+         {id: 3 , name: '3 - Active movement against gravity but not against resistance'},
+         {id: 4 , name: '4 - Active movement against gravity and resistance, but not full strength'},
+         {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
                                         
         behavior: [
@@ -311,13 +311,13 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         mental: [
-         {id: '1' , name: '1 - Alert'},
-         {id: '2' , name: '2 - Lethargic'},
-         {id: '3' , name: '3 - Sedated'},
-         {id: '4' , name: '4 - Obtunded'},
-         {id: '5' , name: '5 - Confused'},
-         {id: '6' , name: '6 - Combative'},
-         {id: '7' , name: '7 - Comatose'}
+         {id: 1 , name: '1 - Alert'},
+         {id: 2 , name: '2 - Lethargic'},
+         {id: 3 , name: '3 - Sedated'},
+         {id: 4 , name: '4 - Obtunded'},
+         {id: 5 , name: '5 - Confused'},
+         {id: 6 , name: '6 - Combative'},
+         {id: 7 , name: '7 - Comatose'}
         ],
 
         comaScale_eyes: [
@@ -336,7 +336,6 @@ docuSimApp.service('neurologicalService', function () {
         ],
 
         comaScale_motor: [
-         {id: 0, name: ''},
          {id: 6 , name: '6 - Obeys Commands'},
          {id: 5 , name: '5 - Localizes Pain'},
          {id: 4 , name: '4 - Withdrawl'},
