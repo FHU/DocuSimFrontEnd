@@ -638,7 +638,7 @@ docuSimApp.service('respiratoryService', function () {
             fiO2: fiO2,
             time: time
         });
-    });
+    };
 
     var = respiratory [
         {}
@@ -790,7 +790,7 @@ docuSimApp.service('dailyService', function () {
             ivSite: ivSite,
             time: time
         });
-    });
+    };
 
     var = daily [
         {}
@@ -842,7 +842,7 @@ docuSimApp.service('safetyService', function () {
             bedPosition: bedPosition,
             time: time
         });
-    });
+    };
 
     var = safety [
         {}
@@ -917,7 +917,7 @@ docuSimApp.service('guService', function () {
             colorConsistency: colorConsistency,
             time: time
         });
-    });
+    };
     
     var = gu [
         {}
@@ -983,7 +983,6 @@ docuSimApp.controller('giController', function($scope, giService){
         {id: '++', name: '++ - Hyperactive'}
     ];
     $scope.Gi = {bsRLQ: ''};
-<tr>
 
     $scope.bsLUQOptions = [
         {id: '', name: ''},
@@ -1020,7 +1019,7 @@ docuSimApp.service('giService', function () {
             bsLLQ: bsLLQ,
             time: time
         });
-    });
+    };
 
     var = gi [
         {}
@@ -1080,7 +1079,7 @@ docuSimApp.service('ioService', function () {
             outputChestTube: outputChestTube,
             time: time
         });
-    });
+    };
 
     var = io [
         {}
