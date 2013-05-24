@@ -60,14 +60,14 @@
 		<!-- Side Nav End -->
 			<section class="span9" data-ng-controller="vitalsController"> 
 				<h1>test</h1>
-				<ul data-ng-repeat="vital in vitals">
-				<li>
-					{{vital.TimeStamp}}
-					<ul > 
-						<li> {{ vital.Weight }} </li>
-						<li> {{ vital.NurseNote }} </li>
-					</ul> 
-				</li>
+				<ul data-ng-repeat="vital in patientInfo.Vitals">
+					<li>
+						{{vital.TimeStamp}}
+						<ul > 
+							<li> {{ vital.Weight }} </li>
+							<li> {{ vital.NurseNote }} </li>
+						</ul> 
+					</li>
 				</ul>
 
 			</section >

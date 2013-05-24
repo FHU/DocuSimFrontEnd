@@ -54,7 +54,6 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular){
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
     }*/
-	
 
     init();
 
