@@ -1,0 +1,24 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- Side Navigation -->
+		<div id="SideBar" class="span3">
+    		<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
+    			<li class="active"><a href="#orders"> Physican Orders </a></li>
+    			<li><a href="#labs"> Labs </a></li>	           			
+       		</ul>
+		</div>
+		<!-- Side Nav End -->
+
+		<!-- Patient/Scenario Block -->
+		<section id="scenario" class="span9" data-ng-controller="restController">
+
+			<h1>Restangular Test</h1>
+
+			<ul data-ng-repeat="patient in patients"> 
+				<li> {{ patient.firstName }} </li>
+			</ul>
+
+		</section>
+			
+
+</div> <!--end of container-fluid -->
