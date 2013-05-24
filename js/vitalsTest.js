@@ -6,7 +6,7 @@ vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
 });
 
 
-vitalsTestApp.controller('restController', function($scope, Restangular) {
+/*vitalsTestApp.controller('restController', function($scope, Restangular) {
 
     //$scope.patientInfo = Restangular.one("patient", 4).get();
     //console.log($scope.patientInfo);
@@ -33,7 +33,7 @@ vitalsTestApp.controller('restController', function($scope, Restangular) {
         console.log("Oops error from server :(");
     });
 
-});
+});*/
 
 
 
@@ -46,9 +46,9 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular){
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
     }*/
-	var id=4;
+	var id = 4;
 	
-	onePatient = Restangular.one("patient", id);
+	var onePatient = Restangular.one("patient", id);
 	onePatient.get().then( function(patient) {
 		
 		//var vitals = patient.Vitals;
