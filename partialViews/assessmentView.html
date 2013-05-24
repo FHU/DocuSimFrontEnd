@@ -77,7 +77,7 @@
         			<tr>
         				<td>Temp</td>
 						<td><input type="text" data-ng-model="newVitals.temp_num"/>
-							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in tempOptions"  bt-select></select></td>
+							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in tempOptions"  bt-select></select>{{newVitals.temp_type}}</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
 	                </tr>
 	                <tr>
@@ -190,7 +190,7 @@
 							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
 									<button type="button" class="btn" value="+">+</button>
 									<button type="button" class="btn" value="+">-</button>
-							</div>{{newNeurological.ppRight_sign}}
+							</div>
 						</td>
 		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ppRight}}</td>
 	                </tr>
@@ -287,7 +287,7 @@
 
 	<!-- Cardio -->
 	<div class="row-fluid">
-		<section id="cardio" class="span9 offset3">
+		<section id="cardio" class="span9 offset3" data-ng-controller="cardioController">
 			<h1>Cardiovascular</h1>
 			<div class="assessmentArea">
 			<table class="table">
@@ -299,45 +299,23 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="car in cardio | orderBy:'id':true">
+		                	<span class="time" >{{car.time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}
+							<span class="date" >{{car.time | date:'M/d/yy'}}
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Heart Intensity</td>
-						<td>
-							<select ng-model="newCardio.heartIntensity" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>S - Strong</option>
-								<option>D - Distant</option>
-								<option>M - Muffled</option>
-								<option>A - Audible</option>
-							</select>
-						</td>
-        				<td>S</td>
-		                <td>D</td>
-		                <td>M</td>
-						<td>A</td>
-		                <td>M</td>
+						<td><select ng-model="newCardio.heartIntensity" ng-options="value.id as value.name for (key, value) in heartIntensityOptions" bt-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.heartIntensity}}</td>
 	                </tr>
 	                <tr>
 		                <td>Heart Regularity</td>
-						<td>
-							<select ng-model="newCardio.heartRegularity" ng-options="value.id as value.name for (key, value) in" bt-select>
-								<option></option>
-								<option>Regular</option>
-								<option>Irregular</option>
-							</select>
-						</td>
-		                <td>regular</td>
-		                <td>irregular</td>
-        				<td>regular</td>
-						<td>regular</td>
-		                <td>irregular</td>
+						<td><select ng-model="newCardio.heartRegularity" ng-options="value.id as value.name for (key, value) in heartRegularityOptions" bt-select></select></td>
+		                <td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.heartRegularity}}</td>
         			</tr>
         			<tr>
         				<td>Cardiac Rhythm</td>
