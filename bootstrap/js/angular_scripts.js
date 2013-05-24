@@ -387,7 +387,6 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
 
     //***** DropDowns ********************
     $scope.heartIntensityOptions = [
-        {id: '', name: ''},
         {id: 'S', name: 'S - Strong'},
         {id: 'D', name: 'D - Distant'},
         {id: 'M', name: 'M - Muffled'},
