@@ -48,18 +48,31 @@
 			</div>
 		</header>		
 
-		<div data-ng-controller="vitalsController"> 
-			<ul data-ng-repeat="vital in vitals">
-			<li>
-				{{vital.TimeStamp}}
-				<ul > 
-					<li> {{ vital.Weight }} </li>
-					<li> {{ vital.NurseNote }} </li>
-				</ul> 
-			</li>
-			</ul>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			<!-- Side Navigation -->
+		<div id="SideBar" class="span3">
+    		<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
+    			<li class="active"><a href="#orders"> Physican Orders </a></li>
+    			<li><a href="#labs"> Labs </a></li>	           			
+       		</ul>
+		</div>
+		<!-- Side Nav End -->
+			<section class="span9" data-ng-controller="vitalsController"> 
+				<h1>test</h1>
+				<ul data-ng-repeat="vital in vitals">
+				<li>
+					{{vital.TimeStamp}}
+					<ul > 
+						<li> {{ vital.Weight }} </li>
+						<li> {{ vital.NurseNote }} </li>
+					</ul> 
+				</li>
+				</ul>
 
-		</div >
+			</section >
+		</div>
+		</div>
 
 
 		<div class="push"><!--//--></div>
