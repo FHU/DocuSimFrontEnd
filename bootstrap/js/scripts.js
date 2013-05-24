@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('select').selectpicker( {
- 	});
+	// $('select').selectpicker( {
+ // 	});
 
 });
