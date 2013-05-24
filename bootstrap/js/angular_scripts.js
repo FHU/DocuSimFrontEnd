@@ -640,7 +640,7 @@ docuSimApp.service('respiratoryService', function () {
         });
     };
 
-    var = respiratory [
+    var respiratory = [
         {}
     ];
 });
@@ -792,7 +792,7 @@ docuSimApp.service('dailyService', function () {
         });
     };
 
-    var = daily [
+    var daily = [
         {}
     ];
 });
@@ -844,7 +844,7 @@ docuSimApp.service('safetyService', function () {
         });
     };
 
-    var = safety [
+    var safety =[
         {}
     ];
 });
@@ -919,7 +919,7 @@ docuSimApp.service('guService', function () {
         });
     };
     
-    var = gu [
+    var gu = [
         {}
     ];
 });
@@ -1021,7 +1021,7 @@ docuSimApp.service('giService', function () {
         });
     };
 
-    var = gi [
+    var gi =[
         {}
     ];
 });
@@ -1081,7 +1081,7 @@ docuSimApp.service('ioService', function () {
         });
     };
 
-    var = io [
+    var io = [
         {}
     ];
 });*/
