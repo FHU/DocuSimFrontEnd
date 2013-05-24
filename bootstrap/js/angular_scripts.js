@@ -194,7 +194,7 @@ docuSimApp.controller('neurologicalController', function($scope, neurologicalSer
         {id: 'present', name: 'present'},
         {id: 'none', name: 'none'}
     ];
-    $scope.newNeurological = {eom: ''};
+    $scope.newNeurological = { eom: ''};
 
     $scope.ruOptions = [
      {id: '', name: ''},
