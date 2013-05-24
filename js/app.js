@@ -367,7 +367,6 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
     function init() {
         $scope.cardio = cardioService.getCardio();
         $scope.cardioOpts = cardioService.getOptArray();
-        $('#cardio select').selectpicker('val','');
     }
 
     $scope.insertCardio = function () {
