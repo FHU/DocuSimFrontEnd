@@ -45,13 +45,15 @@ docuSimApp.controller('restController', function($scope, Restangular) {
 
     basePatients.getList().then(function (patients) {
 
-        $scope.patients = basePatients.getList();
+        $scope.patients = patients;
 
     }, function errorCallback() {
         alert("Oops error from server :(");
     })
 
 });
+
+
 
 
 docuSimApp.controller('NavbarController', function ($scope, $location) {
