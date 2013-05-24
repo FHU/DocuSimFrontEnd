@@ -131,13 +131,16 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
     };
 
     //***** DropDowns **********************
-    var vitalsOpt.temp = [
+    var temp = [
         {id: '', name: ''},
         {id: 'Oral', name: 'Oral'},
         {id: 'Rectal', name: 'Rectal'},
         {id: 'Axillary', name: 'Axillary'},
         {id: 'Tympanic', name: 'Tympanic'}
     ];
+
+    $scope.vitalsOp.temp = temp;
+
 });
 
 docuSimApp.service('vitalsService', function () {
