@@ -78,13 +78,7 @@
         				<td>Temp</td>
 						<td>
 							<input type="text" data-ng-model="newVitals.temp_num"/>
-							<select class="selectpicker" data-ng-model="newVitals.temp_type">
-								<option></option>
-								<option>Oral</option>
-								<option>Rectal</option>
-								<option>Axillary</option>
-								<option>Tympanic</option>
-							</select>
+							<select class="selectpicker" data-ng-model="newVitals.temp_type"></select>
 						</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'id':true">{{vital.temp}}</td>
 	                </tr>
@@ -186,13 +180,17 @@
 			<table class="table">
       			<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-		                <th>8:00</th>
-		                <th>7:45</th>
-        				<th>7:30</th>
-						<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -467,13 +465,17 @@
 			<table class="table">
       			<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-		                <th>8:00</th>
-		                <th>7:45</th>
-        				<th>7:30</th>
-						<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -716,13 +718,17 @@
 			<table class="table">
       			<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-		                <th>8:00</th>
-		                <th>7:45</th>
-        				<th>7:30</th>
-						<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -938,13 +944,17 @@
 			<table class="table">
       			<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-		                <th>8:00</th>
-		                <th>7:45</th>
-        				<th>7:30</th>
-						<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -1238,12 +1248,16 @@
       			<thead>
 	                <tr>
         			    <th></th>
-        			    <th></th>
-        			    <th>8:00</th>
-		                <th>7:45</th>
-	    				<th>7:15</th>
-						<th>7:15</th>
-						<th>7:00</th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -1318,12 +1332,16 @@
       			<thead>
 	                <tr>
         			    <th></th>
-						<th></th>
-		                <th>8:00</th>
-		                <th>7:45</th>
-        				<th>7:30</th>
-						<th>7:15</th>
-						<th>7:00</th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -1404,13 +1422,17 @@
 			<table class="table">
       			<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-        			    <th>8:00</th>
-		                <th>7:45</th>
-		                <th>7:30</th>
-        				<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
@@ -1530,13 +1552,17 @@
 			<table class="table">
 				<thead>
 	                <tr>
-						<th></th>
-						<th></th>
-        			    <th>8:00</th>
-		                <th>7:45</th>
-		                <th>7:30</th>
-        				<th>7:15</th>
-						<th>7:00</th>
+        			    <th></th>
+						<th ng-controller="MyClock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
+		                	<span class="time" >{{vital.time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.time | date:'M/d/yy'}}
+		                </th>
         			</tr>
     			</thead>
     			<tbody>
