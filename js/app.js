@@ -108,7 +108,6 @@ docuSimApp.controller('vitalsController', function($scope, vitalsService){
     function init() {
         $scope.vitals = vitalsService.getVitals();
         $scope.vitalsOpts = vitalsService.getOptArray();
-        $scope.newVitals = { temp_type: ''};
     }
 
     $scope.insertVitals = function () {
@@ -166,7 +165,6 @@ docuSimApp.service('vitalsService', function () {
     //***** DropDowns **********************
     var optArray = {
         temp: [
-            {id: '', name: ''},
             {id: 'Oral', name: 'Oral'},
             {id: 'Rectal', name: 'Rectal'},
             {id: 'Axillary', name: 'Axillary'},
@@ -368,6 +366,8 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
 
     function init() {
         $scope.cardio = cardioService.getCardio();
+        $scope.cardioOpts = cardioService.getOptArray();
+        $('#cardio select').selectpicker('val','');
     }
 
     $scope.insertCardio = function () {
@@ -393,124 +393,13 @@ docuSimApp.controller('cardioController', function($scope, cardioService){
         $scope.newCardio= '';
         $('#cardio select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.heartIntensityOptions = [
-        {id: '', name: ''},
-        {id: 'S', name: 'S - Strong'},
-        {id: 'D', name: 'D - Distant'},
-        {id: 'M', name: 'M - Muffled'},
-        {id: 'A', name: 'A - Audible'}
-    ];
-    $scope.newCardio = {heartIntensity: ''};
-
-    $scope.heartRegularityOptions = [
-        {id: '', name: ''},
-        {id: 'Regular', name: 'Regular'},
-        {id: 'Irregular', name: 'Irregular'}
-    ];
-    $scope.newCardio = {heartRegularity: ''};
-
-    $scope.cardiacRhythmOptions = [
-        {id: '', name: ''},
-        {id: 'NSR', name: 'NSR - Sinus'},
-        {id: 'ST', name: 'ST - Sinus Tach'},
-        {id: 'SB', name: 'SB - Sinus Brady'},
-        {id: 'SA', name: 'SA - Sinus Arrhythmia'},
-        {id: 'AFL', name: 'AFL - Atrial Flutter'},
-        {id: 'Afib', name: 'Afib - Atrial Fibrillation'},
-        {id: 'JUNC', name: 'JUNC - Junctional'},
-        {id: 'VT', name: 'VT - Ventricular Tach'},
-        {id: 'VF', name: 'VF - Ventricular Fib'},
-        {id: 'SVT', name: 'SVT - Supraventricular Tach'}
-    ];
-    $scope.newCardio = {cardiacRhythm: ''};
-
-    $scope.skinOptions = [
-        {id: '', name: ''},
-        {id: 'W', name: 'W - Warm'},
-        {id: 'C', name: 'C - Cool'},
-        {id: 'CD', name: 'CD - Cold'},
-        {id: 'H', name: 'H - Hot'},
-        {id: 'DIA', name: 'DIA - Diaphoretic'},
-        {id: 'CLA', name: 'CLA - Clammy'},
-        {id: 'DR', name: 'DR - Dry'}
-    ];
-    $scope.newCardio = {skin: ''};
-
-    $scope.skinColorOptions = [
-        {id: '', name: ''},
-        {id: 'FL', name: 'FL - Flushed'},
-        {id: 'G', name: 'G - Good/Pink'},
-        {id: 'P', name: 'DSK - Dusky'},
-        {id: 'DSK', name: 'P - Pale'},
-        {id: 'C', name: 'C - Cyanotic'},
-        {id: 'J', name: 'J - Jandiced'},
-        {id: 'A', name: 'A - Ashen'}
-    ];
-    $scope.newCardio = {skinColor: ''};
-
-    $scope.nailBedsOptions = [
-        {id: '', name: ''},
-        {id: 'FL', name: 'FL - Flushed'},
-        {id: 'G', name: 'G - Good/Pink'},
-        {id: 'P', name: 'DSK - Dusky'},
-        {id: 'DSK', name: 'P - Pale'},
-        {id: 'C', name: 'C - Cyanotic'},
-        {id: 'J', name: 'J - Jandiced'},
-        {id: 'A', name: 'A - Ashen'}
-    ];
-    $scope.newCardio = {nailBeds: ''};
-
-    $scope.capillaryRefillOptions = [
-        {id: '', name: ''},
-        {id: 'Normal', name: '< 3 seconds - Normal'},
-        {id: 'Sluggish', name: '> 3 seconds - Sluggish'}
-    ];
-    $scope.newCardio = {capillaryRefill: ''};
-
-    $scope.edemaUEOptions = [
-        {id: '', name: ''},
-        {id: '1+', name: '1+ Capable of being pitted'},
-        {id: '2+', name: '2+ Area not tense, 30 second pitting'},
-        {id: '3+', name: '3+ Area Tense, one minute pitting'},
-        {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
-        {id: 'GEN', name: 'GEN - Generalized'},
-        {id: 'P', name: 'P - Periorbital'}
-    ];
-    $scope.newCardio = {edemaUE: ''};
-
-    $scope.edemaLEOptions = [
-        {id: '', name: ''},
-        {id: '1+', name: '1+ Capable of being pitted'},
-        {id: '2+', name: '2+ Area not tense, 30 second pitting'},
-        {id: '3+', name: '3+ Area Tense, one minute pitting'},
-        {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
-        {id: 'GEN', name: 'GEN - Generalized'},
-        {id: 'P', name: 'P - Periorbital'}
-    ];
-    $scope.newCardio = {edemaLE: ''};
-
-    $scope.pulseRadialOptions = [
-        {id: '', name: ''},
-        {id: '1+', name: '1+ Intermittent'},
-        {id: '2+', name: '2+ Weak'},
-        {id: '3+', name: '3+ Normal'},
-        {id: '4+', name: '4+ Strong'}
-    ];
-    $scope.newCardio = {pulseRadial: ''};
-
-    $scope.darsalisPedisOptions = [
-        {id: '', name: ''},
-        {id: '1+', name: 'Intermittent'},
-        {id: '2+', name: 'Weak'},
-        {id: '3+', name: 'Normal'},
-        {id: '4+', name: 'Strong'}
-    ];
-    $scope.newCardio = {darsalisPedis: ''};
 });
 
 docuSimApp.service('cardioService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getCardio = function () {
         return cardio;
     };
@@ -538,6 +427,112 @@ docuSimApp.service('cardioService', function () {
     var cardio = [
         {id: 1, heartIntensity:"", heartRegularity:"", cardiacRhythm:"", skin:"", skinColor:"", nailBeds:"", capillaryRefill:"", edemaUE:"", edemaLE:"", pulseRadial:"", darsalisPedis:"", TED:"", time: 0}
     ];
+
+    //***** DropDowns ********************
+    var optArray = {
+        heartIntensity: [
+            {id: '', name: ''},
+            {id: 'S', name: 'S - Strong'},
+            {id: 'D', name: 'D - Distant'},
+            {id: 'M', name: 'M - Muffled'},
+            {id: 'A', name: 'A - Audible'}
+        ],
+
+        heartRegularity: [
+            {id: '', name: ''},
+            {id: 'Regular', name: 'Regular'},
+            {id: 'Irregular', name: 'Irregular'}
+        ],
+
+        cardiacRhythm: [
+            {id: '', name: ''},
+            {id: 'NSR', name: 'NSR - Sinus'},
+            {id: 'ST', name: 'ST - Sinus Tach'},
+            {id: 'SB', name: 'SB - Sinus Brady'},
+            {id: 'SA', name: 'SA - Sinus Arrhythmia'},
+            {id: 'AFL', name: 'AFL - Atrial Flutter'},
+            {id: 'Afib', name: 'Afib - Atrial Fibrillation'},
+            {id: 'JUNC', name: 'JUNC - Junctional'},
+            {id: 'VT', name: 'VT - Ventricular Tach'},
+            {id: 'VF', name: 'VF - Ventricular Fib'},
+            {id: 'SVT', name: 'SVT - Supraventricular Tach'}
+        ],
+
+        skin:[
+            {id: '', name: ''},
+            {id: 'W', name: 'W - Warm'},
+            {id: 'C', name: 'C - Cool'},
+            {id: 'CD', name: 'CD - Cold'},
+            {id: 'H', name: 'H - Hot'},
+            {id: 'DIA', name: 'DIA - Diaphoretic'},
+            {id: 'CLA', name: 'CLA - Clammy'},
+            {id: 'DR', name: 'DR - Dry'}
+        ],
+
+        skinColor: [
+            {id: '', name: ''},
+            {id: 'FL', name: 'FL - Flushed'},
+            {id: 'G', name: 'G - Good/Pink'},
+            {id: 'P', name: 'DSK - Dusky'},
+            {id: 'DSK', name: 'P - Pale'},
+            {id: 'C', name: 'C - Cyanotic'},
+            {id: 'J', name: 'J - Jandiced'},
+            {id: 'A', name: 'A - Ashen'}
+        ],
+
+        nailBeds: [
+            {id: '', name: ''},
+            {id: 'FL', name: 'FL - Flushed'},
+            {id: 'G', name: 'G - Good/Pink'},
+            {id: 'P', name: 'DSK - Dusky'},
+            {id: 'DSK', name: 'P - Pale'},
+            {id: 'C', name: 'C - Cyanotic'},
+            {id: 'J', name: 'J - Jandiced'},
+            {id: 'A', name: 'A - Ashen'}
+        ],
+
+        capillaryRefill: [
+            {id: '', name: ''},
+            {id: 'Normal', name: '< 3 seconds - Normal'},
+            {id: 'Sluggish', name: '> 3 seconds - Sluggish'}
+        ],
+
+        edemaUE: [
+            {id: '', name: ''},
+            {id: '1+', name: '1+ Capable of being pitted'},
+            {id: '2+', name: '2+ Area not tense, 30 second pitting'},
+            {id: '3+', name: '3+ Area Tense, one minute pitting'},
+            {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
+            {id: 'GEN', name: 'GEN - Generalized'},
+            {id: 'P', name: 'P - Periorbital'}
+        ],
+
+        edemaLE: [
+            {id: '', name: ''},
+            {id: '1+', name: '1+ Capable of being pitted'},
+            {id: '2+', name: '2+ Area not tense, 30 second pitting'},
+            {id: '3+', name: '3+ Area Tense, one minute pitting'},
+            {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
+            {id: 'GEN', name: 'GEN - Generalized'},
+            {id: 'P', name: 'P - Periorbital'}
+        ],
+
+        pulseRadial: [
+            {id: '', name: ''},
+            {id: '1+', name: '1+ Intermittent'},
+            {id: '2+', name: '2+ Weak'},
+            {id: '3+', name: '3+ Normal'},
+            {id: '4+', name: '4+ Strong'}
+        ],
+
+        darsalisPedis: [
+            {id: '', name: ''},
+            {id: '1+', name: 'Intermittent'},
+            {id: '2+', name: 'Weak'},
+            {id: '3+', name: 'Normal'},
+            {id: '4+', name: 'Strong'}
+        ]
+    };
 });
 
 
@@ -549,6 +544,7 @@ docuSimApp.controller('respiratoryController', function($scope, respiratoryServi
 
     function init() {
         $scope.respiratory = respiratoryService.getRespiratory();
+        $scope.respiratoryOpts = respiratoryService.getOptArray();
     }
 
     $scope.insertRespiratory = function () {
@@ -572,111 +568,13 @@ docuSimApp.controller('respiratoryController', function($scope, respiratoryServi
         $scope.newRespiratory= '';
         $('#respiratory select').selectpicker('val','');
     };
-
-    //***** DropDowns ********************
-    $scope.respirationOptions = [
-        {id: '', name: ''},
-        {id: 'R', name: 'R-Regular'},
-        {id: 'S', name: 'S-Shallow'},
-        {id: 'V', name: 'V-Vent'},
-        {id: 'I', name: 'I-Irregular'},
-        {id: 'L', name: 'L-Labored'}
-    ];
-    $scope.newRespiratory = {respiration: ''};
-
-    $scope.breathRULOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL-Clear'},
-        {id: 'Rh', name: 'Rh-Rhonchi'},
-        {id: 'I', name: 'I-Inspiratory'},
-        {id: 'D', name: 'D-Decrease'},
-        {id: 'BR', name: 'BR-Bronchial'},
-        {id: 'CR', name: 'CR-Crack'},
-        {id: 'W', name: 'W-Wheeze'},
-        {id: 'E', name: 'E-Expiration'},
-        {id: 'A', name: 'Absent'},
-        {id: 'H', name: 'H-Harsh'}
-    ];
-    $scope.newRespiratory = {breathRUL: ''};
-
-    $scope.breathRMLOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL-Clear'},
-        {id: 'Rh', name: 'Rh-Rhonchi'},
-        {id: 'I', name: 'I-Inspiratory'},
-        {id: 'D', name: 'D-Decrease'},
-        {id: 'BR', name: 'BR-Bronchial'},
-        {id: 'CR', name: 'CR-Crack'},
-        {id: 'W', name: 'W-Wheeze'},
-        {id: 'E', name: 'E-Expiration'},
-        {id: 'A', name: 'Absent'},
-        {id: 'H', name: 'H-Harsh'}
-    ];
-    $scope.newRespiratory = {breathRML: ''};
-
-    $scope.breathRLLOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL-Clear'},
-        {id: 'Rh', name: 'Rh-Rhonchi'},
-        {id: 'I', name: 'I-Inspiratory'},
-        {id: 'D', name: 'D-Decrease'},
-        {id: 'BR', name: 'BR-Bronchial'},
-        {id: 'CR', name: 'CR-Crack'},
-        {id: 'W', name: 'W-Wheeze'},
-        {id: 'E', name: 'E-Expiration'},
-        {id: 'A', name: 'Absent'},
-        {id: 'H', name: 'H-Harsh'}
-    ];
-    $scope.newRespiratory = {breathRLL: ''};
-
-    $scope.breathLULOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL-Clear'},
-        {id: 'Rh', name: 'Rh-Rhonchi'},
-        {id: 'I', name: 'I-Inspiratory'},
-        {id: 'D', name: 'D-Decrease'},
-        {id: 'BR', name: 'BR-Bronchial'},
-        {id: 'CR', name: 'CR-Crack'},
-        {id: 'W', name: 'W-Wheeze'},
-        {id: 'E', name: 'E-Expiration'},
-        {id: 'A', name: 'Absent'},
-        {id: 'H', name: 'H-Harsh'}
-    ];
-    $scope.newRespiratory = {breathLUL: ''};
-
-    $scope.breathLLLOptions = [
-        {id: '', name: ''},
-        {id: 'CL', name: 'CL-Clear'},
-        {id: 'Rh', name: 'Rh-Rhonchi'},
-        {id: 'I', name: 'I-Inspiratory'},
-        {id: 'D', name: 'D-Decrease'},
-        {id: 'BR', name: 'BR-Bronchial'},
-        {id: 'CR', name: 'CR-Crack'},
-        {id: 'W', name: 'W-Wheeze'},
-        {id: 'E', name: 'E-Expiration'},
-        {id: 'A', name: 'Absent'},
-        {id: 'H', name: 'H-Harsh'}
-    ];
-    $scope.newRespiratory = {breathLLL: ''};
-
-    $scope.oxygenationOptions = [
-        {id: '', name: ''},
-        {id: 'BN', name: 'BN - BiNasal Oxygen'},
-        {id: 'SM', name: 'SM - Simple Mask'},
-        {id: 'AFM', name: 'AFM - Aeorsol Face Mask'},
-        {id: 'HFBN', name: 'HFBN - High flow Binasal Cannula'},
-        {id: 'VM', name: 'VM - Venturi Mask'},
-        {id: 'PRB', name: 'PRB - Partial Rebreather'},
-        {id: 'NRB', name: 'NRB - Non-Rebreather'},
-        {id: 'ATP', name: 'ATP - Aerosol T-Piece'},
-        {id: 'AFT', name: 'AFT - Aerosol Face Tent'},
-        {id: 'CPAP', name: 'CPAP - Continous Positive Airway Pressure'},
-        {id: 'BPAP', name: 'BPAP - Binasel Positive Airway Pressure'}
-    ];
-    $scope.newRespiratory = {oxygenation: ''};
 });
 
 docuSimApp.service('respiratoryService', function () {
+    this.getOptArray = function(){
+        return optArray;
+    };
+
     this.getRespiratory = function () {
         return respiratory;
     };
@@ -702,6 +600,103 @@ docuSimApp.service('respiratoryService', function () {
     var respiratory = [
         {}
     ];
+
+    //***** DropDowns ********************
+    var optArray = {}
+        respiration: [
+            {id: '', name: ''},
+            {id: 'R', name: 'R-Regular'},
+            {id: 'S', name: 'S-Shallow'},
+            {id: 'V', name: 'V-Vent'},
+            {id: 'I', name: 'I-Irregular'},
+            {id: 'L', name: 'L-Labored'}
+        ],
+        
+        breathRUL: [
+            {id: '', name: ''},
+            {id: 'CL', name: 'CL-Clear'},
+            {id: 'Rh', name: 'Rh-Rhonchi'},
+            {id: 'I', name: 'I-Inspiratory'},
+            {id: 'D', name: 'D-Decrease'},
+            {id: 'BR', name: 'BR-Bronchial'},
+            {id: 'CR', name: 'CR-Crack'},
+            {id: 'W', name: 'W-Wheeze'},
+            {id: 'E', name: 'E-Expiration'},
+            {id: 'A', name: 'Absent'},
+            {id: 'H', name: 'H-Harsh'}
+        ],
+
+        breathRML: [
+            {id: '', name: ''},
+            {id: 'CL', name: 'CL-Clear'},
+            {id: 'Rh', name: 'Rh-Rhonchi'},
+            {id: 'I', name: 'I-Inspiratory'},
+            {id: 'D', name: 'D-Decrease'},
+            {id: 'BR', name: 'BR-Bronchial'},
+            {id: 'CR', name: 'CR-Crack'},
+            {id: 'W', name: 'W-Wheeze'},
+            {id: 'E', name: 'E-Expiration'},
+            {id: 'A', name: 'Absent'},
+            {id: 'H', name: 'H-Harsh'}
+        ],
+
+        breathRLL: [
+            {id: '', name: ''},
+            {id: 'CL', name: 'CL-Clear'},
+            {id: 'Rh', name: 'Rh-Rhonchi'},
+            {id: 'I', name: 'I-Inspiratory'},
+            {id: 'D', name: 'D-Decrease'},
+            {id: 'BR', name: 'BR-Bronchial'},
+            {id: 'CR', name: 'CR-Crack'},
+            {id: 'W', name: 'W-Wheeze'},
+            {id: 'E', name: 'E-Expiration'},
+            {id: 'A', name: 'Absent'},
+            {id: 'H', name: 'H-Harsh'}
+        ],
+
+        breathLUL: [
+            {id: '', name: ''},
+            {id: 'CL', name: 'CL-Clear'},
+            {id: 'Rh', name: 'Rh-Rhonchi'},
+            {id: 'I', name: 'I-Inspiratory'},
+            {id: 'D', name: 'D-Decrease'},
+            {id: 'BR', name: 'BR-Bronchial'},
+            {id: 'CR', name: 'CR-Crack'},
+            {id: 'W', name: 'W-Wheeze'},
+            {id: 'E', name: 'E-Expiration'},
+            {id: 'A', name: 'Absent'},
+            {id: 'H', name: 'H-Harsh'}
+        ],
+
+        breathLLL: [
+            {id: '', name: ''},
+            {id: 'CL', name: 'CL-Clear'},
+            {id: 'Rh', name: 'Rh-Rhonchi'},
+            {id: 'I', name: 'I-Inspiratory'},
+            {id: 'D', name: 'D-Decrease'},
+            {id: 'BR', name: 'BR-Bronchial'},
+            {id: 'CR', name: 'CR-Crack'},
+            {id: 'W', name: 'W-Wheeze'},
+            {id: 'E', name: 'E-Expiration'},
+            {id: 'A', name: 'Absent'},
+            {id: 'H', name: 'H-Harsh'}
+        ],
+
+        oxygenation: [
+            {id: '', name: ''},
+            {id: 'BN', name: 'BN - BiNasal Oxygen'},
+            {id: 'SM', name: 'SM - Simple Mask'},
+            {id: 'AFM', name: 'AFM - Aeorsol Face Mask'},
+            {id: 'HFBN', name: 'HFBN - High flow Binasal Cannula'},
+            {id: 'VM', name: 'VM - Venturi Mask'},
+            {id: 'PRB', name: 'PRB - Partial Rebreather'},
+            {id: 'NRB', name: 'NRB - Non-Rebreather'},
+            {id: 'ATP', name: 'ATP - Aerosol T-Piece'},
+            {id: 'AFT', name: 'AFT - Aerosol Face Tent'},
+            {id: 'CPAP', name: 'CPAP - Continous Positive Airway Pressure'},
+            {id: 'BPAP', name: 'BPAP - Binasel Positive Airway Pressure'}
+        ]
+    };
 });
 
 
