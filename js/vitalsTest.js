@@ -53,13 +53,15 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
         //var results = ModelName.query({ search : 'all' }, onSuccessFn, onFailureFn);
 
         //get a specific record
-        var record = ModelName.get({ id : 4 }, onSuccessFn, onFailureFn); 
+        var record = VitalsModel; 
+
+        record.get({id:4}, onSuccessFn, onFailureFn);
 
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
 
-    function onSuccessFn() {
-        $scope.vitals = record;
+    function onSuccessFn(results) {
+        $scope.vitals = results;
     }
 
     function onFailureFn() {
@@ -101,22 +103,30 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
     };*/
 });
 
-//vitalsController.$inject = ['$scope','$http','$location','VitalsModel'];
+//vitalsTestApp.vitalsController.$inject = ['$scope','$http','$location','VitalsModel'];
 
 
-vitalsTestApp.factory('VitalsModel', ['$resource', function($resource) {
-  $resource.url('http://docusimapi.azurewebsites.net/api/vitals/:id'),{
-    id : '@id', //this binds the ID of the model to the URL param
-  },{
-    query : { method : 'GET', isArray : true }, //this can also be called index or all
-    save : { method : 'PUT' }, //this is the update method
-    create : { method : 'POST' },
-    destroy : { method : 'DELETE' }
-  }
-}]);
+vitalsTestApp.factory('VitalsModel', function($resource) {
+
+  var vitals = $resource(
+    "http://docusimapi.azurewebsites.net/api/vitals/:id",
+      {
+        id : '@id', //this binds the ID of the model to the URL param
+      },
+      {
+        query : { method : 'GET', isArray : true }, //this can also be called index or all
+        save : { method : 'PUT' }, //this is the update method
+        create : { method : 'POST' },
+        destroy : { method : 'DELETE' }
+      }
+  );
+
+  return vitals;
+
+});
 
 
-vitalsTestApp.service('vitalsService', function (Restangular) {
+/*vitalsTestApp.service('vitalsService', function (Restangular) {
 
     this.getVitalsForPatient = function (id) {
         console.log(id);
@@ -156,7 +166,7 @@ vitalsTestApp.service('vitalsService', function (Restangular) {
 	];*/
 
 
-});
+//});
 
 
 
