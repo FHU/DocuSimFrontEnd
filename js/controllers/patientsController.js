@@ -54,18 +54,17 @@ docuSimApp.factory('PatientModel', function($resource) {
     var patients = [];
     var selectedPatient = {};
 
-var User = $resource('/user/:userId', {userId:'@id'});
     var patientFactory = $resource(
     "http://docusimapi.azurewebsites.net/api/patient/:patientId",
       {
         patientId : '@id' //this binds the ID of the model to the URL param
-      }/*,
+      },
       {
         query : { method : 'GET', isArray : true }, //this can also be called index or all
-        save : { method : 'PUT' }, //this is the update method
+        save : { method : 'PUT', params: {id: "@id"}}, //this is the update method
         create : { method : 'POST' },
         destroy : { method : 'DELETE', params: {id: "@id"} }
-      }*/
+      }
     );  
 
     patientFactory.getAllPatients = function() {
