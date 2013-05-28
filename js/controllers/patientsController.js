@@ -63,7 +63,7 @@ docuSimApp.factory('PatientModel', function($resource) {
         query : { method : 'GET', isArray : true }, //this can also be called index or all
         save : { method : 'PUT', params: {id: "@id"}}, //this is the update method
         create : { method : 'POST' },
-        destroy : { method : 'DELETE', params: {id: "@id"} }
+        destroy : { method : 'DELETE'}
       }
     );  
 
