@@ -70,7 +70,7 @@
 						</tr>						
 					</thead>
 					<tbody>
-						<tr data-ng-repeat="patient in Patients" data-ng-model="selectedPatient">
+						<tr data-ng-repeat="patient in Patients" data-ng-model="editedPatient ng-model-instant">
 							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
 							<td> <input type="text" value={{patient.ID}} /> </td>

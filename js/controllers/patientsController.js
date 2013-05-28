@@ -3,6 +3,7 @@
 
 docuSimApp.controller('patientsController', function($scope, $http, $location, PatientModel){
     $scope.patients = [];
+    $scope.selectedPatient = {};
 
     init();
 
@@ -18,7 +19,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
 
     $scope.editPatient = function(id) {
 
-        PatientModel.editPatient(id, firstName, lastName, gender, age, height, weight);
+        PatientModel.editPatient(id, $scope.selectedPatient);
     }
 
     $scope.addPatient = function() {
@@ -62,7 +63,7 @@ docuSimApp.factory('PatientModel', function($resource) {
         query : { method : 'GET', isArray : true }, //this can also be called index or all
         save : { method : 'PUT' }, //this is the update method
         create : { method : 'POST' },
-        destroy : { method : 'DELETE' }
+        destroy : { method : 'DELETE', params: {id: "@id"} }
       }
     );  
 
@@ -91,15 +92,22 @@ docuSimApp.factory('PatientModel', function($resource) {
     }*/
 
     patientFactory.addPatient = function(id, patient) {
-        patientFactory.destroy(id);  
+        patientFactory.create();
     }
 
     patientFactory.deletePatient = function(id) {
         patientFactory.destroy(id);  
     }
 
-    patientFactory.editPatient = function(id) {
-        patientFactory.destroy(id);  
+    patientFactory.editPatient = function(id, patient) {
+        //get patient
+        selectedPatient = patientFactory.get({id: id});
+
+        //update patient info
+        selectedPatient = patient;
+
+        //save to backend
+        patientFactory.save(selectedPatient);  
     }
 
 
