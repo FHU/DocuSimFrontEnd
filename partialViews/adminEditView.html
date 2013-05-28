@@ -17,6 +17,7 @@
 				<table class="table">
 					<thead>
 						<tr>
+							<th></th>
 							<th>Patient ID</th>
 							<th>First Name</th>
 							<th>Last Name</th>
@@ -30,6 +31,7 @@
 					</thead>
 					<tbody>
 						<tr data-ng-repeat="patient in Patients">
+							<td><button class="btn btn-danger span5" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td>{{patient.ID}}</td>
 							<td>{{patient.FirstName}}</td>
 							<td>{{patient.LastName}}</td>
