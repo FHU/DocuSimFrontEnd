@@ -98,9 +98,12 @@ docuSimApp.factory('PatientModel', function($resource) {
 
     patientFactory.deletePatient = function(id) {
         console.log("Deleting patient " + id);
-        patientFactory.$delete(id);
+        selectedPatient = patientFactory.get({id: id});
+        selectedPatient.destroy();
 
-        this.getAllPatients();
+        //patientFactory.destroy(id);
+
+        //this.getAllPatients();
     }
 
     patientFactory.editPatient = function(id, patient) {
