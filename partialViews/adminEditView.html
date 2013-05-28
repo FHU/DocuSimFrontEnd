@@ -70,15 +70,15 @@
 						<tr data-ng-repeat="patient in Patients" data-ng-model="selectedPatient">
 							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
-							<td> <input type="text" > {{patient.ID}} </input> </td>
-							<td> <input type="text" > {{patient.FirstName}}</input> </td>
-							<td> <input type="text" > {{patient.LastName}}</input> </td>
-							<td> <input type="text" > {{patient.Gender}}</input> </td>
-							<td> <input type="text" > {{patient.DateOfBirth}}</input> </td>
-							<td> <input type="text" > {{patient.Height}}</input> </td>
-							<td> <input type="text" > {{patient.Weight}}</input> </td>
-							<td> <input type="text" > {{patient.PictureFileLocation}}</input> </td>
-							<td> <input type="text" > {{patient.Allergies}}</input> </td>
+							<td> <input type="text" {{patient.ID}} /> </td>
+							<td> <input type="text" {{patient.FirstName}} /> </td>
+							<td> <input type="text" {{patient.LastName}} /> </td>
+							<td> <input type="text" {{patient.Gender}}/>  </td>
+							<td> <input type="text" {{patient.DateOfBirth}} /> </td>
+							<td> <input type="text" {{patient.Height}}/></td>
+							<td> <input type="text" {{patient.Weight}}/> </td>
+							<td> <input type="text" {{patient.PictureFileLocation}}/> </td>
+							<td> <input type="text" {{patient.Allergies}} /> </td>
 						</tr>
 					</tbody>
 			</section>
