@@ -11,7 +11,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
     }
 
     function deletePatient() {
-        console.log(this.params.id)
+        console.log(this.params.id);
 
         PatientModel.deletePatient(this.params.id);
     }
