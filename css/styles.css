@@ -25,6 +25,11 @@ html, body {
     vertical-align: baseline;
 }
 
+.hidden {
+	display:none;
+}
+
+
 /* Header ------------------------*/
 
 #patientsLink {

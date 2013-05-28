@@ -70,7 +70,20 @@
 						</tr>						
 					</thead>
 					<tbody>
-						<tr data-ng-repeat="patient in Patients" data-ng-model="editedPatient ">
+						<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
+							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
+							<td>{{patient.ID}}</td>
+							<td>{{patient.FirstName}}</td>
+							<td>{{patient.LastName}}</td>
+							<td>{{patient.Gender}}</td>
+							<td>{{patient.DateOfBirth}}</td>
+							<td>{{patient.Height}}</td>
+							<td>{{patient.Weight}}</td>
+							<td>{{patient.PictureFileLocation}}</td>
+							<td>{{patient.Allergies}}</td>
+
+
+						<tr data-ng-repeat="patient in Patients" data-ng-model="editedPatient " data-ng-class="hidden">
 							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
 							<td> <input type="text" value={{patient.ID}} /> </td>
