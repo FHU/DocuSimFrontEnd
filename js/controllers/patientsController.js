@@ -1,18 +1,19 @@
 
 
 
-docuSimApp.controller('patientsController', function($scope, patientsFactory){
+docuSimApp.controller('patientsController', function($scope, $http, $location, PatientModel){
     $scope.patients = [];
 
     init();
 
     function init() {
-        $scope.patients = patientsFactory.getPatients();
+        $scope.patients = patientsFactory.getAllPatients();
     }
 
 });
 
-docuSimApp.factory('patientsFactory', function() {
+
+/*docuSimApp.factory('patientsFactory', function($scope, $http, $location, patientModel {
 
     var factory = {};
 
@@ -29,5 +30,56 @@ docuSimApp.factory('patientsFactory', function() {
     };
 
     return factory;
+
+});*/
+
+docuSimApp.factory('PatientModel', function($resource) {
+
+    var patients = [];
+    var selectedPatient = {};
+
+    var patientFactory = $resource(
+    "http://docusimapi.azurewebsites.net/api/patient/:id",
+      {
+        id : '@id', //this binds the ID of the model to the URL param
+      },
+      {
+        query : { method : 'GET', isArray : true }, //this can also be called index or all
+        save : { method : 'PUT' }, //this is the update method
+        create : { method : 'POST' },
+        destroy : { method : 'DELETE' }
+      }
+    );  
+
+    patientFactory.getAllPatients = function() {
+        patients = patientFactory.query(onSuccessFn, onFailureFn);
+        return patients;
+    };
+
+    patientFactory.getPatient = function(id) {
+        selectedPatient = patientFactory.get({id: id}, onSelectedPatientReturned, onFailure);
+        return selectedPatient;
+    }
+
+    patientFactory.getVitals = function(id) {
+        selectedPatient = patientFactory.get({id: id}, onSuccessFn, onFailure);
+        return selectedPatient.Vitals;
+    }
+
+   function onSelectedPatientReturned(newPatient) {
+        selectedPatient = newPatient;
+    }
+    
+    function onPatientsReturned(allPatients) {
+        patients = allPatients;
+    }
+
+
+    function onFailure() {
+        console.log("Error getting patient model");
+    }
+
+
+  return patientFactory;
 
 });

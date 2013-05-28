@@ -53,9 +53,8 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
         //var results = ModelName.query({ search : 'all' }, onSuccessFn, onFailureFn);
 
         //get a specific record
-        var patient = PatientModel; 
-
-        patient.get({id:3}, onSuccessFn, onFailureFn);
+        
+        getPatient();
 
         var newPatient = new PatientModel();
         newPatient.FirstName = "Cory";
@@ -63,8 +62,17 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
 
         PatientModel.create(newPatient);
 
-
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
+    }
+
+    function getPatient(id) {
+        var patient = PatientModel; 
+
+        patient.get({id:id}, onSuccessFn, onFailureFn);
+    }
+
+    function insertAssessment() {
+
     }
 
     function onSuccessFn(results) {
