@@ -40,7 +40,7 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
                 controller: 'restController',
                 templateUrl: partialViewsUrlBase +'restangularView.html'
             })
-        .when('/adminEdit/:id', 
+        .when('/adminEdit/', 
             {
                 controller: 'patientsController',
                 templateUrl: partialViewsUrlBase +'adminEditView.html'
