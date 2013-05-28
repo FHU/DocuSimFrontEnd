@@ -31,7 +31,7 @@
 						</tr>						
 					</thead>
 					<tbody>
-						<tr data-ng-repeat="patient in Patients">
+						<tr data-ng-repeat="patient in Patients" data-ng-model="selectedPatient">
 							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
 							<td>{{patient.ID}}</td>
@@ -43,6 +43,42 @@
 							<td>{{patient.Weight}}</td>
 							<td>{{patient.PictureFileLocation}}</td>
 							<td>{{patient.Allergies}}</td>
+						</tr>
+					</tbody>
+			</section>
+
+			<section class="span9 offset3" data-ng-controller="patientsController">
+				<h1>Edit Patients</h1>
+				<div class="">
+				<table class="table patientsTable">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+							<th>Patient ID</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Gender</th>
+							<th>Date of Birth</th>
+							<th>Height</th>
+							<th>Weight</th>
+							<th>Picture File Location</th>
+							<th>Allergies</th>
+						</tr>						
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="patient in Patients" data-ng-model="selectedPatient">
+							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
+							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
+							<td> <input type="text" > {{patient.ID}} </input> </td>
+							<td> <input type="text" > {{patient.FirstName}}</input> </td>
+							<td> <input type="text" > {{patient.LastName}}</input> </td>
+							<td> <input type="text" > {{patient.Gender}}</input> </td>
+							<td> <input type="text" > {{patient.DateOfBirth}}</input> </td>
+							<td> <input type="text" > {{patient.Height}}</input> </td>
+							<td> <input type="text" > {{patient.Weight}}</input> </td>
+							<td> <input type="text" > {{patient.PictureFileLocation}}</input> </td>
+							<td> <input type="text" > {{patient.Allergies}}</input> </td>
 						</tr>
 					</tbody>
 			</section>
