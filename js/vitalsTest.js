@@ -38,7 +38,7 @@ vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
 
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-vitalsTestApp.controller('vitalsController', function($scope, $http, $location, VitalsModel) { 
+vitalsTestApp.controller('vitalsController', function($scope, $http, $location, PatientModel) { 
       
     /*function init() {
         $scope.vitals = vitalsService.getVitalsForPatient(4);
@@ -53,9 +53,16 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
         //var results = ModelName.query({ search : 'all' }, onSuccessFn, onFailureFn);
 
         //get a specific record
-        var record = VitalsModel; 
+        var patient = PatientModel; 
 
-        record.get({id:3}, onSuccessFn, onFailureFn);
+        patient.get({id:3}, onSuccessFn, onFailureFn);
+
+        var newPatient = new PatientModel();
+        newPatient.FirstName = "Cory";
+        newPatient.LastName = "Dalton";
+
+        PatientModel.create(newPatient);
+
 
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
@@ -106,7 +113,7 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
 //vitalsTestApp.vitalsController.$inject = ['$scope','$http','$location','VitalsModel'];
 
 
-vitalsTestApp.factory('VitalsModel', function($resource) {
+vitalsTestApp.factory('PatientModel', function($resource) {
 
   var patient = $resource(
     "http://docusimapi.azurewebsites.net/api/patient/:id",
@@ -124,7 +131,6 @@ vitalsTestApp.factory('VitalsModel', function($resource) {
   return patient;
 
 });
-
 
 /*vitalsTestApp.service('vitalsService', function (Restangular) {
 
@@ -167,10 +173,6 @@ vitalsTestApp.factory('VitalsModel', function($resource) {
 
 
 //});
-
-
-
-
 
 vitalsTestApp.controller('NavbarController', function ($scope, $location) {
     $scope.getClass = function (path) {
