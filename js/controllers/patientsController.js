@@ -103,7 +103,7 @@ docuSimApp.factory('PatientModel', function($resource) {
 
         patientFactory.destroy({id: id});
 
-        //this.getAllPatients();
+        this.getAllPatients();
     }
 
     patientFactory.editPatient = function(id, patient) {
