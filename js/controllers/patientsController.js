@@ -10,6 +10,17 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
         $scope.Patients = PatientModel.getAllPatients();
     }
 
+    function deletePatient() {
+        console.log(this.params.id)
+
+        PatientModel.deletePatient(this.params.id);
+    }
+
+    function editPatient(id) {
+
+        PatientModel.editPatient(id, firstName, lastName, gender, age, height, weight);
+    }
+
 });
 
 
@@ -66,6 +77,10 @@ docuSimApp.factory('PatientModel', function($resource) {
         return selectedPatient.Vitals;
     }
 
+    patientFactory.deletePatient = function(id) {
+        patientFactory.destroy(id);  
+    }
+
    function onSelectedPatientReturned(newPatient) {
         selectedPatient = newPatient;
     }
@@ -74,10 +89,11 @@ docuSimApp.factory('PatientModel', function($resource) {
         patients = allPatients;
     }
 
-
     function onFailure() {
         console.log("Error getting patient model");
     }
+
+
 
 
   return patientFactory;

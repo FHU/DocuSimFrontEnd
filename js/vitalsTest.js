@@ -56,11 +56,11 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
         
         getPatient();
 
-        var newPatient = new PatientModel();
+        /*var newPatient = new PatientModel();
         newPatient.FirstName = "Cory";
         newPatient.LastName = "Dalton";
 
-        PatientModel.create(newPatient);
+        PatientModel.create(newPatient);*/
 
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
