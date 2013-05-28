@@ -70,7 +70,9 @@
 						</tr>						
 					</thead>
 					<tbody>
-						<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
+
+						<tr data-ng-repeat="patient in Patients" >
+							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
 							<td><button class="btn btn-warning" data-ng-click="editPatient({{patient.ID}})">Edit</button></td>
 							<td>{{patient.ID}}</td>
 							<td>{{patient.FirstName}}</td>
@@ -81,7 +83,7 @@
 							<td>{{patient.Weight}}</td>
 							<td>{{patient.PictureFileLocation}}</td>
 							<td>{{patient.Allergies}}</td>
-
+						</tr>
 
 						<tr data-ng-repeat="patient in Patients" data-ng-model="editedPatient " data-ng-class="hidden">
 							<td><button class="btn btn-danger" data-ng-click="deletePatient({{patient.ID}})">Delete</button></td>
