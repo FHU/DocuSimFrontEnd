@@ -16,7 +16,8 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
 
         PatientModel.deletePatient(id);
 
-        $scope.Patients = PatientModel.getAllPatients();
+        //$scope.Patients = PatientModel.getAllPatients();
+        //$scope.$apply();
     }
 
     $scope.editPatient = function(id) {
@@ -104,6 +105,8 @@ docuSimApp.factory('PatientModel', function($resource) {
         //selectedPatient.destroy();
 
         patientFactory.destroy({id: id});
+
+        patients = this.getAllPatients();
     }
 
     patientFactory.editPatient = function(id, patient) {
