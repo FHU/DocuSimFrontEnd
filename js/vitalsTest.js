@@ -4,7 +4,7 @@ vitalsTestApp.config(function ($routeProvider, RestangularProvider) {
     RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
-vitalsTestApp.controller('restController', function($scope, Restangular, vitalsService) {
+/*vitalsTestApp.controller('restController', function($scope, Restangular, vitalsService) {
 
     //$scope.patientInfo = Restangular.one("patient", 4).get();
     //console.log($scope.patientInfo);
@@ -31,7 +31,7 @@ vitalsTestApp.controller('restController', function($scope, Restangular, vitalsS
         console.log("Oops error from server :(");
     });
 
-});
+});*/
 
 
 
@@ -55,13 +55,13 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
         //get a specific record
         var record = VitalsModel; 
 
-        record.get({id:4}, onSuccessFn, onFailureFn);
+        record.get({id:3}, onSuccessFn, onFailureFn);
 
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
 
     function onSuccessFn(results) {
-        $scope.vitals = results;
+        $scope.vitals = results.Vitals;
     }
 
     function onFailureFn() {
@@ -108,8 +108,8 @@ vitalsTestApp.controller('vitalsController', function($scope, $http, $location, 
 
 vitalsTestApp.factory('VitalsModel', function($resource) {
 
-  var vitals = $resource(
-    "http://docusimapi.azurewebsites.net/api/vitals/:id",
+  var patient = $resource(
+    "http://docusimapi.azurewebsites.net/api/patient/:id",
       {
         id : '@id', //this binds the ID of the model to the URL param
       },
@@ -121,7 +121,7 @@ vitalsTestApp.factory('VitalsModel', function($resource) {
       }
   );
 
-  return vitals;
+  return patient;
 
 });
 
