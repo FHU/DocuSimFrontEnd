@@ -98,10 +98,10 @@ docuSimApp.factory('PatientModel', function($resource) {
 
     patientFactory.deletePatient = function(id) {
         console.log("Deleting patient " + id);
-        selectedPatient = patientFactory.get({id: id});
-        selectedPatient.destroy();
+        //selectedPatient = patientFactory.get({id: id});
+        //selectedPatient.destroy();
 
-        //patientFactory.destroy(id);
+        patientFactory.destroy(id);
 
         //this.getAllPatients();
     }
