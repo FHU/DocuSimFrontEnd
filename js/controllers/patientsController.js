@@ -7,7 +7,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
     init();
 
     function init() {
-        $scope.patients = patientsFactory.getAllPatients();
+        $scope.Patients = PatientModel.getAllPatients();
     }
 
 });
