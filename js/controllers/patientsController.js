@@ -58,7 +58,7 @@ var User = $resource('/user/:userId', {userId:'@id'});
     var patientFactory = $resource(
     "http://docusimapi.azurewebsites.net/api/patient/:patientId",
       {
-        patientId : '@id', //this binds the ID of the model to the URL param
+        patientId : '@id' //this binds the ID of the model to the URL param
       }/*,
       {
         query : { method : 'GET', isArray : true }, //this can also be called index or all
@@ -69,8 +69,7 @@ var User = $resource('/user/:userId', {userId:'@id'});
     );  
 
     patientFactory.getAllPatients = function() {
-        //patients = patientFactory.$query(onPatientsReturned, onFailure);
-        patients = patientFactory.$get({method:'GET', isArray:true});
+        patients = patientFactory.query(onPatientsReturned, onFailure);
         return patients;
     };
 
