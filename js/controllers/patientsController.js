@@ -52,7 +52,7 @@ docuSimApp.factory('PatientModel', function($resource) {
     );  
 
     patientFactory.getAllPatients = function() {
-        patients = patientFactory.query(onSuccessFn, onFailureFn);
+        patients = patientFactory.query(onPatientsReturned, onFailure);
         return patients;
     };
 
@@ -62,7 +62,7 @@ docuSimApp.factory('PatientModel', function($resource) {
     }
 
     patientFactory.getVitals = function(id) {
-        selectedPatient = patientFactory.get({id: id}, onSuccessFn, onFailure);
+        selectedPatient = patientFactory.get({id: id}, onSelectedPatientReturned, onFailure);
         return selectedPatient.Vitals;
     }
 
