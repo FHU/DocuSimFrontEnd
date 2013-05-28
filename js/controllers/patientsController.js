@@ -70,7 +70,7 @@ var User = $resource('/user/:userId', {userId:'@id'});
 
     patientFactory.getAllPatients = function() {
         //patients = patientFactory.$query(onPatientsReturned, onFailure);
-        patients = patientFactory.$query();
+        patients = patientFactory.$get({method:'GET', isArray:true});
         return patients;
     };
 
