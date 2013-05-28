@@ -1,0 +1,47 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- Side Navigation -->
+		<div id="SideBar" class="span3">
+    		<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
+    			<li class="active"><a href="#orders"> Physican Orders </a></li>
+    			<li><a href="#labs"> Labs </a></li>	           			
+       		</ul>
+		</div>
+		 <!-- Side Nav End -->
+
+		<!-- Patient Table -->
+		<div class="row-fluid">
+			<section class="span9 offset3" data-ng-controller="adminController">
+				<h1>Patients</h1>
+				<div class="assessmentArea">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Patient ID</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Gender</th>
+							<th>Date of Birth</th>
+							<th>Height</th>
+							<th>Weight</th>
+							<th>Picture File Location</th>
+							<th>Allergies</th>
+						</tr>						
+					</thead>
+					<tbody>
+						<tr data-ng-repeat="patient in Patients">
+							<td>{{patient.ID}}</td>
+							<td>{{patient.FirstName}}</td>
+							<td>{{patient.LastName}}</td>
+							<td>{{patient.Gender}}</td>
+							<td>{{patient.DateOfBirth}}</td>
+							<td>{{patient.Height}}</td>
+							<td>{{patient.Weight}}</td>
+							<td>{{patient.PictureFileLocation}}</td>
+							<td>{{patient.Allergies}}</td>
+						</tr>
+					</tbody>
+			</section>
+			
+
+</div> <!--end of container-fluid -->
