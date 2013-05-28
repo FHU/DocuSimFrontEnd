@@ -37,9 +37,9 @@ vitalsTestApp.controller('restController', function($scope, Restangular, vitalsS
 
 
 //***** VITALS SECTION *********************************************************************************
-vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-    
-
+//vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
+vitalsTestApp.controller('vitalsController', function($scope, $http, $location, VitalsModel) { 
+      
     /*function init() {
         $scope.vitals = vitalsService.getVitalsForPatient(4);
         //$scope.newVitals = { temp_type: ''};
@@ -48,6 +48,25 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular, vital
     init();
 
     function init() {
+
+        //list all the records on the page
+        //var results = ModelName.query({ search : 'all' }, onSuccessFn, onFailureFn);
+
+        //get a specific record
+        var record = ModelName.get({ id : 4 }, onSuccessFn, onFailureFn); 
+
+        //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
+    }
+
+    function onSuccessFn() {
+        $scope.vitals = record;
+    }
+
+    function onFailureFn() {
+        console.log("Error getting model");
+    }
+
+    /*function init() {
 
         id = 4;
         var onePatient = Restangular.one("patient", id).get().then(function(patient) {
@@ -60,7 +79,7 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular, vital
         //$scope.vitals = vitalsService.getVitals(id);
         
         $scope.newVitals = { temp_type: ''};
-    }
+    }*/
 
     /*$scope.insertVitals = function () {
         var temp = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
@@ -81,6 +100,20 @@ vitalsTestApp.controller('vitalsController', function($scope, Restangular, vital
         $('#vitals select').selectpicker('val','');
     };*/
 });
+
+//vitalsController.$inject = ['$scope','$http','$location','VitalsModel'];
+
+
+vitalsTestApp.factory('VitalsModel', ['$resource', function($resource) {
+  $resource.url('http://docusimapi.azurewebsites.net/api/vitals/:id'),{
+    id : '@id', //this binds the ID of the model to the URL param
+  },{
+    query : { method : 'GET', isArray : true }, //this can also be called index or all
+    save : { method : 'PUT' }, //this is the update method
+    create : { method : 'POST' },
+    destroy : { method : 'DELETE' }
+  }
+}]);
 
 
 vitalsTestApp.service('vitalsService', function (Restangular) {
