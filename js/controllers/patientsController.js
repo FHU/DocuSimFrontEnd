@@ -54,21 +54,23 @@ docuSimApp.factory('PatientModel', function($resource) {
     var patients = [];
     var selectedPatient = {};
 
+var User = $resource('/user/:userId', {userId:'@id'});
     var patientFactory = $resource(
-    "http://docusimapi.azurewebsites.net/api/patient/:id",
+    "http://docusimapi.azurewebsites.net/api/patient/:patientId",
       {
-        id : '@id', //this binds the ID of the model to the URL param
-      },
+        patientId : '@id', //this binds the ID of the model to the URL param
+      }/*,
       {
         query : { method : 'GET', isArray : true }, //this can also be called index or all
         save : { method : 'PUT' }, //this is the update method
         create : { method : 'POST' },
         destroy : { method : 'DELETE', params: {id: "@id"} }
-      }
+      }*/
     );  
 
     patientFactory.getAllPatients = function() {
-        patients = patientFactory.query(onPatientsReturned, onFailure);
+        //patients = patientFactory.$query(onPatientsReturned, onFailure);
+        patients = patientFactory.$query();
         return patients;
     };
 
@@ -77,7 +79,8 @@ docuSimApp.factory('PatientModel', function($resource) {
     }
 
     patientFactory.getPatient = function(id) {
-        selectedPatient = patientFactory.get({id: id}, onSelectedPatientReturned, onFailure);
+        //selectedPatient = patientFactory.$get({id: id}, onSelectedPatientReturned, onFailure);
+        selectedPatient = patientFactory.$get({id: id});
         return selectedPatient;
     }
 
@@ -97,7 +100,7 @@ docuSimApp.factory('PatientModel', function($resource) {
 
     patientFactory.deletePatient = function(id) {
         console.log("Deleting patient " + id);
-        patientFactory.destroy(id);
+        patientFactory.$delete(id);
 
         this.getAllPatients();
     }
@@ -110,7 +113,7 @@ docuSimApp.factory('PatientModel', function($resource) {
         selectedPatient = patient;
 
         //save to backend
-        patientFactory.save(selectedPatient);  
+        patientFactory.$save(selectedPatient);  
     }
 
 
