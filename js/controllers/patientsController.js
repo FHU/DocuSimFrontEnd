@@ -22,7 +22,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, P
     }
 
     $scope.addPatient = function() {
-        
+
     }
 
 });
@@ -71,35 +71,42 @@ docuSimApp.factory('PatientModel', function($resource) {
         return patients;
     };
 
+    function onSelectedPatientReturned(newPatient) {
+        selectedPatient = newPatient;
+    }
+
     patientFactory.getPatient = function(id) {
         selectedPatient = patientFactory.get({id: id}, onSelectedPatientReturned, onFailure);
         return selectedPatient;
     }
 
-    patientFactory.getVitals = function(id) {
+    function onPatientsReturned(allPatients) {
+        patients = allPatients;
+    }
+
+
+    /*patientFactory.getVitals = function(id) {
         selectedPatient = patientFactory.get({id: id}, onSelectedPatientReturned, onFailure);
         return selectedPatient.Vitals;
+    }*/
+
+    patientFactory.addPatient = function(id, patient) {
+        patientFactory.destroy(id);  
     }
 
     patientFactory.deletePatient = function(id) {
         patientFactory.destroy(id);  
     }
 
-   function onSelectedPatientReturned(newPatient) {
-        selectedPatient = newPatient;
+    patientFactory.editPatient = function(id) {
+        patientFactory.destroy(id);  
     }
-    
-    function onPatientsReturned(allPatients) {
-        patients = allPatients;
-    }
+
 
     function onFailure() {
         console.log("Error getting patient model");
     }
 
-
-
-
-  return patientFactory;
+    return patientFactory;
 
 });
