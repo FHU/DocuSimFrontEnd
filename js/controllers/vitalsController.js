@@ -1,10 +1,11 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
 docuSimApp.controller('vitalsController', function($scope, $http, $location, $resource) { 
-    init();
+    var PatientResource;
+	init();
 
     function init() {
-		$scope.PatientResource = $resource(
+		PatientResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/patient/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
