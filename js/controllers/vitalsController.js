@@ -62,7 +62,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	}
 	
     function insertAssessment(patientID) {
-		var stamp = getDateTimeForSQLServer( new Date().getTime() );
+		var stamp = new Date().getFullYear().getMonth().getDate().getHours().getMinutes().getSeconds().toString();
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
 		newVital.TimeStamp = stamp;
