@@ -67,9 +67,9 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="vital in vitals | orderBy:'id':true">
-		                	<span class="time" >{{vital.TimeStamp}}  </span> 
-							<!--<br />  
-							<span class="date" >{{vital.time | date:'M/d/yy'}}-->
+		                	<span class="time" >{{vital.TimeStamp | date: 'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{vital.TimeStamp | date:'M/d/yy'}}</span>
 		                </th>
         			</tr>
     			</thead> 
