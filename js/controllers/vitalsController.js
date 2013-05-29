@@ -49,8 +49,8 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         return PatientResource.get({id:id}, onPatientsReturned, onFailure);
     }
 
-    function onPatientsReturned(patients) {
-        $scope.vitals = patients.Vitals;
+    function onPatientsReturned(patient) {
+        $scope.vitals = patient.Vitals;
     }
 
 	/*function getVitals(id) {
