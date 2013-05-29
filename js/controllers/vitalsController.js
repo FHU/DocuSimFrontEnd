@@ -31,7 +31,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
     }
 
     function getPatient(id) {
-        return PatientResource.get({id:id});
+        return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
     function insertAssessment() {
