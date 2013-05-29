@@ -179,6 +179,10 @@ table{
 	margin-top: 25px;
 }
 
+.btn-group .btn {
+	 border-right: 1px solid #f5f5f5;
+}
+
 input[type="text"]{
 	width: 60px;
 	margin-bottom: 0;
