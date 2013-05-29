@@ -62,7 +62,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	}
 	
     function insertAssessment(patientID) {
-		var stamp = new Date().getFullYear().getMonth().getDate().getHours().getMinutes().getSeconds().toString();
+		var stamp = getDateTimeForSQLServer( new Date() );
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
 		newVital.TimeStamp = stamp;
@@ -88,7 +88,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }
 
     function getDateTimeForSQLServer(timestamp) {
-    	var timeString = '';
+    	var timeString = timestamp.getFullYear + '-' + timestamp.getMonth() + '-' + timestamp.getDay() + ' ' + timestamp.getHours() + ':' + timestamp.getMinutes() + ':' + timestamp.getSeconds();
 
     	return timeString;
 
