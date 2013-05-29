@@ -95,7 +95,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     	var timeString = timestamp.getUTCFullYear() + '-' + 
 		('00' + (timestamp.getUTCMonth() + 1)).slice(-2) + '-' +
 		('00' + timestamp.getUTCDate()).slice(-2) + ' ' + 
-		('00' + (timestamp.getUTCHours())).slice(-2) + ':' + 
+		('00' + (timestamp.getUTCHours() + timestamp.getTimezoneOffset())).slice(-2) + ':' + 
 		('00' + timestamp.getUTCMinutes()).slice(-2) + ':' +
 		('00' + timestamp.getUTCSeconds()).slice(-2);
 		

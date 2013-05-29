@@ -62,12 +62,12 @@
 	                <tr>
         			    <th></th>
 						<th ng-controller="MyClock"> 
-							<span class="time" >{{time | date:'h:mm:a'}}  </span> 
+							<span class="time" >{{time | date:'h:mm a'}}  </span> 
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{vital.TimeStamp | date: 'h:mm:a'}}  </span> 
+		                	<span class="time" >{{vital.TimeStamp | date: 'h:mm a'}}  </span> 
 							<br />  
 							<span class="date" >{{vital.TimeStamp | date:'M/d/yy'}}</span>
 		                </th>
