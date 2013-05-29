@@ -76,7 +76,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }*/
 
     function onSuccessFn(results) {
-        $scope.vitals = results;
+        $scope.vitals = results.Vitals;
     }
 
     function onFailureFn() {
