@@ -58,18 +58,18 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 	
     function insertAssessment(id) {
 		var stamp = new Date().getTime();
-		var newVital = new VitalsResource(
-			{"PatientID" : id},
-			{"TimeStamp" : stamp},
-			{"Temperature" : $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type},
-			{"HR" : $scope.newVitals.heartRate},
-			{"R" : $scope.newVitals.rate},
-			{"BP_Systolic" : $scope.newVitals.bpSystolic},
-			{"BP_Diastolic" : $scope.newVitals.bpDiastolic},
-			{"SpO2" : $scope.newVitals.spO2},
-			{"Weight" : $scope.newVitals.weight},
-			{"NurseNote" : $scope.newVitals.note}
-		);
+		var newVital = new VitalsResource();
+		newVital.PatientID = id;
+		newVital.TimeStamp = stamp;
+		newVital.Temperature = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
+		newVital.HR = $scope.newVitals.heartRate;
+		newVital.R = $scope.newVitals.rate;
+		newVital.BP_Systolic = $scope.newVitals.bpSystolic;
+		newVital.BP_Diastolic = $scope.newVitals.bpDiastolic;
+		newVital.SpO2 = $scope.newVitals.spO2;
+		newVital.Weight = $scope.newVitals.weight;
+		newVital.NurseNote = $scope.newVitals.note;
+		
 		VitalsResource.create(newVital);
 		$scope.clearVitals();
 		init();
