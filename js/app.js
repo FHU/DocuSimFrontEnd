@@ -1,8 +1,3 @@
-$(document).ready(function() {
-
-    $('select').selectpicker('val','');
-
-});
 
 var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
@@ -1122,3 +1117,9 @@ docuSimApp.service('ioService', function () {
     };
 });
 
+
+$(document).ready(function() {
+
+    $('select').selectpicker('val','');
+
+});

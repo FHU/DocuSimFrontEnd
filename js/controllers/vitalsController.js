@@ -120,7 +120,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 
    	function getOptArray(){
         return optArray;
-    };
+    }
 
     /*function init() {
 
