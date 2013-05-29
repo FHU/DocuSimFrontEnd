@@ -8,6 +8,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
     function init() {
         $scope.patients = getAllPatients();
+        $scope.selectedPatient = getPatient($routeParams.id);
     }
 
     var patientResource = $resource(
@@ -37,7 +38,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
     function getPatient(id) {
         //selectedPatient = patientFactory.$get({id: id}, onSelectedPatientReturned, onFailure);
-        selectedPatient = patientResource.$get({id: id});
+        var selectedPatient = patientResource.$get({id: id});
         return selectedPatient;
     }
 
