@@ -6365,9 +6365,9 @@ div.subnav .nav > .active > a:hover {
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
-  -webkit-transition: 0.25s;
-     -moz-transition: 0.25s;
-          transition: 0.25s;
+  -webkit-transition: 0.1s; /* Changed from 0.25*/
+     -moz-transition: 0.1s;
+          transition: 0.1s;
 }
 
 .btn:hover,
