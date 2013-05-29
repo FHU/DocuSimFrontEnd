@@ -25,7 +25,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
       }
     );  
 
-    getAllPatients() {
+    function getAllPatients() {
         //var patients = patientResource.query(onPatientsReturned, onFailure);
         var patients = patientResource.query();
         return patients;
@@ -35,7 +35,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
         selectedPatient = newPatient;
     }*/
 
-    getPatient(id) {
+    function getPatient(id) {
         //selectedPatient = patientFactory.$get({id: id}, onSelectedPatientReturned, onFailure);
         selectedPatient = patientResource.$get({id: id});
         return selectedPatient;
@@ -47,7 +47,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
 
 
-    $scope.deletePatient = function(id) {
+    /*$scope.deletePatient = function(id) {
         //console.log(id);
 
         //patientResource.deletePatient(id);
@@ -63,7 +63,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
     $scope.addPatient = function() {
 
-    }
+    }*/
 
 });
 
