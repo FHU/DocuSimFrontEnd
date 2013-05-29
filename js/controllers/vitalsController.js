@@ -92,12 +92,12 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }
 
     function getDateTimeForSQLServer(timestamp) {
-    	var timeString = timestamp.getFullYear() + '-' + 
-		('00' + (timestamp.getMonth() + 1)).slice(-2) + '-' +
-		('00' + timestamp.getDate()).slice(-2) + ' ' + 
-		('00' + (timestamp.getHours())).slice(-2) + ':' + 
-		('00' + timestamp.getMinutes()).slice(-2) + ':' +
-		('00' + timestamp.getSeconds()).slice(-2);
+    	var timeString = timestamp.getUTCFullYear() + '-' + 
+		('00' + (timestamp.getUTCMonth() + 1)).slice(-2) + '-' +
+		('00' + timestamp.getUTCDate()).slice(-2) + ' ' + 
+		('00' + (timestamp.getUTCHours())).slice(-2) + ':' + 
+		('00' + timestamp.getUTCMinutes()).slice(-2) + ':' +
+		('00' + timestamp.getUTCSeconds()).slice(-2);
 		
 		
 		
