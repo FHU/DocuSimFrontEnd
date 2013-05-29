@@ -22,7 +22,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 		  $scope.vitals = $scope.patient.Vitals;*/
 		  
 		  VitalsResource = $resource(
-			"http://docusimapi.azurewebsites.net/api/Vitals/:id",
+			"http://docusimapi.azurewebsites.net/api/vitals/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
 			  },
@@ -52,7 +52,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
-	function insertVitals(){
+	/*function insertVitals(){
 		insertAssessment($routeParams.id);
 	}
 	
@@ -70,10 +70,10 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 		newVital.Weight = $scope.newVitals.weight;
 		newVital.NurseNote = $scope.newVitals.note;
 		
-		VitalsResource.post(newVital);
+		VitalsResource.creat(newVital);
 		//$scope.clearVitals();
 		//init();
-    }
+    }*/
 
     function onSuccessFn(results) {
         $scope.vitals = results;
