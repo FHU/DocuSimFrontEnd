@@ -76,34 +76,34 @@
 				<tbody>
         			<tr>
         				<td>Temp</td>
-						<td><input pattern="[0-9]*" data-ng-model="newVitals.temp_num"/>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.temp_num"/>
 							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bt-select></select></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}}</td>
 	                </tr>
 	                <tr>
 		                <td>HR</td>
-						<td><input pattern="[0-9]*" data-ng-model="newVitals.heartRate"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.heartRate"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.HR}}</td>
         			</tr>
         			<tr>
         				<td>R</td>
-        				<td><input type="number" pattern="[0-9]*" data-ng-model="newVitals.rate"/></td>
+        				<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.rate"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.R}}</td>
         			</tr>
 					<tr>
         				<td>BP(systolic/diastolic)</td>
-						<td><input type="number" pattern="[0-9]*" data-ng-model="newVitals.bpSystolic"/>
-							<input type="number" pattern="[0-9]*" data-ng-model="newVitals.bpDiastolic"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.bpSystolic"/>
+							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.bpDiastolic"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
         			</tr>
 					<tr>
         				<td>SpO<sub>2</sub></td>
-						<td><input type="number" pattern="[0-9]*" data-ng-model="newVitals.spO2"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.spO2"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.SpO2}}</td>
         			</tr>
         			<tr>
 		                <td>Weight</td>
-						<td><input type="number" pattern="[0-9]*" data-ng-model="newVitals.weight"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.weight"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Weight}}</td>
         			</tr>
 					<tr>
