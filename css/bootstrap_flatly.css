@@ -3787,7 +3787,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .btn .caret {
-  margin-top: 8px;
+  margin-top: 12px; /* was 8px*/
   margin-left: 0;
 }
 
