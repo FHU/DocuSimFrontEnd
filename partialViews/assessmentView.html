@@ -111,7 +111,7 @@
 							Nurse's Note:
 							<textarea class="nurseNote"> </textarea>
 						</td>
-						<td>
+						<td data-ng-repeat="vital in vitals | orderBy: 'id':true">
 							<a href="#noteModal" role="button" class="noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 
 
 							<!-- Modal -->
@@ -121,7 +121,7 @@
 							    <h3 id="myModalLabel">Nurse's Note</h3>
 							  </div>
 							  <div class="modal-body">
-							    <p>The patient's bp was incredibly high. Is that bad?</p>
+							    <p>{{vital.NurseNote}}</p>
 							  </div>
 							  <div class="modal-footer">
 							    <button class="btn" data-dismiss="modal" aria-hidden="true"> Close </button>
@@ -130,12 +130,13 @@
 							</div>
 
 						</td>
+						<!--
 						<td> </td>
 						<td> </td>
 						<td> 
 							<a href="#noteModal2" role="button" class="noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 
 
-							<!-- Modal -->
+							<!-- Modal
 							<div id="noteModal2" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							  <div class="modal-header">
 							    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -150,7 +151,7 @@
 							  </div>
 							</div>
 						</td>
-						<td> </td>
+						<td> </td>-->
 					</tr>
       			</tbody>
     		</table>
