@@ -6,8 +6,6 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
     $scope.patients = [];
     $scope.selectedPatient = {};
 
-    init();
-
     function init() {
         $scope.patients = getAllPatients();
     }
@@ -24,6 +22,8 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
         destroy : { method : 'DELETE'}
       }
     );  
+
+    init();
 
     function getAllPatients() {
         //var patients = patientResource.query(onPatientsReturned, onFailure);
