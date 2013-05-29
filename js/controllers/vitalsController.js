@@ -57,10 +57,10 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 	}
 	
     function insertAssessment(id) {
-		var now = new Date().getTime();
+		var stamp = new Date().getTime();
 		var newVital = new VitalsResource({
 			PatientID : id;
-			TimeStamp : now;
+			TimeStamp : stamp;
 			Temperature : $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
 			HR : $scope.newVitals.heartRate;
 			R : $scope.newVitals.rate;
