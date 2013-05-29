@@ -18,7 +18,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 			  }
 		  );
         
-        $scope.patient = getPatient(4);
+        $scope.patient = getPatient(id);
 		$scope.vitals = $scope.patient.Vitals;
 
         /*var newPatient = new PatientModel();
