@@ -1,6 +1,6 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-docuSimApp.controller('vitalsController', function($scope, $http, $location, $resource, $routeParams) { 
+docuSimApp.controller('vitalsController', function($scope, $http, $resource, $routeParams) { 
     var VitalsResource;
 	init();
 
@@ -49,7 +49,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
     }*/
 	function getVitals(id) {
-        return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
+        return VitalsResource.get({PatientID:id}, onSuccessFn, onFailureFn);
     }
 
 	/*function insertVitals(){
