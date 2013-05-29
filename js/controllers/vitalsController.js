@@ -66,7 +66,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		var stampString = getDateTimeForSQLServer(now);
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
-		newVital.TimeStamp = stamp;
+		newVital.TimeStamp = stampString;
 		newVital.Temperature = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
 		newVital.HR = $scope.newVitals.heartRate;
 		newVital.R = $scope.newVitals.rate;
