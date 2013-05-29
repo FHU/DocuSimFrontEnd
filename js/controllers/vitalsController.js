@@ -57,7 +57,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }*/
 
-	/*function insertVitals(){
+	function insertVitals(){
 		insertAssessment($routeParams.id);
 	}
 	
@@ -76,9 +76,9 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		newVital.NurseNote = $scope.newVitals.note;
 		
 		VitalsResource.creat(newVital);
-		//$scope.clearVitals();
+		$scope.clearVitals();
 		//init();
-    }*/
+    }
 
 
     function onFailure() {
