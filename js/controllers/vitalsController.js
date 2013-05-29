@@ -80,13 +80,20 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 
 		VitalsResource.create(newVital);
 
-		$scope.clearVitals();
+		//$scope.clearVitals();
 		//init();
     }
 
 
     function onFailure() {
         console.log("Error getting model");
+    }
+
+    function getDateTimeForSQLServer(timestamp) {
+    	var timeString = '';
+
+    	return timeString;
+
     }
 
     /*function init() {
