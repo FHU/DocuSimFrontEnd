@@ -21,7 +21,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		  $scope.patient = getPatient($routeParams.id);
 		  $scope.vitals = $scope.patient.Vitals;
 		  
-		 /* VitalsResource = $resource(
+		 VitalsResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/vitals/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
@@ -32,7 +32,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 				create : { method : 'POST' },
 				destroy : { method : 'DELETE' }
 			  }
-		  );*/
+		  );
         
         //$scope.vitals = getVitals($routeParams.id);
 
@@ -61,10 +61,10 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		insertAssessment($routeParams.id);
 	}
 	
-    function insertAssessment(id) {
+    function insertAssessment(patientID) {
 		var stamp = new Date().getTime();
 		var newVital = new VitalsResource();
-		newVital.PatientID = id;
+		newVital.PatientID = patientID;
 		newVital.TimeStamp = stamp;
 		newVital.Temperature = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
 		newVital.HR = $scope.newVitals.heartRate;
@@ -75,10 +75,11 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		newVital.Weight = $scope.newVitals.weight;
 		newVital.NurseNote = $scope.newVitals.note;
 		
-		$scope.patient.Vitals.push(newVital);
-		$scope.patient.save();
+		/*$scope.patient.Vitals.push(newVital);
+		$scope.patient.save();*/
 
-		//VitalsResource.create(newVital);
+		VitalsResource.create(newVital);
+
 		$scope.clearVitals();
 		//init();
     }
