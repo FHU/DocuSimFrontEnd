@@ -109,7 +109,7 @@ function MyClock($scope, $timeout) {
 
 
 //***** VITALS SECTION *********************************************************************************
-docuSimApp.controller('vitalsController', function($scope, vitalsService){
+/*docuSimApp.controller('vitalsController', function($scope, vitalsService){
     init();
 
     function init() {
@@ -178,7 +178,7 @@ docuSimApp.service('vitalsService', function () {
             {id: 'Tympanic', name: 'Tympanic'}
         ]
     };
-});
+});*/
 
 
 
