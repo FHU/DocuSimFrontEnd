@@ -19,18 +19,18 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
             })
         //Define a route that has a route parameter in it (:customerID)
         //.when('/assessments/:patientID',
-        .when('/assessments',
+        .when('/assessments/:id',
             {
                 controller: 'assessmentsController',
                 templateUrl: partialViewsUrlBase +'assessmentView.html'
             })
         //Define a route that has a route parameter in it (:customerID)
-        .when('/orders',
+        .when('/orders/:id',
             {
                 controller: 'ordersController',
                 templateUrl: partialViewsUrlBase +'ordersView.html'
             })
-        .when('/history',
+        .when('/history/:id',
             {
                 controller: 'historyViewController',
                 templateUrl: partialViewsUrlBase +'historyView.html'
