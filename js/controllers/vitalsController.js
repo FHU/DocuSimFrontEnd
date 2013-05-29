@@ -1,11 +1,11 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
 docuSimApp.controller('vitalsController', function($scope, $http, $resource, $routeParams) { 
-    var VitalsResource;
+    var PatientResource;
 	init();
 
     function init() {
-		/*PatientResource = $resource(
+		PatientResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/patient/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
@@ -16,12 +16,12 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 				create : { method : 'POST' },
 				destroy : { method : 'DELETE' }
 			  }
-		  );*/
+		  );
 		  
-		  /*$scope.patient = getPatient($routeParams.id);
-		  $scope.vitals = $scope.patient.Vitals;*/
+		  $scope.patient = getPatient($routeParams.id);
+		  $scope.vitals = $scope.patient.Vitals;
 		  
-		  VitalsResource = $resource(
+		 /* VitalsResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/vitals/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
@@ -32,9 +32,9 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 				create : { method : 'POST' },
 				destroy : { method : 'DELETE' }
 			  }
-		  );
+		  );*/
         
-        $scope.vitals = getVitals($routeParams.id);
+        //$scope.vitals = getVitals($routeParams.id);
 
         /*var newPatient = new PatientModel();
         newPatient.FirstName = "Cory";
@@ -45,12 +45,12 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
 
-    /*function getPatient(id) {
+    function getPatient(id) {
         return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
-    }*/
-	function getVitals(id) {
-        return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
+	/*function getVitals(id) {
+        return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
+    }*/
 
 	/*function insertVitals(){
 		insertAssessment($routeParams.id);
