@@ -62,7 +62,8 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	}
 	
     function insertAssessment(patientID) {
-		var stamp = getDateTimeForSQLServer( new Date() );
+		var now = new Date();
+		var stampString = getDateTimeForSQLServer(now);
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
 		newVital.TimeStamp = stamp;
@@ -75,13 +76,14 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		newVital.Weight = $scope.newVitals.weight;
 		newVital.NurseNote = $scope.newVitals.note;
 
+		//Add vital array to backend model.
 		VitalsResource.create(newVital);
-		//$scope.vitals.push(newVital);
-		$scope.patient = getPatient(patientID);
-		$scope.vitals = $scope.patient.Vitals;
 		
-		//$scope.clearVitals();
-		//init();
+		//Add vital array to frontend model.
+		newVital.TimeStamp = now;
+		$scope.vitals.push(newVital);
+
+		$scope.clearVitals();
     }
 
 
