@@ -95,9 +95,11 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     	var timeString = timestamp.getFullYear() + '-' + 
 		('00' + (timestamp.getMonth() + 1)).slice(-2) + '-' +
 		('00' + timestamp.getDate()).slice(-2) + ' ' + 
-		('00' + timestamp.getHours()).slice(-2) + ':' + 
+		('00' + timestamp.getHours() - 5).slice(-2) + ':' + 
 		('00' + timestamp.getMinutes()).slice(-2) + ':' +
 		('00' + timestamp.getSeconds()).slice(-2);
+		
+		
 		
     	return timeString.toString();
     }
