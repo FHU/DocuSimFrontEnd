@@ -1,28 +1,63 @@
 
 
 
-docuSimApp.controller('patientsController', function($scope, $http, $location, PatientModel){
+docuSimApp.controller('patientsController', function($scope, $http, $location, $resource){
+
     $scope.patients = [];
     $scope.selectedPatient = {};
 
     init();
 
     function init() {
-        $scope.Patients = PatientModel.getAllPatients();
+        $scope.patients = getAllPatients();
     }
 
+    var patientResource = $resource(
+    "http://docusimapi.azurewebsites.net/api/patient/:patientId",
+      {
+        patientId : '@id' //this binds the ID of the model to the URL param
+      },
+      {
+        query : { method : 'GET', isArray : true }, //this can also be called index or all
+        save : { method : 'PUT', params: {id: "@id"}}, //this is the update method
+        create : { method : 'POST' },
+        destroy : { method : 'DELETE'}
+      }
+    );  
+
+    getAllPatients() {
+        var patients = patientResource.query(onPatientsReturned, onFailure);
+        return patients;
+    };
+
+    /*function onSelectedPatientReturned(newPatient) {
+        selectedPatient = newPatient;
+    }*/
+
+    getPatient(id) {
+        //selectedPatient = patientFactory.$get({id: id}, onSelectedPatientReturned, onFailure);
+        selectedPatient = patientResource.$get({id: id});
+        return selectedPatient;
+    }
+
+    /*function onPatientsReturned(allPatients) {
+        patients = allPatients;
+    }*/
+
+
+
     $scope.deletePatient = function(id) {
-        console.log(id);
+        //console.log(id);
 
-        PatientModel.deletePatient(id);
+        //patientResource.deletePatient(id);
 
-        //$scope.Patients = PatientModel.getAllPatients();
+        //$scope.Patients = patientResource.getAllPatients();
         //$scope.$apply();
     }
 
     $scope.editPatient = function(id) {
 
-        PatientModel.editPatient(id, $scope.selectedPatient);
+        //patientResource.editPatient(id, $scope.selectedPatient);
     }
 
     $scope.addPatient = function() {
