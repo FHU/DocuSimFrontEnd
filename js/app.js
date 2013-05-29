@@ -4,7 +4,6 @@ $(document).ready(function() {
 
 });
 
-
 var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
 var partialViewsUrlBase = '/partialViews/' ;

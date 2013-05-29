@@ -112,10 +112,12 @@
 							<textarea class="nurseNote" data-ng-model="newVitals.note"> </textarea>
 						</td>
 						<td data-ng-repeat="vital in vitals | orderBy: 'id':true">
-							<a href="#noteModal" role="button" class="noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 
+							<button type="button" class="noteButton" bs-modal="'partials/modal.html'"> <i class="icon-file"></i> </button>
+ 
+							<!--<a href="#noteModal" class="noteButton" bs-modal="'partialViews/modalView.html'">  </a> -->
 
 							<!-- Modal -->
-							<div id="noteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<!--<div id="noteModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							  <div class="modal-header">
 							    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 							    <h3 id="myModalLabel">Nurse's Note</h3>
@@ -127,7 +129,7 @@
 							    <button class="btn" data-dismiss="modal" aria-hidden="true"> Close </button>
 							    <button class="btn btn-primary" data-dismiss="modal"> OK </button>
 							  </div>
-							</div>
+							</div>-->
 
 						</td>
 						<!--
