@@ -1,7 +1,7 @@
 
 
 
-docuSimApp.controller('patientsController', function($scope, $http, $location, $resource){
+docuSimApp.controller('patientsController', function($scope, $http, $location, $resource, $routeParams){
 
     $scope.patients = [];
     $scope.selectedPatient = {};
