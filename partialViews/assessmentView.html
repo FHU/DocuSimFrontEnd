@@ -19,9 +19,9 @@
 
 		<!-- Patient/Scenario Block -->
 		<section id="scenario" class="span9 ">
-			<div class="hero-unit" data-ng-controller="patientController">
+			<div class="hero-unit" data-ng-controller="patientsController">
 				<div class="row-fluid">
-					<h2>{{patient.FirstName}} {{patient.LastName}} <span class="pull-right">{{patient.LastName}}</span></h2>
+					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} <span class="pull-right">{{selectedPatient.ID}}</span></h2>
 				</div>
 				<hr>
 				<div class="row-fluid">
