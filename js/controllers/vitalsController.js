@@ -74,11 +74,9 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		newVital.SpO2 = $scope.newVitals.spO2;
 		newVital.Weight = $scope.newVitals.weight;
 		newVital.NurseNote = $scope.newVitals.note;
-		
-		/*$scope.patient.Vitals.push(newVital);
-		$scope.patient.save();*/
 
 		VitalsResource.create(newVital);
+		$scope.vitals.push(newVital);
 
 		//$scope.clearVitals();
 		//init();
