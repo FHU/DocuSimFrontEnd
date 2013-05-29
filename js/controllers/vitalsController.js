@@ -20,7 +20,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		  
 		  $scope.patient = getPatient($routeParams.id);
 		  $scope.vitals = $scope.patient.Vitals;
-		  $scope.vitalsOpts = getOptArray();
 		  
 		 VitalsResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/vitals/:id",
@@ -109,7 +108,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     };
 
     //***** DropDowns **********************
-    var optArray = {
+    $scope.vitalsOpts = {
         temp: [
             {id: 'Oral', name: 'Oral'},
             {id: 'Rectal', name: 'Rectal'},
@@ -117,10 +116,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
             {id: 'Tympanic', name: 'Tympanic'}
         ]
     };
-
-   	function getOptArray(){
-        return optArray;
-    }
 
     /*function init() {
 
