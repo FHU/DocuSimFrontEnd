@@ -26,9 +26,10 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
     );  
 
     getAllPatients() {
-        var patients = patientResource.query(onPatientsReturned, onFailure);
+        //var patients = patientResource.query(onPatientsReturned, onFailure);
+        var patients = patientResource.query();
         return patients;
-    };
+    }
 
     /*function onSelectedPatientReturned(newPatient) {
         selectedPatient = newPatient;
