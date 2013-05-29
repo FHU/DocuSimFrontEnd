@@ -39,7 +39,7 @@
 				<tbody>
 
 					<tr data-ng-repeat="patient in patients">
-						<td> <a href="assessment.html" > {{patient.FirstName}} {{patient.LastName}} </a> </td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.FirstName}} {{patient.LastName}} </a> </td>
 						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.ID}} </a></td>
 						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.Gender}} </a></td>
 						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.DateOfBirth}} </a></td>
