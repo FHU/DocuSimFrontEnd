@@ -10,10 +10,11 @@
 		<!-- Side Nav End -->
 
 		<!-- Patient/Scenario Block -->
+				<!-- Patient/Scenario Block -->
 		<section id="scenario" class="span9 ">
-			<div class="hero-unit">
+			<div class="hero-unit" data-ng-controller="patientsController">
 				<div class="row-fluid">
-					<h2>Carl Shapiro<span class="pull-right">0639</span></h2>
+					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} <span class="pull-right">{{selectedPatient.ID}}</span></h2>
 				</div>
 				<hr>
 				<div class="row-fluid">
@@ -22,12 +23,12 @@
 						<table class="table table-condensed">
 							<tbody>
     							<tr>
-    								<td><strong>Age:</strong> 54</td>
-    								<td><strong>Height:</strong> 69 in</td>
+    								<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
+    								<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
         						</tr>
     	    					<tr>
-        							<td><strong>Gender:</strong> Male</td>
-    								<td><strong>Weight:</strong> 110 kg</td>
+        							<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
+    								<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
     							</tr>
     							<tr>
     						</tbody>
