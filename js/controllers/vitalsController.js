@@ -20,6 +20,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		  
 		  $scope.patient = getPatient($routeParams.id);
 		  $scope.vitals = $scope.patient.Vitals;
+		  $scope.vitalsOpts = getOptArray();
 		  
 		 VitalsResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/vitals/:id",
@@ -87,7 +88,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		$scope.clearVitals();
     }
 
-
     function onFailure() {
         console.log("Error getting model");
     }
@@ -102,6 +102,25 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		
     	return timeString.toString();
     }
+
+    $scope.clearVitals = function () {
+        $scope.newVitals= '';
+        $('#vitals select').selectpicker('val','');
+    };
+
+    //***** DropDowns **********************
+    var optArray = {
+        temp: [
+            {id: 'Oral', name: 'Oral'},
+            {id: 'Rectal', name: 'Rectal'},
+            {id: 'Axillary', name: 'Axillary'},
+            {id: 'Tympanic', name: 'Tympanic'}
+        ]
+    };
+
+   	getOptArray = function(){
+        return optArray;
+    };
 
     /*function init() {
 
@@ -132,8 +151,5 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         init();
     };*/
 
-    $scope.clearVitals = function () {
-        $scope.newVitals= '';
-        $('#vitals select').selectpicker('val','');
-    };
+
 });
