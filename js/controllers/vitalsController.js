@@ -118,7 +118,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         ]
     };
 
-   	getOptArray = function(){
+   	function getOptArray(){
         return optArray;
     };
 
