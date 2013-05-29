@@ -70,7 +70,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 		newVital.Weight = $scope.newVitals.weight;
 		newVital.NurseNote = $scope.newVitals.note;
 		
-		VitalsResource.create(newVital);
+		VitalsResource.post(newVital);
 		//$scope.clearVitals();
 		//init();
     }
