@@ -46,8 +46,13 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }
 
     function getPatient(id) {
-        return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
+        return PatientResource.get({id:id}, onPatientsReturned, onFailure);
     }
+
+    function onPatientsReturned(results) {
+        $scope.vitals = results.Vitals;
+    }
+
 	/*function getVitals(id) {
         return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }*/
@@ -75,11 +80,8 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		//init();
     }*/
 
-    function onSuccessFn(results) {
-        $scope.vitals = results.Vitals;
-    }
 
-    function onFailureFn() {
+    function onFailure() {
         console.log("Error getting model");
     }
 
