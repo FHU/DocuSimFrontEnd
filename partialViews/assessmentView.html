@@ -109,7 +109,7 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newVitals.note"> </textarea>
 						</td>
 						<td data-ng-repeat="vital in vitals | orderBy: 'id':true">
 							<a href="#noteModal" role="button" class="noteButton" data-toggle="modal"> <i class="icon-file"></i> </a> 

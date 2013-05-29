@@ -52,8 +52,22 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
-    function insertAssessment() {
-
+    function insertAssessment(id) {
+		var newVital = new VitalsResource({
+			PatientID : id;
+			TimeStamp : new Date().getTime();
+			Temperature : $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
+			HR : $scope.newVitals.heartRate;
+			R : $scope.newVitals.rate;
+			BP_Systolic : $scope.newVitals.bpSystolic;
+			BP_Diastolic : $scope.newVitals.bpDiastolic;
+			SpO2 : $scope.newVitals.spO2;
+			Weight : $scope.newVitals.weight;
+			NurseNote : $scope.newVitals.note;
+		});
+		VitalsResource.create(newVital);
+		$scope.clearVitals();
+		init();
     }
 
     function onSuccessFn(results) {
@@ -79,7 +93,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         $scope.newVitals = { temp_type: ''};
     }*/
 
-    $scope.insertVitals = function () {
+    /*$scope.insertVitals = function () {
         var temp = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
         var heartRate = $scope.newVitals.heartRate;
         var rate = $scope.newVitals.rate;
@@ -91,7 +105,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         vitalsService.insertVitals(temp, heartRate, rate, bpSystolic, bpDiastolic, spO2, weight, time);
         $scope.clearVitals();
         init();
-    };
+    };*/
 
     $scope.clearVitals = function () {
         $scope.newVitals= '';
