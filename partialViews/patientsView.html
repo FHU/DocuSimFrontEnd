@@ -40,11 +40,11 @@
 
 					<tr data-ng-repeat="patient in patients">
 						<td> <a href="assessment.html" > {{patient.FirstName}} {{patient.LastName}} </a> </td>
-						<td> <a href="assessment.html" > {{patient.ID}} </a></td>
-						<td> <a href="assessment.html" > {{patient.Gender}} </a></td>
-						<td> <a href="assessment.html" > {{patient.DateOfBirth}} </a></td>
-						<td> <a href="assessment.html" > {{patient.Height}}" </a></td>
-						<td> <a href="assessment.html" > {{patient.Weight}} kg </a></td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.ID}} </a></td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.Gender}} </a></td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.DateOfBirth}} </a></td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.Height}}" </a></td>
+						<td> <a href="#/assessment/{{patient.ID}}" > {{patient.Weight}} kg </a></td>
 					</tr> 
 					
 				</tbody>
