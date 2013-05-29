@@ -27,7 +27,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
     function getAllPatients() {
         //var patients = patientResource.query(onPatientsReturned, onFailure);
-        var patients = patientResource.query();
+        var patients = patientResource.all();
         return patients;
     }
 
