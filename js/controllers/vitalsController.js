@@ -1,6 +1,6 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
-docuSimApp.controller('vitalsController', function($scope, $http, $location, $resource) { 
+docuSimApp.controller('vitalsController', function($scope, $http, $location, $resource, $routeParams) { 
     var PatientResource;
 	init();
 
@@ -18,7 +18,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 			  }
 		  );
         
-        $scope.patient = getPatient(id);
+        $scope.patient = getPatient($routeParams.id);
 		$scope.vitals = $scope.patient.Vitals;
 
         /*var newPatient = new PatientModel();
