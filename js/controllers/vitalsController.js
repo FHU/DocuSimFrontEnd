@@ -1,12 +1,28 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
 docuSimApp.controller('vitalsController', function($scope, $http, $location, $resource, $routeParams) { 
-    var PatientResource;
+    var VitalsResource;
 	init();
 
     function init() {
-		PatientResource = $resource(
+		/*PatientResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/patient/:id",
+			  {
+				id : '@id', //this binds the ID of the model to the URL param
+			  },
+			  {
+				query : { method : 'GET', isArray : true }, //this can also be called index or all
+				save : { method : 'PUT' }, //this is the update method
+				create : { method : 'POST' },
+				destroy : { method : 'DELETE' }
+			  }
+		  );*/
+		  
+		  /*$scope.patient = getPatient($routeParams.id);
+		  $scope.vitals = $scope.patient.Vitals;*/
+		  
+		  VitalsResource = $resource(
+			"http://docusimapi.azurewebsites.net/api/Vitals/:id",
 			  {
 				id : '@id', //this binds the ID of the model to the URL param
 			  },
@@ -18,8 +34,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
 			  }
 		  );
         
-        $scope.patient = getPatient($routeParams.id);
-		$scope.vitals = $scope.patient.Vitals;
+        $scope.vitals = getVitals($routeParams.id);
 
         /*var newPatient = new PatientModel();
         newPatient.FirstName = "Cory";
@@ -30,8 +45,11 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         //onSuccessFn and onFailureFn are optional callback functions where you can further customize the response
     }
 
-    function getPatient(id) {
+    /*function getPatient(id) {
         return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
+    }*/
+	function getVitals(id) {
+        return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
     function insertAssessment() {
@@ -39,7 +57,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
     }
 
     function onSuccessFn(results) {
-        $scope.vitals = results.Vitals;
+        $scope.vitals = results;
     }
 
     function onFailureFn() {
@@ -61,7 +79,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         $scope.newVitals = { temp_type: ''};
     }*/
 
-    /*$scope.insertVitals = function () {
+    $scope.insertVitals = function () {
         var temp = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
         var heartRate = $scope.newVitals.heartRate;
         var rate = $scope.newVitals.rate;
@@ -78,5 +96,5 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
     $scope.clearVitals = function () {
         $scope.newVitals= '';
         $('#vitals select').selectpicker('val','');
-    };*/
+    };
 });
