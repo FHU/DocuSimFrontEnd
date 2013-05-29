@@ -6373,9 +6373,9 @@ div.subnav .nav > .active > a:hover {
 .btn:hover,
 .btn:focus {
   color: white;
-  -webkit-transition: 0.25s;
-     -moz-transition: 0.25s;
-          transition: 0.25s;
+  -webkit-transition: 0.1s; /* Changed from 0.25*/
+     -moz-transition: 0.1s;
+          transition: 0.1s;
 }
 
 .btn:active,
