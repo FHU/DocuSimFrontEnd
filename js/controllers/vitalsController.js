@@ -52,7 +52,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
         return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
-	function invsertVitals(){
+	function insertVitals(){
 		insertAssessment($routParams.id);
 	}
 	
