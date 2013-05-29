@@ -53,7 +53,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $location, $re
     }
 
 	function insertVitals(){
-		insertAssessment($routParams.id);
+		insertAssessment($routeParams.id);
 	}
 	
     function insertAssessment(id) {
