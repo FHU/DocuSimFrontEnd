@@ -77,7 +77,13 @@
         			<tr>
         				<td>Temp</td>
 						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.temp_num"/>
-							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select></td>
+							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
+
+							<div class="btn-group" ng-model="newVitals.temp_type" bs-buttons-radio>
+              					<button ng-repeat="value.id as value.name for (key, value) in vitalsOpts.temp" type="button" class="btn" value="{{value.id}}" ng-bind-html-unsafe="value.name"></button>
+            				</div>
+
+						</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}}</td>
 	                </tr>
 	                <tr>
