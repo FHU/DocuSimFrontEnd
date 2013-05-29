@@ -149,7 +149,7 @@
     			<tbody>
         			<tr>
         				<td>Pupils - Right</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newNeurological.ppRight_num"/>
+						<td><input type="text" pattern="[0-9]*" ng-model="newNeurological.ppRight_num"/>
 							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
 									<button type="button" class="btn" value="+">+</button>
 									<button type="button" class="btn" value="+">-</button>
@@ -160,7 +160,7 @@
 	                <tr>
 		                <td>Pupils - Left</td>
 						<td>
-							<input type="number" pattern="[0-9]*" ng-model="newNeurological.ppLeft_num"/>
+							<input type="text" pattern="[0-9]*" ng-model="newNeurological.ppLeft_num"/>
 							<div class="btn-group" ng-model="newNeurological.ppLeft_sign" bs-buttons-radio>
 									<button class="btn" value="+">+</button>
 									<button class="btn" value="-">-</button>
@@ -825,21 +825,21 @@
     			<tbody>
 					<tr>
 		                <td>Intake - PO</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.intakePO"/></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.intakePO"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakePO}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - Tube</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.intakeTube"/>
-							<input type="number" pattern="[0-9]*"/></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.intakeTube"/>
+							<input type="text" pattern="[0-9]*"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakeTube}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - IV(s)</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.intakeIV"/>
-							<input type="number" pattern="[0-9]*" />
-							<input type="number" pattern="[0-9]*" />
-							<input type="number" pattern="[0-9]*" /></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.intakeIV"/>
+							<input type="text" pattern="[0-9]*" />
+							<input type="text" pattern="[0-9]*" />
+							<input type="text" pattern="[0-9]*" /></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.intakeIV}}</td>
         			</tr>
 					<tr>
@@ -849,23 +849,23 @@
         			</tr>
 					<tr>
 		                <td>Output - Emesis</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.outputEmesis"/>
-							<input type="number" pattern="[0-9]*" /></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.outputEmesis"/>
+							<input type="text" pattern="[0-9]*" /></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputEmesis}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Urine</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.outpuetUrine"/></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.outpuetUrine"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputUrine}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Stool Colostomy/Fecal Pouch</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.outputStool"/></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.outputStool"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputStool}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Chest Tube Drainage</td>
-						<td><input type="number" pattern="[0-9]*" ng-model="newIo.outputChestTube"/></td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newIo.outputChestTube"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'id':true">{{i.outputChestTube}}</td>
         			</tr>
 					<tr>
