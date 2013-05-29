@@ -49,7 +49,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         return PatientResource.get({id:id}, onSuccessFn, onFailureFn);
     }*/
 	function getVitals(id) {
-        return VitalsResource.get({PatientID:id}, onSuccessFn, onFailureFn);
+        return VitalsResource.get({id:id}, onSuccessFn, onFailureFn);
     }
 
 	/*function insertVitals(){
