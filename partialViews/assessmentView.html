@@ -116,7 +116,6 @@
 						</td>
 						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
 							<a href="#/assessments/{{vital.PatientID}}" 
-							type="button" 
 							class="noteButton" 
 							bs-modal="'partialViews/modalView.html'" 
 							data-ng-class="(!vital.NurseNote)? 'hidden' : ''"
@@ -166,7 +165,7 @@
 									<button type="button" class="btn" value="+">-</button>
 							</div>
 						</td>
-		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.Pupil_R}}</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Pupil_R}}</td>
 	                </tr>
 	                <tr>
 		                <td>Pupils - Left</td>
@@ -177,72 +176,78 @@
 									<button class="btn" value="-">-</button>
 							</div>
 						</td>
-		                <td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.Pupil_L}}</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Pupil_L}}</td>
         			</tr>
         			<tr>
         				<td>EOM</td>
 						<td><select ng-model="newNeurological.eom" ng-options="value.id as value.name for (key, value) in neurologicalOpts.eom" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.eom}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.eom}}</td>
         			</tr>
 					<tr>
         				<td>RU</td>
 						<td><select ng-model="newNeurological.ru" ng-options="value.id as value.name for (key, value) in neurologicalOpts.ru" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ru}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ru}}</td>
         			</tr>
 					<tr>
         				<td>LU</td>
 						<td><select ng-model="newNeurological.lu" ng-options="value.id as value.name for (key, value) in neurologicalOpts.lu" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.lu}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.lu}}</td>
         			</tr>
 					<tr>
         				<td>RL</td>
 						<td><select ng-model="newNeurological.rl" ng-options="value.id as value.name for (key, value) in neurologicalOpts.rl" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.rl}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.rl}}</td>
         			</tr>
 					<tr>
 						<td>LL</td>
 						<td><select ng-model="newNeurological.ll" ng-options="value.id as value.name for (key, value) in neurologicalOpts.ll" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.ll}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ll}}</td>
         			</tr>
 					<tr>
         				<td>Behavior</td>
 						<td><select ng-model="newNeurological.behavior" ng-options="value.id as value.name for (key, value) in neurologicalOpts.behavior" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.behavior}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.behavior}}</td>
         			</tr>
 					<tr>
         				<td>Speech</td>
 						<td><select ng-model="newNeurological.speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.speech" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.speech}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.speech}}</td>
         			</tr>
 					<tr>
         				<td>Mental Status</td>
 						<td><select ng-model="newNeurological.mental" ng-options="value.id as value.name for (key, value) in neurologicalOpts.mental" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.mental}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.mental}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Eyes</td>
 						<td><select ng-model="newNeurological.comaScale_eyes" ng-options="value.id as value.name for (key, value) in neurologicalOpts.comaScale_eyes" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_eyes}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.comaScale_eyes}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Verbal</td>
 						<td><select ng-model="newNeurological.comaScale_verbal" ng-options="value.id as value.name for (key, value) in neurologicalOpts.comaScale_verbal" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_verbal}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.comaScale_verbal}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Motor</td>
 						<td><select ng-model="newNeurological.comaScale_motor" ng-options="value.id as value.name for (key, value) in neurologicalOpts.comaScale_motor" bs-select></select></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_motor}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
         				<td>Coma Scale - Total</td>
 						<td></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'id':true">{{neuro.comaScale_eyes + neuro.comaScale_verbal + neuro.comaScale_motor}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.comaScale_eyes + neuro.comaScale_verbal + neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
-						<td colspan="2">
-							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{neuro.PatientID}}" 
+							type="button" 
+							class="noteButton" 
+							bs-modal="'partialViews/modalView.html'" 
+							data-ng-class="(!neuro.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
 						</td>
 						<td></td>
 						<td></td>
