@@ -19,7 +19,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		  );
 		  
 		  $scope.patient = getPatient($routeParams.id);
-          $scope.neurological = [];
+          //$scope.neurological = [];
 		  $scope.neurological = $scope.patient.Neurologicals;
 		 
 		 //Vitals Object
