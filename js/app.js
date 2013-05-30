@@ -110,13 +110,13 @@ docuSimApp.filter("localTime", function($filter) {
     return function(utcTime){
         //Do conversion
 
-        console.log("UTC:" + utcTime);
+        //console.log("UTC:" + utcTime);
 
         var time_string_utc_epoch = Date.parse(utcTime);
         var localTime = new Date();
         localTime.setTime(time_string_utc_epoch);
 
-        console.log("Local:" + localTime);
+        //console.log("Local:" + localTime);
 
         return localTime;
     }; 
