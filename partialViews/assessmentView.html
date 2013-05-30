@@ -21,11 +21,13 @@
 		<section id="scenario" class="span9 ">
 			<div class="hero-unit" data-ng-controller="patientsController">
 				<div class="row-fluid">
-					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} <span class="pull-right">{{selectedPatient.ID}}</span></h2>
+					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} 
+						<span class="pull-right">{{selectedPatient.ID}}</span>
+					</h2>
 				</div>
 				<hr>
 				<div class="row-fluid">
-					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}">
+					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}" />
 					<div class="span8">
 						<table class="table table-condensed">
 							<tbody>
