@@ -20,7 +20,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		  
 		  $scope.patient = getPatient($routeParams.id);
             //$scope.neurological = [];
-		  $scope.neurological = $scope.patient.Neurological;
+		  $scope.neurological = $scope.patient.Neurologicals;
 		 
 		 //Vitals Object
 		 NeurologicalResource = $resource(
@@ -44,7 +44,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
     
     //Set the scope to the Vitals array in Patient
     function onPatientReturned(patient) {
-        $scope.neurological = patient.Neurological;
+        $scope.neurological = patient.Neurologicals;
     }
 
     function onFailure() {
@@ -76,18 +76,14 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         newNeurological.ComaScale_Motor = $scope.newNeurological.comaScale_motor;
         newNeurological.NurseNote = $scope.newNeurological.note;
 
-		//Add vital array to backend model.
+		//Add neuro array to backend model.
 		NeurologicalResource.create(newNeurological);
-		
-		//Add vital array to frontend model.
+	
+        //Change frontend timestamp to UTC	
 		newNeurological.TimeStamp = now.toUTCString();
-        if($scope.neurological) {
-            $scope.neurological.unshift(newNeurological);
-
-        } else {
-            $scope.neurological = [];
-            $scope.neurological.unshift(newNeurological);
-        }
+    
+        //Add vital array to frontend model.
+        $scope.neurological.unshift(newNeurological);
 
 		//clear the input fields
 		$scope.clearNeurological();
