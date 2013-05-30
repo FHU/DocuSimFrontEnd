@@ -59,19 +59,19 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
 		var newNeurological = new NeurologicalResource();
-        var ppRight = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
-        var ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
-        var eom = $scope.newNeurological.eom;
-        var ru = $scope.newNeurological.ru;
-        var lu = $scope.newNeurological.lu;
-        var rl = $scope.newNeurological.rl;
-        var ll = $scope.newNeurological.ll;
-        var behavior = $scope.newNeurological.behavior;
-        var speech = $scope.newNeurological.speech;
-        var mental = $scope.newNeurological.mental;
-        var comaScale_eyes = $scope.newNeurological.comaScale_eyes;
-        var comaScale_verbal = $scope.newNeurological.comaScale_verbal;
-        var comaScale_motor = $scope.newNeurological.comaScale_motor;
+        newNeurological.ppRight = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
+        newNeurological.ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
+        newNeurological.eom = $scope.newNeurological.eom;
+        newNeurological.ru = $scope.newNeurological.ru;
+        newNeurological.lu = $scope.newNeurological.lu;
+        newNeurological.rl = $scope.newNeurological.rl;
+        newNeurological.ll = $scope.newNeurological.ll;
+        newNeurological.behavior = $scope.newNeurological.behavior;
+        newNeurological.speech = $scope.newNeurological.speech;
+        newNeurological.mental = $scope.newNeurological.mental;
+        newNeurological.comaScale_eyes = $scope.newNeurological.comaScale_eyes;
+        newNeurological.comaScale_verbal = $scope.newNeurological.comaScale_verbal;
+        newNeurological.comaScale_motor = $scope.newNeurological.comaScale_motor;
 
        	$scope.clearNeurological();
 
@@ -80,7 +80,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		
 		//Add vital array to frontend model.
 		newNeurological.TimeStamp = now.toUTCString();
-		$scope.vitals.unshift(newNeurological);
+		$scope.neurological.unshift(newNeurological);
 
 		//clear the input fields
 		$scope.clearNeurological();
