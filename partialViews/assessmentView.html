@@ -239,9 +239,12 @@
         				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.comaScale_eyes + neuro.comaScale_verbal + neuro.comaScale_motor}}</td>
         			</tr>
 					<tr>
-						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newVitals.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="neuro in neurological | orderBy: 'TimeStamp':true">
 							<a href="#/assessments/{{neuro.PatientID}}" 
-							type="button" 
 							class="noteButton" 
 							bs-modal="'partialViews/modalView.html'" 
 							data-ng-class="(!neuro.NurseNote)? 'hidden' : ''"
@@ -249,11 +252,6 @@
 								<i class="icon-file"></i> 
 							</a>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
 					</tr>
       			</tbody>
     		</table>

@@ -61,20 +61,21 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		var stampString = getDateTimeForSQLServer(now);
 		var newNeurological = new NeurologicalResource();
         newNeurological.PatientID = patientID;
-        newNeurological.Pupil_R = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
-        newNeurological.Pupil_L = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
-        newNeurological.EOM = $scope.newNeurological.eom;
-        newNeurological.Extremeties_RU = $scope.newNeurological.ru;
-        newNeurological.Extremeties_LU = $scope.newNeurological.lu;
-        newNeurological.Extremeties_RL = $scope.newNeurological.rl;
-        newNeurological.Extremeties_LL = $scope.newNeurological.ll;
-        newNeurological.Behavior = $scope.newNeurological.behavior;
-        newNeurological.Speech = $scope.newNeurological.speech;
-        newNeurological.MentalStatus = $scope.newNeurological.mental;
-        newNeurological.ComaScale_Eyes = $scope.newNeurological.comaScale_eyes;
-        newNeurological.ComaScale_Verbal = $scope.newNeurological.comaScale_verbal;
-        newNeurological.ComaScale_Motor = $scope.newNeurological.comaScale_motor;
-        newNeurological.NurseNote = $scope.newNeurological.note;
+        newNeurological.Pupil_R = $scope.newNeurological.Pupil_R + "pp, " + $scope.newNeurological.ppRight_sign;
+        newNeurological.Pupil_L = $scope.newNeurological.Pupil_L + "pp, " + $scope.newNeurological.ppLeft_sign;
+        newNeurological.EOM = $scope.newNeurological.EOM;
+        newNeurological.Extremeties_RU = $scope.newNeurological.Extremeties_RU;
+        newNeurological.Extremeties_LU = $scope.newNeurological.Extremeties_LU;
+        newNeurological.Extremeties_RL = $scope.newNeurological.Extremeties_RL;
+        newNeurological.Extremeties_LL = $scope.newNeurological.Extremeties_LL;
+        newNeurological.Behavior = $scope.newNeurological.Behavior;
+        newNeurological.Speech = $scope.newNeurological.Speech;
+        newNeurological.MentalStatus = $scope.newNeurological.MentalStatus;
+        newNeurological.ComaScale_Eyes = $scope.newNeurological.ComaScale_Eyes;
+        newNeurological.ComaScale_Verbal = $scope.newNeurological.ComaScale_Verbal;
+        newNeurological.ComaScale_Motor = $scope.newNeurological.ComaScale_Motor;
+        // Add COMA TOTAL
+        newNeurological.NurseNote = $scope.newNeurological.NurseNote;
 
 		//Add neuro array to backend model.
 		NeurologicalResource.create(newNeurological);
