@@ -84,7 +84,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		//newVital.TimeStamp = now;
 		//$scope.vitals.unshift(newVital);
 
-		$scope.patient = getPatient(patientID);
+		getPatient(patientID);
 		//$scope.vitals = patient.Vitals(patientID);
 		$scope.clearVitals();
     }
