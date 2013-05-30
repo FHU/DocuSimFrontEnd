@@ -1,7 +1,9 @@
 //***** VITALS SECTION *********************************************************************************
 //vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
 docuSimApp.controller('vitalsController', function($scope, $http, $resource, $routeParams) { 
+    
     var PatientResource;
+	
 	init();
 
     function init() {
@@ -55,7 +57,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	//create a new object of Vitals and add it to the database
     function insertAssessment(patientID) {
 		var now = new Date();
-		console.log( now.toTimeString() );
 		var stampString = getDateTimeForSQLServer(now);
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
@@ -113,3 +114,4 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     };
 
 });
+

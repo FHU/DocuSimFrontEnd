@@ -201,7 +201,7 @@ docuSimApp.service('vitalsService', function () {
 
 
 //***** Neurological SECTION *********************************************************************************
-docuSimApp.controller('neurologicalController', function($scope, neurologicalService){
+/*docuSimApp.controller('neurologicalController', function($scope, neurologicalService){
     init();
 
     function init() {
@@ -368,7 +368,7 @@ docuSimApp.service('neurologicalService', function () {
          {id: 1 , name: '1 - None'}
         ]
     };
-});
+});*/
 
 
 
