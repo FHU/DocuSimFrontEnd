@@ -56,24 +56,42 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         insertAssessment($routeParams.id);
     }
 
+"ID":6,"PatientID":4,"TimeStamp":"2013-05-30T00:00:00",
+"Pupil_R":"3",
+"Pupil_L":"4",
+"EOM":"5",
+"Extremeties_RU":"6",
+"Extremeties_LU":"7",
+"Extremeties_RL":"8",
+"Extremeties_LL":"9",
+"Behavior":"10",
+"Speech":"11",
+"MentalStatus":"12",
+"ComaScale_Eyes":"13",
+"ComaScale_Verbal":"14",
+"ComaScale_Motor":"15",
+"ComaScale_Total":"16",
+"NurseNote":"17"}
+
     function insertAssessment(patientID) {
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
 		var newNeurological = new NeurologicalResource();
         newNeurological.PatientID = patientID;
-        newNeurological.ppRight = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
-        newNeurological.ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
-        newNeurological.eom = $scope.newNeurological.eom;
-        newNeurological.ru = $scope.newNeurological.ru;
-        newNeurological.lu = $scope.newNeurological.lu;
-        newNeurological.rl = $scope.newNeurological.rl;
-        newNeurological.ll = $scope.newNeurological.ll;
-        newNeurological.behavior = $scope.newNeurological.behavior;
-        newNeurological.speech = $scope.newNeurological.speech;
-        newNeurological.mental = $scope.newNeurological.mental;
-        newNeurological.comaScale_eyes = $scope.newNeurological.comaScale_eyes;
-        newNeurological.comaScale_verbal = $scope.newNeurological.comaScale_verbal;
-        newNeurological.comaScale_motor = $scope.newNeurological.comaScale_motor;
+        newNeurological.Pupil_R = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
+        newNeurological.Pupil_L = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
+        newNeurological.EOM = $scope.newNeurological.eom;
+        newNeurological.Extremeties_RU = $scope.newNeurological.ru;
+        newNeurological.Extremeties_LU = $scope.newNeurological.lu;
+        newNeurological.Extremeties_RL = $scope.newNeurological.rl;
+        newNeurological.Extremeties_LL = $scope.newNeurological.ll;
+        newNeurological.Behavior = $scope.newNeurological.behavior;
+        newNeurological.Speech = $scope.newNeurological.speech;
+        newNeurological.MentalStatus = $scope.newNeurological.mental;
+        newNeurological.ComaScale_Eyes = $scope.newNeurological.comaScale_eyes;
+        newNeurological.ComaScale_Verbal = $scope.newNeurological.comaScale_verbal;
+        newNeurological.ComaScale_Motor = $scope.newNeurological.comaScale_motor;
+        newVital.NurseNote = $scope.newVitals.note;
 
 		//Add vital array to backend model.
 		NeurologicalResource.create(newNeurological);
