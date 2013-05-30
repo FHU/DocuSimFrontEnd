@@ -59,6 +59,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
 		var newNeurological = new NeurologicalResource();
+        newNeurological.PatientID = patientID;
         newNeurological.ppRight = $scope.newNeurological.ppRight_num + "pp, " + $scope.newNeurological.ppRight_sign;
         newNeurological.ppLeft = $scope.newNeurological.ppLeft_num + "pp, " + $scope.newNeurological.ppLeft_sign;
         newNeurological.eom = $scope.newNeurological.eom;
@@ -72,8 +73,6 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         newNeurological.comaScale_eyes = $scope.newNeurological.comaScale_eyes;
         newNeurological.comaScale_verbal = $scope.newNeurological.comaScale_verbal;
         newNeurological.comaScale_motor = $scope.newNeurological.comaScale_motor;
-
-       	$scope.clearNeurological();
 
 		//Add vital array to backend model.
 		NeurologicalResource.create(newNeurological);
