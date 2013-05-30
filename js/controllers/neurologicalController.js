@@ -19,6 +19,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		  );
 		  
 		  $scope.patient = getPatient($routeParams.id);
+            //$scope.neurological = [];
 		  $scope.neurological = $scope.patient.Neurological;
 		 
 		 //Vitals Object
@@ -79,7 +80,13 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		
 		//Add vital array to frontend model.
 		newNeurological.TimeStamp = now.toUTCString();
-		$scope.neurological.unshift(newNeurological);
+        if($scope.neurological) {
+            $scope.neurological.unshift(newNeurological);
+
+        } else {
+            $scope.neurological = [];
+            $scope.neurological.unshift(newNeurological);
+        }
 
 		//clear the input fields
 		$scope.clearNeurological();
