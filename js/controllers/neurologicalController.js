@@ -92,6 +92,18 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         $('#neurological select').selectpicker('val','');
     };
 
+    //Database uses UTC time
+    function getDateTimeForSQLServer(timestamp) {
+        var timeString = timestamp.getUTCFullYear() + '-' + 
+        ('00' + (timestamp.getUTCMonth() + 1)).slice(-2) + '-' +
+        ('00' + timestamp.getUTCDate()).slice(-2) + ' ' + 
+        ('00' + timestamp.getUTCHours()).slice(-2) + ':' + 
+        ('00' + timestamp.getUTCMinutes()).slice(-2) + ':' +
+        ('00' + timestamp.getUTCSeconds()).slice(-2);
+        
+        return timeString.toString();
+    }
+
     //***** DropDowns ********************
     $scope.neurologicalOpts = {
         eom: [
