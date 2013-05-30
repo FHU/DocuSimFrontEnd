@@ -81,7 +81,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		VitalsResource.create(newVital);
 		
 		//Add vital array to frontend model.
-		newVital.TimeStamp = now;
+		newVital.TimeStamp = now.toUTCString();
 		$scope.vitals.push(newVital);
 
 		//getPatient(patientID);
