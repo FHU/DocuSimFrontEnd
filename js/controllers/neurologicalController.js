@@ -74,7 +74,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         newNeurological.ComaScale_Eyes = $scope.newNeurological.comaScale_eyes;
         newNeurological.ComaScale_Verbal = $scope.newNeurological.comaScale_verbal;
         newNeurological.ComaScale_Motor = $scope.newNeurological.comaScale_motor;
-        newVital.NurseNote = $scope.newVitals.note;
+        newNeurological.NurseNote = $scope.newNeurological.note;
 
 		//Add vital array to backend model.
 		NeurologicalResource.create(newNeurological);
