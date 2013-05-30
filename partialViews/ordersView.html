@@ -48,9 +48,10 @@
 
 <div id="container" data-ng-repeat="order in selectedPatient.Orders">
 
-	<h1 class="span9 offset3">{{order.TimeStamp | date:'M/d/yy, H:mm' }}</h1>
-
 	<div class="row-fluid">
+
+		<h1 class="span9 offset3">{{order.TimeStamp | date:'M/d/yy, H:mm' }}</h1>
+
 		<section id="orders" class="span9 offset3">
 			<h2>Physican Orders</h2>
 			
