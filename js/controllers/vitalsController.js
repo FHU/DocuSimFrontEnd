@@ -129,10 +129,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
         ]
     };
 
-    $scope.isEmpty = function(note) {
-    	return note=="";
-    };
-
     /*function init() {
 
         id = 4;

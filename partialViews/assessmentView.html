@@ -115,8 +115,11 @@
 							<textarea class="nurseNote" data-ng-model="newVitals.note"> </textarea>
 						</td>
 						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
-							<a href="#" type="button" class="noteButton" bs-modal="'partialViews/modalView.html'" 
-							data-ng-class="{'': 'hidden'}[vital.NurseNote]"> 
+							<a href="#" 
+							type="button" 
+							class="noteButton" 
+							bs-modal="'partialViews/modalView.html'" 
+							data-ng-class="(vital.NurseNote=='')? 'hidden' : ''"> 
 								<i class="icon-file"></i> 
 							</a>
 						</td>
