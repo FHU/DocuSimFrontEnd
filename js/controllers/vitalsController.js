@@ -41,12 +41,16 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 
 	//Get an individual Patient
     function getPatient(id) {
-        return PatientResource.get({id:id}, onPatientsReturned, onFailure);
+        return PatientResource.get({id:id}, onPatientReturned, onFailure);
     }
 	
 	//Set the scope to the Vitals array in Patient
-    function onPatientsReturned(patient) {
+    function onPatientReturned(patient) {
         $scope.vitals = patient.Vitals;
+    }
+
+    function onFailure() {
+        console.log("Error getting model");
     }
 	
 	//Calls the insert method on the Sign button
@@ -79,10 +83,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 
 		//clear the input fields
 		$scope.clearVitals();
-    }
-
-    function onFailure() {
-        console.log("Error getting model");
     }
 
 	//Database uses UTC time

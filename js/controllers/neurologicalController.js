@@ -36,7 +36,26 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		  );
     }
 
+    //Get an individual Patient
+    function getPatient(id) {
+        return PatientResource.get({id:id}, onPatientReturned, onFailure);
+    }
+    
+    //Set the scope to the Vitals array in Patient
+    function onPatientReturned(patient) {
+        $scope.neurological = patient.Neurological;
+    }
+
+    function onFailure() {
+        console.log("Error getting model");
+    }
+
+    //Calls the insert method on the Sign button
     $scope.insertNeurological = function () {
+        insertAssessment($routeParams.id);
+    }
+
+    function insertAssessment(patientID) {
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
 		var newNeurological = new NeurologicalResource();
@@ -170,7 +189,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
     };
 });
 
-docuSimApp.service('neurologicalService', function () {
+/*docuSimApp.service('neurologicalService', function () {
     this.getOptArray = function(){
         return optArray;
     };
@@ -201,4 +220,4 @@ docuSimApp.service('neurologicalService', function () {
     };
 
     
-});
+});*/
