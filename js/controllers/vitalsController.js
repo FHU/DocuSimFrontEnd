@@ -50,10 +50,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }
 
     function onPatientsReturned(patient) {
-        //var convertedTimeStamp = getLocalTimeFromUTC(patient.Vitals.TimeStamp);
-
         $scope.vitals = patient.Vitals;
-
     }
 
 	/*function getVitals(id) {
@@ -85,7 +82,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		
 		//Add vital array to frontend model.
 		newVital.TimeStamp = now;
-		$scope.vitals.push(newVital);
+		$scope.vitals.unshift(newVital);
 
 		$scope.clearVitals();
     }
@@ -101,8 +98,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		('00' + (timestamp.getUTCHours() + timestamp.getTimezoneOffset())).slice(-2) + ':' + 
 		('00' + timestamp.getUTCMinutes()).slice(-2) + ':' +
 		('00' + timestamp.getUTCSeconds()).slice(-2);
-		
-		
 		
     	return timeString.toString();
     }
