@@ -50,7 +50,10 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
     }
 
     function onPatientsReturned(patient) {
+        //var convertedTimeStamp = getLocalTimeFromUTC(patient.Vitals.TimeStamp);
+
         $scope.vitals = patient.Vitals;
+
     }
 
 	/*function getVitals(id) {
@@ -103,6 +106,16 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		
     	return timeString.toString();
     }
+
+    /*function getLocalTimeFromUTC(utcTime) {
+
+    	//Do conversion
+	    var time_string_utc_epoch = Date.parse(utcTime);
+	    var localTime = new Date();
+	    localTime.setTime(time_string_utc_epoch);
+
+    	return localTime;
+    }*/
 
     $scope.clearVitals = function () {
         $scope.newVitals= '';
