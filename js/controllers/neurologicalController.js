@@ -36,11 +36,6 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 		  );
     }
 
-    function init() {
-        $scope.neurological = neurologicalService.getNeurological();
-        $scope.neurologicalOpts = neurologicalService.getOptArray();
-    }
-
     $scope.insertNeurological = function () {
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
