@@ -65,14 +65,15 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 		var newVital = new VitalsResource();
 		newVital.PatientID = patientID;
 		newVital.TimeStamp = stampString;
-		newVital.Temperature = $scope.newVitals.temp_num + " " + $scope.newVitals.temp_type;
-		newVital.HR = $scope.newVitals.heartRate;
-		newVital.R = $scope.newVitals.rate;
-		newVital.BP_Systolic = $scope.newVitals.bpSystolic;
-		newVital.BP_Diastolic = $scope.newVitals.bpDiastolic;
-		newVital.SpO2 = $scope.newVitals.spO2;
-		newVital.Weight = $scope.newVitals.weight;
-		newVital.NurseNote = $scope.newVitals.note;
+		newVital.Temperature = $scope.newVitals.Temperature
+		newVital.TemperatureRoute = $scope.newVitals.TemperatureRoute;
+		newVital.HR = $scope.newVitals.HR;
+		newVital.R = $scope.newVitals.R;
+		newVital.BP_Systolic = $scope.newVitals.BP_Systolic;
+		newVital.BP_Diastolic = $scope.newVitals.BP_Diastolic;
+		newVital.SpO2 = $scope.newVitals.SpO2;
+		newVital.Weight = $scope.newVitals.Weight;
+		newVital.NurseNote = $scope.newVitals.NurseNote;
 
 		//Add vital array to backend model.
 		VitalsResource.create(newVital);

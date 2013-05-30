@@ -77,42 +77,42 @@
 				<tbody>
         			<tr>
         				<td>Temp</td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.temp_num"/>
-							<select ng-model="newVitals.temp_type" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
 
 						</td>
-        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}}</td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}} , {{vital.TemperatureRoute}} </td>
 	                </tr>
 	                <tr>
 		                <td>HR</td>
-						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.heartRate"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.HR"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.HR}}</td>
         			</tr>
         			<tr>
         				<td>R</td>
-        				<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.rate"/></td>
+        				<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.R"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.R}}</td>
         			</tr>
 					<tr>
         				<td>BP(systolic/diastolic)</td>
-						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.bpSystolic"/>
-							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.bpDiastolic"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/>
+							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
         			</tr>
 					<tr>
         				<td>SpO<sub>2</sub></td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.spO2"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.SpO2"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.SpO2}}</td>
         			</tr>
         			<tr>
 		                <td>Weight</td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.weight"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Weight"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Weight}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote" data-ng-model="newVitals.note"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newVitals.NurseNote"> </textarea>
 						</td>
 						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
 							<a href="#/assessments/{{vital.PatientID}}" 
