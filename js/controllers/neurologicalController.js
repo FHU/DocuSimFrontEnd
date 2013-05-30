@@ -56,23 +56,6 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         insertAssessment($routeParams.id);
     }
 
-"ID":6,"PatientID":4,"TimeStamp":"2013-05-30T00:00:00",
-"Pupil_R":"3",
-"Pupil_L":"4",
-"EOM":"5",
-"Extremeties_RU":"6",
-"Extremeties_LU":"7",
-"Extremeties_RL":"8",
-"Extremeties_LL":"9",
-"Behavior":"10",
-"Speech":"11",
-"MentalStatus":"12",
-"ComaScale_Eyes":"13",
-"ComaScale_Verbal":"14",
-"ComaScale_Motor":"15",
-"ComaScale_Total":"16",
-"NurseNote":"17"}
-
     function insertAssessment(patientID) {
     	var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
