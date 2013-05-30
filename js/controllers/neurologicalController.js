@@ -110,11 +110,11 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
 
     //***** DropDowns ********************
     $scope.neurologicalOpts = {
-        eom: [
+        EOM: [
             {id: 'present', name: 'present'},
             {id: 'none', name: 'none'}
         ],
-        ru: [
+        Extremeties_RU: [
          {id: 0 , name: '0 - No muscle contractions'},
          {id: 1 , name: '1 - Flicker or trace of voluntary'},
          {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
@@ -123,7 +123,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
-        lu: [
+        Extremeties_LU: [
          {id: 0 , name: '0 - No muscle contractions'},
          {id: 1 , name: '1 - Flicker or trace of voluntary'},
          {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
@@ -132,7 +132,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
-        rl: [
+        Extremeties_RL: [
          {id: 0 , name: '0 - No muscle contractions'},
          {id: 1 , name: '1 - Flicker or trace of voluntary'},
          {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
@@ -141,7 +141,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
 
-        ll: [
+        Extremeties_LL: [
          {id: 0 , name: '0 - No muscle contractions'},
          {id: 1 , name: '1 - Flicker or trace of voluntary'},
          {id: 2 , name: '2 - Active movement with gravity eliminated coordination'},
@@ -150,7 +150,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 5 , name: '5 - Full power against examiner resistance'}
         ],
                                         
-        behavior: [
+        Behavior: [
          {id: 'AX' , name: 'AX Anxious'},
          {id: 'AG' , name: 'AG Agitated'},
          {id: 'H' , name: 'H Hostile'},
@@ -161,7 +161,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 'R' , name: 'R Refusing'}
         ],
 
-        speech: [
+        Speech: [
          {id: 'CL' , name: 'CL Clear'},
          {id: 'S' , name: 'S Slurred'},
          {id: 'A' , name: 'A Absent'},
@@ -169,7 +169,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 'ET' , name: 'ET Entubation Tube'}
         ],
 
-        mental: [
+        MentalStatus: [
          {id: 1 , name: '1 - Alert'},
          {id: 2 , name: '2 - Lethargic'},
          {id: 3 , name: '3 - Sedated'},
@@ -179,14 +179,14 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 7 , name: '7 - Comatose'}
         ],
 
-        comaScale_eyes: [
+        ComaScale_Eyes: [
          {id: 4 , name: '4 - Spontatneous'},
          {id: 3 , name: '3 - To Speech'},
          {id: 2 , name: '2 - To Pain'},
          {id: 1 , name: '1 - None'}
         ],
 
-        comaScale_verbal: [
+        ComaScale_Verbal: [
          {id: 5 , name:  '5 - Oriented'},
          {id: 4 , name:  '4 - Confused'},
          {id: 3 , name:  '3 - Inappropriate Words'},
@@ -194,7 +194,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
          {id: 1 , name:  '1 - None'}
         ],
 
-        comaScale_motor: [
+        ComaScale_Motor: [
          {id: 6 , name: '6 - Obeys Commands'},
          {id: 5 , name: '5 - Localizes Pain'},
          {id: 4 , name: '4 - Withdrawl'},
