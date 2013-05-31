@@ -238,10 +238,9 @@ textarea.nurseNote{
 
 /*----- History/Orders --------------------*/
 
-.orderContainer, .historyContainer {
-	border-bottom: 1px solid #7b8a8b;
-	padding-bottom: 35px;
-	margin-left: 25.53191489361702%; 
+.orderContainer hr, .historyContainer hr {
+	/*border-bottom: 1px solid #7b8a8b;
+	padding-bottom: 35px;*/
 }
 
 

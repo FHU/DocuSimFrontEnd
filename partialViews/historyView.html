@@ -47,16 +47,16 @@
 		<!-- Patient History Content -->
 
 		<div class="historyContainer" data-ng-repeat="history in selectedPatient.Histories">
-
 			<div class="row-fluid">
-
 				<section id="orders" class="span9 offset3">
 					<h2 >{{history.DateOfEvent | date: 'longDate' }}</h2>
 
 					{{history.EventText}}
 
+					<hr>
 				</section>
 			</div>
+
 
 		</div> <!--end of historyContainer -->
 
