@@ -240,13 +240,14 @@ textarea.nurseNote{
 
 .orderContainer section, .historyContainer section {
 
-	padding-top: 20px;
+	padding-top: 15px;
 	/*border-bottom: 1px solid #7b8a8b;
 	padding-bottom: 35px;*/
 }
 
-
-
+.orderContainer hr, .historyContainer hr {
+	margin: 0;
+}
 
 /*select{
 	width: auto;
