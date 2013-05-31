@@ -3,16 +3,16 @@
 		<!-- Side Navigation -->
 		<div id="SideBar" class="span2">
     		<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
-    			<li class="active"><a href="#scenario"><img class="nav-icon" src="img/medicoicons/hospital.png"> Patient</a></li>
-    			<li><a href="#vitals"><img class="nav-icon" src="img/medicoicons/blood pressure.png"> Vitals</a></li>
+    			<li class="active"><a href="#/assessments#scenario"><img class="nav-icon" src="img/medicoicons/hospital.png"> Patient</a></li>
+    			<li><a href="#/assessments#vitals"><img class="nav-icon" src="img/medicoicons/blood pressure.png"> Vitals</a></li>
     			<li><a href="#/assessments#neurological"><img class="nav-icon" src="img/medicoicons/ecg.png"> Neuro</a></li>
-       			<li><a href="#cardio"><img class="nav-icon" src="img/medicoicons/heart.png"> Cardio</a></li>
-       			<li><a href="#respiratory"><img class="nav-icon" src="img/medicoicons/inhaler.png"> Respiratory</a></li>
-				<li><a href="#daily"><img class="nav-icon" src="img/medicoicons/clipboard.png"> Daily</a></li>
-		    	<li><a href="#safety"><img class="nav-icon" src="img/medicoicons/biohazard.png"> Safety</a></li>
-		    	<li><a href="#gu"><img class="nav-icon" src="img/medicoicons/bandage.png"> GU</a></li>
-	    		<li><a href="#gi"><img class="nav-icon" src="img/medicoicons/iv bag.png"> GI</a></li>
-	    		<li><a href="#io"><img class="nav-icon" src="img/medicoicons/iv bag.png"> Is/Os</a></li>
+       			<li><a href="#/assessments#cardio"><img class="nav-icon" src="img/medicoicons/heart.png"> Cardio</a></li>
+       			<li><a href="#/assessments#respiratory"><img class="nav-icon" src="img/medicoicons/inhaler.png"> Respiratory</a></li>
+				<li><a href="#/assessments#daily"><img class="nav-icon" src="img/medicoicons/clipboard.png"> Daily</a></li>
+		    	<li><a href="#/assessments#safety"><img class="nav-icon" src="img/medicoicons/biohazard.png"> Safety</a></li>
+		    	<li><a href="#/assessments#gu"><img class="nav-icon" src="img/medicoicons/bandage.png"> GU</a></li>
+	    		<li><a href="#/assessments#gi"><img class="nav-icon" src="img/medicoicons/iv bag.png"> GI</a></li>
+	    		<li><a href="#/assessments#io"><img class="nav-icon" src="img/medicoicons/iv bag.png"> Is/Os</a></li>
        		</ul>
 		</div>
 		<!-- Side Nav End -->
@@ -239,7 +239,7 @@
 					<tr>
         				<td>Coma Scale - Total</td>
 						<td></td>
-        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Total}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Eyes + neuro.ComaScale_Verbal + neuro.ComaScale_Motor}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
