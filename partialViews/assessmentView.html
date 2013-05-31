@@ -280,10 +280,10 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{vital.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		                	<span class="time" >{{car.TimeStamp | localTime | date: 'H:mm'}}  </span>
 		               
 							<br />  
-							<span class="date" >{{vital.TimeStamp | localTime | date:'M/d/yy'}} </span>
+							<span class="date" >{{car.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
