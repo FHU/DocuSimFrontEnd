@@ -99,7 +99,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 
 	//clears input fields
 	$scope.clearIsos = function () {
-		$scope.newIsos= '';
+		$scope.newIo= '';
 		$('#isos select').selectpicker('val','');
 	};
 
