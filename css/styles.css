@@ -249,10 +249,13 @@ textarea.nurseNote{
 	margin: 0;
 }
 
+.orderContainer, .historyContainer {
+	font-size: 1.2em;  
+}
+
 .orderContainer ul, .historyContainer ul {
 	list-style: none;
 	margin: 0;
-	font-size: 1.2em;  
 }
 
 .orderContainer li, .historyContainer li {
@@ -440,14 +443,6 @@ hr{
 }
 
 /*--------------------------------*/
-
-
-/* Orders --------*/
-
-
-
-/*--------------------------------*/
-
 
 
 /* Footer ------------------------*/
