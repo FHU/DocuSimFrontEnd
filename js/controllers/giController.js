@@ -101,12 +101,43 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
 
     //***** DropDowns **********************
     $scope.giOpts = {
-    	temp: [
-    	{id: 'Oral', name: 'Oral'},
-    	{id: 'Rectal', name: 'Rectal'},
-    	{id: 'Axillary', name: 'Axillary'},
-    	{id: 'Tympanic', name: 'Tympanic'}
-    	]
+        abdomenOptinos: [
+            {id: 'Flat', name: 'Flat'},
+            {id: 'Soft', name: 'Soft'},
+            {id: 'DIS', name: 'DIS - Distended'},
+            {id: 'Firm', name: 'Firm'},
+            {id: 'LG', name: 'LG - Large'},
+            {id: 'RG', name: 'RG - Rigid'},
+            {id: 'TEN', name: 'TEN - Tender'}
+        ],
+
+        bsRUQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsRLQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsLUQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ],
+
+        bsLLQOptions: [
+            {id: 'A', name: 'A - Absent'},
+            {id: '+0', name: '+0 - Hypoactive'},
+            {id: '+-', name: '+- - Present'},
+            {id: '++', name: '++ - Hyperactive'}
+        ]
     };
 
 });

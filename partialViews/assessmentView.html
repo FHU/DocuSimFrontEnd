@@ -829,27 +829,27 @@
     			<tbody>
         			<tr>
         				<td>Abdomen</td>
-						<td><select ng-model="newGi.abdomen" ng-options="value.id as value.name for (key, value) in giOpt.abdomen" bs-select></select></td>
+						<td><select ng-model="newGi.abdomen" ng-options="value.id as value.name for (key, value) in giOpts.abdomen" bs-select></select></td>
         				<td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.abdomen}}</td>
 	                </tr>
 	                <tr>
 		                <td>Bowel Sounds - RUQ</td>
-						<td><select ng-model="newGi.bsRUQ" ng-options="value.id as value.name for (key, value) in giOpt.bsRUQ" bs-select></select></td>
+						<td><select ng-model="newGi.bsRUQ" ng-options="value.id as value.name for (key, value) in giOpts.bsRUQ" bs-select></select></td>
         				<td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.bsRUQ}}</td>
         			</tr>
         			<tr>
 		                <td>Bowel Sounds - RLQ</td>
-						<td><select ng-model="newGi.bsRLQ" ng-options="value.id as value.name for (key, value) in giOpt.bsRLQ" bs-select></select></td>
+						<td><select ng-model="newGi.bsRLQ" ng-options="value.id as value.name for (key, value) in giOpts.bsRLQ" bs-select></select></td>
 		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.bsRLQ}}</td>
         			</tr>
 					<tr>
 		                <td>Bowel Sounds - LUQ</td>
-						<td><select ng-model="newGi.bsLUQ" ng-options="value.id as value.name for (key, value) in giOpt.bsLUQ" bs-select></select></td>
+						<td><select ng-model="newGi.bsLUQ" ng-options="value.id as value.name for (key, value) in giOpts.bsLUQ" bs-select></select></td>
 		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.bsLUQ}}</td>
         			</tr>
 					<tr>
 		                <td>Bowel Sounds - LLQ</td>
-						<td><select ng-model="newGi.bsLLQ" ng-options="value.id as value.name for (key, value) in giOpt.bsLLQ" bs-select></select></td>
+						<td><select ng-model="newGi.bsLLQ" ng-options="value.id as value.name for (key, value) in giOpts.bsLLQ" bs-select></select></td>
 		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.bsLLQ}}</td>
         			</tr>
 					<tr>
