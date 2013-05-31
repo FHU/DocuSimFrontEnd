@@ -49,27 +49,15 @@
 		<div class="historyContainer" data-ng-repeat="history in selectedPatient.Histories">
 
 			<div class="row-fluid">
-				
+
 				<section id="orders" class="span9 offset3">
 					<h2 >{{history.DateOfEvent | date: 'longDate' }}</h2>
-					
+
 					{{history.EventText}}
-					
-			<!--<ul class="ordersList">
-				<li> Emergency Department Orders: </li>
-				<li> 12-lead ECG </li>
-				<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
-				<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
-				<li> Cardiac monitoring </li>
-				<li> Aspirin 325 mg poo (chewed) </li>
-				<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
-				<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
 
-			</ul>-->
-			
-		</section>
-	</div>
+				</section>
+			</div>
 
-</div> <!--end of historyContainer -->
+		</div> <!--end of historyContainer -->
 
 </div> <!--end of container-fluid -->
