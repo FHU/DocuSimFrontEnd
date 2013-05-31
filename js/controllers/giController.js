@@ -111,28 +111,28 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
             {id: 'TEN', name: 'TEN - Tender'}
         ],
 
-        bsRUQOptions: [
+        BowelSoundsRUQ: [
             {id: 'A', name: 'A - Absent'},
             {id: '+0', name: '+0 - Hypoactive'},
             {id: '+-', name: '+- - Present'},
             {id: '++', name: '++ - Hyperactive'}
         ],
 
-        bsRLQOptions: [
+        BowelSoundsRLQ: [
             {id: 'A', name: 'A - Absent'},
             {id: '+0', name: '+0 - Hypoactive'},
             {id: '+-', name: '+- - Present'},
             {id: '++', name: '++ - Hyperactive'}
         ],
 
-        bsLUQOptions: [
+        BowelSoundsLUQ: [
             {id: 'A', name: 'A - Absent'},
             {id: '+0', name: '+0 - Hypoactive'},
             {id: '+-', name: '+- - Present'},
             {id: '++', name: '++ - Hyperactive'}
         ],
 
-        bsLLQOptions: [
+        BowelSoundsLLQ: [
             {id: 'A', name: 'A - Absent'},
             {id: '+0', name: '+0 - Hypoactive'},
             {id: '+-', name: '+- - Present'},
