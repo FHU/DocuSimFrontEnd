@@ -87,10 +87,10 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
 		
 		//Add vital array to frontend model.
 		newCardio.TimeStamp = now.toUTCString();
-		$scope.vitals.unshift(newCardio);
+		$scope.cardio.unshift(newCardio);
 
 		//clear the input fields
-		$scope.clearVitals();
+		$scope.clearCardio();
     }
 
 	//Database uses UTC time
@@ -112,20 +112,20 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
     };
 
     //***** DropDowns ********************
-    var optArray = {
-        heartIntensity: [
+    $scope.cardioOpts = {
+        Heart_Intensity: [
             {id: 'S', name: 'S - Strong'},
             {id: 'D', name: 'D - Distant'},
             {id: 'M', name: 'M - Muffled'},
             {id: 'A', name: 'A - Audible'}
         ],
 
-        heartRegularity: [
+        Heart_Regularity: [
             {id: 'Regular', name: 'Regular'},
             {id: 'Irregular', name: 'Irregular'}
         ],
 
-        cardiacRhythm: [
+        Rhythm: [
             {id: 'NSR', name: 'NSR - Sinus'},
             {id: 'ST', name: 'ST - Sinus Tach'},
             {id: 'SB', name: 'SB - Sinus Brady'},
@@ -138,7 +138,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'SVT', name: 'SVT - Supraventricular Tach'}
         ],
 
-        skin:[
+        Skin:[
             {id: 'W', name: 'W - Warm'},
             {id: 'C', name: 'C - Cool'},
             {id: 'CD', name: 'CD - Cold'},
@@ -148,7 +148,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'DR', name: 'DR - Dry'}
         ],
 
-        skinColor: [
+        SkinColor: [
             {id: 'FL', name: 'FL - Flushed'},
             {id: 'G', name: 'G - Good/Pink'},
             {id: 'P', name: 'DSK - Dusky'},
@@ -158,7 +158,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'A', name: 'A - Ashen'}
         ],
 
-        nailBeds: [
+        SkinColor: [
             {id: 'FL', name: 'FL - Flushed'},
             {id: 'G', name: 'G - Good/Pink'},
             {id: 'P', name: 'DSK - Dusky'},
@@ -168,12 +168,21 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'A', name: 'A - Ashen'}
         ],
 
-        capillaryRefill: [
+        CapillaryRefill: [
             {id: 'Normal', name: '< 3 seconds - Normal'},
             {id: 'Sluggish', name: '> 3 seconds - Sluggish'}
         ],
 
-        edemaUE: [
+        Edema_RUE: [
+            {id: '1+', name: '1+ Capable of being pitted'},
+            {id: '2+', name: '2+ Area not tense, 30 second pitting'},
+            {id: '3+', name: '3+ Area Tense, one minute pitting'},
+            {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
+            {id: 'GEN', name: 'GEN - Generalized'},
+            {id: 'P', name: 'P - Periorbital'}
+        ],
+		
+		Edema_LUE: [
             {id: '1+', name: '1+ Capable of being pitted'},
             {id: '2+', name: '2+ Area not tense, 30 second pitting'},
             {id: '3+', name: '3+ Area Tense, one minute pitting'},
@@ -182,7 +191,16 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'P', name: 'P - Periorbital'}
         ],
 
-        edemaLE: [
+        Edema_RLE: [
+            {id: '1+', name: '1+ Capable of being pitted'},
+            {id: '2+', name: '2+ Area not tense, 30 second pitting'},
+            {id: '3+', name: '3+ Area Tense, one minute pitting'},
+            {id: '4+', name: '4+ Skin Cracked, tense, may be weeping'},
+            {id: 'GEN', name: 'GEN - Generalized'},
+            {id: 'P', name: 'P - Periorbital'}
+        ],
+		
+		Edema_LLE: [
             {id: '1+', name: '1+ Capable of being pitted'},
             {id: '2+', name: '2+ Area not tense, 30 second pitting'},
             {id: '3+', name: '3+ Area Tense, one minute pitting'},
@@ -191,19 +209,33 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
             {id: 'P', name: 'P - Periorbital'}
         ],
 
-        pulseRadial: [
+        Pulses_Radial_R: [
+            {id: '1+', name: '1+ Intermittent'},
+            {id: '2+', name: '2+ Weak'},
+            {id: '3+', name: '3+ Normal'},
+            {id: '4+', name: '4+ Strong'}
+        ],
+		
+		Pulses_Radial_L: [
             {id: '1+', name: '1+ Intermittent'},
             {id: '2+', name: '2+ Weak'},
             {id: '3+', name: '3+ Normal'},
             {id: '4+', name: '4+ Strong'}
         ],
 
-        darsalisPedis: [
+        Dorsalis_Pedis_R: [
             {id: '1+', name: 'Intermittent'},
             {id: '2+', name: 'Weak'},
             {id: '3+', name: 'Normal'},
             {id: '4+', name: 'Strong'}
-        ]
+        ],
+		
+		Dorsalis_Pedis_L: [
+            {id: '1+', name: 'Intermittent'},
+            {id: '2+', name: 'Weak'},
+            {id: '3+', name: 'Normal'},
+            {id: '4+', name: 'Strong'}
+        ],
     };
 
 });
