@@ -76,8 +76,6 @@ docuSimApp.controller('restController', function($scope, Restangular) {
 });
 
 
-
-
 docuSimApp.controller('NavbarController', function ($scope, $location, $routeParams) {
     
     $scope.getClass = function (path) {
@@ -127,7 +125,7 @@ docuSimApp.filter("localTime", function($filter) {
 
 
 //***** GI SECTION *********************************************************************************
-docuSimApp.controller('giController', function($scope, giService){
+/*docuSimApp.controller('giController', function($scope, giService){
     init();
 
     function init() {

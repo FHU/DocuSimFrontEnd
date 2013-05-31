@@ -74,7 +74,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         newNeurological.ComaScale_Eyes = $scope.newNeurological.ComaScale_Eyes;
         newNeurological.ComaScale_Verbal = $scope.newNeurological.ComaScale_Verbal;
         newNeurological.ComaScale_Motor = $scope.newNeurological.ComaScale_Motor;
-        // Add COMA TOTAL
+        newNeurological.ComaScale_Total = sumComaScale($scope.newNeurological.ComaScale_Eyes, $scope.newNeurological.ComaScale_Verbal, $scope.newNeurological.ComaScale_Motor);
         newNeurological.NurseNote = $scope.newNeurological.NurseNote;
 
 		//Add neuro array to backend model.
@@ -107,6 +107,11 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
         
         return timeString.toString();
     }
+	
+	//Sums up Coma Scale Total
+	function sumComaScale(num1, num2, num3){
+		return num1 + num2 + num3;
+	}
 
     //***** DropDowns ********************
     $scope.neurologicalOpts = {
