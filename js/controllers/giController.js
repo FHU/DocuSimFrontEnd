@@ -20,7 +20,7 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
 			);
 
 		$scope.patient = getPatient($routeParams.id);
-		$scope.gi = $scope.patient.Gi;
+		$scope.gi = $scope.patient.GIs;
 
 		 //Gi Object
 		 GiResource = $resource(
@@ -44,7 +44,7 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
 	
 	//Set the scope to the Gi array in Patient
 	function onPatientReturned(patient) {
-		$scope.gi = patient.Gi;
+		$scope.gi = patient.GIs;
 	}
 
 	function onFailure() {
