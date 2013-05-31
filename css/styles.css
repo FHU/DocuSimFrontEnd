@@ -249,6 +249,20 @@ textarea.nurseNote{
 	margin: 0;
 }
 
+.ordersContainer ul, .historyContainer ul {
+	list-style: none;
+	margin: 0;
+	font-size: 1.2em;  
+}
+
+.ordersContainer li, .historyContainer li {
+	height: 2.0em;
+}
+
+.ordersContainer li:before, .historyContainer li:before {
+	content: "-";
+}
+
 /*select{
 	width: auto;
 	background: #D0D5D9;
@@ -430,19 +444,7 @@ hr{
 
 /* Orders --------*/
 
-.ordersContainer ul {
-	list-style: none;
-	margin: 0;
-	font-size: 1.2em;  
-}
 
-.ordersContainer li {
-	height: 2.0em;
-}
-
-.ordersContainer li:before {
-	content: "-";
-}
 
 /*--------------------------------*/
 
