@@ -52,7 +52,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	}
 	
 	//Calls the insert method on the Sign button
-	$scope.insertIsos = function () {
+	$scope.insertIo = function () {
 		insertAssessment($routeParams.id);
 	}
 	
@@ -82,7 +82,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		$scope.isos.unshift(newIo);
 
 		//clear the input fields
-		$scope.clearIsos();
+		$scope.clearIo();
 	}
 
 	//Database uses UTC time
@@ -98,7 +98,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	}
 
 	//clears input fields
-	$scope.clearIsos = function () {
+	$scope.clearIo = function () {
 		$scope.newIo= '';
 		$('#isos select').selectpicker('val','');
 	};
