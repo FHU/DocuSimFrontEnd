@@ -251,6 +251,7 @@ textarea.nurseNote{
 
 .orderContainer section div , .historyContainer section div {
 	font-size: 1.2em;  
+	line-height: 2.0em;
 }
 
 .orderContainer ul, .historyContainer ul {
