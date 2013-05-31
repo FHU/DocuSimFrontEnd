@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" data-ng-controller="patientsController">
 	<div class="row-fluid">
 		<!-- Side Navigation -->
 		<div id="SideBar" class="span3">
@@ -10,15 +10,14 @@
 		<!-- Side Nav End -->
 
 		<!-- Patient/Scenario Block -->
-				<!-- Patient/Scenario Block -->
 		<section id="scenario" class="span9 ">
-			<div class="hero-unit" data-ng-controller="patientsController">
+			<div class="hero-unit" >
 				<div class="row-fluid">
 					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} <span class="pull-right">{{selectedPatient.ID}}</span></h2>
 				</div>
 				<hr>
 				<div class="row-fluid">
-					<img id="PatientPic" class="span4" src="img/male, hispanic, 50's.jpg">
+					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}">
 					<div class="span8">
 						<table class="table table-condensed">
 							<tbody>
@@ -37,15 +36,45 @@
     			</div>
     			<br>
 	    		<div>
-        			<p>Carl Shapiro is a 54-year-old male who travels frequently on business. He is seeking care in the local Emergency Department with complaints of dull aching chest pain and shortness of breath. He is out of state with no local physician. He smokes less than half a pack of cigarettes a day and drinks alcohol occasionally. He describes his work as stressful</p>
+        			<p>{{selectedPatient.Background}}</p>
         		</div>
     		</div>
 		</section>
 	</div>
-		<!-- Patient/Scenario End -->
+	<!-- Patient/Scenario End -->
 
-		<!-- Patient History Content -->
-	<div class="row-fluid">
+
+	<!-- Patient History Content -->
+
+	<div class="historyContainer" data-ng-repeat="history in selectedPatient.Histories">
+
+		<div class="row-fluid">
+		
+		<section id="orders" class="span9 offset3">
+			<h2 >{{history.DateOfEvent | date: 'longDate' }}</h2>
+			
+			{{history.EventText}}
+			
+			<!--<ul class="ordersList">
+				<li> Emergency Department Orders: </li>
+				<li> 12-lead ECG </li>
+				<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
+				<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
+				<li> Cardiac monitoring </li>
+				<li> Aspirin 325 mg poo (chewed) </li>
+				<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
+				<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
+
+			</ul>-->
+				
+		</section>
+	</div>
+
+</div> <!--end of historyContainer -->
+
+<hr>
+
+<!--	<div class="row-fluid">
 		<section id="recent" class="span9 offset3">
 			<h1>Recent</h1>
 			<p> 
@@ -65,5 +94,5 @@
 			</p>
 		</section>
 	</div>
-
+-->
 </div> <!--end of container-fluid -->

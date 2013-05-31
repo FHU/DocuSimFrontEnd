@@ -10,7 +10,6 @@
 		<!-- Side Nav End -->
 
 		<!-- Patient/Scenario Block -->
-				<!-- Patient/Scenario Block -->
 		<section id="scenario" class="span9 ">
 			<div class="hero-unit" >
 				<div class="row-fluid">
@@ -42,11 +41,11 @@
     		</div>
 		</section>
 	</div>
-		<!-- Patient/Scenario End -->
+	<!-- Patient/Scenario End -->
 
 		<!-- Patient Orders Content -->
 
-<div id="container" data-ng-repeat="order in selectedPatient.Orders">
+<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
 
 		<div class="row-fluid">
 			<h1 class="span9 offset3">{{order.TimeStamp | date: 'longDate' }}</h1>
@@ -94,7 +93,7 @@
 	</div>
 
 
-</div>
+</div> <!--end of orderContainer -->
 
 <hr>
 
