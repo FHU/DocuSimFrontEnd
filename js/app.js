@@ -49,13 +49,13 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
-docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
+/*docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
   return function(scope, elem, attr) {
     scope.$watch(attr.scrollSpy, function(value) {
       $timeout(function() { elem.scrollspy('refresh') }, 200);
   }, true);
 }
-});
+});*/
 
 function SidebarController($scope, $http) {
     $scope.sidebarItems = [];
