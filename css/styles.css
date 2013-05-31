@@ -249,17 +249,17 @@ textarea.nurseNote{
 	margin: 0;
 }
 
-.ordersContainer ul, .historyContainer ul {
+.orderContainer ul, .historyContainer ul {
 	list-style: none;
 	margin: 0;
 	font-size: 1.2em;  
 }
 
-.ordersContainer li, .historyContainer li {
+.orderContainer li, .historyContainer li {
 	height: 2.0em;
 }
 
-.ordersContainer li:before, .historyContainer li:before {
+.orderContainer li:before, .historyContainer li:before {
 	content: "-";
 }
 
