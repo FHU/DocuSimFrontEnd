@@ -64,22 +64,16 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
 		var newRespiratory = new CardioResource();
 		newRespiratory.PatientID = patientID;
 		newRespiratory.TimeStamp = stampString;
-		newRespiratory.Heart_Intensity = $scope.newRespiratory.Heart_Intensity
-		newRespiratory.Heart_Regularity = $scope.newRespiratory.Heart_Regularity;
-		newRespiratory.Rhythm = $scope.newRespiratory.Rhythm;
-		newRespiratory.Skin = $scope.newRespiratory.Skin;
-		newRespiratory.SkinColor = $scope.newRespiratory.SkinColor;
-		newRespiratory.NailBeds = $scope.newRespiratory.NailBeds;
-		newRespiratory.CapillaryRefill = $scope.newRespiratory.CapillaryRefill;
-		newRespiratory.Edema_RUE = $scope.newRespiratory.Edema_RUE;
-		newRespiratory.Edema_LUE = $scope.newRespiratory.Edema_LUE;
-		newRespiratory.Edema_RLE = $scope.newRespiratory.Edema_RLE;
-		newRespiratory.Edema_LLE = $scope.newRespiratory.Edema_LLE;
-		newRespiratory.Pulses_Radial_R = $scope.newRespiratory.Pulses_Radial_R;
-		newRespiratory.Pulses_Radial_L = $scope.newRespiratory.Pulses_Radial_L;
-		newRespiratory.Dorsalis_Pedis_R = $scope.newRespiratory.Dorsalis_Pedis_R;
-		newRespiratory.Dorsalis_Pedis_L = $scope.newRespiratory.Dorsalis_Pedis_L;
-		newRespiratory.Ted_Hose_Device = $scope.newRespiratory.Ted_Hose_Device;
+		newRespiratory.Respiration = $scope.newRespiratory.Respiration;
+		newRespiratory.BreathSounds_RUL = $scope.newRespiratory.BreathSounds_RUL;
+		newRespiratory.BreathSounds_RML = $scope.newRespiratory.BreathSounds_RML;
+		newRespiratory.BreathSounds_RLL = $scope.newRespiratory.BreathSounds_RLL;
+		newRespiratory.BreathSounds_LUL = $scope.newRespiratory.BreathSounds_LUL;
+		newRespiratory.BreathSounds_LLL = $scope.newRespiratory.BreathSounds_LLL;
+		newRespiratory.Suction = $scope.newRespiratory.Suction;
+		newRespiratory.Secretions = $scope.newRespiratory.Secretions;
+		newRespiratory.OxygenationType = $scope.newRespiratory.OxygenationType;
+		newRespiratory.FIO2 = $scope.newRespiratory.FIO2;
 		newRespiratory.NurseNote = $scope.newRespiratory.NurseNote;
 
 		//Add respiratory array to backend model.
@@ -113,7 +107,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
 
     //***** DropDowns ********************
     $scope.respiratoryOpts = {
-        respiration: [
+        Respiration: [
             {id: 'R', name: 'R-Regular'},
             {id: 'S', name: 'S-Shallow'},
             {id: 'V', name: 'V-Vent'},
@@ -121,7 +115,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'L', name: 'L-Labored'}
         ],
         
-        breathRUL: [
+        BreathSounds_RUL: [
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -134,7 +128,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'H', name: 'H-Harsh'}
         ],
 
-        breathRML: [
+        BreathSounds_RML: [
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -147,7 +141,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'H', name: 'H-Harsh'}
         ],
 
-        breathRLL: [
+        BreathSounds_RLL: [
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -160,7 +154,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'H', name: 'H-Harsh'}
         ],
 
-        breathLUL: [
+        BreathSounds_LUL: [
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -173,7 +167,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'H', name: 'H-Harsh'}
         ],
 
-        breathLLL: [
+        BreathSounds_LLL: [
             {id: 'CL', name: 'CL-Clear'},
             {id: 'Rh', name: 'Rh-Rhonchi'},
             {id: 'I', name: 'I-Inspiratory'},
@@ -186,7 +180,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'H', name: 'H-Harsh'}
         ],
 
-        oxygenation: [
+        OxygenationType: [
             {id: 'BN', name: 'BN - BiNasal Oxygen'},
             {id: 'SM', name: 'SM - Simple Mask'},
             {id: 'AFM', name: 'AFM - Aeorsol Face Mask'},
