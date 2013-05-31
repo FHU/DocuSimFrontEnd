@@ -1,57 +1,55 @@
-//***** VITALS SECTION *********************************************************************************
-//vitalsTestApp.controller('vitalsController', function($scope, Restangular, vitalsService){
 docuSimApp.controller('vitalsController', function($scope, $http, $resource, $routeParams) { 
-    
-    var PatientResource;
-	
+
+	var PatientResource;
+
 	init();
 
-    function init() {
+	function init() {
 		//Patient Object
 		PatientResource = $resource(
 			"http://docusimapi.azurewebsites.net/api/patient/:id",
-			  {
+			{
 				id : '@id', //this binds the ID of the model to the URL param
-			  },
-			  {
+			},
+			{
 				query : { method : 'GET', isArray : true }, //this can also be called index or all
 				save : { method : 'PUT' }, //this is the update method
 				create : { method : 'POST' },
 				destroy : { method : 'DELETE' }
-			  }
-		  );
-		  
-		  $scope.patient = getPatient($routeParams.id);
-		  $scope.vitals = $scope.patient.Vitals;
-		 
+			}
+			);
+
+		$scope.patient = getPatient($routeParams.id);
+		$scope.vitals = $scope.patient.Vitals;
+
 		 //Vitals Object
 		 VitalsResource = $resource(
-			"http://docusimapi.azurewebsites.net/api/vitals/:id",
-			  {
+		 	"http://docusimapi.azurewebsites.net/api/vitals/:id",
+		 	{
 				id : '@id', //this binds the ID of the model to the URL param
-			  },
-			  {
+			},
+			{
 				query : { method : 'GET', isArray : true }, //this can also be called index or all
 				save : { method : 'PUT' }, //this is the update method
 				create : { method : 'POST' },
 				destroy : { method : 'DELETE' }
-			  }
-		  );
-    }
+			}
+			);
+		}
 
 	//Get an individual Patient
-    function getPatient(id) {
-        return PatientResource.get({id:id}, onPatientReturned, onFailure);
-    }
+	function getPatient(id) {
+		return PatientResource.get({id:id}, onPatientReturned, onFailure);
+	}
 	
 	//Set the scope to the Vitals array in Patient
-    function onPatientReturned(patient) {
-        $scope.vitals = patient.Vitals;
-    }
+	function onPatientReturned(patient) {
+		$scope.vitals = patient.Vitals;
+	}
 
-    function onFailure() {
-        console.log("Error getting model");
-    }
+	function onFailure() {
+		console.log("Error getting model");
+	}
 	
 	//Calls the insert method on the Sign button
 	$scope.insertVitals = function () {
@@ -59,7 +57,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	}
 	
 	//create a new object of Vitals and add it to the database
-    function insertAssessment(patientID) {
+	function insertAssessment(patientID) {
 		var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
 		var newVital = new VitalsResource();
@@ -84,34 +82,34 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 
 		//clear the input fields
 		$scope.clearVitals();
-    }
+	}
 
 	//Database uses UTC time
-    function getDateTimeForSQLServer(timestamp) {
-    	var timeString = timestamp.getUTCFullYear() + '-' + 
+	function getDateTimeForSQLServer(timestamp) {
+		var timeString = timestamp.getUTCFullYear() + '-' + 
 		('00' + (timestamp.getUTCMonth() + 1)).slice(-2) + '-' +
 		('00' + timestamp.getUTCDate()).slice(-2) + ' ' + 
 		('00' + timestamp.getUTCHours()).slice(-2) + ':' + 
 		('00' + timestamp.getUTCMinutes()).slice(-2) + ':' +
 		('00' + timestamp.getUTCSeconds()).slice(-2);
 		
-    	return timeString.toString();
-    }
+		return timeString.toString();
+	}
 
 	//clears input fields
-    $scope.clearVitals = function () {
-        $scope.newVitals= '';
-        $('#vitals select').selectpicker('val','');
-    };
+	$scope.clearVitals = function () {
+		$scope.newVitals= '';
+		$('#vitals select').selectpicker('val','');
+	};
 
     //***** DropDowns **********************
     $scope.vitalsOpts = {
-        temp: [
-            {id: 'Oral', name: 'Oral'},
-            {id: 'Rectal', name: 'Rectal'},
-            {id: 'Axillary', name: 'Axillary'},
-            {id: 'Tympanic', name: 'Tympanic'}
-        ]
+    	temp: [
+    	{id: 'Oral', name: 'Oral'},
+    	{id: 'Rectal', name: 'Rectal'},
+    	{id: 'Axillary', name: 'Axillary'},
+    	{id: 'Tympanic', name: 'Tympanic'}
+    	]
     };
 
 });

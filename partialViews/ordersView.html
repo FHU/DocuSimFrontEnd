@@ -2,10 +2,10 @@
 	<div class="row-fluid">
 		<!-- Side Navigation -->
 		<div id="SideBar" class="span3">
-    		<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
-    			<li class="active"><a href="#orders"> Physican Orders </a></li>
-    			<li><a href="#labs"> Labs </a></li>	           			
-       		</ul>
+			<ul id="SideNav" class="nav nav-tabs nav-stacked span3">
+				<li class="active"><a href="#orders"> Physican Orders </a></li>
+				<li><a href="#labs"> Labs </a></li>	           			
+			</ul>
 		</div>
 		<!-- Side Nav End -->
 
@@ -21,43 +21,43 @@
 					<div class="span8">
 						<table class="table table-condensed">
 							<tbody>
-    							<tr>
-    								<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
-    								<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
-        						</tr>
-    	    					<tr>
-        							<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
-    								<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
-    							</tr>
-    							<tr>
-    						</tbody>
-    					</table>
-    				</div>
-    			</div>
-    			<br>
-	    		<div>
-        			<p>{{selectedPatient.Background}}</p>
-        		</div>
-    		</div>
-		</section>
-	</div>
-	<!-- Patient/Scenario End -->
+								<tr>
+									<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
+									<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
+								</tr>
+								<tr>
+									<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
+									<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
+								</tr>
+								<tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<br>
+					<div>
+						<p>{{selectedPatient.Background}}</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- Patient/Scenario End -->
 
 		<!-- Patient Orders Content -->
 
-<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
+		<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
 
-		<div class="row-fluid">
-			<h1 class="span9 offset3">{{order.TimeStamp | date: 'longDate' }}</h1>
-		</div>
+			<div class="row-fluid">
+				<h1 class="span9 offset3">{{order.TimeStamp | date: 'longDate' }}</h1>
+			</div>
 
-		<div class="row-fluid">
-		
-		<section id="orders" class="span9 offset3">
-			<h2>Physican Orders</h2>
-			
-			{{order.PhysicianOrders}}
-			
+			<div class="row-fluid">
+				
+				<section id="orders" class="span9 offset3">
+					<h2>Physican Orders</h2>
+					
+					{{order.PhysicianOrders}}
+					
 			<!--<ul class="ordersList">
 				<li> Emergency Department Orders: </li>
 				<li> 12-lead ECG </li>
@@ -69,7 +69,7 @@
 				<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
 
 			</ul>-->
-				
+			
 		</section>
 	</div>
 
