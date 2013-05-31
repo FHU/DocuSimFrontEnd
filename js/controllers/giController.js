@@ -101,7 +101,7 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
 
     //***** DropDowns **********************
     $scope.giOpts = {
-        abdomenOptinos: [
+        Abdomen: [
             {id: 'Flat', name: 'Flat'},
             {id: 'Soft', name: 'Soft'},
             {id: 'DIS', name: 'DIS - Distended'},
