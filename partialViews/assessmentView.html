@@ -238,7 +238,7 @@
         			</tr>
 					<tr>
         				<td>Coma Scale - Total</td>
-						<td></td>
+						<td>{{$scope.newNeurological.ComaScale_Eyes + $scope.newNeurological.ComaScale_Verbal + $scope.newNeurological.ComaScale_Motor}}</td>
         				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Total}}</td>
         			</tr>
 					<tr>
