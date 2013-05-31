@@ -57,21 +57,24 @@
 		</div>
 
 		<div class="row-fluid">
-			<section class="physicianOrders span9 offset3" ng-bind-html="order.PhysicianOrders">
+			<section class="physicianOrders span9 offset3" >
 				<h3>Physican Orders</h3>
-				{{order.PhysicianOrders}}
 
-			<ul>
-				<li> Emergency Department Orders: </li>
-				<li> 12-lead ECG </li>
-				<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
-				<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
-				<li> Cardiac monitoring </li>
-				<li> Aspirin 325 mg poo (chewed) </li>
-				<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
-				<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
+				<div ng-bind-html-unsafe="order.PhysicianOrders">
+					{{order.PhysicianOrders}}
+				</div>
+				
+				<ul>
+					<li> Emergency Department Orders: </li>
+					<li> 12-lead ECG </li>
+					<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
+					<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
+					<li> Cardiac monitoring </li>
+					<li> Aspirin 325 mg poo (chewed) </li>
+					<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
+					<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
 
-			</ul>
+				</ul>
 
 			</section>
 		</div>
