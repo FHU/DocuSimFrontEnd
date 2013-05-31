@@ -507,9 +507,10 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="day in daily | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{day.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{day.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{day.time | date:'M/d/yy'}}
+							<span class="date" >{{day.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
