@@ -61,7 +61,7 @@ docuSimApp.controller('dailyController', function($scope, $http, $resource, $rou
     function insertAssessment(patientID) {
 		var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
-		var newDaily = new CardioResource();
+		var newDaily = new DailyResource();
 		newDaily.PatientID = patientID;
 		newDaily.TimeStamp = stampString;
 		newDaily.IsolationPrecautions = $scope.newDaily.IsolationPrecautions;
