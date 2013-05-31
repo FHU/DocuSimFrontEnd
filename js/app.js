@@ -4,7 +4,10 @@ var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives'])
 var partialViewsUrlBase = '/partialViews/' ;
 
 //This configures the routes and associates each route with a view and a controller
-docuSimApp.config(function ($routeProvider, RestangularProvider) {
+docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
+
+    $locationProvider.html5Mode(true); 
+
     $routeProvider
         .when('/patients',
             {
@@ -13,7 +16,7 @@ docuSimApp.config(function ($routeProvider, RestangularProvider) {
             })
         //Define a route that has a route parameter in it (:customerID)
         //.when('/assessments/:patientID',
-        .when('/assessments/:id#:section',
+        .when('/assessments/:id#[:section]',
             {
                 controller: 'assessmentsController',
                 templateUrl: partialViewsUrlBase +'assessmentView.html'
