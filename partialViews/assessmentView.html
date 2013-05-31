@@ -682,9 +682,10 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{safe.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{safe.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{safe.time | date:'M/d/yy'}}
+							<span class="date" >{{safe.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
@@ -692,32 +693,32 @@
         			<tr>
         				<td>Side Rails Up</td>
 						<td>
-							<div class="btn-group" ng-model="newSafety.sideRails" bs-buttons-radio>
+							<div class="btn-group" ng-model="newSafety.SideRails" bs-buttons-radio>
 								<button class="btn" value="x2">x2</button>
 								<button class="btn" value="x4">x4</button>
 							</div>
 						</td>
-        				<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.sideRails}}</td>
+        				<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.SideRails}}</td>
 	                </tr>
 	                <tr>
 	                	<td>Call Light Within Reach</td>
 	                	<td>
-	                		<div class="btn-group" ng-model="newSafety.callLight" bs-buttons-radio>
+	                		<div class="btn-group" ng-model="newSafety.CallLightWithinReach" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="No">No</button>
 							</div>
 	                	</td>
-	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.callLight}}</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.CallLightWithinReach}}</td>
 	                </tr>
 	                <tr>
 	                	<td>Bed in Low Position</td>
 	                	<td>
-	                		<div class="btn-group" ng-model="newSafety.bedPosition" bs-buttons-radio>
+	                		<div class="btn-group" ng-model="newSafety.BedInLowPosition" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="No">No</button>
 							</div>
 	                	</td>
-	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.bedPosition}}</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.BedInLowPosition}}</td>
 	                </tr>
 					<tr>
 						<td colspan="2">
