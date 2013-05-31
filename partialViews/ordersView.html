@@ -50,14 +50,14 @@
 	<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
 
 		<div class="row-fluid">
-			<section class="span9 offset3">
+			<section class="span10 offset2">
 				<h2>{{order.TimeStamp | date: 'longDate' }}</h2>
 				<hr>
 			</section>
 		</div>
 
 		<div class="row-fluid">
-			<section class="physicianOrders span9 offset3" >
+			<section class="physicianOrders span10 offset2" >
 				<h3>Physican Orders</h3>
 
 				<div ng-bind-html-unsafe="order.PhysicianOrders">
@@ -68,7 +68,7 @@
 		</div>
 
 	<div class="row-fluid">
-		<section class="labs span9 offset3">
+		<section class="labs span10 offset2">
 			<h3>Labs</h3>
 
 			<div ng-bind-html-unsafe="order.LabOrders">
@@ -80,7 +80,7 @@
 
 
 	<div class="row-fluid">
-		<section class="meds span9 offset3">
+		<section class="meds span10 offset2">
 			<h3>Meds</h3>
 
 			<div ng-bind-html-unsafe="order.MedicationOrders">
