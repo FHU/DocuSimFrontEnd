@@ -48,13 +48,15 @@
 
 		<div class="historyContainer" data-ng-repeat="history in selectedPatient.Histories">
 			<div class="row-fluid">
-				<section id="orders" class="span9 offset3">
-					<h2 >{{history.DateOfEvent | date: 'longDate' }}</h2>
+				<section class="history span9 offset3">
+					<h2 >
+						{{history.DateOfEvent | date: 'longDate' }}
+					</h2>
 					<hr>
 
-
-					{{history.EventText}}
-
+					<div>
+						s{{history.EventText}}
+					</div>
 				</section>
 			</div>
 
