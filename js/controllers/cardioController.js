@@ -83,7 +83,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
 		newCardio.NurseNote = $scope.newCardio.NurseNote;
 
 		//Add vital array to backend model.
-		VitalsResource.create(newCardio);
+		CardioResource.create(newCardio);
 		
 		//Add vital array to frontend model.
 		newCardio.TimeStamp = now.toUTCString();
