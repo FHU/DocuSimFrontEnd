@@ -20,7 +20,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 			);
 
 		$scope.patient = getPatient($routeParams.id);
-		$scope.isos = $scope.patient.Isos;
+		$scope.isos = $scope.patient.IsOs;
 
 		 //Isos Object
 		 IsosResource = $resource(
@@ -44,7 +44,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	
 	//Set the scope to the Isos array in Patient
 	function onPatientReturned(patient) {
-		$scope.isos = patient.Isos;
+		$scope.isos = patient.IsOs;
 	}
 
 	function onFailure() {
