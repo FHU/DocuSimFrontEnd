@@ -380,7 +380,7 @@
 						<td data-ng-repeat="car in cardio | orderBy: 'TimeStamp':true">
 							<a href="#/assessments/{{car.PatientID}}" 
 							class="noteButton" 
-							bs-modal="'partialViews/modalView.html'" 
+							bs-modal="'partialViews/cardioModalView.html'" 
 							data-ng-class="(!car.NurseNote)? 'hidden' : ''"
 							> 
 								<i class="icon-file"></i> 
