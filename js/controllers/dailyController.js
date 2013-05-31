@@ -53,7 +53,7 @@ docuSimApp.controller('dailyController', function($scope, $http, $resource, $rou
     }
 	
 	//Calls the insert method on the Sign button
-	$scope.insertCardio = function () {
+	$scope.insertDaily = function () {
 		insertAssessment($routeParams.id);
 	}
 	
