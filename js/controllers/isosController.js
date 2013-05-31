@@ -65,8 +65,9 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		newIo.TimeStamp = stampString;
 		newIo.Intake_PO = $scope.newIo.Intake_PO
 		newIo.Intake_TubeFeeding = $scope.newIo.Intake_TubeFeeding;
-		newIo.Intake_IV = $scope.newIo.Intake_IV;
-		newIo.Intake_Total = sumTotal();
+		//Add total once IV is addressed
+		//newIo.Intake_IV = $scope.newIo.Intake_IV;		
+		//newIo.Intake_Total = ;
 		newIo.Output_Emesis = $scope.newIo.Output_Emesis;
 		newIo.Output_Urine = $scope.newIo.Output_Urine;
 		newIo.Output_Stool = $scope.newIo.Output_Stool;
@@ -100,7 +101,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	//clears input fields
 	$scope.clearIo = function () {
 		$scope.newIo= '';
-		$('#isos select').selectpicker('val','');
+		$('#io select').selectpicker('val','');
 	};
 	
 	//Sums up output Total

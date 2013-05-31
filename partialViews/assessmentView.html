@@ -912,7 +912,7 @@
 		                <td>Intake - Tube</td>
 						<td>
 							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_TubeFeeding"/>
-							<input type="text" pattern="[0-9]*"/></td>
+						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	{{i.Intake_TubeFeeding}}
 		                </td>
@@ -932,7 +932,7 @@
 					<tr>
 		                <td>Intake - Total</td>
 						<td></td>
-						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.intakePO + i.intakeTube + i.intakeIV}}</td>
+						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Intake_Total}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Emesis</td>
