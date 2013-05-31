@@ -54,8 +54,8 @@
 					</h2>
 					<hr>
 
-					<div>
-						s{{history.EventText}}
+					<div ng-bind-html-unsafe="history.EventText">
+						{{history.EventText}}
 					</div>
 				</section>
 			</div>
