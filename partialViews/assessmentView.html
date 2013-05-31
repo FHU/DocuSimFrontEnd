@@ -819,12 +819,13 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 		                <th data-ng-repeat="g in gi | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{g.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{g.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{g.time | date:'M/d/yy'}}
+							<span class="date" >{{g.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
