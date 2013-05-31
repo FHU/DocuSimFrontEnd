@@ -516,124 +516,131 @@
     			<tbody>
         			<tr>
         				<td>Isolation Precautions</td>
-						<td><select ng-model="newDaily.isolationPrecautions" ng-options="value.id as value.name for (key, value) in dailyOpts.isolationPrecautions" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.isolationPrecautions}}</td>
+						<td><select ng-model="newDaily.IsolationPrecautions" ng-options="value.id as value.name for (key, value) in dailyOpts.IsolationPrecautions" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.IsolationPrecautions}}</td>
 	                </tr>
 	                <tr>
 		                <td>Oral Care/Suction</td>
-						<td><div class="btn-group" ng-model="newDaily.oral" bs-buttons-radio>
+						<td><div class="btn-group" ng-model="newDaily.OralCare" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="Yes">No</button>
 							</div></td>
-		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.oral}}</td>
+		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.OralCare}}</td>
         			</tr>
         			<tr>
         				<td>Bath</td>
-						<td><select ng-model="newDaily.bath" ng-options="value.id as value.name for (key, value) in dailyOpts.bath" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.bath}}</td>
+						<td><select ng-model="newDaily.Bath" ng-options="value.id as value.name for (key, value) in dailyOpts.Bath" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Bath}}</td>
         			</tr>
 					<tr>
 		                <td>Linen</td>
-						<td><div class="btn-group" ng-model="newDaily.linen" bs-buttons-radio>
+						<td><div class="btn-group" ng-model="newDaily.Linen" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="No">No</button>
 							</div></td>
-		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.linen}}</td>
+		                <td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Linen}}</td>
         			</tr>
 					<tr>
         				<td>Turn/Shift</td>
-						<td><select ng-model="newDaily.turnShift" ng-options="value.id as value.name for (key, value) in dailyOpts.turnShift" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.turnShift}}</td>
+						<td><select ng-model="newDaily.TurnShift" ng-options="value.id as value.name for (key, value) in dailyOpts.TurnShift" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.TurnShift}}</td>
 	                </tr>
 					<tr>
         				<td>ROM</td>
-						<td><select ng-model="newDaily.rom" ng-options="value.id as value.name for (key, value) in dailyOpts.rom" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.rom}}</td>
+						<td><select ng-model="newDaily.ROM" ng-options="value.id as value.name for (key, value) in dailyOpts.ROM" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.ROM}}</td>
 	                </tr>
 					<tr>
+        				<td>Skin</td>
+						<td><input type="text" ng-model="newDaily.Skin"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin}}</td>
+	                </tr>
+					<tr>
+					<tr>
         				<td>Skin - Site</td>
-						<td><input type="text" ng-model="newDaily.skinSite"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skin}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Site"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Site}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Dsg</td>
 						<td>
-							<div class="btn-group" ng-model="newDaily.skinDsg" bs-buttons-radio>
+							<div class="btn-group" ng-model="newDaily.Skin_Dsg" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="No">No</button>
 							</div>
 						</td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDsg}}</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Dsg}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Dsg. Drainage Amt.</td>
+						<td><select ng-model="newDaily.Skin_DrainAmt" ng-options="value.id as value.name for (key, value) in dailyOpts.Skin_DrainAmt" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_DrainAmt}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Incision</td>
 						<td>
-							<div class="btn-group" ng-model="newDaily.skinIncision" bs-buttons-radio>
+							<div class="btn-group" ng-model="newDaily.Skin_Incision" bs-buttons-radio>
 								<button class="btn">Yes</button>
 								<button class="btn">No</button>
 							</div>
 						</td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinIncision}}</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Incision}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Dry and Intact</td>
-						<td><input type="text" ng-model="newDaily.skinDryIntact"></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDryIntact}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_DryIntact"></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_DryIntact}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - No change at</td>
-						<td><input type="text" ng-model="newDaily.skinNoChange"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinNoChange}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_NoChangeAt"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_NoChangeAt}}</td>
 	                </tr>
-					<tr>
-        				<td>Skin - Dsg. Drainage Amt.</td>
-						<td><select ng-model="newDaily.skinDsgDrainage" ng-options="value.id as value.name for (key, value) in dailyOpts.skinDsgDrainage" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDsgDrainage}}</td>
-	                </tr>
+					
 					<tr>
         				<td>Skin - Color</td>
-						<td><select ng-model="newDaily.skinColor" ng-options="value.id as value.name for (key, value) in dailyOpts.skinColor" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinColor}}</td>
+						<td><select ng-model="newDaily.Skin_Color" ng-options="value.id as value.name for (key, value) in dailyOpts.Skin_Color" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Color}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Odor</td>
-						<td><input type="text" ng-model="newDaily.skinOder"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinOdor}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Odor"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Odor}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Appearance</td>
-						<td><input type="text" ng-model="newDaily.skinAppearance"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinAppearance}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Appearance"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Appearance}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Size</td>
-						<td><input type="text" ng-model="newDaily.skinSize"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinSize}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Size"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Size}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Drain</td>
-						<td><input type="text" ng-model="newDaily.skinDrain"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinDrain}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Drain"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Drain}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Primed</td>
 						<td>
-							<div class="btn-group" ng-model="newDaily.skinPrimed" bs-buttons-radio>
+							<div class="btn-group" ng-model="newDaily.Skin_Primed" bs-buttons-radio>
 								<button class="btn" value="Yes">Yes</button>
 								<button class="btn" value="No">No</button>
 							</div>
 						</td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinPrimed}}</td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Primed}}</td>
 	                </tr>
 					<tr>
         				<td>Skin - Comments</td>
-						<td><input type="text" ng-model="newDaily.skinComments"/></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.skinComments}}</td>
+						<td><input type="text" ng-model="newDaily.Skin_Comments"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.Skin_Comments}}</td>
 	                </tr>
 					<tr>
         				<td>Peripheral/Central IV site</td>
-						<td><select ng-model="newDaily.ivSite" ng-options="value.id as value.name for (key, value) in dailyOpts.ivSite" bs-select></select></td>
-        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.ivSite}}</td>
+						<td><select ng-model="newDaily.IV_Site" ng-options="value.id as value.name for (key, value) in dailyOpts.IV_Site" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.IV_Site}}</td>
 	                </tr>
 					<tr>
 						<td colspan="2">

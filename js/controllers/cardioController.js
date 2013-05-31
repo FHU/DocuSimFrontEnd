@@ -64,7 +64,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
 		var newCardio = new CardioResource();
 		newCardio.PatientID = patientID;
 		newCardio.TimeStamp = stampString;
-		newCardio.Heart_Intensity = $scope.newCardio.Heart_Intensity
+		newCardio.Heart_Intensity = $scope.newCardio.Heart_Intensity;
 		newCardio.Heart_Regularity = $scope.newCardio.Heart_Regularity;
 		newCardio.Rhythm = $scope.newCardio.Rhythm;
 		newCardio.Skin = $scope.newCardio.Skin;

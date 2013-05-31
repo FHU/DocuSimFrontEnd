@@ -540,7 +540,7 @@ docuSimApp.service('cardioService', function () {
 
 
 //***** RESPIRATORY SECTION *********************************************************************************
-docuSimApp.controller('respiratoryController', function($scope, respiratoryService){
+/*docuSimApp.controller('respiratoryController', function($scope, respiratoryService){
     init();
 
     function init() {
@@ -691,14 +691,14 @@ docuSimApp.service('respiratoryService', function () {
             {id: 'BPAP', name: 'BPAP - Binasel Positive Airway Pressure'}
         ]
     };
-});
+});*/
 
 
 
 
 
 //***** DAILY SECTION *********************************************************************************
-docuSimApp.controller('dailyController', function($scope, dailyService){
+/*docuSimApp.controller('dailyController', function($scope, dailyService){
     init();
 
     function init() {
@@ -832,7 +832,7 @@ docuSimApp.service('dailyService', function () {
             {id: 'Abnormal', name: 'Abnormal'}
         ]
     };
-});
+});*/
 
 
 
