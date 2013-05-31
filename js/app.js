@@ -57,14 +57,14 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
 }
 });*/
 
-function SidebarController($scope, $http) {
+/*function SidebarController($scope, $http) {
     $scope.sidebarItems = [];
 
     $scope.lookupAddress = function() {
         $scope.sidebarItems.push($scope.addressText);
         $scope.addressText = '';
     };
-}
+}*/ 
 
 docuSimApp.controller('restController', function($scope, Restangular) {
 

@@ -46,15 +46,15 @@
 
 		<!-- Patient History Content -->
 
-<div id="history" class="historyContainer accordion-group" data-ng-repeat="history in selectedPatient.Histories" class="">
+<div class="historyContainer accordion-group" data-ng-repeat="history in selectedPatient.Histories" class="">
 	<div class="row-fluid">
-		<section class="history span10 offset2">
-			<div class="accordion-heading row-fluid">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#history" href="#history">
-				<h2> {{history.DateOfEvent | date: 'longDate' }} </h2>
-				</a>
+		<section id="historyEvent{{history.ID}}" class="history span10 offset2">
+			<div class="accordion-heading">
+				<h2 class="accordion-toggle" data-toggle="collapse" data-parent="#history"> 
+					{{history.DateOfEvent | date: 'longDate' }} 
+				</h2>
 			</div>
-			<div id="collapseTwo" class="accordion-body collapse">
+			<div id="historyText{{history.ID}}" class="accordion-body collapse">
 				<div class="accordion-inner" div ng-bind-html-unsafe="history.EventText">
 		      		{{history.EventText}}
 				</div>>
