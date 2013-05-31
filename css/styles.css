@@ -430,17 +430,17 @@ hr{
 
 /* Orders --------*/
 
-.ordersList {
+.ordersContainer ul {
 	list-style: none;
 	margin: 0;
 	font-size: 1.2em;  
 }
 
-.ordersList li {
+.ordersContainer li {
 	height: 2.0em;
 }
 
-.ordersList li:before {
+.ordersContainer li:before {
 	content: "-";
 }
 
