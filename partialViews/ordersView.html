@@ -13,7 +13,9 @@
 		<section id="scenario" class="span9 ">
 			<div class="hero-unit" >
 				<div class="row-fluid">
-					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} <span class="pull-right">{{selectedPatient.ID}}</span></h2>
+					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} 
+						<span class="pull-right">{{selectedPatient.ID}}</span>
+					</h2>
 				</div>
 				<hr>
 				<div class="row-fluid">
@@ -31,52 +33,52 @@
 								</tr>
 								<tr>
 								</tbody>
-							</table>
-						</div>
-					</div>
-					<br>
-					<div>
-						<p>{{selectedPatient.Background}}</p>
+						</table>
 					</div>
 				</div>
-			</section>
-		</div>
-		<!-- Patient/Scenario End -->
+				<br>
+				<div>
+					<p>{{selectedPatient.Background}}</p>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- Patient/Scenario End -->
 
 		<!-- Patient Orders Content -->
 
-		<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
+	<div class="orderContainer" data-ng-repeat="order in selectedPatient.Orders">
 
-			<div class="row-fluid">
-				<section class="span9 offset3">
-					<h2>{{order.TimeStamp | date: 'longDate' }}</h2>
-					<hr>
-				</section>
-			</div>
+		<div class="row-fluid">
+			<section class="span9 offset3">
+				<h2>{{order.TimeStamp | date: 'longDate' }}</h2>
+				<hr>
+			</section>
+		</div>
 
-			<div class="row-fluid">
-				<section class="physicianOrders" class="span9 offset3" ng-bind-html-unsafe="order.PhysicianOrders">
-					<h3>Physican Orders</h3>
+		<div class="row-fluid">
+			<section class="physicianOrders span9 offset3" ng-bind-html-unsafe="order.PhysicianOrders">
+				<h3>Physican Orders</h3>
 
-					{{order.PhysicianOrders}}
+				{{order.PhysicianOrders}}
 
-				<ul>
-					<li> Emergency Department Orders: </li>
-					<li> 12-lead ECG </li>
-					<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
-					<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
-					<li> Cardiac monitoring </li>
-					<li> Aspirin 325 mg poo (chewed) </li>
-					<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
-					<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
+			<ul>
+				<li> Emergency Department Orders: </li>
+				<li> 12-lead ECG </li>
+				<li> IV Normal Saline 1000 mL at 75 mL/hour </li>
+				<li> Oxygen at 4L/min to maintin Sp02 greawtn than 92% </li>
+				<li> Cardiac monitoring </li>
+				<li> Aspirin 325 mg poo (chewed) </li>
+				<li> 'NTG tablet sublignual may be repated after 5 mintues max 3 doses </li>
+				<li>If pain is not relieved by NTG may give Morphione 2 mg IVP, may repeat x'</li>
 
-				</ul>
+			</ul>
 
-		</section>
-	</div>
+			</section>
+		</div>
 
 	<div class="row-fluid">
-		<section class="labs" class="span9 offset3">
+		<section class="labs span9 offset3">
 			<h3>Labs</h3>
 
 			{{order.LabOrders}}
@@ -86,7 +88,7 @@
 
 
 	<div class="row-fluid">
-		<section class="meds" class="span9 offset3">
+		<section class="meds span9 offset3">
 			<h3>Meds</h3>
 
 			{{order.MedicationOrders}}
