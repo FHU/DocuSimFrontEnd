@@ -45,7 +45,7 @@ docuSimApp.controller('dailyController', function($scope, $http, $resource, $rou
 	
 	//Set the scope to the Dailies array in Patient
     function onPatientReturned(patient) {
-        $scope.cardio = patient.Dailies;
+        $scope.daily = patient.Dailies;
     }
 
     function onFailure() {
