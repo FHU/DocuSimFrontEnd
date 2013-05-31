@@ -249,7 +249,7 @@
 						<td data-ng-repeat="neuro in neurological | orderBy: 'TimeStamp':true">
 							<a href="#/assessments/{{neuro.PatientID}}" 
 							class="noteButton" 
-							bs-modal="'partialViews/modalView.html'" 
+							bs-modal="'partialViews/neurologicalModalView.html'" 
 							data-ng-class="(!neuro.NurseNote)? 'hidden' : ''"
 							> 
 								<i class="icon-file"></i> 
@@ -470,13 +470,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newRespiratory.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="resp in respiratory | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{resp.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/respiratoryModalView.html'" 
+							data-ng-class="(!resp.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>
@@ -633,9 +637,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newDaily.NurseNote"> </textarea>
 						</td>
-						<td data-ng-repeat="day in daily | orderBy:'id':true">{{day.isolationPrecautions}}</td>
+						<td data-ng-repeat="day in daily | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{day.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/dailyModalView.html'" 
+							data-ng-class="(!day.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>
@@ -701,13 +713,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newSafety.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="safe in safety | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{safe.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/safetyModalView.html'" 
+							data-ng-class="(!safe.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>
@@ -759,13 +775,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newGu.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="g in gu | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{g.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/guModalView.html'" 
+							data-ng-class="(!g.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>
@@ -826,13 +846,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newGi.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="g in gi | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{g.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/giModalView.html'" 
+							data-ng-class="(!g.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
         		</tbody>
         	</table>
@@ -918,13 +942,17 @@
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newIo.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="i in io | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{i.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/giModalView.html'" 
+							data-ng-class="(!i.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>
