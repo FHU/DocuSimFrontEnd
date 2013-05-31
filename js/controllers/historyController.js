@@ -1,7 +1,4 @@
 
-
-
-
 docuSimApp.controller('historyController', function($scope, historyFactory){
     $scope.histories = [];
 
