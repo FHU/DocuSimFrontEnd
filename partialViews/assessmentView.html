@@ -279,88 +279,113 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
-		                <th data-ng-repeat="car in cardio | orderBy:'id':true">
-		                	<span class="time" >{{car.time | date:'H:mm'}}  </span> 
+		                <th data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{vital.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{car.time | date:'M/d/yy'}}
+							<span class="date" >{{vital.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Heart Intensity</td>
-						<td><select ng-model="newCardio.heartIntensity" ng-options="value.id as value.name for (key, value) in cardioOpts.heartIntensity" bs-select></select></td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.heartIntensity}}</td>
+						<td><select ng-model="newCardio.Heart_Intensity" ng-options="value.id as value.name for (key, value) in cardioOpts.Heart_Intensity" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Heart_Intensity}}</td>
 	                </tr>
 	                <tr>
 		                <td>Heart Regularity</td>
-						<td><select ng-model="newCardio.heartRegularity" ng-options="value.id as value.name for (key, value) in cardioOpts.heartRegularity" bs-select></select></td>
-		                <td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.heartRegularity}}</td>
+						<td><select ng-model="newCardio.Heart_Regularity" ng-options="value.id as value.name for (key, value) in cardioOpts.Heart_Regularity" bs-select></select></td>
+		                <td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Heart_Regularity}}</td>
         			</tr>
         			<tr>
         				<td>Cardiac Rhythm</td>
-						<td><select ng-model="newCardio.cardiacRhythm" ng-options="value.id as value.name for (key, value) in cardioOpts.cardiacRhythm" bs-select></select>
+						<td><select ng-model="newCardio.Rhythm" ng-options="value.id as value.name for (key, value) in cardioOpts.Rhythm" bs-select></select>
 						</td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.cardiacRhythm}}</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Rhythm}}</td>
         			</tr>
 					<tr>
         				<td>Skin</td>
-						<td><select ng-model="newCardio.skin" ng-options="value.id as value.name for (key, value) in cardioOpts.skin" bs-select></select></td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.skin}}</td>
+						<td><select ng-model="newCardio.Skin" ng-options="value.id as value.name for (key, value) in cardioOpts.Skin" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Skin}}</td>
         			</tr>
 					<tr>
         				<td>Skin Color</td>
-						<td><select ng-model="newCardio.skinColor" ng-options="value.id as value.name for (key, value) in cardioOpts.skinColor" bs-select></select>
+						<td><select ng-model="newCardio.SkinColor" ng-options="value.id as value.name for (key, value) in cardioOpts.SkinColor" bs-select></select>
 						</td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.skinColor}}</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.SkinColor}}</td>
         			</tr>
 					<tr>
         				<td>Nail Beds</td>
-						<td><select ng-model="newCardio.nailBeds" ng-options="value.id as value.name for (key, value) in cardioOpts.nailBeds" bs-select></select>
+						<td><select ng-model="newCardio.NailBeds" ng-options="value.id as value.name for (key, value) in cardioOpts.NailBeds" bs-select></select>
 						</td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.nailBeds}}</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.NailBeds}}</td>
         			</tr>
 					<tr>
         				<td>Capillary Refill</td>
-						<td><select ng-model="newCardio.capillayrRefill" ng-options="value.id as value.name for (key, value) in cardioOpts.capillaryRefill" bs-select></select>
+						<td><select ng-model="newCardio.CapillaryRefill" ng-options="value.id as value.name for (key, value) in cardioOpts.CapillaryRefill" bs-select></select>
 						</td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.capillaryRefill}}</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.CapillaryRefill}}</td>
         			</tr>
 					<tr>
-        				<td>Edema - RUE/LUE</td>
-						<td><select ng-model="newCardio.edemaUE" ng-options="value.id as value.name for (key, value) in cardioOpts.edemaUEOptions " bs-select></select></td>
-						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.edemaUE}}</td>
+        				<td>Edema - RUE</td>
+						<td><select ng-model="newCardio.Edema_RUE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_RUE " bs-select></select></td>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Edema_RUE}}</td>
         			</tr>
 					<tr>
-        				<td>Edema - RLE/LLE</td>
-						<td><select ng-model="newCardio.edemaLE" ng-options="value.id as value.name for (key, value) in cardioOpts.edemaUE" bs-select></select></td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.edemaLE}}</td>
+        				<td>Edema - LUE</td>
+						<td><select ng-model="newCardio.Edema_LUE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_LUE " bs-select></select></td>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Edema_LUE}}</td>
         			</tr>
 					<tr>
-        				<td>Pulses Radial - R/L</td>
-						<td><select ng-model="newCardio.pulseRadial" ng-options="value.id as value.name for (key, value) in cardioOpts.pulseRadial" bs-select></select>
-						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.pulseRadial}}</td>
+        				<td>Edema - RLE</td>
+						<td><select ng-model="newCardio.Edema_RLE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_RLE" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Edema_RLE}}</td>
         			</tr>
 					<tr>
-        				<td>Dorsalis Pedis - R/L</td>
-						<td><select ng-model="newCardio.dorsaliPedis" ng-options="value.id as value.name for (key, value) in cardioOpts.dorsalisPedis" bs-select></select></td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.dorsalisPedis}}</td>
+        				<td>Edema - LLE</td>
+						<td><select ng-model="newCardio.Edema_LLE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_LLE" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Edema_LLE}}</td>
+        			</tr>
+					<tr>
+        				<td>Pulses Radial - R</td>
+						<td><select ng-model="newCardio.Pulses_Radial_R" ng-options="value.id as value.name for (key, value) in cardioOpts.Pulses_Radial_R" bs-select></select>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Pulses_Radial_R}}</td>
+        			</tr>
+					<tr>
+        				<td>Pulses Radial - L</td>
+						<td><select ng-model="newCardio.Pulses_Radial_L" ng-options="value.id as value.name for (key, value) in cardioOpts.Pulses_Radial_L" bs-select></select>
+						<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Pulses_Radial_L}}</td>
+        			</tr>
+					<tr>
+        				<td>Dorsalis Pedis - R</td>
+						<td><select ng-model="newCardio.Dorsalis_Pedis_R" ng-options="value.id as value.name for (key, value) in cardioOpts.Dorsalis_Pedis_R" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Dorsalis_Pedis_R}}</td>
+        			</tr>
+					<tr>
+        				<td>Dorsalis Pedis - L</td>
+						<td><select ng-model="newCardio.Dorsalis_Pedis_L" ng-options="value.id as value.name for (key, value) in cardioOpts.Dorsalis_Pedis_L" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Dorsalis_Pedis_L}}</td>
         			</tr>
 					<tr>
         				<td>TED Hose Device</td>
-						<td><input type="text" ng-model="newCardio.TED"/></td>
-        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Ted}}</td>
+						<td><input type="text" ng-model="newCardio.Ted_Hose_Device"/></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'id':true">{{car.Ted_Hose_Device}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
 							Nurse's Note:
-							<textarea class="nurseNote"> </textarea>
+							<textarea class="nurseNote" data-ng-model="newCardio.NurseNote"> </textarea>
 						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td data-ng-repeat="car in cardio | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{car.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/modalView.html'" 
+							data-ng-class="(!car.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
 					</tr>
       			</tbody>
     		</table>

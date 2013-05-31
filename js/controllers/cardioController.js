@@ -61,25 +61,33 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
     function insertAssessment(patientID) {
 		var now = new Date();
 		var stampString = getDateTimeForSQLServer(now);
-		var newVital = new VitalsResource();
-		newVital.PatientID = patientID;
-		newVital.TimeStamp = stampString;
-		newVital.Temperature = $scope.newVitals.Temperature
-		newVital.TemperatureRoute = $scope.newVitals.TemperatureRoute;
-		newVital.HR = $scope.newVitals.HR;
-		newVital.R = $scope.newVitals.R;
-		newVital.BP_Systolic = $scope.newVitals.BP_Systolic;
-		newVital.BP_Diastolic = $scope.newVitals.BP_Diastolic;
-		newVital.SpO2 = $scope.newVitals.SpO2;
-		newVital.Weight = $scope.newVitals.Weight;
-		newVital.NurseNote = $scope.newVitals.NurseNote;
+		var newCardio = new CardioResource();
+		newCardio.PatientID = patientID;
+		newCardio.TimeStamp = stampString;
+		newCardio.Heart_Intensity = $scope.newCardio.Heart_Intensity
+		newCardio.Heart_Regularity = $scope.newCardio.Heart_Regularity;
+		newCardio.Rhythm = $scope.newCardio.Rhythm;
+		newCardio.Skin = $scope.newCardio.Skin;
+		newCardio.SkinColor = $scope.newCardio.SkinColor;
+		newCardio.NailBeds = $scope.newCardio.NailBeds;
+		newCardio.CapillaryRefill = $scope.newCardio.CapillaryRefill;
+		newCardio.Edema_RUE = $scope.newCardio.Edema_RUE;
+		newCardio.Edema_LUE = $scope.newCardio.Edema_LUE;
+		newCardio.Edema_RLE = $scope.newCardio.Edema_RLE;
+		newCardio.Edema_LLE = $scope.newCardio.Edema_LLE;
+		newCardio.Pulses_Radial_R = $scope.newCardio.Pulses_Radial_R;
+		newCardio.Pulses_Radial_L = $scope.newCardio.Pulses_Radial_L;
+		newCardio.Dorsalis_Pedis_R = $scope.newCardio.Dorsalis_Pedis_R;
+		newCardio.Dorsalis_Pedis_L = $scope.newCardio.Dorsalis_Pedis_L;
+		newCardio.Ted_Hose_Device = $scope.newCardio.Ted_Hose_Device;
+		newCardio.NurseNote = $scope.newCardio.NurseNote;
 
 		//Add vital array to backend model.
-		VitalsResource.create(newVital);
+		VitalsResource.create(newCardio);
 		
 		//Add vital array to frontend model.
-		newVital.TimeStamp = now.toUTCString();
-		$scope.vitals.unshift(newVital);
+		newCardio.TimeStamp = now.toUTCString();
+		$scope.vitals.unshift(newCardio);
 
 		//clear the input fields
 		$scope.clearVitals();
