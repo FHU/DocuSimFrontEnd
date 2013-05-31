@@ -235,6 +235,14 @@ textarea.nurseNote{
 	min-width:200px;
 }
 
+
+/*----- History/Orders --------------------*/
+
+.orderContainer, .historyContainer {
+	border-bottom: 1px solid red;
+}
+
+
 /*select{
 	width: auto;
 	background: #D0D5D9;
