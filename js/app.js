@@ -1073,7 +1073,7 @@ docuSimApp.service('giService', function () {
 
 
 //***** I/O SECTION *********************************************************************************
-docuSimApp.controller('ioController', function($scope, ioService){
+/*docuSimApp.controller('ioController', function($scope, ioService){
     init();
 
     function init() {
@@ -1140,4 +1140,4 @@ $(document).ready(function() {
 
     $('select').selectpicker('val','');
 
-});
+});*/
