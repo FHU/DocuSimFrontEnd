@@ -21,7 +21,7 @@ docuSimApp.controller('dailyController', function($scope, $http, $resource, $rou
 		  );
 		  
 		  $scope.patient = getPatient($routeParams.id);
-		  $scope.daily = $scope.patient.Dailes;
+		  $scope.daily = $scope.patient.Dailies;
 		 
 		 //Daily Object
 		 DailyResource = $resource(
