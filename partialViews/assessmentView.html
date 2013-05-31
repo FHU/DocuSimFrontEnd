@@ -906,17 +906,24 @@
         			</tr>
 					<tr>
 		                <td>Intake - Tube</td>
-						<td><input type="text" pattern="[0-9]*" ng-model="newIo.Intake_TubeFeeding"/>
+						<td>
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_TubeFeeding"/>
 							<input type="text" pattern="[0-9]*"/></td>
-		                <td data-ng-repeat="i in isos | orderBy:'id':true">{{i.Intake_TubeFeeding}}</td>
+		                <td data-ng-repeat="i in isos | orderBy:'id':true">
+		                	{{i.Intake_TubeFeeding}}
+		                </td>
         			</tr>
 					<tr>
 		                <td>Intake - IV(s)</td>
-						<td><input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV"/>
+						<td>
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV"/>
 							<input type="text" pattern="[0-9]*" />
 							<input type="text" pattern="[0-9]*" />
-							<input type="text" pattern="[0-9]*" /></td>
-		                <td data-ng-repeat="i in isos | orderBy:'id':true">{{i.Intake_IV}}</td>
+							<input type="text" pattern="[0-9]*" />
+						</td>
+		                <td data-ng-repeat="i in isos | orderBy:'id':true">
+		                	{{i.Intake_IV}}
+		                </td>
         			</tr>
 					<tr>
 		                <td>Intake - Total</td>
