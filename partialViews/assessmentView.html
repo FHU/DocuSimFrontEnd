@@ -411,9 +411,10 @@
 							<span class="date" >{{time | date:'M/d/yy'}}
 						</th>
 		                <th data-ng-repeat="resp in respiratory | orderBy:'id':true">
-		                	<span class="time" >{{resp.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{resp.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{resp.time | date:'M/d/yy'}}
+							<span class="date" >{{resp.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
