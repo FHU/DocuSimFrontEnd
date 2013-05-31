@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row-fluid">
 		<!-- Side Navigation -->
-		<div id="SideBar" class="span2">
+		<div id="SideBar" class="span2" data-ng-controller="patientsController">
     		<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
     			<li class="active"><a href="#/assessments/{{selectedPatient.ID}}#scenario"><img class="nav-icon" src="img/medicoicons/hospital.png"> Patient</a></li>
     			<li><a href="#/assessments/{{selectedPatient.ID}}#vitals"><img class="nav-icon" src="img/medicoicons/blood pressure.png"> Vitals</a></li>
