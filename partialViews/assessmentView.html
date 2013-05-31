@@ -937,7 +937,6 @@
 					<tr>
 		                <td>Output - Emesis</td>
 						<td><input type="text" pattern="[0-9]*" ng-model="newIo.Output_Emesis"/>
-							<input type="text" pattern="[0-9]*" /></td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Emesis}}</td>
         			</tr>
 					<tr>
@@ -957,8 +956,8 @@
         			</tr>
 					<tr>
 		                <td>Output - Total</td>
-						<td></td>
-						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.outputEmesis + i.outputUrine + i.outputStool + i.outputChestTube}}</td>
+						<td>{{newIo.Output_Emesis + newIo.Output_Urine + newIo.Output_Stool + newIo.Output_ChestTube}}</td>
+						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Total}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">

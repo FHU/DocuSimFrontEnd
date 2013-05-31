@@ -66,12 +66,12 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		newIo.Intake_PO = $scope.newIo.Intake_PO
 		newIo.Intake_TubeFeeding = $scope.newIo.Intake_TubeFeeding;
 		newIo.Intake_IV = $scope.newIo.Intake_IV;
-		newIo.Intake_Total = $scope.newIo.Intake_Total;
+		newIo.Intake_Total = sumTotal();
 		newIo.Output_Emesis = $scope.newIo.Output_Emesis;
 		newIo.Output_Urine = $scope.newIo.Output_Urine;
 		newIo.Output_Stool = $scope.newIo.Output_Stool;
 		newIo.Output_ChestTube = $scope.newIo.Output_ChestTube;
-		newIo.Output_Total = $scope.newIo.Output_Total;
+		newIo.Output_Total = sumOutputTotal($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube);
 		newIo.NurseNote = $scope.newIo.NurseNote;
 
 		//Add vital array to backend model.
@@ -102,17 +102,12 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		$scope.newIo= '';
 		$('#isos select').selectpicker('val','');
 	};
+	
+	//Sums up output Total
+	function sumOutputTotal(num1, num2, num3, num4){
+		return num1 + num2 + num3 + num4;
+	}
 
     //***** DropDowns **********************
-    // Not used currently
-    $scope.isosOpts = {
-    	fieldName: [
-    	{id: 'Oral', name: 'Oral'},
-    	{id: 'Rectal', name: 'Rectal'},
-    	{id: 'Axillary', name: 'Axillary'},
-    	{id: 'Tympanic', name: 'Tympanic'}
-    	]
-    };
-
 });
 
