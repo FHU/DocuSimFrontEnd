@@ -148,7 +148,7 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 
 		                <th data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">
@@ -277,7 +277,7 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 		                <th data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">
 		                	<span class="time" >{{car.TimeStamp | localTime | date: 'H:mm'}}  </span>
@@ -408,7 +408,7 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 		                <th data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
 		                	<span class="time" >{{resp.TimeStamp | localTime | date: 'H:mm'}}  </span>
@@ -504,7 +504,7 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 		                <th data-ng-repeat="day in daily | orderBy:'TimeStamp':true">
 		                	<span class="time" >{{day.TimeStamp | localTime | date: 'H:mm'}}  </span>
@@ -756,31 +756,32 @@
 						<th ng-controller="MyClock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
 		                <th data-ng-repeat="g in gu | orderBy:'TimeStamp':true">
-		                	<span class="time" >{{g.time | date:'H:mm'}}  </span> 
+		                	<span class="time" >{{g.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
 							<br />  
-							<span class="date" >{{g.time | date:'M/d/yy'}}
+							<span class="date" >{{g.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
         			</tr>
     			</thead>
     			<tbody>
         			<tr>
         				<td>Elimination Pattern</td>
-        				<td><select ng-model="newGu.elimination" ng-options="value.id as value.name for (key, value) in guOpt.elimination" bs-select></select></td>
-		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.elimination}}</td>
+        				<td><select ng-model="newGu.EliminationPattern" ng-options="value.id as value.name for (key, value) in guOpt.EliminationPattern" bs-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.EliminationPattern}}</td>
 	                </tr>
 	                <tr>
 		                <td>Catheter</td>
-						<td><select ng-model="newGu.catheter" ng-options="value.id as value.name for (key, value) in guOpt.elimination" bs-select></select></td>
-		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.catheter}}</td>
+						<td><select ng-model="newGu.Catheter" ng-options="value.id as value.name for (key, value) in guOpt.Catheter" bs-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.Catheter}}</td>
         			</tr>
         			<tr>
         				<td>Color/Consistency</td>
-						<td><select ng-model="newGu.colorConsistency" ng-options="value.id as value.name for (key, value) in guOpt.colorConsistency" bs-select></select>
+						<td><select ng-model="newGu.ColorConsistency" ng-options="value.id as value.name for (key, value) in guOpt.ColorConsistency" bs-select></select>
 						</td>
-						<td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.colorConsistency}}</td>
+						<td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.ColorConsistency}}</td>
         			</tr>
 					<tr>
 						<td colspan="2">
