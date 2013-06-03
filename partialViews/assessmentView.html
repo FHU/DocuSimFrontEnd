@@ -460,7 +460,7 @@
         			</tr>
 					<tr>
         				<td>Oxygenation(Type)</td>
-						<td><select ng-model="newRepiratory.OxygenationType" ng-options="value.id as value.name for (key, value) in respiratoryOpts.OxygenationType" bs-select></select></td>
+						<td><select ng-model="newRepiratory.OxygenationType" ng-options="value.id as value.name for (key, value) in respiratoryOpts.OxygenationType" bs-select multiple ></select></td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.OxygenationType}}</td>
         			</tr>
 					<tr>
