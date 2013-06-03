@@ -213,7 +213,7 @@
         			</tr>
 					<tr>
         				<td>Speech</td>
-						<td><select ng-model="newNeurological.Speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Speech"+ 'data-subtext="Calm"' bs-select ></select></td>
+						<td><select ng-model="newNeurological.Speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Speech"+ 'data-subtext="Calm"'	 bs-select ></select></td>
         				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Speech}}</td>
         			</tr>
 					<tr>
@@ -460,7 +460,7 @@
         			</tr>
 					<tr>
         				<td>Oxygenation(Type)</td>
-						<td><select ng-model="newRepiratory.OxygenationType" ng-options="value.id as value.name for (key, value) in respiratoryOpts.OxygenationType" bs-select multiple class="dropup"></select></td>
+						<td><select ng-model="newRepiratory.OxygenationType" ng-options="value.id as value.name for (key, value) in respiratoryOpts.OxygenationType" bs-select multiple ></select></td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.OxygenationType}}</td>
         			</tr>
 					<tr>
