@@ -22,7 +22,7 @@ var partialViewsUrlBase = '/partialViews/' ;
 
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
-    
+
     //$locationProvider.html5Mode(true); 
 
     $routeProvider
@@ -64,6 +64,14 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
         .otherwise({ redirectTo: '/patients' });
 
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+});
+
+docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
+  //when the route is changed scroll to the proper element.
+  $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
+    $location.hash($routeParams.scrollTo);
+    $anchorScroll();  
+  });
 });
 
 /*docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
