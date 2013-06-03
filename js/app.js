@@ -1,3 +1,14 @@
+$(document).ready(function() {
+
+    $('select').selectpicker('val','');
+
+    $('body').click(function() {
+        $('selectpicker').render();
+    });
+
+});*/
+
+
 
 var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
