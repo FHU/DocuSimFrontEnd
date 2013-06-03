@@ -6,9 +6,9 @@ $(document).ready(function() {
         $('bootstrap-select').render();
     });*/
 
-    $('.assessmentArea thead').affix({
-        offset: $(this).position();
-    });​
+    /*$('.assessmentArea thead').affix({
+        offset: $(this).position()
+    });​*/
 
 });
 
