@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-    $('select').selectpicker('val','');
+    //$('select').selectpicker('val','');
 
-    $('.assessmentArea').click( function(){
+    /*$('.assessmentArea').click( function(){
         $('bootstrap-select').render();
-    });
+    });*/
 
 });
 
