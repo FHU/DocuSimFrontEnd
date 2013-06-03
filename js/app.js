@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('select').selectpicker('val','');
 
     $('.assessmentArea').click( function(){
-        $('bootstrap-select').render());
+        $('bootstrap-select').render();
     });
 
 });
