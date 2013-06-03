@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
 
-var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
+var docuSimApp = angular.module('docuSim', ['$strap.directives']);
 
 var partialViewsUrlBase = '/partialViews/' ;
 
@@ -106,7 +106,7 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
     };
 }*/ 
 
-docuSimApp.controller('restController', function($scope, Restangular) {
+/*docuSimApp.controller('restController', function($scope, Restangular) {
 
     //$scope.patientInfo = Restangular.one("patient", 4).get();
     //console.log($scope.patientInfo);
@@ -133,7 +133,7 @@ docuSimApp.controller('restController', function($scope, Restangular) {
         console.log("Oops error from server :(");
     });
 
-});
+});*/
 
 
 docuSimApp.controller('NavbarController', function ($scope, $location, $routeParams) {
