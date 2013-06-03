@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
 
-var docuSimApp = angular.module('docuSim', ['$strap.directives']);
+var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
 var partialViewsUrlBase = '/partialViews/' ;
 
@@ -47,6 +47,11 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
                 controller: 'patientsController',
                 templateUrl: partialViewsUrlBase +'historyView.html'
             })
+        .when('/rest', 
+            {
+                controller: 'restController',
+                templateUrl: partialViewsUrlBase +'restangularView.html'
+            })
         .when('/adminEdit/', 
             {
                 controller: 'patientsController',
@@ -56,7 +61,12 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
 
         .otherwise({ redirectTo: '/patients' });
 
-        //RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+        RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+});
+
+docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
+
+
 });
 
 //http://stackoverflow.com/questions/14712223/how-to-handle-anchor-hash-linking-in-angularjs/14717011#14717011
@@ -75,13 +85,8 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
         //reset to old to keep any additional routing logic from kicking in
         //$location.hash(old);
     };
+
 });
-
-
-/*docuSimApp.controller( 'mainController', function($scope, $location, $anchorScroll, $routeParams ) {
-    //What goes here?
-});*/
-
 
 /*docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
   return function(scope, elem, attr) {
@@ -100,7 +105,7 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
     };
 }*/ 
 
-/*docuSimApp.controller('restController', function($scope, Restangular) {
+docuSimApp.controller('restController', function($scope, Restangular) {
 
     //$scope.patientInfo = Restangular.one("patient", 4).get();
     //console.log($scope.patientInfo);
@@ -127,7 +132,7 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
         console.log("Oops error from server :(");
     });
 
-});*/
+});
 
 
 docuSimApp.controller('NavbarController', function ($scope, $location, $routeParams) {
