@@ -77,10 +77,10 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
     };
 });
 
-docuSimApp.controller( 'mainController', function($scope, $location, $anchorScroll, $routeParams ) {
-    //What goes here?
-});
 
+/*docuSimApp.controller( 'mainController', function($scope, $location, $anchorScroll, $routeParams ) {
+    //What goes here?
+});*/
 
 
 /*docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
