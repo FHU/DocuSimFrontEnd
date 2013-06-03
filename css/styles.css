@@ -304,7 +304,8 @@ textarea.nurseNote{
 	}
 
 	.btn .caret {
-		margin-top: 15px;
+		margin-top: 22px;
+		margin-left: 10px;
 	}
 
 	.bootstrap-select.btn-group .dropdown-menu li > a {
