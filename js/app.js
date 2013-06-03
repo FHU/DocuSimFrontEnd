@@ -66,10 +66,11 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
+//http://stackoverflow.com/questions/14712223/how-to-handle-anchor-hash-linking-in-angularjs/14717011#14717011
 docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
   //when the route is changed scroll to the proper element.
   $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-    $location.hash($routeParams.scrollTo);
+    $location.hash($routeParams.section);
     $anchorScroll();  
   });
 });
