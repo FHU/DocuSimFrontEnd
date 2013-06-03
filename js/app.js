@@ -21,7 +21,7 @@ var partialViewsUrlBase = '/partialViews/' ;
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
 
-    //$locationProvider.html5Mode(true); 
+    $locationProvider.html5Mode(true); 
 
     $routeProvider
         .when('/patients',
