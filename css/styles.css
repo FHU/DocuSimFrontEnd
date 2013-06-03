@@ -21,6 +21,10 @@ html, body {
 	transition: none;
 }
 
+.affix {
+    top: 10px;
+}​
+
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
