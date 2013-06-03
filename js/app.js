@@ -47,11 +47,11 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
                 controller: 'patientsController',
                 templateUrl: partialViewsUrlBase +'historyView.html'
             })
-        .when('/rest', 
+        /*.when('/rest', 
             {
                 controller: 'restController',
                 templateUrl: partialViewsUrlBase +'restangularView.html'
-            })
+            })*/
         .when('/adminEdit/', 
             {
                 controller: 'patientsController',
@@ -61,7 +61,7 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
 
         .otherwise({ redirectTo: '/patients' });
 
-        RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+        //RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
 docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
