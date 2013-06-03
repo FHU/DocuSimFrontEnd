@@ -21,7 +21,6 @@ html, body {
 	transition: none;
 }
 
-
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
@@ -31,6 +30,12 @@ html, body {
 
 .hidden {
 	display:none;
+}
+
+.btn .caret {
+	margin-top: 10px;
+	margin-left: 10px;
+	color: #f5f5f5;
 }
 
 
