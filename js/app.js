@@ -2,9 +2,9 @@ $(document).ready(function() {
 
     $('select').selectpicker('val','');
 
-    $('body').click(function() {
+    /*$('body').click(function() {
         $('selectpicker').render();
-    });
+    });*/
 
 });
 
