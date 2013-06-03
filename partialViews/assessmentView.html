@@ -213,7 +213,7 @@
         			</tr>
 					<tr>
         				<td>Speech</td>
-						<td><select ng-model="newNeurological.Speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Speech" bs-select></select></td>
+						<td><select ng-model="newNeurological.Speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Speech" bs-select data-subtext="Calm"></select></td>
         				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Speech}}</td>
         			</tr>
 					<tr>
