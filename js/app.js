@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
 
-var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
+var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']).value('$anchorScroll', angular.noop);
 
 var partialViewsUrlBase = '/partialViews/' ;
 
@@ -63,6 +63,8 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
 
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
+
+
 
 /*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
