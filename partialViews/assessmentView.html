@@ -581,7 +581,7 @@
 						<td><select ng-model="newDaily.ROM" ng-options="value.id as value.name for (key, value) in dailyOpts.ROM" bs-select></select></td>
         				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.ROM}}</td>
 	                </tr>
-					<tr>
+					<!--<tr>
         				<td>Skin</td>
 						<td><input type="text" ng-model="newDaily.Skin"/></td>
         				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin}}</td>
@@ -591,7 +591,21 @@
         				<td>Skin - Site</td>
 						<td><input type="text" ng-model="newDaily.Skin_Site"/></td>
         				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Site}}</td>
+	                </tr> -->
+					<tr>
+        				<td>Skin - Dry and Intact</td>
+
+							<td>
+								<div class="btn-group" ng-model="newDaily.Skin_DryIntact" bs-buttons-radio>
+									<button class="btn" value="Yes">Yes</button>
+									<button class="btn" value="No">No</button>
+								</div>
+							</td>
+
+						<td><input type="text" ng-model="newDaily.Skin_DryIntact"></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_DryIntact}}</td>
 	                </tr>
+
 					<tr>
         				<td>Skin - Dsg</td>
 						<td>
@@ -617,11 +631,7 @@
 						</td>
         				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Incision}}</td>
 	                </tr>
-					<tr>
-        				<td>Skin - Dry and Intact</td>
-						<td><input type="text" ng-model="newDaily.Skin_DryIntact"></td>
-        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_DryIntact}}</td>
-	                </tr>
+					
 					<tr>
         				<td>Skin - No change at</td>
 						<td><input type="text" ng-model="newDaily.Skin_NoChangeAt"/></td>
