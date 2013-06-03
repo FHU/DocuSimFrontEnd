@@ -66,7 +66,7 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
 
 docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
-    
+
 
 });
 
@@ -84,7 +84,7 @@ docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
         $location.hash(id);
         $anchorScroll();
         //reset to old to keep any additional routing logic from kicking in
-        $location.hash(old);
+        //$location.hash(old);
     };
 
 });
