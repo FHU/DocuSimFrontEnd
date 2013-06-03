@@ -18,10 +18,8 @@ var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives'])
 
 var partialViewsUrlBase = '/partialViews/' ;
 
-
-
 //This configures the routes and associates each route with a view and a controller
-docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
+docuSimApp.config(function ($routeProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true); 
 
@@ -64,6 +62,12 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
         .otherwise({ redirectTo: '/patients' });
 
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
+});
+
+docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
+
+    
+
 });
 
 //http://stackoverflow.com/questions/14712223/how-to-handle-anchor-hash-linking-in-angularjs/14717011#14717011
