@@ -7,7 +7,7 @@ $(document).ready(function() {
     });*/
 
     $('.assessmentArea thead').affix({
-        offset: $(this).position()
+        offset: $(this).position();
     });​
 
 });
