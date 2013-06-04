@@ -459,6 +459,10 @@ hr{
   color: #2c3e50;
 }
 
+.patientsTable tr:even {
+	background: #b4bcc2;
+}
+
 .patientsTable tbody tr td a:hover {
 	color: #2c3e50;
 	text-decoration: none;
