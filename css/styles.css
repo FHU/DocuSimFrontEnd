@@ -69,7 +69,7 @@ html, body {
 	}
 }
 
-@media (max-width: 768){
+@media (max-width: 768px){
 
 	#SideNav li a span {
 		display:none;
