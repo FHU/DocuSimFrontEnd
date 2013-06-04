@@ -435,14 +435,12 @@ hr{
 
 #PatientPic{
 	max-width: 250px;
-	max-height: 200px;
+	/*max-height: 200px;*/
 }
 
 
 @media (max-width: 699px) {
 	#PatientPic{
-		max-width: 250px;
-		max-height: 200px;
 	}
 }
 /*--------------------------------*/
