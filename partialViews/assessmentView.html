@@ -109,16 +109,20 @@
     			</thead> 
 				<tbody>
         			<tr>
-        				<td>Temp</td>
+        				<td>Temp, Route</td>
 						<td>
-							<div class="left">
+							<!--<div class="left">
 								<h4> Temp </h4>
 								<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
 							</div>
 							<div class="right">
 								<h4> Route </h4>
-								<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
-							</div>
+								
+							</div>-->
+
+							<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							, 
+							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
 
 						</td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}} , {{vital.TemperatureRoute}} </td>

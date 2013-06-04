@@ -192,7 +192,7 @@ table{
 	background: #ECF0F1;
 }
 
-.assessmentArea td div {
+/*.assessmentArea td div {
 	width: auto;
 	float: left;
 }
@@ -204,8 +204,8 @@ table{
 .assessmentArea td div h4 {
 	margin: 3px 0px;
 	border-bottom: 1px solid #95A5A6;
-	font-size: 15px;
-}
+	font-size: 14px;
+}*/
 
 /*----- Input --------------------*/
 
