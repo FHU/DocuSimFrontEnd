@@ -183,7 +183,7 @@ table{
 }
 
 .assessmentArea tr:nth-child(even){
-	background: #b4bcc2;
+	background: #ECF0F1;
 }
 
 
@@ -463,7 +463,7 @@ hr{
 }
 
 .patientsTable tr:nth-child(even){
-	background: #b4bcc2;
+	background: #ECF0F1;
 }
 
 .patientsTable tbody tr td a:hover {
