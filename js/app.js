@@ -22,8 +22,6 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
     //$locationProvider.html5Mode(true).hashMode  ; 
 
     var partialViewsUrlBase = '../partialViews/';
-
-    alert(partialViewsUrlBase);
     
     $routeProvider
         .when('/patients',
