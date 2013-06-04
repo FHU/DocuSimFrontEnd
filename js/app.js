@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+     $('.assessmentArea table').stickyTableHeaders();
+
     //$('select').selectpicker('val','');
 
     /*$('.assessmentArea').click( function(){
