@@ -3,7 +3,7 @@ $(document).ready(function() {
      //$('.assessmentArea table').stickyTableHeaders();
 
      var offset = $('.navbar').height();
-      $("html:not(.legacy) table").stickyTableHeaders({fixedOffset: offset});
+      $("table").stickyTableHeaders({fixedOffset: offset});
 
     //$('select').selectpicker('val','');
 
