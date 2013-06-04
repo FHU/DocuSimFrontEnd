@@ -44,8 +44,8 @@ html, body {
 
 .navbar .brand {
 	color: #e6bb0d;
-	font-size: 2.0em;
-	padding-left:0;
+	font-size: 1.7em;
+	/*padding-left:0;*/
 }
 
 /* Header ------------------------*/
