@@ -182,6 +182,9 @@ table{
 	color: #fff;
 }
 
+.assessmentArea tr:nth-child(even){
+	background: #b4bcc2;
+}
 
 
 /*----- Input --------------------*/
