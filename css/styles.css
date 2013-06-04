@@ -489,9 +489,9 @@ hr{
   color: #2c3e50;
 }
 
-.patientsTable tr:nth-child(even){
+/*.patientsTable tr:nth-child(even){
 	background: #ECF0F1;
-}
+}*/
 
 .patientsTable tbody tr td a:hover {
 	color: #2c3e50;
