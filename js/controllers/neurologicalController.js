@@ -94,7 +94,7 @@ docuSimApp.controller('neurologicalController', function($scope, $http, $resourc
     $scope.clearNeurological = function () {
         $scope.newNeurological= '';
         $('#neurological select').selectpicker('val','');
-        $('#neurological button.active').removeClass("active");
+        $('#neurological .btn').removeClass('active');
     };
 
     //Database uses UTC time
