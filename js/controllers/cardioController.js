@@ -109,6 +109,7 @@ docuSimApp.controller('cardioController', function($scope, $http, $resource, $ro
     $scope.clearCardio = function () {
         $scope.newCardio= '';
         $('#cardio select').selectpicker('val','');
+        $('#cardio .btn').removeClass('active');
     };
 
     //***** DropDowns ********************

@@ -97,6 +97,7 @@ docuSimApp.controller('giController', function($scope, $http, $resource, $routeP
 	$scope.clearGi = function () {
 		$scope.newGi= '';
 		$('#gi select').selectpicker('val','');
+		$('#gi .btn').removeClass('active');
 	};
 
     //***** DropDowns **********************

@@ -96,6 +96,7 @@ docuSimApp.controller('guController', function($scope, $http, $resource, $routeP
     $scope.clearGu = function () {
         $scope.newGu= '';
         $('#gu select').selectpicker('val','');
+        $('#gu .btn').removeClass('active');
     };
 
     //***** DropDowns ********************

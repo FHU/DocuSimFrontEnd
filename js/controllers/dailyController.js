@@ -114,6 +114,7 @@ docuSimApp.controller('dailyController', function($scope, $http, $resource, $rou
     $scope.clearDaily = function () {
         $scope.newDaily= '';
         $('#daily select').selectpicker('val','');
+        $('#daily .btn').removeClass('active');
     };
 
     //***** DropDowns ********************

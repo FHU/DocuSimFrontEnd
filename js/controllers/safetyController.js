@@ -96,6 +96,7 @@ docuSimApp.controller('safetyController', function($scope, $http, $resource, $ro
     $scope.clearSafety = function () {
         $scope.newSafety= '';
         $('#safety select').selectpicker('val','');
+        $('#safety .btn').removeClass('active');
     };
 
     //***** DropDowns ********************

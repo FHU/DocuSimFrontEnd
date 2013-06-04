@@ -100,6 +100,7 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	$scope.clearVitals = function () {
 		$scope.newVitals= '';
 		$('#vitals select').selectpicker('val','');
+		$('#vitals .btn').removeClass('active');
 	};
 
     //***** DropDowns **********************

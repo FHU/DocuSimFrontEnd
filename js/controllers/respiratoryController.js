@@ -103,6 +103,7 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
     $scope.clearRespiratory = function () {
         $scope.newRespiratory= '';
         $('#respiratory select').selectpicker('val','');
+        $('#respiratory .btn').removeClass('active');
     };
 
     //***** DropDowns ********************

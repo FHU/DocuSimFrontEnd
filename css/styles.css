@@ -69,13 +69,6 @@ html, body {
 	}
 }
 
-@media (max-width: 768px){
-
-	#SideNav li a span {
-		display:none;
-	}
-
-}
 /*--------------------------------*/
 
 
@@ -410,7 +403,14 @@ textarea.nurseNote{
 	}
 }
 
-@media (max-width: 699px) {
+@media (max-width: 768px){
+
+	#SideNav li a span {
+		display:none;
+	}
+}
+
+@media (max-width: 320px) {
 	#SideNav{
 		position:static;
 		width: 100%;
