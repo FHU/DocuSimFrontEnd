@@ -5,43 +5,43 @@
     		<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
     			<li class="active">
     				<a href="#/assessments/{{selectedPatient.ID}}#scenario">
-    				<img class="nav-icon" src="img/medicoicons/hospital.png"> Patient</a>
+    				<img class="nav-icon" src="img/medicoicons/hospital.png"> <span> Patient </span> </a>
     			</li>
     			<li>
     				<a href="#/assessments/{{selectedPatient.ID}}#vitals">
-					<img class="nav-icon" src="img/medicoicons/blood pressure.png"> Vitals</a>
+					<img class="nav-icon" src="img/medicoicons/blood pressure.png"> <span> Vitals </span></a>
 				</li>
     			<li>
     				<a href="#/assessments/{{selectedPatient.ID}}#neurological">
-					<img class="nav-icon" src="img/medicoicons/ecg.png"> Neuro</a>
+					<img class="nav-icon" src="img/medicoicons/ecg.png"> <span> Neuro </span> </a>
     			</li>
        			<li>
        				<a href="#/assessments/{{selectedPatient.ID}}#cardio">
-   					<img class="nav-icon" src="img/medicoicons/heart.png"> Cardio</a>
+   					<img class="nav-icon" src="img/medicoicons/heart.png"> <span> Cardio </span> </a>
    				</li>
        			<li>
        				<a href="#/assessments/{{selectedPatient.ID}}#respiratory">
-       				<img class="nav-icon" src="img/medicoicons/inhaler.png"> Respiratory</a>
+       				<img class="nav-icon" src="img/medicoicons/inhaler.png"> <span> Respiratory </span> </a>
        			</li>
 				<li>
 					<a href="#/assessments/{{selectedPatient.ID}}#daily">
-					<img class="nav-icon" src="img/medicoicons/clipboard.png"> Daily</a>
+					<img class="nav-icon" src="img/medicoicons/clipboard.png"><span>  Daily </span> </a>
 				</li>
 		    	<li>
 		    		<a href="#/assessments/{{selectedPatient.ID}}#safety">
-	    			<img class="nav-icon" src="img/medicoicons/biohazard.png"> Safety</a>
+	    			<img class="nav-icon" src="img/medicoicons/biohazard.png"> <span> Safety </span> </a>
 	    		</li>
 		    	<li>
 		    		<a href="#/assessments/{{selectedPatient.ID}}#gu">
-	    			<img class="nav-icon" src="img/medicoicons/bandage.png"> GU</a>
+	    			<img class="nav-icon" src="img/medicoicons/bandage.png"> <span> GU </span> </a>
 	    		</li>
 	    		<li>
 	    			<a href="#/assessments/{{selectedPatient.ID}}#gi">
-    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> GI</a>
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> GI </span> </a>
     			</li>
 	    		<li>
 	    			<a href="#/assessments/{{selectedPatient.ID}}#io">
-    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> Is/Os</a>
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> Is/Os </span> </a>
     			</li>
        		</ul>
 		</div>
@@ -195,8 +195,8 @@
         				<td>Pupils - Right</td>
 						<td><input type="text" pattern="[0-9]*" ng-model="newNeurological.Pupil_R"/>
 							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
-									<button type="button" class="btn" value="+">+</button>
-									<button type="button" class="btn" value="+">-</button>
+									<button class="btn" value="+">+</button>
+									<button class="btn" value="-">-</button>
 							</div>
 						</td>
 		                <td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Pupil_R}}</td>

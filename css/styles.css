@@ -68,6 +68,14 @@ html, body {
 		padding-right: 5px;
 	}
 }
+
+@media (max-width: 768){
+
+	#SideNav li a span {
+		display:none;
+	}
+
+}
 /*--------------------------------*/
 
 
