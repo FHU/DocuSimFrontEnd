@@ -1,7 +1,7 @@
 /*! Copyright (c) 2011 by Jonas Mosbech - https://github.com/jmosbech/StickyTableHeaders
     MIT license info: https://github.com/jmosbech/StickyTableHeaders/blob/master/license.txt */
 
-;(function ($, window, undefined) {
+(function ($, window, undefined) {
 	'use strict';
 
 	var name = 'stickyTableHeaders';

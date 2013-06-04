@@ -1,23 +1,3 @@
-$(document).ready(function() {
-
-     //$('.assessmentArea table').stickyTableHeaders();
-
-     var offset = $('.navbar').height();
-      $("table").stickyTableHeaders({fixedOffset: offset});
-
-    //$('select').selectpicker('val','');
-
-    /*$('.assessmentArea').click( function(){
-        $('bootstrap-select').render();
-    });*/
-
-    /*$('.assessmentArea thead').affix({
-        offset: $(this).position()
-    });​*/
-
-});
-
-
 
 var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
@@ -184,5 +164,24 @@ docuSimApp.filter("localTime", function($filter) {
 
         return localTime;
     }; 
+
+});
+
+$(document).ready(function() {
+
+     //$('.assessmentArea table').stickyTableHeaders();
+
+     var offset = $('.navbar').height();
+      $("table").stickyTableHeaders({fixedOffset: offset});
+
+    //$('select').selectpicker('val','');
+
+    /*$('.assessmentArea').click( function(){
+        $('bootstrap-select').render();
+    });*/
+
+    /*$('.assessmentArea thead').affix({
+        offset: $(this).position()
+    });​*/
 
 });
