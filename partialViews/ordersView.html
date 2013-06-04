@@ -10,8 +10,8 @@
 		<!-- Side Nav End -->
 
 		<!-- Patient/Scenario Block -->
-		<section id="scenario" class="span10">
-			<div class="hero-unit" >
+		<section id="scenario" class="span10 ">
+			<div class="hero-unit" data-ng-controller="patientsController" >
 				<div class="row-fluid">
 					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} 
 						<span class="pull-right">{{selectedPatient.ID}}</span>
@@ -19,30 +19,31 @@
 				</div>
 				<hr>
 				<div class="row-fluid">
-					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}">
+					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}" />
 					<div class="span8">
 						<table class="table table-condensed">
 							<tbody>
-								<tr>
-									<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
-									<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
-								</tr>
-								<tr>
-									<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
-									<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
-								</tr>
-								<tr>
-								</tbody>
-						</table>
-					</div>
-				</div>
-				<br>
-				<div>
-					<p>{{selectedPatient.Background}}</p>
-				</div>
-			</div>
+    							<tr>
+    								<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
+    								<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
+        						</tr>
+    	    					<tr>
+        							<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
+    								<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
+    							</tr>
+    							<tr>
+    						</tbody>
+    					</table>
+
+			    		<div>
+        					<p>{{selectedPatient.Background}}</p>
+        				</div>
+
+    				</div>
+    			</div> <!-- end row-fluid -->
+    		</div> <!-- end hero -->
 		</section>
-	</div>
+		</div> <!-- end row-fluid -->
 	<!-- Patient/Scenario End -->
 
 		<!-- Patient Orders Content -->
