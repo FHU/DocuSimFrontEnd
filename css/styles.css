@@ -53,6 +53,7 @@ html, body {
 #patientsLink {
 	color: #e6bb0d;
 	margin-right: 40px;
+	text-decoration: none;
 }
 
 @media (max-width: 699px) {
