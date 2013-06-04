@@ -192,6 +192,10 @@ table{
 	background: #ECF0F1;
 }
 
+.assessmentArea td div {
+	width: auto;
+	float: left;
+}
 
 /*----- Input --------------------*/
 
