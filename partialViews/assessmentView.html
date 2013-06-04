@@ -110,7 +110,10 @@
 				<tbody>
         			<tr>
         				<td>Temp</td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+						<td>
+							<span> Temp </span> <br>
+							<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							<span> Route </span> <br>
 							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
 
 						</td>
@@ -128,7 +131,7 @@
         			</tr>
 					<tr>
         				<td>BP(systolic/diastolic)</td>
-						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/> /
 							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
         			</tr>
