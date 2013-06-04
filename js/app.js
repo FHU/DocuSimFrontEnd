@@ -16,13 +16,15 @@ $(document).ready(function() {
 
 var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
-var partialViewsUrlBase = '/partialViews/' ;
-
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
 
     //$locationProvider.html5Mode(true).hashMode  ; 
 
+    var partialViewsUrlBase = '../partialViews/';
+
+    alert(partialViewsUrlBase);
+    
     $routeProvider
         .when('/patients',
             {
