@@ -50,6 +50,31 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
 });
 
 
+/*docuSimApp.directive("stickyTableHeaders", function () {
+    return function (scope, element, attrs) {
+        scope.$watch("", function () {
+            console.log("testing stickytableheaders");
+            var offset = $('.navbar').height();
+
+            $("table").stickyTableHeaders({fixedOffset: offset});
+        });
+    };
+});*/
+
+
+docuSimApp.directive("stickyTableHeaders", function () {
+    return function (scope, element, attrs) {
+
+        var offset = $('.navbar').height();
+
+        element.stickyTableHeaders({fixedOffset: offset});
+
+        //$.growlUI('Growl Notification', 'Saved Succesfully');
+        //element.tree();
+    };
+
+});
+
 
 /*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
