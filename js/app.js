@@ -65,11 +65,11 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
 docuSimApp.directive("stickyTableHeaders", function () {
     return function (scope, element, attrs) {
 
-        scope.$watch("patient", function() {
+        scope.$watch("vitals", function() {
             var offset = $('.navbar').height();
             element.stickyTableHeaders('destroy');
             element.stickyTableHeaders({fixedOffset: offset});
-            $(window).trigger('resize.stickyTableHeaders');
+            //$(window).trigger('resize.stickyTableHeaders');
         });
 
     };
