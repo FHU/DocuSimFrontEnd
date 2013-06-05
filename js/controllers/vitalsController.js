@@ -45,7 +45,6 @@ docuSimApp.controller('vitalsController', function($scope, $http, $resource, $ro
 	//Set the scope to the Vitals array in Patient
 	function onPatientReturned(patient) {
 		$scope.vitals = patient.Vitals;
-		$timeout(function() { $rootScope.$emit('patientUpdated'); });
 	}
 
 	function onFailure() {
