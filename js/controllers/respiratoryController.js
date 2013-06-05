@@ -73,7 +73,8 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
 		newRespiratory.Suction = $scope.newRespiratory.Suction;
 		newRespiratory.Secretions = $scope.newRespiratory.Secretions;
 		newRespiratory.OxygenationType = $scope.newRespiratory.OxygenationType;
-		newRespiratory.FIO2 = $scope.newRespiratory.FIO2;
+		newRespiratory.FIO2_LPM = $scope.newRespiratory.FIO2_LPM;
+        newRespiratory.FIO2_Pct = $scope.newRespiratory.FIO2_Pct;
 		newRespiratory.NurseNote = $scope.newRespiratory.NurseNote;
 
 		//Add respiratory array to backend model.
