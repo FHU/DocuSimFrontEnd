@@ -67,7 +67,7 @@ docuSimApp.directive("stickyTableHeaders", function () {
 
         var offset = $('.navbar').height();
 
-        element.stickyTableHeaders({fixedOffset: offset});
+        $("table").stickyTableHeaders({fixedOffset: offset});
 
         //$.growlUI('Growl Notification', 'Saved Succesfully');
         //element.tree();
