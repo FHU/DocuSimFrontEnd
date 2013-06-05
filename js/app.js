@@ -67,7 +67,9 @@ docuSimApp.directive("stickyTableHeaders", function () {
 
         scope.$watch("patient", function() {
             var offset = $('.navbar').height();
+            element.stickyTableHeaders('destroy');
             element.stickyTableHeaders({fixedOffset: offset});
+            $(window).trigger('resize.stickyTableHeaders');
         });
 
     };
