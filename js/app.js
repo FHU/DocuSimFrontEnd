@@ -163,7 +163,7 @@ docuSimApp.controller('NavbarController', function ($scope, $location, $routePar
 });
 
 //simple clock
-function MyClock($scope, $timeout) {
+function clock($scope, $timeout) {
     $scope.time = new Date();
     
     $scope.$watch('time', function(){
@@ -192,10 +192,10 @@ docuSimApp.filter("localTime", function($filter) {
 
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 
      var offset = $('.navbar').height();
 
       $("table").stickyTableHeaders({fixedOffset: offset});
 
-});
+});*/
