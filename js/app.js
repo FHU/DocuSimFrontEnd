@@ -66,10 +66,10 @@ docuSimApp.directive("stickyTableHeaders", function () {
     return function (scope, element, attrs) {
 
         scope.$watch("vitals", function() {
-            alert("vitals:"+ scope.vitals);
             var offset = $('.navbar').height();
             element.stickyTableHeaders('destroy');
             element.stickyTableHeaders({fixedOffset: offset});
+            scope.$apply();
             //$(window).trigger('resize.stickyTableHeaders');
         });
 
