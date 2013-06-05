@@ -64,8 +64,9 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
 
 docuSimApp.directive("stickyTableHeaders", function () {
     return function (scope, element, attrs) {
-
-        scope.$watch("vitals", function(newValue, oldValue) {
+        //scope.$watch("vitals", function(newValue, oldValue) {
+        scope.$on('patientUpdated', assessment ) {
+            console.log(assessment);
             var offset = $('.navbar').height();
             element.stickyTableHeaders('destroy');
             element.stickyTableHeaders({fixedOffset: offset});
