@@ -491,9 +491,20 @@
 						<td><select ng-model="newRespiratory.BreathSounds_LLL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_LLL" bs-select multiple></select></td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_LLL}}</td>
         			</tr>
-					<tr><td>Suction</td>
-						<td><input type="text" ng-model="newRespiratory.Suction"/></td>
-        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.Suction}}</td>
+					<tr><td>Suction <br> Frequency, Area</td>
+						<td>
+							<div class="btn-group" ng-model="newRespiratory.Suction_Frequency" bs-buttons-radio>
+								<button class="btn" value="x2">x2</button>
+								<button class="btn" value="x4">x4</button>
+							</div>
+
+							<select ng-model="newRespiratory.Suction_Area" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Suction_Area" bs-select multiple></select>
+
+						</td>
+
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
+        					{{resp.Suction_Frequency}}, {{resp.Suction_Area}}
+        				</td>
         			</tr>
 					<tr>
 						<td>Secretions</td>
@@ -514,11 +525,11 @@
 
 						</td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true"> 
-        					<span ng:show="!resp.FIO2_LPM">
+        					<span ng:show="resp.FIO2_LPM">
         						{{resp.FIO2}} L/min
         					</span> 
 
-        					<span ng:show="!resp.FIO2_Pct">
+        					<span ng:show="resp.FIO2_Pct">
         						{{resp.FIO2_Pct}} %
         					</span> 
         				</td>

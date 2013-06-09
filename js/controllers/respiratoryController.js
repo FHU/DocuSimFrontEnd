@@ -70,8 +70,9 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
 		newRespiratory.BreathSounds_RLL = $scope.newRespiratory.BreathSounds_RLL;
 		newRespiratory.BreathSounds_LUL = $scope.newRespiratory.BreathSounds_LUL;
 		newRespiratory.BreathSounds_LLL = $scope.newRespiratory.BreathSounds_LLL;
-		newRespiratory.Suction = $scope.newRespiratory.Suction;
-		newRespiratory.Secretions = $scope.newRespiratory.Secretions;
+		newRespiratory.Suction_Frequency = $scope.newRespiratory.Suction_Frequency;
+        newRespiratory.Suction_Area = $scope.newRespiratory.Suction_Area;
+        newRespiratory.Secretions = $scope.newRespiratory.Secretions;
 		newRespiratory.OxygenationType = $scope.newRespiratory.OxygenationType;
 		newRespiratory.FIO2_LPM = $scope.newRespiratory.FIO2_LPM;
         newRespiratory.FIO2_Pct = $scope.newRespiratory.FIO2_Pct;
@@ -194,6 +195,12 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'AFT', name: 'AFT - Aerosol Face Tent'},
             {id: 'CPAP', name: 'CPAP - Continous Positive Airway Pressure'},
             {id: 'BPAP', name: 'BPAP - Binasel Positive Airway Pressure'}
+        ],
+
+        Suction_Area : [
+            {id: 'Oral', name: 'Oral' }, 
+            {id: 'ETT', name: 'ETT'}, 
+            {id: 'Trach', name: 'Trach' }
         ]
     };
 
