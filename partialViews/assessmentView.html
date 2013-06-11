@@ -138,7 +138,7 @@
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.R}}</td>
         			</tr>
 					<tr>
-        				<td>BP(systolic/diastolic)</td>
+        				<td>BP <br> <small>Systolic/Diastolic</small></td>
 						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/> /
 							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
@@ -491,7 +491,7 @@
 						<td><select ng-model="newRespiratory.BreathSounds_LLL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_LLL" bs-select multiple></select></td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_LLL}}</td>
         			</tr>
-					<tr><td>Suction <br> Frequency, Area</td>
+					<tr><td>Suction <br> <small> Frequency, Area <small> </td>
 						<td>
 							<div class="btn-group" ng-model="newRespiratory.Suction_Frequency" bs-buttons-radio>
 								<button class="btn" value="x2">x2</button>
@@ -524,7 +524,7 @@
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.OxygenationType}}</td>
         			</tr>
 					<tr>
-        				<td>FIO2</td>
+        				<td>FiO<sub>2</sub></td>
 						<td>
 							<input type="text" ng-model="newRespiratory.FIO2_LPM"/> L/min
 
