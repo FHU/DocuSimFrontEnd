@@ -507,9 +507,16 @@
         				</td>
         			</tr>
 					<tr>
-						<td>Secretions</td>
-						<td><input type="text" ng-model="newRespiratory.Secretions"/></td>
-        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.Secretions}}</td>
+						<td>Secretions <br> Amount, Color </td>
+						<td>
+							<select ng-model="newRespiratory.Secretions_Amount" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Secretions_Amount" bs-select ></select>
+
+							<select ng-model="newRespiratory.Secretions_Color" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Secretions_Color" bs-select ></select>
+
+						</td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
+        					{{resp.Secretions_Amount}}, {{resp.Secretions_Color}} 
+        				</td>
         			</tr>
 					<tr>
         				<td>Oxygenation(Type)</td>

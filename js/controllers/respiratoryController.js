@@ -72,7 +72,8 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
 		newRespiratory.BreathSounds_LLL = $scope.newRespiratory.BreathSounds_LLL;
 		newRespiratory.Suction_Frequency = $scope.newRespiratory.Suction_Frequency;
         newRespiratory.Suction_Area = $scope.newRespiratory.Suction_Area;
-        newRespiratory.Secretions = $scope.newRespiratory.Secretions;
+        newRespiratory.Secretions_Amount = $scope.newRespiratory.Secretions_Amount;
+        newRespiratory.Secretions_Color = $scope.newRespiratory.Secretions_Color;
 		newRespiratory.OxygenationType = $scope.newRespiratory.OxygenationType;
 		newRespiratory.FIO2_LPM = $scope.newRespiratory.FIO2_LPM;
         newRespiratory.FIO2_Pct = $scope.newRespiratory.FIO2_Pct;
@@ -201,7 +202,21 @@ docuSimApp.controller('respiratoryController', function($scope, $http, $resource
             {id: 'Oral', name: 'Oral' }, 
             {id: 'ETT', name: 'ETT'}, 
             {id: 'Trach', name: 'Trach' }
-        ]
+        ],
+
+        Secretions_Amount: [
+            {id:'Large', name: 'Large'},
+            {id:'Moderate', name: 'Moderate'},
+            {id:'Small', name: 'Small'},
+            {id:'Scant', name: 'Scant'}
+        ], 
+
+        Secretions_Color: [
+            {id:'Clear', name: 'Clear'},
+            {id:'Cream', name: 'Cream'},
+            {id:'Blood-Tinged', name: 'Blood-Tinged'},
+            {id:'Other', name: 'Other'}
+        ] 
     };
 
 });
