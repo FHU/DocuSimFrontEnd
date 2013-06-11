@@ -104,15 +104,15 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		$('#io select').selectpicker('val','');
 	};
 
-/*	function sumArguments() {
-		var sum=0;
+	$scope.sumArguments = function() {
+		var sum=0.0;
 
 		for(var i = 0; i < arguments.length; i++) {
-    		sum+=arguments[i];
+    		sum+= parseFloat(arguments[i]);
   		}
 
   		return sum;
-	}*/
+	};
 
     //***** DropDowns **********************
 
