@@ -107,11 +107,10 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	$scope.sumArguments = function() {
 		var sum=0.0;
 
-
-		alert(arguments.length);
-		
 		for(var i = 0; i < arguments.length; i++) {
-    		sum+= parseFloat(arguments[i]);
+			if(arguments[i]) {
+    			sum+= parseFloat(arguments[i]);
+    		}
   		}
 
   		return sum;
