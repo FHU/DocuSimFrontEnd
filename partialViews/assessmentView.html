@@ -1000,15 +1000,48 @@
 		                </td>
         			</tr>
 					<tr>
-		                <td>Intake - IV(s)</td>
+		                <td>Intake - IV(s) <br> <small>Solution, Amount</small> </td>
 						<td>
-							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV"/>
-							<input type="text" pattern="[0-9]*" />
-							<input type="text" pattern="[0-9]*" />
-							<input type="text" pattern="[0-9]*" />
+							<!-- IV 1 -->
+							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV1_Amount"/>
+							<br>
+
+							<!-- IV 2 -->
+							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV2_Amount"/>
+							<br>
+
+							<!-- IV 3 -->
+							<select ng-model="newIo.Intake_IV3_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV3_Amount"/>
+							<br>
+
+							<!-- IV 4 -->
+							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*" ng-model="newIo.Intake_IV4_Amount"/>
+
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
-		                	{{i.Intake_IV}}
+		                	<span ng:show="i.Intake_IV1_Amount">
+		                		{{i.Intake_IV1_Solution}},  {{i.Intake_IV1_Amount}} 
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV2_Amount">
+		                		{{i.Intake_IV2_Solution}},  {{i.Intake_IV2_Amount}}
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV3_Amount">
+		                		{{i.Intake_IV3_Solution}},  {{i.Intake_IV3_Amount}} 
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV4_Amount">
+		                		{{i.Intake_IV4_Solution}},  {{i.Intake_IV4_Amount}}
+		                	</span> 		                	
 		                </td>
         			</tr>
 					<tr>
