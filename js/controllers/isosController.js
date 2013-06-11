@@ -107,6 +107,9 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 	$scope.sumArguments = function() {
 		var sum=0.0;
 
+
+		alert(arguments.length);
+		
 		for(var i = 0; i < arguments.length; i++) {
     		sum+= parseFloat(arguments[i]);
   		}
@@ -117,17 +120,18 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
     //***** DropDowns **********************
 
     $scope.ioOpts = {
+    	
     	Intake_IV_Solution: [
-    	{id: 'NS', name: 'NS'},
-    	{id: '1/2NS', name: '1/2NS'},
-    	{id: 'D5W', name: 'D5W'},
-    	{id: 'D5NS', name: 'D5NS'},
-    	{id: 'D5W', name: 'D5W'},
-    	{id: 'D5 1/2NS', name: 'D5 1/2NS'},
-    	{id: '1/4NS', name: '1/4NS'},
-    	{id: 'LR', name: 'LR'},
-    	{id: 'D5 1/2NS 20meq KCl', name: 'D5 1/2NS 20meq KCl'},
-    	{id: '1/2NS 20meq/KCl', name: '1/2NS 20meq/KCl'}
+	    	{id: 'NS', name: 'NS'},
+	    	{id: '1/2NS', name: '1/2NS'},
+	    	{id: 'D5W', name: 'D5W'},
+	    	{id: 'D5NS', name: 'D5NS'},
+	    	{id: 'D5W', name: 'D5W'},
+	    	{id: 'D5 1/2NS', name: 'D5 1/2NS'},
+	    	{id: '1/4NS', name: '1/4NS'},
+	    	{id: 'LR', name: 'LR'},
+	    	{id: 'D5 1/2NS 20meq KCl', name: 'D5 1/2NS 20meq KCl'},
+	    	{id: '1/2NS 20meq/KCl', name: '1/2NS 20meq/KCl'}
     	]
     };
 

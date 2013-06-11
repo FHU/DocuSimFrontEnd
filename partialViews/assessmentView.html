@@ -1046,7 +1046,9 @@
         			</tr>
 					<tr>
 		                <td>Intake - Total</td>
-						<td>{{ sumArguments(newIo.Intake_PO, newIo.Intake_TubeFeeding, newIo.Intake_IV1_Amount, newIo.Intake_IV2_Amount, newIo.Intake_IV3_Amount, newIo.Intake_IV4_Amount) }}</td>
+						<td>
+							{{ sumArguments(newIo.Intake_PO, newIo.Intake_TubeFeeding, newIo.Intake_IV1_Amount, newIo.Intake_IV2_Amount, newIo.Intake_IV3_Amount, newIo.Intake_IV4_Amount) }}
+						</td>
 
 						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Intake_Total}}</td>
         			</tr>
