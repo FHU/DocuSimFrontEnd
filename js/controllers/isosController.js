@@ -103,11 +103,16 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		$scope.newIo= '';
 		$('#io select').selectpicker('val','');
 	};
-	
-	//Sums up output Total
-	function sumOutputTotal(num1, num2, num3, num4){
-		return num1 + num2 + num3 + num4;
-	}
+
+/*	function sumArguments() {
+		var sum=0;
+
+		for(var i = 0; i < arguments.length; i++) {
+    		sum+=arguments[i];
+  		}
+
+  		return sum;
+	}*/
 
     //***** DropDowns **********************
 
