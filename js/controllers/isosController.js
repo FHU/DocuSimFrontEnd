@@ -111,8 +111,8 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 
     //***** DropDowns **********************
 
-    $scope.Intake_IV_Solution = {
-    	temp: [
+    $scope.ioOpts = {
+    	Intake_IV_Solution: [
     	{id: 'NS', name: 'NS'},
     	{id: '1/2NS', name: '1/2NS'},
     	{id: 'D5W', name: 'D5W'},
