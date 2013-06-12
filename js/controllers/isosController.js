@@ -63,15 +63,22 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		var newIo = new IsosResource();
 		newIo.PatientID = patientID;
 		newIo.TimeStamp = stampString;
-		newIo.Intake_PO = $scope.newIo.Intake_PO
+		newIo.Intake_PO = $scope.newIo.Intake_PO;
 		newIo.Intake_TubeFeeding = $scope.newIo.Intake_TubeFeeding;
-		//Add total once IV is addressed
-		//newIo.Intake_IV = $scope.newIo.Intake_IV;		
-		//newIo.Intake_Total = ;
+		newIo.Intake_IV1_Location = $scope.newIo.Intake_IV1_Location;
+		newIo.Intake_IV1_Amount = $scope.newIo.Intake_IV1_Amount;
+		newIo.Intake_IV2_Location = $scope.newIo.Intake_IV2_Location;
+		newIo.Intake_IV2_Amount = $scope.newIo.Intake_IV2_Amount;
+		newIo.Intake_IV3_Location = $scope.newIo.Intake_IV3_Location;
+		newIo.Intake_IV3_Amount = $scope.newIo.Intake_IV3_Amount;
+		newIo.Intake_IV4_Location = $scope.newIo.Intake_IV4_Location;
+		newIo.Intake_IV4_Amount = $scope.newIo.Intake_IV4_Amount;
 		newIo.Output_Emesis = $scope.newIo.Output_Emesis;
 		newIo.Output_Urine = $scope.newIo.Output_Urine;
 		newIo.Output_Stool = $scope.newIo.Output_Stool;
 		newIo.Output_ChestTube = $scope.newIo.Output_ChestTube;
+		newIo.Output_Drainage_Other = $scope.newIo.Output_Drainage_Other;
+		newIo.Output_Other = $scope.newIo.Output_Other;
 		newIo.Output_Total = sumOutputTotal($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube);
 		newIo.NurseNote = $scope.newIo.NurseNote;
 
