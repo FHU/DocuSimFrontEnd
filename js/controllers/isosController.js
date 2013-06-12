@@ -80,7 +80,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		newIo.Output_ChestTube = $scope.newIo.Output_ChestTube;
 		newIo.Output_Drainage_Other = $scope.newIo.Output_Drainage_Other;
 		newIo.Output_Other = $scope.newIo.Output_Other;
-		newIo.Output_Total = sumArguments($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube);
+		newIo.Output_Total = sumArguments($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube, $scope.newIo.Output_Drainage_Other, $scope.newIo.Output_Other);
 		newIo.NurseNote = $scope.newIo.NurseNote;
 
 		//Add vital array to backend model.
