@@ -1074,20 +1074,20 @@
         			</tr>
 					<tr>
 		                <td>Output - Drainage Other</td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Drainage_Other"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Drainage_Other}}</td>
         			</tr>
 
         			<tr>
 		                <td>Output - Other</td>
-						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Other}}</td>
         			</tr>
 
 
 					<tr>
 		                <td>Output - Total</td>
-						<td>{{ sumArguments (newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube) }}</td>
+						<td>{{ sumArguments (newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
 						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Total}}</td>
         			</tr>
 					<tr>
