@@ -194,7 +194,7 @@ docuSimApp.filter("localTime", function($filter) {
 
 $(document).ready(function() {
 
-    $("nav").mmenu({
+    $("navbar-inner").mmenu({
         // options go here...
     });
 
