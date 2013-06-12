@@ -192,10 +192,14 @@ docuSimApp.filter("localTime", function($filter) {
 
 });
 
-/*$(document).ready(function() {
+$(document).ready(function() {
 
-     var offset = $('.navbar').height();
+    $(".nav").mmenu({
+        // options go here...
+    });
 
-      $("table").stickyTableHeaders({fixedOffset: offset});
+     //var offset = $('.navbar').height();
 
-});*/
+      //$("table").stickyTableHeaders({fixedOffset: offset});
+
+});
