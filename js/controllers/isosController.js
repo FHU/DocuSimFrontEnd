@@ -127,7 +127,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 
     $scope.ioOpts = {
     	
-    	Intake_IV_Solution: [
+    	Intake_IV_Location: [
 	    	{id: 'NS', name: 'NS'},
 	    	{id: '1/2NS', name: '1/2NS'},
 	    	{id: 'D5W', name: 'D5W'},
