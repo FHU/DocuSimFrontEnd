@@ -65,13 +65,13 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		newIo.TimeStamp = stampString;
 		newIo.Intake_PO = $scope.newIo.Intake_PO;
 		newIo.Intake_TubeFeeding = $scope.newIo.Intake_TubeFeeding;
-		newIo.Intake_IV1_Location = $scope.newIo.Intake_IV1_Location;
+		newIo.Intake_IV1_Solution = $scope.newIo.Intake_IV1_Solution;
 		newIo.Intake_IV1_Amount = $scope.newIo.Intake_IV1_Amount;
-		newIo.Intake_IV2_Location = $scope.newIo.Intake_IV2_Location;
+		newIo.Intake_IV2_Solution = $scope.newIo.Intake_IV2_Solution;
 		newIo.Intake_IV2_Amount = $scope.newIo.Intake_IV2_Amount;
-		newIo.Intake_IV3_Location = $scope.newIo.Intake_IV3_Location;
+		newIo.Intake_IV3_Solution = $scope.newIo.Intake_IV3_Solution;
 		newIo.Intake_IV3_Amount = $scope.newIo.Intake_IV3_Amount;
-		newIo.Intake_IV4_Location = $scope.newIo.Intake_IV4_Location;
+		newIo.Intake_IV4_Solution = $scope.newIo.Intake_IV4_Solution;
 		newIo.Intake_IV4_Amount = $scope.newIo.Intake_IV4_Amount;
 		newIo.Output_Emesis = $scope.newIo.Output_Emesis;
 		newIo.Output_Urine = $scope.newIo.Output_Urine;
@@ -127,7 +127,7 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 
     $scope.ioOpts = {
     	
-    	Intake_IV_Location: [
+    	Intake_IV_Solution: [
 	    	{id: 'NS', name: 'NS'},
 	    	{id: '1/2NS', name: '1/2NS'},
 	    	{id: 'D5W', name: 'D5W'},
