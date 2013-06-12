@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html data-ng-app="docuSim">
+<head>
+	<title>Patient Assessment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap_flatly.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/bootstrap-select.css" rel="stylesheet">
+	<link href="css/bootstrap-slider.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/mmenu.css" rel="stylesheet">
+	<link href="css/mmenu-widescreen.css" rel="stylesheet">
+	
+	<link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#SideBarContainer" data-offset-top:"70" >
+	<div class="wrapper" >
+
+		<header class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<div class="row-fluid" >
+
+						<!-- Logo -->
+						<a class="brand span2" href="/">DocuSim</a>
+						
+						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Top-Level Nav -->
+						<nav class="nav-collapse collapse span10 ">
+							<!-- User/Logout -->	
+							<p class="navbar-text pull-right">
+								<a class="navbar-text" href="#/patients" id="patientsLink" data-ng-class="{'active':getClass('/patients')}">Patients</a>
+								Logged in as <a href="#" class="navbar-link">Chris White</a>
+							</p>
+							<ul class="nav" data-ng-controller="NavbarController">
+								<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
+								<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
+								<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>		
+
+		<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- Side Navigation -->
+		<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
+    		<!--<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
+    			<li class="active">
+    				<a href="#/assessments/{{selectedPatient.ID}}#scenario">
+    				<img class="nav-icon" src="img/medicoicons/hospital.png"> <span> Patient </span> </a>
+    			</li>
+    			<li>
+    				<a href="#/assessments/{{selectedPatient.ID}}#vitals">
+					<img class="nav-icon" src="img/medicoicons/blood pressure.png"> <span> Vitals </span></a>
+				</li>
+    			<li>
+    				<a href="#/assessments/{{selectedPatient.ID}}#neurological">
+					<img class="nav-icon" src="img/medicoicons/ecg.png"> <span> Neuro </span> </a>
+    			</li>
+       			<li>
+       				<a href="#/assessments/{{selectedPatient.ID}}#cardio">
+   					<img class="nav-icon" src="img/medicoicons/heart.png"> <span> Cardio </span> </a>
+   				</li>
+       			<li>
+       				<a href="#/assessments/{{selectedPatient.ID}}#respiratory">
+       				<img class="nav-icon" src="img/medicoicons/inhaler.png"> <span> Respiratory </span> </a>
+       			</li>
+				<li>
+					<a href="#/assessments/{{selectedPatient.ID}}#daily">
+					<img class="nav-icon" src="img/medicoicons/clipboard.png"><span>  Daily </span> </a>
+				</li>
+		    	<li>
+		    		<a href="#/assessments/{{selectedPatient.ID}}#safety">
+	    			<img class="nav-icon" src="img/medicoicons/biohazard.png"> <span> Safety </span> </a>
+	    		</li>
+		    	<li>
+		    		<a href="#/assessments/{{selectedPatient.ID}}#gu">
+	    			<img class="nav-icon" src="img/medicoicons/bandage.png"> <span> GU </span> </a>
+	    		</li>
+	    		<li>
+	    			<a href="#/assessments/{{selectedPatient.ID}}#gi">
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> GI </span> </a>
+    			</li>
+	    		<li>
+	    			<a href="#/assessments/{{selectedPatient.ID}}#io">
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> Is/Os </span> </a>
+    			</li>
+       		</ul> -->
+		</div>
+		<!-- Side Nav End -->
+
+		<!-- Patient/Scenario Block -->
+		<section id="scenario" class="span10 ">
+			<div class="hero-unit" data-ng-controller="patientsController" >
+				<div class="row-fluid">
+					<h2>{{selectedPatient.FirstName}} {{selectedPatient.LastName}} 
+						<span class="pull-right">{{selectedPatient.ID}}</span>
+					</h2>
+				</div>
+				<hr>
+				<div class="row-fluid">
+					<img id="PatientPic" class="span4" src="{{selectedPatient.PictureFileLocation}}" />
+					<div class="span8">
+						<table class="table table-condensed">
+							<tbody>
+    							<tr>
+    								<td><strong>DOB:</strong> {{selectedPatient.DateOfBirth}} </td>
+    								<td><strong>Height:</strong> {{selectedPatient.Height}}  in</td>
+        						</tr>
+    	    					<tr>
+        							<td><strong>Gender:</strong> {{selectedPatient.Gender}} </td>
+    								<td><strong>Weight:</strong> {{selectedPatient.Weight}}  kg</td>
+    							</tr>
+    							<tr>
+    						</tbody>
+    					</table>
+
+			    		<div>
+        					<p>{{selectedPatient.Background}}</p>
+        				</div>
+
+    				</div>
+    			</div> <!-- end row-fluid -->
+    		</div> <!-- end hero -->
+		</section>
+	</div> <!-- end row-fluid -->
+	<!-- Patient/Scenario End -->
+
+	<!-- Table Content -->
+	<!-- Vitals -->
+	<div class="row-fluid">
+		<section id="vitals" class="span10 offset2" data-ng-controller="vitalsController" >
+			<h1>Vitals</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped" data-sticky-table-headers>
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{vital.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{vital.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead> 
+				<tbody>
+        			<tr>
+        				<td>Temp, Route</td>
+						<td>
+							<!--<div class="left">
+								<h4> Temp </h4>
+								<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							</div>
+							<div class="right">
+								<h4> Route </h4>
+								
+							</div>-->
+
+							<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							, 
+							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
+
+						</td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}} , {{vital.TemperatureRoute}} </td>
+	                </tr>
+	                <tr>
+		                <td>HR</td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.HR"/></td>
+		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.HR}}</td>
+        			</tr>
+        			<tr>
+        				<td>R</td>
+        				<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.R"/></td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.R}}</td>
+        			</tr>
+					<tr>
+        				<td>BP <br> <small>Systolic/Diastolic</small></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/> /
+							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/></td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
+        			</tr>
+					<tr>
+        				<td>SpO<sub>2</sub></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.SpO2"/></td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.SpO2}}</td>
+        			</tr>
+        			<tr>
+		                <td>Weight</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Weight"/></td>
+		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Weight}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newVitals.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="vital in vitals | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{vital.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/modalView.html'" 
+							data-ng-class="(!vital.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+			</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Vitals -->
+
+	<!-- Neurological -->
+	<div class="row-fluid">
+		<section id="neurological" class="span10 offset2 "  data-ng-controller="neurologicalController">
+			<h1>Neurological</h1>
+			<div class="assessmentArea">
+
+			<table class="table table-striped" data-sticky-table-headers>
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+
+		                <th data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">
+							<span class="time" >{{neuro.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{neuro.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Pupils - Right</td>
+						<td><input type="text" pattern="[0-9]*" ng-model="newNeurological.Pupil_R"/>
+							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
+									<button class="btn" value="+">+</button>
+									<button class="btn" value="-">-</button>
+							</div>
+						</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Pupil_R}}</td>
+	                </tr>
+	                <tr>
+		                <td>Pupils - Left</td>
+						<td>
+							<input type="text" pattern="[0-9]*" ng-model="newNeurological.Pupil_L"/>
+							<div class="btn-group" ng-model="newNeurological.ppLeft_sign" bs-buttons-radio>
+									<button class="btn" value="+">+</button>
+									<button class="btn" value="-">-</button>
+							</div>
+						</td>
+		                <td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Pupil_L}}</td>
+        			</tr>
+        			<tr>
+        				<td>EOM</td>
+						<td><select ng-model="newNeurological.EOM" ng-options="value.id as value.name for (key, value) in neurologicalOpts.EOM" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.EOM}}</td>
+        			</tr>
+					<tr>
+        				<td>RU</td>
+						<td><select ng-model="newNeurological.Extremeties_RU" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Extremeties_RU" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Extremeties_RU}}</td>
+        			</tr>
+					<tr>
+        				<td>LU</td>
+						<td><select ng-model="newNeurological.Extremeties_LU" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Extremeties_LU" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Extremeties_LU}}</td>
+        			</tr>
+					<tr>
+        				<td>RL</td>
+						<td><select ng-model="newNeurological.Extremeties_RL" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Extremeties_RL" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Extremeties_RL}}</td>
+        			</tr>
+					<tr>
+						<td>LL</td>
+						<td><select ng-model="newNeurological.Extremeties_LL" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Extremeties_LL" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Extremeties_LL}}</td>
+        			</tr>
+					<tr>
+        				<td>Behavior</td>
+						<td><select ng-model="newNeurological.Behavior" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Behavior" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Behavior}}</td>
+        			</tr>
+					<tr>
+        				<td>Speech</td>
+						<td><select ng-model="newNeurological.Speech" ng-options="value.id as value.name for (key, value) in neurologicalOpts.Speech"+ 'data-subtext="Calm"'	 bs-select ></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.Speech}}</td>
+        			</tr>
+					<tr>
+        				<td>Mental Status</td>
+						<td><select ng-model="newNeurological.MentalStatus" ng-options="value.id as value.name for (key, value) in neurologicalOpts.MentalStatus" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.MentalStatus}}</td>
+        			</tr>
+					<tr>
+        				<td>Coma Scale - Eyes</td>
+						<td><select ng-model="newNeurological.ComaScale_Eyes" ng-options="value.id as value.name for (key, value) in neurologicalOpts.ComaScale_Eyes" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Eyes}}</td>
+        			</tr>
+					<tr>
+        				<td>Coma Scale - Verbal</td>
+						<td><select ng-model="newNeurological.ComaScale_Verbal" ng-options="value.id as value.name for (key, value) in neurologicalOpts.ComaScale_Verbal" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Verbal}}</td>
+        			</tr>
+					<tr>
+        				<td>Coma Scale - Motor</td>
+						<td><select ng-model="newNeurological.ComaScale_Motor" ng-options="value.id as value.name for (key, value) in neurologicalOpts.ComaScale_Motor" bs-select></select></td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Motor}}</td>
+        			</tr>
+					<tr>
+        				<td>Coma Scale - Total</td>
+						<td>{{newNeurological.ComaScale_Eyes + newNeurological.ComaScale_Verbal + newNeurological.ComaScale_Motor}}</td>
+        				<td data-ng-repeat="neuro in neurological | orderBy:'TimeStamp':true">{{neuro.ComaScale_Total}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newNeurological.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="neuro in neurological | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{neuro.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/neurologicalModalView.html'" 
+							data-ng-class="(!neuro.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+			</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertNeurological()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearNeurological()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Neurological -->
+
+	<!-- Cardio -->
+	<div class="row-fluid">
+		<section id="cardio" class="span10 offset2" data-ng-controller="cardioController">
+			<h1>Cardiovascular</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped" data-sticky-table-headers>
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+		                <th data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{car.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{car.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Heart Intensity</td>
+						<td><select ng-model="newCardio.Heart_Intensity" ng-options="value.id as value.name for (key, value) in cardioOpts.Heart_Intensity" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Heart_Intensity}}</td>
+	                </tr>
+	                <tr>
+		                <td>Heart Regularity</td>
+						<td><select ng-model="newCardio.Heart_Regularity" ng-options="value.id as value.name for (key, value) in cardioOpts.Heart_Regularity" bs-select></select></td>
+		                <td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Heart_Regularity}}</td>
+        			</tr>
+        			<tr>
+        				<td>Cardiac Rhythm</td>
+						<td><select ng-model="newCardio.Rhythm" ng-options="value.id as value.name for (key, value) in cardioOpts.Rhythm" bs-select></select>
+						</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Rhythm}}</td>
+        			</tr>
+					<tr>
+        				<td>Skin</td>
+						<td><select ng-model="newCardio.Skin" ng-options="value.id as value.name for (key, value) in cardioOpts.Skin" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Skin}}</td>
+        			</tr>
+					<tr>
+        				<td>Skin Color</td>
+						<td><select ng-model="newCardio.SkinColor" ng-options="value.id as value.name for (key, value) in cardioOpts.SkinColor" bs-select></select>
+						</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.SkinColor}}</td>
+        			</tr>
+					<tr>
+        				<td>Nail Beds</td>
+						<td><select ng-model="newCardio.NailBeds" ng-options="value.id as value.name for (key, value) in cardioOpts.SkinColor" bs-select></select>
+						</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.NailBeds}}</td>
+        			</tr>
+					<tr>
+        				<td>Capillary Refill</td>
+						<td><select ng-model="newCardio.CapillaryRefill" ng-options="value.id as value.name for (key, value) in cardioOpts.CapillaryRefill" bs-select></select>
+						</td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.CapillaryRefill}}</td>
+        			</tr>
+					<tr>
+        				<td>Edema - RUE</td>
+						<td><select ng-model="newCardio.Edema_RUE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_RUE " bs-select></select></td>
+						<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Edema_RUE}}</td>
+        			</tr>
+					<tr>
+        				<td>Edema - LUE</td>
+						<td><select ng-model="newCardio.Edema_LUE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_LUE " bs-select></select></td>
+						<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Edema_LUE}}</td>
+        			</tr>
+					<tr>
+        				<td>Edema - RLE</td>
+						<td><select ng-model="newCardio.Edema_RLE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_RLE" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Edema_RLE}}</td>
+        			</tr>
+					<tr>
+        				<td>Edema - LLE</td>
+						<td><select ng-model="newCardio.Edema_LLE" ng-options="value.id as value.name for (key, value) in cardioOpts.Edema_LLE" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Edema_LLE}}</td>
+        			</tr>
+					<tr>
+        				<td>Pulses Radial - R</td>
+						<td><select ng-model="newCardio.Pulses_Radial_R" ng-options="value.id as value.name for (key, value) in cardioOpts.Pulses_Radial_R" bs-select></select>
+						<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Pulses_Radial_R}}</td>
+        			</tr>
+					<tr>
+        				<td>Pulses Radial - L</td>
+						<td><select ng-model="newCardio.Pulses_Radial_L" ng-options="value.id as value.name for (key, value) in cardioOpts.Pulses_Radial_L" bs-select></select>
+						<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Pulses_Radial_L}}</td>
+        			</tr>
+					<tr>
+        				<td>Dorsalis Pedis - R</td>
+						<td><select ng-model="newCardio.Dorsalis_Pedis_R" ng-options="value.id as value.name for (key, value) in cardioOpts.Dorsalis_Pedis_R" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Dorsalis_Pedis_R}}</td>
+        			</tr>
+					<tr>
+        				<td>Dorsalis Pedis - L</td>
+						<td><select ng-model="newCardio.Dorsalis_Pedis_L" ng-options="value.id as value.name for (key, value) in cardioOpts.Dorsalis_Pedis_L" bs-select></select></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Dorsalis_Pedis_L}}</td>
+        			</tr>
+					<tr>
+        				<td>TED Hose Device</td>
+						<td><input type="text" ng-model="newCardio.Ted_Hose_Device"/></td>
+        				<td data-ng-repeat="car in cardio | orderBy:'TimeStamp':true">{{car.Ted_Hose_Device}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newCardio.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="car in cardio | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{car.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/cardioModalView.html'" 
+							data-ng-class="(!car.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertCardio()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearCardio()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Cardio-->
+
+	<!-- Respiratory -->
+	<div class="row-fluid">
+		<section id="respiratory" class="span10 offset2" data-ng-controller="respiratoryController">
+			<h1>Respiratory</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+		                <th data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{resp.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{resp.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+    				<tr>
+    					<td>Respiration</td>
+    					<td><select ng-model="newRespiratory.Respiration" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Respiration" bs-select></select></td>
+    					<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.Respiration}}</td>
+    				</tr>
+        			<tr>
+        				<td>Breath - RUL</td>
+						<td><select ng-model="newRespiratory.BreathSounds_RUL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_RUL" bs-select multiple></select></td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_RUL}}</td>
+	                </tr>
+	                <tr>
+		                <td>Breath - RML</td>
+						<td><select ng-model="newRespiratory.BreathSounds_RML" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_RML" bs-select multiple></select></td>
+		                <td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_RML}}</td>
+        			</tr>
+        			<tr>
+        				<td>Breath - RLL</td>
+						<td><select ng-model="newRespiratory.BreathSounds_RLL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_RLL" bs-select multiple></select></td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_RLL}}</td>
+        			</tr>
+					<tr>
+        				<td>Breath - LUL</td>
+						<td><select ng-model="newRespiratory.BreathSounds_LUL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_LUL" bs-select multiple></select></td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_LUL}}</td>
+        			</tr>
+					<tr>
+        				<td>Breath - LLL</td>
+						<td><select ng-model="newRespiratory.BreathSounds_LLL" ng-options="value.id as value.name for (key, value) in respiratoryOpts.BreathSounds_LLL" bs-select multiple></select></td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.BreathSounds_LLL}}</td>
+        			</tr>
+					<tr><td>Suction <br> <small> Frequency, Area <small> </td>
+						<td>
+							<div class="btn-group" ng-model="newRespiratory.Suction_Frequency" bs-buttons-radio>
+								<button class="btn" value="x2">x2</button>
+								<button class="btn" value="x4">x4</button>
+							</div>
+
+							<select ng-model="newRespiratory.Suction_Area" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Suction_Area" bs-select ></select>
+
+						</td>
+
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
+        					{{resp.Suction_Frequency}}, {{resp.Suction_Area}}
+        				</td>
+        			</tr>
+					<tr>
+						<td>Secretions <br> <small>Amount, Color</small> </td>
+						<td>
+							<select ng-model="newRespiratory.Secretions_Amount" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Secretions_Amount" bs-select ></select>
+
+							<select ng-model="newRespiratory.Secretions_Color" ng-options="value.id as value.name for (key, value) in respiratoryOpts.Secretions_Color" bs-select ></select>
+
+						</td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
+        					{{resp.Secretions_Amount}}, {{resp.Secretions_Color}} 
+        				</td>
+        			</tr>
+					<tr>
+        				<td>Oxygenation(Type)</td>
+						<td><select ng-model="newRepiratory.OxygenationType" ng-options="value.id as value.name for (key, value) in respiratoryOpts.OxygenationType" bs-select multiple ></select></td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">{{resp.OxygenationType}}</td>
+        			</tr>
+					<tr>
+        				<td>FiO<sub>2</sub></td>
+						<td>
+							<input type="text" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_LPM"/> L/min
+
+							<input type="text" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_Pct"/> %
+
+						</td>
+        				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true"> 
+        					<span ng:show="resp.FIO2_LPM">
+        						{{resp.FIO2_LPM}} L/min
+        					</span> 
+
+        					<span ng:show="resp.FIO2_Pct">
+        						{{resp.FIO2_Pct}} %
+        					</span> 
+        				</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newRespiratory.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="resp in respiratory | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{resp.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/respiratoryModalView.html'" 
+							data-ng-class="(!resp.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertRespiratory()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearRespiratory()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Respiratory -->
+
+	<!-- Daily -->
+	<div class="row-fluid">
+		<section id="daily" class="span10 offset2" data-ng-controller="dailyController">
+			<h1>Daily</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+		                <th data-ng-repeat="day in daily | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{day.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{day.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Isolation Precautions</td>
+						<td><select ng-model="newDaily.IsolationPrecautions" ng-options="value.id as value.name for (key, value) in dailyOpts.IsolationPrecautions" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.IsolationPrecautions}}</td>
+	                </tr>
+	                <tr>
+		                <td>Oral Care/Suction</td>
+						<td><div class="btn-group" ng-model="newDaily.OralCare" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="Yes">No</button>
+							</div></td>
+		                <td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.OralCare}}</td>
+        			</tr>
+        			<tr>
+        				<td>Bath</td>
+						<td><select ng-model="newDaily.Bath" ng-options="value.id as value.name for (key, value) in dailyOpts.Bath" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Bath}}</td>
+        			</tr>
+					<tr>
+		                <td>Linen</td>
+						<td><div class="btn-group" ng-model="newDaily.Linen" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div></td>
+		                <td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Linen}}</td>
+        			</tr>
+					<tr>
+        				<td>Turn/Shift</td>
+						<td><select ng-model="newDaily.TurnShift" ng-options="value.id as value.name for (key, value) in dailyOpts.TurnShift" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.TurnShift}}</td>
+	                </tr>
+					<tr>
+        				<td>ROM</td>
+						<td><select ng-model="newDaily.ROM" ng-options="value.id as value.name for (key, value) in dailyOpts.ROM" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.ROM}}</td>
+	                </tr>
+					<!--<tr>
+        				<td>Skin</td>
+						<td><input type="text" ng-model="newDaily.Skin"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin}}</td>
+	                </tr>
+					<tr>
+					<tr>
+        				<td>Skin - Site</td>
+						<td><input type="text" ng-model="newDaily.Skin_Site"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Site}}</td>
+	                </tr> --> 
+					<tr> 
+        				<td>Skin - Dry and Intact</td>
+
+							<td>
+								<div class="btn-group" ng-model="newDaily.Skin_DryIntact" bs-buttons-radio>
+									<button class="btn" value="Yes">Yes</button>
+									<button class="btn" value="No">No</button>
+								</div>
+							</td>
+
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_DryIntact}}</td>
+	                </tr>
+
+					<tr>
+        				<td>Skin - Dsg</td>
+						<td>
+							<div class="btn-group" ng-model="newDaily.Skin_Dsg" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div>
+						</td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Dsg}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Dsg. Drainage Amt.</td>
+						<td><select ng-model="newDaily.Skin_DrainAmt" ng-options="value.id as value.name for (key, value) in dailyOpts.Skin_DrainAmt" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_DrainAmt}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Incision</td>
+						<td>
+							<div class="btn-group" ng-model="newDaily.Skin_Incision" bs-buttons-radio>
+								<button class="btn">Yes</button>
+								<button class="btn">No</button>
+							</div>
+						</td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Incision}}</td>
+	                </tr>
+					
+					<tr>
+        				<td>Skin - No change at</td>
+						<td><input type="text" ng-model="newDaily.Skin_NoChangeAt"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_NoChangeAt}}</td>
+	                </tr>
+					
+					<tr>
+        				<td>Skin - Color</td>
+						<td><select ng-model="newDaily.Skin_Color" ng-options="value.id as value.name for (key, value) in dailyOpts.Skin_Color" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Color}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Odor</td>
+						<td><input type="text" ng-model="newDaily.Skin_Odor"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Odor}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Appearance</td>
+						<td><input type="text" ng-model="newDaily.Skin_Appearance"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Appearance}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Size</td>
+						<td><input type="text" ng-model="newDaily.Skin_Size"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Size}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Drain</td>
+						<td><input type="text" ng-model="newDaily.Skin_Drain"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Drain}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Primed</td>
+						<td>
+							<div class="btn-group" ng-model="newDaily.Skin_Primed" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div>
+						</td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Primed}}</td>
+	                </tr>
+					<tr>
+        				<td>Skin - Comments</td>
+						<td><input type="text" ng-model="newDaily.Skin_Comments"/></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.Skin_Comments}}</td>
+	                </tr>
+					<tr>
+        				<td>Peripheral/Central IV site</td>
+						<td><select ng-model="newDaily.IV_Site" ng-options="value.id as value.name for (key, value) in dailyOpts.IV_Site" bs-select></select></td>
+        				<td data-ng-repeat="day in daily | orderBy:'TimeStamp':true">{{day.IV_Site}}</td>
+	                </tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newDaily.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="day in daily | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{day.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/dailyModalView.html'" 
+							data-ng-class="(!day.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertDaily()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearDaily()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Daily -->
+
+	<!-- Safety -->
+	<div class="row-fluid">
+		<section id="safety" class="span10 offset2" data-ng-controller="safetyController">
+			<h1>Safety</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}}
+						</th>
+		                <th data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{safe.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{safe.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Side Rails Up</td>
+						<td>
+							<div class="btn-group" ng-model="newSafety.SideRails" bs-buttons-radio>
+								<button class="btn" value="x2">x2</button>
+								<button class="btn" value="x4">x4</button>
+							</div>
+						</td>
+        				<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.SideRails}}</td>
+	                </tr>
+	                <tr>
+	                	<td>Call Light Within Reach</td>
+	                	<td>
+	                		<div class="btn-group" ng-model="newSafety.CallLightWithinReach" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div>
+	                	</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.CallLightWithinReach}}</td>
+	                </tr>
+	                <tr>
+	                	<td>Bed in Low Position</td>
+	                	<td>
+	                		<div class="btn-group" ng-model="newSafety.BedInLowPosition" bs-buttons-radio>
+								<button class="btn" value="Yes">Yes</button>
+								<button class="btn" value="No">No</button>
+							</div>
+	                	</td>
+	                	<td data-ng-repeat="safe in safety | orderBy:'TimeStamp':true">{{safe.BedInLowPosition}}</td>
+	                </tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newSafety.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="safe in safety | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{safe.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/safetyModalView.html'" 
+							data-ng-class="(!safe.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertSafety()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearSafety()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End Safety -->
+
+	<!-- GU -->
+	<div class="row-fluid">
+		<section id="gu" class="span10 offset2" data-ng-controller="guController">
+			<h1>GU</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+		                <th data-ng-repeat="g in gu | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{g.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{g.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Elimination Pattern</td>
+        				<td><select ng-model="newGu.EliminationPattern" ng-options="value.id as value.name for (key, value) in guOpt.EliminationPattern" bs-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.EliminationPattern}}</td>
+	                </tr>
+	                <tr>
+		                <td>Catheter</td>
+						<td><select ng-model="newGu.Catheter" ng-options="value.id as value.name for (key, value) in guOpt.Catheter" bs-select></select></td>
+		                <td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.Catheter}}</td>
+        			</tr>
+        			<tr>
+        				<td>Color/Consistency</td>
+						<td><select ng-model="newGu.ColorConsistency" ng-options="value.id as value.name for (key, value) in guOpt.ColorConsistency" bs-select></select>
+						</td>
+						<td data-ng-repeat="g in gu | orderBy:'TimeStamp':true">{{g.ColorConsistency}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newGu.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="g in gu | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{g.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/guModalView.html'" 
+							data-ng-class="(!g.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertGu()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearGu()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End GU -->
+
+	<!-- GI -->
+	<div class="row-fluid">
+		<section id="gi" class="span10 offset2" data-ng-controller="giController">
+			<h1>GI</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+      			<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+		                <th data-ng-repeat="g in gi | orderBy:'TimeStamp':true">
+		                	<span class="time" >{{g.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{g.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+        			<tr>
+        				<td>Abdomen</td>
+						<td><select ng-model="newGi.Abdomen" ng-options="value.id as value.name for (key, value) in giOpts.Abdomen" bs-select></select></td>
+        				<td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.Abdomen}}</td>
+	                </tr>
+	                <tr>
+		                <td>Bowel Sounds - RUQ</td>
+						<td><select ng-model="newGi.BowelSoundsRUQ" ng-options="value.id as value.name for (key, value) in giOpts.BowelSoundsRUQ" bs-select></select></td>
+        				<td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.BowelSoundsRUQ}}</td>
+        			</tr>
+        			<tr>
+		                <td>Bowel Sounds - RLQ</td>
+						<td><select ng-model="newGi.BowelSoundsRLQ" ng-options="value.id as value.name for (key, value) in giOpts.BowelSoundsRLQ" bs-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.BowelSoundsRLQ}}</td>
+        			</tr>
+					<tr>
+		                <td>Bowel Sounds - LUQ</td>
+						<td><select ng-model="newGi.BowelSoundsLUQ" ng-options="value.id as value.name for (key, value) in giOpts.BowelSoundsLUQ" bs-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.BowelSoundsLUQ}}</td>
+        			</tr>
+					<tr>
+		                <td>Bowel Sounds - LLQ</td>
+						<td><select ng-model="newGi.BowelSoundsLLQ" ng-options="value.id as value.name for (key, value) in giOpts.BowelSoundsLLQ" bs-select></select></td>
+		                <td data-ng-repeat="g in gi | orderBy:'TimeStamp':true">{{g.BowelSoundsLLQ}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newGi.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="g in gi | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{g.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/giModalView.html'" 
+							data-ng-class="(!g.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+        		</tbody>
+        	</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertGi()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearGi()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End GI -->
+
+	<!-- I/O -->
+	<div class="row-fluid">
+		<section id="io" class="span10 offset2" data-ng-controller="isosController">
+			<h1>I's/O's</h1>
+			<div class="assessmentArea">
+			<table class="table table-striped">
+				<thead>
+	                <tr>
+        			    <th></th>
+						<th ng-controller="clock"> 
+							<span class="time" >{{time | date:'H:mm'}}  </span> 
+							<br />  
+							<span class="date" >{{time | date:'M/d/yy'}} </span>
+						</th>
+
+						<th data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
+							<span class="time" >{{i.TimeStamp | localTime | date: 'H:mm'}}  </span>
+		               
+							<br />  
+							<span class="date" >{{i.TimeStamp | localTime | date:'M/d/yy'}} </span>
+		                </th>
+        			</tr>
+    			</thead>
+    			<tbody>
+					<tr>
+		                <td>Intake - PO</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_PO"/></td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Intake_PO}}</td>
+        			</tr>
+					<tr>
+		                <td>Intake - Tube</td>
+						<td>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_TubeFeeding"/>
+						</td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
+		                	{{i.Intake_TubeFeeding}}
+		                </td>
+        			</tr>
+					<tr>
+		                <td>Intake - IV(s) <br> <small>Solution, Amount</small> </td>
+						<td>
+							<!-- IV 1 -->
+							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
+							<br>
+
+							<!-- IV 2 -->
+							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
+							<br>
+
+							<!-- IV 3 -->
+							<select ng-model="newIo.Intake_IV3_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV3_Amount"/>
+							<br>
+
+							<!-- IV 4 -->
+							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
+
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
+
+						</td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
+		                	<span ng:show="i.Intake_IV1_Amount">
+		                		{{i.Intake_IV1_Solution}},  	{{i.Intake_IV1_Amount}} 
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV2_Amount">
+		                		{{i.Intake_IV2_Solution}},  {{i.Intake_IV2_Amount}}
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV3_Amount">
+		                		{{i.Intake_IV3_Solution}},  {{i.Intake_IV3_Amount}} 
+		                	</span> <br>
+
+		                	<span ng:show="i.Intake_IV4_Amount">
+		                		{{i.Intake_IV4_Solution}},  {{i.Intake_IV4_Amount}}
+		                	</span> 		                	
+		                </td>
+        			</tr>
+					<tr>
+		                <td>Intake - Total</td>
+						<td>
+							{{ sumArguments(newIo.Intake_PO, newIo.Intake_TubeFeeding, newIo.Intake_IV1_Amount, newIo.Intake_IV2_Amount, newIo.Intake_IV3_Amount, newIo.Intake_IV4_Amount) }}
+						</td>
+
+						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Intake_Total}}</td>
+        			</tr>
+					<tr>
+		                <td>Output - Emesis</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Emesis"/>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Emesis}}</td>
+        			</tr>
+					<tr>
+		                <td>Output - Urine</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" ng-model="newIo.Output_Urine"/></td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Urine}}</td>
+        			</tr>
+					<tr>
+		                <td>Output - Stool Colostomy/Fecal Pouch</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Stool"/></td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Stool}}</td>
+        			</tr>
+					<tr>
+		                <td>Output - Chest Tube Drainage</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_ChestTube}}</td>
+        			</tr>
+					<tr>
+		                <td>Output - Drainage Other</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Drainage_Other"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Drainage_Other}}</td>
+        			</tr>
+
+        			<tr>
+		                <td>Output - Other</td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Other}}</td>
+        			</tr>
+
+
+					<tr>
+		                <td>Output - Total</td>
+						<td>{{ sumArguments (newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
+						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Total}}</td>
+        			</tr>
+					<tr>
+						<td colspan="2">
+							Nurse's Note:
+							<textarea class="nurseNote" data-ng-model="newIo.NurseNote"> </textarea>
+						</td>
+						<td data-ng-repeat="i in isos | orderBy: 'TimeStamp':true">
+							<a href="#/assessments/{{i.PatientID}}" 
+							class="noteButton" 
+							bs-modal="'partialViews/isosModalView.html'" 
+							data-ng-class="(!i.NurseNote)? 'hidden' : ''"
+							> 
+								<i class="icon-file"></i> 
+							</a>
+						</td>
+					</tr>
+      			</tbody>
+    		</table>
+    		</div>
+			<button class="btn btn-large btn-warning span5" data-ng-click="insertIo()"><i class="icon-pencil"></i> Sign</button>
+			<button class="btn btn-large btn-primary span3" data-ng-click="clearIo()"><i class="icon-remove"></i> Clear</button>
+		</section>
+	</div>
+	<!-- End I/O -->
+</div> <!--end container-fluid -->
+
+
+
+		<div class="push"><!--//--></div>
+
+	</div> <!--end wrapper -->
+	
+
+
+	<footer class="footer">
+		<div class="container-fluid">&copy; Freed Hardeman University</div>
+	</footer>
+
+
+	<!-- Utility -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/libs/modernizr.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="js/libs/bootstrap.js"></script>	
+	<script src="js/libs/bootstrap-select.js"></script>
+	<script src="js/libs/bootstrap-slider.js"></script>	 	
+
+	<!-- Angular -->
+	<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+	<script src="http://code.angularjs.org/1.1.5/angular-resource.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-strap/0.7.2/angular-strap.min.js"></script>
+
+	<!-- Rectangular -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+	<script src="http://cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
+
+	<!-- Plugins -->
+	<script src="js/libs/stickyTableHeaders/jquery.stickyTableHeaders.js"></script>	 
+	<script type="text/javascript" language="javascript" src="js/libs/mmenu-1.4.1/jquery.mmenu.js"></script>
+	
+
+	<!-- Custom Scripts -->
+	<script src="js/app.js"></script>
+
+	<script src="js/controllers/patientsController.js"></script>
+	<script src="js/controllers/assessments	Controller.js"></script>
+	<script src="js/controllers/ordersController.js"></script>
+	<script src="js/controllers/historyController.js"></script>
+	<script src="js/controllers/vitalsController.js"></script>
+	<script src="js/controllers/neurologicalController.js"></script>	
+	<script src="js/controllers/cardioController.js"></script>	
+	<script src="js/controllers/respiratoryController.js"></script>	
+	<script src="js/controllers/dailyController.js"></script>	
+	<script src="js/controllers/safetyController.js"></script>	
+	<script src="js/controllers/guController.js"></script>	
+	<script src="js/controllers/giController.js"></script>	
+	<script src="js/controllers/isosController.js"></script>
+
+</body>
+</html>
