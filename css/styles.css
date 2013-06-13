@@ -229,8 +229,15 @@ table{
 	border: 1px solid #f5f5f5;
 }
 
+input[type="text"]{
+	width: 120px;
+}
+
+input[type="tel"]{
+	width: 600px;
+}
+
 input[type="text"], input[type="tel"]{
-	width: 60px;
 	margin-bottom: 0;
 }
 
