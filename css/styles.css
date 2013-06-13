@@ -230,7 +230,7 @@ table{
 }
 
 input[type="text"]{
-	width: 120px;
+	width: auto;
 }
 
 input[type="tel"]{
@@ -383,7 +383,7 @@ textarea.nurseNote{
 	}*/
 }
 
-@media (max-width: 768px) {		
+@media (max-width: 768px) {
 	
 	.btn-large{
 		padding: 0;
