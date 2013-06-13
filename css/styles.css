@@ -348,7 +348,6 @@ textarea.nurseNote{
 	}
 
 	input[type="text"], input[type="tel"]{
-		width: 60px;
 		height: 44px;
 	}
 
@@ -385,11 +384,6 @@ textarea.nurseNote{
 }
 
 @media (max-width: 768px) {		
-
-	input[type="text"], input[type="tel"]{
-		width: 60px;
-		height: 44px;
-	}
 	
 	.btn-large{
 		padding: 0;
