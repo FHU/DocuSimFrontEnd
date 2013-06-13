@@ -78,9 +78,13 @@ docuSimApp.directive("stickyTableHeaders", function () {
 docuSimApp.directive("sidr", function () {
     return function (scope, element, attrs) {
 
-        scope.$watch("patient", function(newValue, oldValue) {
+        scope.$watch("selectedPatient", function(newValue, oldValue) {
             //var offset = $('.navbar').height();
-            $('#simple-menu').sidr();
+            $('#responsive-menu-button').sidr({
+                name: 'sidr-main',
+                source: '#navigation'
+            });
+
             //element.stickyTableHeaders('destroy');
             //element.stickyTableHeaders({fixedOffset: offset});
         });
@@ -205,9 +209,15 @@ docuSimApp.filter("localTime", function($filter) {
 
 });
 
+$('#responsive-menu-button').sidr({
+    name: 'sidr-main',
+    source: '#navigation'
+});
+    
 $(document).ready(function() {
 
-    $('#simple-menu').sidr();
+    //$('#simple-menu').sidr();
+
     
     //$("#nav").mmenu({
         // options go here...
