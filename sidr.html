@@ -14,22 +14,33 @@
 	<link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body data-spy="scroll" data-target="#SideBarContainer" data-offset-top:"70" >
+<body >
 	<div class="wrapper" >
 
-	<header class="navbar navbar-fixed-top">
+	<header class="navbar navbar-fixed-top" >
 			<div class="navbar-inner">
 				<div class="container-fluid">
 					<div class="row-fluid" >
 
+						<a href="#sidr"> Menu </a>
+												
+						<div id="sidr" data-sidr>
+						<!-- Your content -->
+						 	<ul class="nav" data-ng-controller="NavbarController">
+								<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
+								<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
+								<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
+							</ul>
+						</div>
+
 						<!-- Logo -->
 						<a class="brand span2" href="/">DocuSim</a>
 						
-						<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</button>
+						</button>-->
 
 						<!-- Top-Level Nav -->
 						<nav class="nav-collapse collapse span10 ">
@@ -1199,7 +1210,7 @@
 
 	<!-- Plugins -->
 	<script src="js/libs/stickyTableHeaders/jquery.stickyTableHeaders.js"></script>	 
-	
+	<script src="js/libs/jquery.sidr.min.js"></script>
 
 	<!-- Custom Scripts -->
 	<script src="js/app.js"></script>

@@ -75,6 +75,19 @@ docuSimApp.directive("stickyTableHeaders", function () {
 
 });
 
+docuSimApp.directive("sidr", function () {
+    return function (scope, element, attrs) {
+
+        scope.$watch("patient", function(newValue, oldValue) {
+            //var offset = $('.navbar').height();
+            $('#simple-menu').sidr();
+            //element.stickyTableHeaders('destroy');
+            //element.stickyTableHeaders({fixedOffset: offset});
+        });
+
+    };
+
+});
 
 /*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
@@ -194,9 +207,9 @@ docuSimApp.filter("localTime", function($filter) {
 
 $(document).ready(function() {
 
-    $("#nav").mmenu({
+    //$("#nav").mmenu({
         // options go here...
-    });
+    //});
 
      //var offset = $('.navbar').height();
 
