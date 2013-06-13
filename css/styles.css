@@ -25,6 +25,10 @@ html, body {
     top: 60px;
 }​
 
+.mobile-header {
+	display:none;
+}
+
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
@@ -324,6 +328,10 @@ textarea.nurseNote{
 }*/
 
 @media (max-width: 1024px){
+	.mobile-header {
+		display:block;
+	}
+
 	.slide-output{
 		margin-top:10px;
 		padding-bottom: 5px;

@@ -213,7 +213,9 @@ $('#responsive-menu-button').sidr({
     name: 'sidr-main',
     source: '#navigation'
 });
-    
+
+//$('#simple-menu').sidr();
+
 $(document).ready(function() {
 
     //$('#simple-menu').sidr();
