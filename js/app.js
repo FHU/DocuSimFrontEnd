@@ -207,6 +207,8 @@ docuSimApp.filter("localTime", function($filter) {
 
 $(document).ready(function() {
 
+    $('#simple-menu').sidr();
+    
     //$("#nav").mmenu({
         // options go here...
     //});

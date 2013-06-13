@@ -25,7 +25,8 @@
 
 						<a href="#sidr" id="simple-menu" class="span2"> &#9776; </a>
 												
-						<div id="sidr" data-sidr>
+						<div id="sidr" >
+
 						<!-- Your content -->
 						 	<ul class="nav" data-ng-controller="NavbarController">
 								<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
@@ -62,7 +63,7 @@
 		</header>		
 
 		<div class="container-fluid">
-	<div class="row-fluid">
+		<div class="row-fluid">
 		<!-- Side Navigation -->
 		<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
     		<!--<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
@@ -120,7 +121,7 @@
 				</div>
 				<hr>
 				<div class="row-fluid">
-					<img id="PatientPic" class="span4" src="carl.jpg" />
+					<img id="PatientPic" class="span4" src="img/carl.jpg" />
 					<div class="span8">
 						<table class="table table-condensed">
 							<tbody>
