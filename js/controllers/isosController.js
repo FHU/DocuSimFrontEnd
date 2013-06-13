@@ -73,14 +73,14 @@ docuSimApp.controller('isosController', function($scope, $http, $resource, $rout
 		newIo.Intake_IV3_Amount = $scope.newIo.Intake_IV3_Amount;
 		newIo.Intake_IV4_Solution = $scope.newIo.Intake_IV4_Solution;
 		newIo.Intake_IV4_Amount = $scope.newIo.Intake_IV4_Amount;
-		newIo.Intake_Total = sumArguments($scope.newIo.Intake_PO, $scope.newIo.Intake_TubeFeeding, $scope.newIo.Intake_IV1_Amount, $scope.newIo.Intake_IV2_Amount, $scope.newIo.Intake_IV3_Amount, $scope.newIo.Intake_IV4_Amount);
+		newIo.Intake_Total = $scope.sumArguments($scope.newIo.Intake_PO, $scope.newIo.Intake_TubeFeeding, $scope.newIo.Intake_IV1_Amount, $scope.newIo.Intake_IV2_Amount, $scope.newIo.Intake_IV3_Amount, $scope.newIo.Intake_IV4_Amount);
 		newIo.Output_Emesis = $scope.newIo.Output_Emesis;
 		newIo.Output_Urine = $scope.newIo.Output_Urine;
 		newIo.Output_Stool = $scope.newIo.Output_Stool;
 		newIo.Output_ChestTube = $scope.newIo.Output_ChestTube;
 		newIo.Output_Drainage_Other = $scope.newIo.Output_Drainage_Other;
 		newIo.Output_Other = $scope.newIo.Output_Other;
-		newIo.Output_Total = sumArguments($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube, $scope.newIo.Output_Drainage_Other, $scope.newIo.Output_Other);
+		newIo.Output_Total = $scope.sumArguments($scope.newIo.Output_Emesis, $scope.newIo.Output_Urine, $scope.newIo.Output_Stool, $scope.newIo.Output_ChestTube, $scope.newIo.Output_Drainage_Other, $scope.newIo.Output_Other);
 		newIo.NurseNote = $scope.newIo.NurseNote;
 
 		//Add vital array to backend model.

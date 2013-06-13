@@ -1087,7 +1087,7 @@
 
 					<tr>
 		                <td>Output - Total</td>
-						<td>{{ sumArguments (newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
+						<td>{{ sumArguments(newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
 						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Total}}</td>
         			</tr>
 					<tr>
