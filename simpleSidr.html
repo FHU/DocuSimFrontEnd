@@ -18,49 +18,21 @@
 
 <div class="wrapper" >
 
-	<header class="navbar navbar-fixed-top" >
-			<div class="navbar-inner">
-				<div class="container-fluid">
-					<div class="row-fluid" >
+	<header  >
 
-						<a href="#sidr" id="simple-menu" class="span2"> &#9776; </a>
+		<a href="#sidr" id="simple-menu" class="span2"> &#9776; </a>
 												
-						<div id="sidr" >
+		<div id="sidr" >
 
-						<!-- Your content -->
-						 	<ul data-ng-controller="NavbarController">
-								<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
-								<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
-								<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
-							</ul>
-						</div>
+		<!-- Your content -->
+		 	<ul data-ng-controller="NavbarController">
+				<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
+				<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
+				<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
+			</ul>
+		</div>
 
-						<!-- Logo -->
-						<a class="brand span2" href="/">DocuSim</a>
-						
-						<!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>-->
-
-						<!-- Top-Level Nav -->
-						<nav class="nav-collapse collapse span10 ">
-							<!-- User/Logout -->	
-							<p class="navbar-text pull-right">
-								<a class="navbar-text" href="#/patients" id="patientsLink" data-ng-class="{'active':getClass('/patients')}">Patients</a>
-								Logged in as <a href="#" class="navbar-link">Chris White</a>
-							</p>
-							<!--<ul class="nav" data-ng-controller="NavbarController">
-								<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
-								<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
-								<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
-							</ul>-->
-						</nav>
-					</div>
-				</div>
-			</div>
-		</header>		
+	</header>		
 
 		<div class="container-fluid">
 		<div class="row-fluid">
