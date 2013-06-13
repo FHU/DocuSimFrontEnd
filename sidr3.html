@@ -10,37 +10,42 @@
 	<link href="css/bootstrap-select.css" rel="stylesheet">
 	<link href="css/bootstrap-slider.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/jquery.sidr.light.css">
+	<link href="css/jquery.sidr.light.css" rel="stylesheet">
 	
 	<link href="css/styles.css" rel="stylesheet">
 
 </head>
 
 <body>
-<div class="wrapper" >
+	<div class="wrapper" >
 
-	<header>
+		<header>
 
-		<a href="#sidr" id="simple-menu" class="span2"> &#9776; </a>
-							
-		<div id="sidr" >
+			<div id="mobile-header">
+				<a id="responsive-menu-button" href="#sidr-main">Menu</a>
+			</div>
 
-		<!-- Your content -->
-		 	<ul>
-				<li > <a href="#"> Assessments</a></li>
-				<li > <a href="#"> Orders</a></li>
-				<li > <a href="#"> History</a></li>
-			</ul>
-		</div>
+			<div id="navigation">
+				<nav class="nav">
+					<ul>
+						<li><a href="#download">Download</a></li>
+						<li><a href="#getstarted">Get started</a></li>
+						<li><a href="#usage">Demos &amp; Usage</a></li>
+						<li><a href="#documentation">Documentation</a></li>
+						<li><a href="#themes">Themes</a></li>
+						<li><a href="#support">Support</a></li>
+					</ul>
+				</nav>
+			</div>
 
-	</header>
+		</header>
 
-			
+
 
 		<div class="container-fluid">
-		<div class="row-fluid">
-		<!-- Side Navigation -->
-		<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
+			<div class="row-fluid">
+				<!-- Side Navigation -->
+				<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
     		<!--<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
     			<li class="active">
     				<a href="#/assessments/{{selectedPatient.ID}}#scenario">
@@ -82,82 +87,83 @@
 	    			<a href="#/assessments/{{selectedPatient.ID}}#io">
     				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> Is/Os </span> </a>
     			</li>
-       		</ul> -->
-		</div>
-		<!-- Side Nav End -->
+    		</ul> -->
+    	</div>
+    	<!-- Side Nav End -->
 
-		<!-- Patient/Scenario Block -->
-		<section id="scenario" class="span10 ">
-			<div class="hero-unit" data-ng-controller="patientsController" >
-				<div class="row-fluid">
-					<h2> Carl Shapiro
-						<span class="pull-right"> 1234</span>
-					</h2>
-				</div>
-				<hr>
-				<div class="row-fluid">
-					<img id="PatientPic" class="span4" src="img/carl.jpg" />
-					<div class="span8">
-						<table class="table table-condensed">
-							<tbody>
+    	<!-- Patient/Scenario Block -->
+    	<section id="scenario" class="span10 ">
+    		<div class="hero-unit" data-ng-controller="patientsController" >
+    			<div class="row-fluid">
+    				<h2> Carl Shapiro
+    					<span class="pull-right"> 1234</span>
+    				</h2>
+    			</div>
+    			<hr>
+    			<div class="row-fluid">
+    				<img id="PatientPic" class="span4" src="img/carl.jpg" />
+    				<div class="span8">
+    					<table class="table table-condensed">
+    						<tbody>
     							<tr>
     								<td><strong>DOB:</strong> 1/8/82 </td>
     								<td><strong>Height:</strong> 62 in</td>
-        						</tr>
-    	    					<tr>
-        							<td><strong>Gender:</strong> Male </td>
+    							</tr>
+    							<tr>
+    								<td><strong>Gender:</strong> Male </td>
     								<td><strong>Weight:</strong> 150 kg</td>
     							</tr>
     							<tr>
-    						</tbody>
-    					</table>
+    							</tbody>
+    						</table>
 
-			    		<div>
-        					<p> </p>
-        				</div>
+    						<div>
+    							<p> </p>
+    						</div>
 
-    				</div>
-    			</div> <!-- end row-fluid -->
-    		</div> <!-- end hero -->
-		</section>
-	</div> <!-- end row-fluid -->
-	<!-- Patient/Scenario End -->
+    					</div>
+    				</div> <!-- end row-fluid -->
+    			</div> <!-- end hero -->
+    		</section>
+    	</div> <!-- end row-fluid -->
+    	<!-- Patient/Scenario End -->
 
-	<!-- Table Content -->
-	<!-- Vitals -->
-
-
-</div> <!--end container-fluid -->
+    	<!-- Table Content -->
+    	<!-- Vitals -->
 
 
-
-	<div class="push"><!--//--></div>
-
-	</div> <!--end wrapper -->
-	
-
-	<footer class="footer">
-		<div class="container-fluid">&copy; Freed Hardeman University</div>
-	</footer>
+    </div> <!--end container-fluid -->
 
 
-	<!-- Utility -->
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="js/libs/modernizr.js"></script>	
-	
 
-	<!-- Plugins -->
-	<script src="js/libs/jquery.sidr.min.js"></script>
+    <div class="push"><!--//--></div>
 
-	<!-- Custom Scripts -->
-	<script>
+</div> <!--end wrapper -->
 
-	$(document).ready(function() {
-    	$('#simple-menu').sidr();
+
+<footer class="footer">
+	<div class="container-fluid">&copy; Freed Hardeman University</div>
+</footer>
+
+
+<!-- Utility -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/libs/modernizr.js"></script>	
+
+
+<!-- Plugins -->
+<script src="js/libs/jquery.sidr.min.js"></script>
+
+<!-- Custom Scripts -->
+<script>
+
+	$('#responsive-menu-button').sidr({
+		name: 'sidr-main',
+		source: '#navigation'
 	});
+			
+</script>
 
-	</script>
 
-	
 </body>
 </html>
