@@ -125,7 +125,7 @@
 							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
 
 						</td>
-        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}} , {{vital.TemperatureRoute}} </td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}}  {{vital.TemperatureRoute}} </td>
 	                </tr>
 	                <tr>
 		                <td>HR</td>
