@@ -23,7 +23,7 @@
 				<div class="container-fluid">
 					<div class="row-fluid" data-ng-controller="NavbarController">
 
-						<div class="span2" >
+						<div class="span1" >
 						 	<a id="responsive-menu-button" href="#sidr-main"> &#9776;</a>
 
 							 <div id="navigation">
@@ -37,8 +37,10 @@
 							 </div>
 
 							<!-- Logo -->
-							<a class="brand" href="/">DocuSim</a>
+							
 						</div>
+
+						<a class="brand span2" href="/">DocuSim</a>
 						
 						<!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
@@ -47,7 +49,7 @@
 						</button>-->
 
 						<!-- Top-Level Nav -->
-						<nav class="span10">
+						<nav class="span9">
 							<!-- User/Logout -->	
 							<p class="navbar-text pull-right">
 								<a class="navbar-text" href="#/patients" id="patientsLink" data-ng-class="{'active':getClass('/patients')}">Patients</a>
@@ -67,7 +69,7 @@
 		<div class="container-fluid">
 	<div class="row-fluid">
 		<!-- Side Navigation -->
-		<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
+		<div id="SideBarContainer" class="span1" data-ng-controller="patientsController">
     		<!--<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
     			<li class="active">
     				<a href="#/assessments/{{selectedPatient.ID}}#scenario">
@@ -153,7 +155,7 @@
 	<!-- Table Content -->
 	<!-- Vitals -->
 	<div class="row-fluid">
-		<section id="vitals" class="span10 offset2" data-ng-controller="vitalsController" >
+		<section id="vitals" class="span10 offset1" data-ng-controller="vitalsController" >
 			<h1>Vitals</h1>
 			<div class="assessmentArea">
 			<table class="table table-striped" data-sticky-table-headers>
