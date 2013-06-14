@@ -29,6 +29,24 @@ html, body {
 	display:none;
 }
 
+#navigation {
+	display:none;	
+}
+
+#responsive-menu-button {
+	display: block;
+	float: left;
+	padding: 14.5px 5px 14.5px;
+	margin-right:20px;	
+	text-decoration: none;
+}
+
+
+
+/*.mobile-navigation {
+	display:none;
+}*/
+
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
@@ -46,10 +64,23 @@ html, body {
 	color: #f5f5f5;
 }
 
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  /*position: absolute;*/
+  position: fixed;
+  top:0;
+  /*right: 0;*/
+  /*left: 0;*/
+  width: 100%;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+
 .navbar .brand {
 	color: #e6bb0d;
 	font-size: 1.7em;
 	padding-left:0;
+	margin-left: 0;
 }
 
 /* Header ------------------------*/

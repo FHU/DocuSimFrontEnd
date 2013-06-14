@@ -23,22 +23,22 @@
 				<div class="container-fluid">
 					<div class="row-fluid" data-ng-controller="NavbarController">
 
-						 <div id="mobile-header">
+						<div class="span2" >
 						 	<a id="responsive-menu-button" href="#sidr-main"> &#9776;</a>
-						 </div>
 
-						 <div id="navigation">
-						 	<nav class="nav">
-						 		<ul>
-							 		<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
-							 		<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
-							 		<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
-						 		</ul>
-						 	</nav>
-						 </div>
+							 <div id="navigation">
+							 	<nav class="nav">
+							 		<ul>
+								 		<li data-ng-class="{'active':getClass('/assessments')}"><a href="#/assessments/{{getID()}}">Assessments</a></li>
+								 		<li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders/{{getID()}}">Orders</a></li>
+								 		<li data-ng-class="{'active':getClass('/history')}"><a href="#/history/{{getID()}}">History</a></li>
+							 		</ul>
+							 	</nav>
+							 </div>
 
-						<!-- Logo -->
-						<a class="brand span2" href="/">DocuSim</a>
+							<!-- Logo -->
+							<a class="brand" href="/">DocuSim</a>
+						</div>
 						
 						<!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 							<span class="icon-bar"></span>
@@ -47,7 +47,7 @@
 						</button>-->
 
 						<!-- Top-Level Nav -->
-						<nav class="nav-collapse collapse span10 ">
+						<nav class="span10">
 							<!-- User/Logout -->	
 							<p class="navbar-text pull-right">
 								<a class="navbar-text" href="#/patients" id="patientsLink" data-ng-class="{'active':getClass('/patients')}">Patients</a>
