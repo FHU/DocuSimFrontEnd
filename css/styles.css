@@ -85,7 +85,7 @@ html, body {
 .sidr ul li img{
 	height: 35px;
 	margin-left: 15px;
-	margin-right: 8px;
+	margin-right: 0px;
 }
 
 .sidr ul li span {
