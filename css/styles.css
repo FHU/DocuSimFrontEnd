@@ -118,6 +118,18 @@ html, body {
 
 
 /* Body --------------------------*/
+
+#scenario {
+	margin-left: 0;
+	margin-top:10px;
+}
+
+@media (max-width: 767px) {
+	#scenario{
+		padding:0px;
+	}
+}
+
 section{
 	padding-top: 60px;
 }
@@ -163,12 +175,6 @@ table{
 ::-webkit-scrollbar-thumb{
 	background: #d0d5d9;
 	border-radius: 15px;
-}
-
-@media (max-width: 767px) {
-	#scenario{
-		padding:0px;
-	}
 }
 
 /*----- tables -------------------*/
