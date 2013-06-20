@@ -69,8 +69,7 @@ html, body {
   position: absolute;
   position: fixed;
   top:0;
-  right: auto;
-  left: auto;
+
   width: 100%;
   z-index: 1030;
   margin-bottom: 0;
@@ -82,6 +81,17 @@ html, body {
 	padding-left:0;
 	margin-left: 0;
 }
+
+.sidr ul li img{
+	height: 35px;
+	margin-left: 15px;
+	margin-right: 8px;
+}
+
+.sidr ul li span {
+	display: inline;
+}
+
 
 /* Header ------------------------*/
 
@@ -432,7 +442,7 @@ textarea.nurseNote{
 
 
 /* Side Navagation ---------------*/
-#SideNav{
+/*#SideNav{
 	padding-top: 60px;
 	position: fixed;
 }
@@ -453,7 +463,7 @@ textarea.nurseNote{
 .nav-tabs > .active > a:focus {
   color: #ffffff;
   background-color: #1abc9c;
-}
+}*/
 
 @media (max-width: 767px) {
 	#SideNav{
