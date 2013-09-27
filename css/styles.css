@@ -466,46 +466,6 @@ textarea.nurseNote{
 .nav-tabs a:hover {
   color: #ffffff;
   background-color: #1abc9c;
-}*/
-
-@media (max-width: 767px) {
-	#SideNav{
-		padding-top: 0px;
-	}
-}
-
-@media (max-width: 768px){
-
-	#SideNav li a span {
-		display:none;
-	}
-}
-
-@media (max-width: 699px) {
-	#SideNav{
-		position:static;
-		width: 100%;
-	}
-}
-
-@media (max-height: 767px){
-	#SideNav li a{
-		height: 30px;
-		padding-top: 15px;
-	}
-	.nav-icon{
-		height: 22px;
-	}
-}
-
-@media (max-height: 600px){
-		#SideNav li a{
-		height: 20px;
-		padding-top: 5px;
-	}
-	.nav-icon{
-		height: 18px;
-	}
 }
 /*--------------------------------*/
 
