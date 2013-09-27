@@ -1,5 +1,5 @@
 
-var docuSimApp = angular.module('docuSim', ['$strap.directives', 'ngResource']);
+var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives', 'ngResource']);
 
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, $locationProvider) {
@@ -32,6 +32,11 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
                 controller: 'patientsController',
                 templateUrl: partialViewsUrlBase +'historyView.html'
             })
+        .when('/rest', 
+            {
+                controller: 'restController',
+                templateUrl: partialViewsUrlBase +'restangularView.html'
+            })
         .when('/adminEdit/', 
             {
                 controller: 'patientsController',
@@ -40,6 +45,8 @@ docuSimApp.config(function ($routeProvider, $locationProvider) {
 
 
         .otherwise({ redirectTo: '/patients' });
+
+        RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
 docuSimApp.directive("stickyTableHeaders", function () {
