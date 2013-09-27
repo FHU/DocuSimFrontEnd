@@ -89,7 +89,7 @@ docuSimApp.controller('patientsController', function($scope, $http, $location, $
 
 });*/
 
-docuSimApp.factory('PatientModel', function($resource) {
+/*docuSimApp.factory('PatientModel', function($resource) {
 
     var patients = [];
     var selectedPatient = {};
@@ -132,7 +132,7 @@ docuSimApp.factory('PatientModel', function($resource) {
         return selectedPatient.Vitals;
     }*/
 
-    patientFactory.addPatient = function(id, patient) {
+/*    patientFactory.addPatient = function(id, patient) {
         patientFactory.create();
     }
 
@@ -164,4 +164,4 @@ docuSimApp.factory('PatientModel', function($resource) {
 
     return patientFactory;
 
-});
+});*/
