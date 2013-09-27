@@ -230,14 +230,7 @@ table{
 }
 
 input[type="text"]{
-	width: auto;
-}
-
-input[type="tel"]{
 	width: 60px;
-}
-
-input[type="text"], input[type="tel"]{
 	margin-bottom: 0;
 }
 
@@ -347,7 +340,8 @@ textarea.nurseNote{
 		line-height: 0;
 	}
 
-	input[type="text"], input[type="tel"]{
+	input[type="text"]{
+		width: 60px;
 		height: 44px;
 	}
 
@@ -383,7 +377,12 @@ textarea.nurseNote{
 	}*/
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {		
+
+	input[type="text"]{
+		width: 60px;
+		height: 44px;
+	}
 	
 	.btn-large{
 		padding: 0;

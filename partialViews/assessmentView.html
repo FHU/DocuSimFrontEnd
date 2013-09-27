@@ -109,7 +109,7 @@
     			</thead> 
 				<tbody>
         			<tr>
-        				<td>Temp <br> <small> &deg;F, Route </small> </td>
+        				<td>Temp, Route</td>
 						<td>
 							<!--<div class="left">
 								<h4> Temp </h4>
@@ -120,47 +120,37 @@
 								
 							</div>-->
 
-							<input type="tel" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
-							 
+							<input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Temperature"/>
+							, 
 							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp"  bs-select></select>
 
 						</td>
-        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
-        					{{vital.Temperature}}
-        					<span ng:show="vital.TemperatureRoute"> , </span> 
-        					{{vital.TemperatureRoute}} 
-    					</td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Temperature}} , {{vital.TemperatureRoute}} </td>
 	                </tr>
 	                <tr>
 		                <td>HR</td>
-						<td><input type="tel" pattern="[0-9]*" data-ng-model="newVitals.HR"/></td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.HR"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.HR}}</td>
         			</tr>
         			<tr>
         				<td>R</td>
-        				<td><input type="tel" pattern="[0-9]*" data-ng-model="newVitals.R"/></td>
+        				<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.R"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.R}}</td>
         			</tr>
 					<tr>
         				<td>BP <br> <small>Systolic/Diastolic</small></td>
-						<td>
-							<input type="tel" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/> /
-							<input type="tel" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/>
-						</td>
-        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
-        					<span ng:show="vital.BP_Systolic&&vital.BP_Diastolic">
-	        					{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}
-        					</span>
-        				</td>
+						<td><input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Systolic"/> /
+							<input type="text" pattern="[0-9]*" data-ng-model="newVitals.BP_Diastolic"/></td>
+        				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.BP_Systolic}} / {{vital.BP_Diastolic}}</td>
         			</tr>
 					<tr>
         				<td>SpO<sub>2</sub></td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.SpO2"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.SpO2"/></td>
         				<td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.SpO2}}</td>
         			</tr>
         			<tr>
 		                <td>Weight</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Weight"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" data-ng-model="newVitals.Weight"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.Weight}}</td>
         			</tr>
 					<tr>
@@ -214,7 +204,7 @@
     			<tbody>
         			<tr>
         				<td>Pupils - Right</td>
-						<td><input type="tel" pattern="[0-9]*" ng-model="newNeurological.Pupil_R"/>
+						<td><input type="text" pattern="[0-9]*" ng-model="newNeurological.Pupil_R"/>
 							<div class="btn-group" ng-model="newNeurological.ppRight_sign" bs-buttons-radio>
 									<button class="btn" value="+">+</button>
 									<button class="btn" value="-">-</button>
@@ -225,7 +215,7 @@
 	                <tr>
 		                <td>Pupils - Left</td>
 						<td>
-							<input type="tel" pattern="[0-9]*" ng-model="newNeurological.Pupil_L"/>
+							<input type="text" pattern="[0-9]*" ng-model="newNeurological.Pupil_L"/>
 							<div class="btn-group" ng-model="newNeurological.ppLeft_sign" bs-buttons-radio>
 									<button class="btn" value="+">+</button>
 									<button class="btn" value="-">-</button>
@@ -513,9 +503,7 @@
 						</td>
 
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
-        					{{resp.Suction_Frequency}}
-        					<span ng:show="resp.Suction_Area"> , </span> 
-        					{{resp.Suction_Area}}
+        					{{resp.Suction_Frequency}}, {{resp.Suction_Area}}
         				</td>
         			</tr>
 					<tr>
@@ -527,9 +515,7 @@
 
 						</td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
-        					{{resp.Secretions_Amount}}
-        					<span ng:show="resp.Secretions_Color"> , </span> 
-        					{{resp.Secretions_Color}}
+        					{{resp.Secretions_Amount}}, {{resp.Secretions_Color}} 
         				</td>
         			</tr>
 					<tr>
@@ -540,9 +526,9 @@
 					<tr>
         				<td>FiO<sub>2</sub></td>
 						<td>
-							<input type="tel" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_LPM"/> L/min
+							<input type="text" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_LPM"/> L/min
 
-							<input type="tel" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_Pct"/> %
+							<input type="text" pattern="[0-9]*.[0-9]*" ng-model="newRespiratory.FIO2_Pct"/> %
 
 						</td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true"> 
@@ -1001,13 +987,13 @@
     			<tbody>
 					<tr>
 		                <td>Intake - PO</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_PO"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_PO"/></td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Intake_PO}}</td>
         			</tr>
 					<tr>
 		                <td>Intake - Tube</td>
 						<td>
-							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_TubeFeeding"/>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_TubeFeeding"/>
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	{{i.Intake_TubeFeeding}}
@@ -1019,30 +1005,30 @@
 							<!-- IV 1 -->
 							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
-							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
 							<br>
 
 							<!-- IV 2 -->
 							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
-							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
 							<br>
 
 							<!-- IV 3 -->
 							<select ng-model="newIo.Intake_IV3_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
-							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV3_Amount"/>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV3_Amount"/>
 							<br>
 
 							<!-- IV 4 -->
 							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
-							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
+							<input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
 
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	<span ng:show="i.Intake_IV1_Amount">
-		                		{{i.Intake_IV1_Solution}},  {{i.Intake_IV1_Amount}} 
+		                		{{i.Intake_IV1_Solution}},  	{{i.Intake_IV1_Amount}} 
 		                	</span> <br>
 
 		                	<span ng:show="i.Intake_IV2_Amount">
@@ -1068,42 +1054,40 @@
         			</tr>
 					<tr>
 		                <td>Output - Emesis</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Emesis"/>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Emesis"/>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Emesis}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Urine</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*" ng-model="newIo.Output_Urine"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*" ng-model="newIo.Output_Urine"/></td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Urine}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Stool Colostomy/Fecal Pouch</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Stool"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Stool"/></td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Stool}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Chest Tube Drainage</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_ChestTube}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Drainage Other</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Drainage_Other"/></td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Drainage_Other"/></td>
 		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Drainage_Other}}</td>
         			</tr>
 
         			<tr>
 		                <td>Output - Other</td>
-						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
-		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">
-		                	{{i.Output_Other}}
-		                </td>
+						<td><input type="text" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
+		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Other}}</td>
         			</tr>
 
 
 					<tr>
 		                <td>Output - Total</td>
-						<td>{{ sumArguments(newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
+						<td>{{ sumArguments (newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
 						<td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Total}}</td>
         			</tr>
 					<tr>
