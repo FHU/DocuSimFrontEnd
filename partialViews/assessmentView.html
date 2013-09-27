@@ -513,9 +513,7 @@
 						</td>
 
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
-        					{{resp.Suction_Frequency}}
-        					<span ng:show="resp.Suction_Area"> , </span> 
-        					{{resp.Suction_Area}}
+        					{{resp.Suction_Frequency}}, {{resp.Suction_Area}}
         				</td>
         			</tr>
 					<tr>
@@ -527,9 +525,7 @@
 
 						</td>
         				<td data-ng-repeat="resp in respiratory | orderBy:'TimeStamp':true">
-        					{{resp.Secretions_Amount}}
-        					<span ng:show="resp.Secretions_Color"> , </span> 
-        					{{resp.Secretions_Color}}
+        					{{resp.Secretions_Amount}}, {{resp.Secretions_Color}} 
         				</td>
         			</tr>
 					<tr>
@@ -1042,7 +1038,7 @@
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	<span ng:show="i.Intake_IV1_Amount">
-		                		{{i.Intake_IV1_Solution}},  {{i.Intake_IV1_Amount}} 
+		                		{{i.Intake_IV1_Solution}},  	{{i.Intake_IV1_Amount}} 
 		                	</span> <br>
 
 		                	<span ng:show="i.Intake_IV2_Amount">
