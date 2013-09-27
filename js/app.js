@@ -75,23 +75,6 @@ docuSimApp.directive("stickyTableHeaders", function () {
 
 });
 
-docuSimApp.directive("sidr", function () {
-    return function (scope, element, attrs) {
-
-        scope.$watch("selectedPatient", function(newValue, oldValue) {
-            //var offset = $('.navbar').height();
-            $('#responsive-menu-button').sidr({
-                name: 'sidr-main',
-                source: '#navigation'
-            });
-
-            //element.stickyTableHeaders('destroy');
-            //element.stickyTableHeaders({fixedOffset: offset});
-        });
-
-    };
-
-});
 
 /*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
@@ -209,21 +192,11 @@ docuSimApp.filter("localTime", function($filter) {
 
 });
 
-$('#responsive-menu-button').sidr({
-    name: 'sidr-main',
-    source: '#navigation'
-});
-
-//$('#simple-menu').sidr();
-
 $(document).ready(function() {
 
-    //$('#simple-menu').sidr();
-
-    
-    //$("#nav").mmenu({
+    $("#nav").mmenu({
         // options go here...
-    //});
+    });
 
      //var offset = $('.navbar').height();
 

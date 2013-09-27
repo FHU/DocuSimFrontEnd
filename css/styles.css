@@ -25,28 +25,6 @@ html, body {
     top: 60px;
 }​
 
-.mobile-header {
-	display:none;
-}
-
-#navigation {
-	display:none;	
-}
-
-#responsive-menu-button {
-	display: block;
-	float: left;
-	padding: 14.5px 5px 14.5px;
-	margin-right:20px;	
-	text-decoration: none;
-}
-
-
-
-/*.mobile-navigation {
-	display:none;
-}*/
-
 /* vetically center icons from font-awesome */
 /*http://www.acarrilho.com/2012/07/17/bug-with-icon-vertical-align-when-using-font-awesome-and-bootstrap/ */
 [class^="icon-"], [class*=" icon-"] {
@@ -64,34 +42,11 @@ html, body {
 	color: #f5f5f5;
 }
 
-.navbar-fixed-top,
-.navbar-fixed-bottom {
-  position: absolute;
-  position: fixed;
-  top:0;
-
-  width: 100%;
-  z-index: 1030;
-  margin-bottom: 0;
-}
-
 .navbar .brand {
 	color: #e6bb0d;
 	font-size: 1.7em;
 	padding-left:0;
-	margin-left: 0;
 }
-
-.sidr ul li img{
-	height: 35px;
-	margin-left: 15px;
-	margin-right: 0px;
-}
-
-.sidr ul li span {
-	display: inline;
-}
-
 
 /* Header ------------------------*/
 
@@ -118,18 +73,6 @@ html, body {
 
 
 /* Body --------------------------*/
-
-#scenario {
-	margin-left: 0;
-	margin-top:10px;
-}
-
-@media (max-width: 767px) {
-	#scenario{
-		padding:0px;
-	}
-}
-
 section{
 	padding-top: 60px;
 }
@@ -175,6 +118,12 @@ table{
 ::-webkit-scrollbar-thumb{
 	background: #d0d5d9;
 	border-radius: 15px;
+}
+
+@media (max-width: 767px) {
+	#scenario{
+		padding:0px;
+	}
 }
 
 /*----- tables -------------------*/
@@ -375,10 +324,6 @@ textarea.nurseNote{
 }*/
 
 @media (max-width: 1024px){
-	.mobile-header {
-		display:block;
-	}
-
 	.slide-output{
 		margin-top:10px;
 		padding-bottom: 5px;
@@ -448,7 +393,7 @@ textarea.nurseNote{
 
 
 /* Side Navagation ---------------*/
-/*#SideNav{
+#SideNav{
 	padding-top: 60px;
 	position: fixed;
 }
@@ -469,7 +414,7 @@ textarea.nurseNote{
 .nav-tabs > .active > a:focus {
   color: #ffffff;
   background-color: #1abc9c;
-}*/
+}
 
 @media (max-width: 767px) {
 	#SideNav{
