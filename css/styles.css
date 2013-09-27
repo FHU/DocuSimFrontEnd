@@ -131,7 +131,7 @@ html, body {
 }
 
 section{
-	padding-top: 60px;
+	margin-top: 60px;
 }
 
 section h1 {
@@ -454,6 +454,7 @@ textarea.nurseNote{
 
 #SideNav li {
 	height: 34px;
+	width: 10%;
 	padding-left: 10px;
 }
 
