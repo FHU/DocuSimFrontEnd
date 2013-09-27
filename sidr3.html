@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="docuSim">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap_flatly.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="css/bootstrap-select.css" rel="stylesheet">
+	<link href="css/bootstrap-slider.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/jquery.sidr.light.css" rel="stylesheet">
+	
+	<link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="wrapper" >
+
+		<header>
+
+			<div id="mobile-header">
+				<a id="responsive-menu-button" href="#sidr-main">Menu</a>
+			</div>
+
+			<div id="navigation">
+				<nav class="nav">
+					<ul>
+						<li><a href="#download">Download</a></li>
+						<li><a href="#getstarted">Get started</a></li>
+						<li><a href="#usage">Demos &amp; Usage</a></li>
+						<li><a href="#documentation">Documentation</a></li>
+						<li><a href="#themes">Themes</a></li>
+						<li><a href="#support">Support</a></li>
+					</ul>
+				</nav>
+			</div>
+
+		</header>
+
+
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<!-- Side Navigation -->
+				<div id="SideBarContainer" class="span2" data-ng-controller="patientsController">
+    		<!--<ul id="SideNav" class="nav nav-tabs nav-stacked span2">
+    			<li class="active">
+    				<a href="#/assessments/{{selectedPatient.ID}}#scenario">
+    				<img class="nav-icon" src="img/medicoicons/hospital.png"> <span> Patient </span> </a>
+    			</li>
+    			<li>
+    				<a href="#/assessments/{{selectedPatient.ID}}#vitals">
+					<img class="nav-icon" src="img/medicoicons/blood pressure.png"> <span> Vitals </span></a>
+				</li>
+    			<li>
+    				<a href="#/assessments/{{selectedPatient.ID}}#neurological">
+					<img class="nav-icon" src="img/medicoicons/ecg.png"> <span> Neuro </span> </a>
+    			</li>
+       			<li>
+       				<a href="#/assessments/{{selectedPatient.ID}}#cardio">
+   					<img class="nav-icon" src="img/medicoicons/heart.png"> <span> Cardio </span> </a>
+   				</li>
+       			<li>
+       				<a href="#/assessments/{{selectedPatient.ID}}#respiratory">
+       				<img class="nav-icon" src="img/medicoicons/inhaler.png"> <span> Respiratory </span> </a>
+       			</li>
+				<li>
+					<a href="#/assessments/{{selectedPatient.ID}}#daily">
+					<img class="nav-icon" src="img/medicoicons/clipboard.png"><span>  Daily </span> </a>
+				</li>
+		    	<li>
+		    		<a href="#/assessments/{{selectedPatient.ID}}#safety">
+	    			<img class="nav-icon" src="img/medicoicons/biohazard.png"> <span> Safety </span> </a>
+	    		</li>
+		    	<li>
+		    		<a href="#/assessments/{{selectedPatient.ID}}#gu">
+	    			<img class="nav-icon" src="img/medicoicons/bandage.png"> <span> GU </span> </a>
+	    		</li>
+	    		<li>
+	    			<a href="#/assessments/{{selectedPatient.ID}}#gi">
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> GI </span> </a>
+    			</li>
+	    		<li>
+	    			<a href="#/assessments/{{selectedPatient.ID}}#io">
+    				<img class="nav-icon" src="img/medicoicons/iv bag.png"> <span> Is/Os </span> </a>
+    			</li>
+    		</ul> -->
+    	</div>
+    	<!-- Side Nav End -->
+
+    	<!-- Patient/Scenario Block -->
+    	<section id="scenario" class="span10 ">
+    		<div class="hero-unit" data-ng-controller="patientsController" >
+    			<div class="row-fluid">
+    				<h2> Carl Shapiro
+    					<span class="pull-right"> 1234</span>
+    				</h2>
+    			</div>
+    			<hr>
+    			<div class="row-fluid">
+    				<img id="PatientPic" class="span4" src="img/carl.jpg" />
+    				<div class="span8">
+    					<table class="table table-condensed">
+    						<tbody>
+    							<tr>
+    								<td><strong>DOB:</strong> 1/8/82 </td>
+    								<td><strong>Height:</strong> 62 in</td>
+    							</tr>
+    							<tr>
+    								<td><strong>Gender:</strong> Male </td>
+    								<td><strong>Weight:</strong> 150 kg</td>
+    							</tr>
+    							<tr>
+    							</tbody>
+    						</table>
+
+    						<div>
+    							<p> </p>
+    						</div>
+
+    					</div>
+    				</div> <!-- end row-fluid -->
+    			</div> <!-- end hero -->
+    		</section>
+    	</div> <!-- end row-fluid -->
+    	<!-- Patient/Scenario End -->
+
+    	<!-- Table Content -->
+    	<!-- Vitals -->
+
+
+    </div> <!--end container-fluid -->
+
+
+
+    <div class="push"><!--//--></div>
+
+</div> <!--end wrapper -->
+
+
+<footer class="footer">
+	<div class="container-fluid">&copy; Freed Hardeman University</div>
+</footer>
+
+
+<!-- Utility -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/libs/modernizr.js"></script>	
+
+
+<!-- Bootstrap -->
+<script src="js/libs/bootstrap.js"></script>	
+<script src="js/libs/bootstrap-select.js"></script>
+<script src="js/libs/bootstrap-slider.js"></script>	 
+
+<!-- Angular -->
+<script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+<script src="http://code.angularjs.org/1.1.5/angular-resource.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-strap/0.7.2/angular-strap.min.js"></script>
+
+<!-- Plugins -->
+<script src="js/libs/jquery.sidr.min.js"></script>
+
+<script src="js/app.js"></script>
+
+
+<script src="js/controllers/patientsController.js"></script>
+<script src="js/controllers/assessments	Controller.js"></script>
+<script src="js/controllers/ordersController.js"></script>
+<script src="js/controllers/historyController.js"></script>
+<script src="js/controllers/vitalsController.js"></script>
+<script src="js/controllers/neurologicalController.js"></script>	
+<script src="js/controllers/cardioController.js"></script>	
+<script src="js/controllers/respiratoryController.js"></script>	
+<script src="js/controllers/dailyController.js"></script>	
+<script src="js/controllers/safetyController.js"></script>	
+<script src="js/controllers/guController.js"></script>	
+<script src="js/controllers/giController.js"></script>	
+<script src="js/controllers/isosController.js"></script>
+
+
+<!-- Custom Scripts -->
+<!--<script>
+
+	$('#responsive-menu-button').sidr({
+		name: 'sidr-main',
+		source: '#navigation'
+	});
+			
+</script>-->
+
+
+</body>
+</html>

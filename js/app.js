@@ -1,5 +1,5 @@
 
-var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives', 'ngResource']);
+var docuSimApp = angular.module('docuSim', ['restangular', '$strap.directives']);
 
 //This configures the routes and associates each route with a view and a controller
 docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvider) {
@@ -75,6 +75,23 @@ docuSimApp.directive("stickyTableHeaders", function () {
 
 });
 
+docuSimApp.directive("sidr", function () {
+    return function (scope, element, attrs) {
+
+        scope.$watch("selectedPatient", function(newValue, oldValue) {
+            //var offset = $('.navbar').height();
+            $('#responsive-menu-button').sidr({
+                name: 'sidr-main',
+                source: '#navigation'
+            });
+
+            //element.stickyTableHeaders('destroy');
+            //element.stickyTableHeaders({fixedOffset: offset});
+        });
+
+    };
+
+});
 
 /*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
 
@@ -192,11 +209,21 @@ docuSimApp.filter("localTime", function($filter) {
 
 });
 
+$('#responsive-menu-button').sidr({
+    name: 'sidr-main',
+    source: '#navigation'
+});
+
+//$('#simple-menu').sidr();
+
 $(document).ready(function() {
 
-    $("#nav").mmenu({
+    //$('#simple-menu').sidr();
+
+    
+    //$("#nav").mmenu({
         // options go here...
-    });
+    //});
 
      //var offset = $('.navbar').height();
 
