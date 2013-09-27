@@ -122,6 +122,7 @@ html, body {
 #scenario {
 	margin-left: 0;
 	margin-top:10px;
+	padding-top:60px;
 }
 
 @media (max-width: 767px) {
@@ -527,6 +528,7 @@ hr{
 .footer {
 padding-top: 10px;
 padding-bottom: 10px;
+padding-right: 10px;
 height: 35px;
 line-height: 35px;
 /*margin-top: 50px;*/
