@@ -49,19 +49,6 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
 
-
-/*docuSimApp.directive("stickyTableHeaders", function () {
-    return function (scope, element, attrs) {
-        scope.$watch("", function () {
-            console.log("testing stickytableheaders");
-            var offset = $('.navbar').height();
-
-            $("table").stickyTableHeaders({fixedOffset: offset});
-        });
-    };
-});*/
-
-
 docuSimApp.directive("stickyTableHeaders", function () {
     return function (scope, element, attrs) {
 
@@ -74,95 +61,6 @@ docuSimApp.directive("stickyTableHeaders", function () {
     };
 
 });
-
-docuSimApp.directive("sidr", function () {
-    return function (scope, element, attrs) {
-
-        scope.$watch("selectedPatient", function(newValue, oldValue) {
-            //var offset = $('.navbar').height();
-            $('#responsive-menu-button').sidr({
-                name: 'sidr-main',
-                source: '#navigation'
-            });
-
-            //element.stickyTableHeaders('destroy');
-            //element.stickyTableHeaders({fixedOffset: offset});
-        });
-
-    };
-
-});
-
-/*docuSimApp.controller( 'mainController', function( $scope, $location, $anchorScroll, $routeParams ) {
-
-
-});*/
-
-//http://stackoverflow.com/questions/14712223/how-to-handle-anchor-hash-linking-in-angularjs/14717011#14717011
-/*docuSimApp.run(function($rootScope, $location, $anchorScroll, $routeParams) {
-    
-    //when the route is changed scroll to the proper element.
-    $rootScope.$on('$routeChangeSuccess', function(newRoute, oldRoute) {
-        $rootScope.scrollTo($routeParams.section);
-    });
-
-
-    $rootScope.scrollTo = function(id) {
-        var old = $location.hash();
-        $location.hash(id);
-        $anchorScroll();
-        //reset to old to keep any additional routing logic from kicking in
-        //$location.hash(old);
-    };
-
-});*/
-
-/*docuSimApp.module('sidebar', []).directive('scrollSpy', function($timeout){
-  return function(scope, elem, attr) {
-    scope.$watch(attr.scrollSpy, function(value) {
-      $timeout(function() { elem.scrollspy('refresh') }, 200);
-  }, true);
-}
-});*/
-
-/*function SidebarController($scope, $http) {
-    $scope.sidebarItems = [];
-
-    $scope.lookupAddress = function() {
-        $scope.sidebarItems.push($scope.addressText);
-        $scope.addressText = '';
-    };
-}*/ 
-
-docuSimApp.controller('restController', function($scope, Restangular) {
-
-    //$scope.patientInfo = Restangular.one("patient", 4).get();
-    //console.log($scope.patientInfo);
-    //$scope.vitals = $scope.patientInfo.Vitals; 
-
-    onePatient = Restangular.one("patient", 4);
-
-    onePatient.get().then( function(patient) {
-        $scope.patientInfo = patient;
-        $scope.vitals = patient.Vitals;
-    }, function errorCallback() {
-            console.log("Oops error from server :(");
-    });
-
-    //$scope.patients = basePatients.getList();
-
-    basePatients = Restangular.all('patient');
-
-    basePatients.getList().then(function (patients) {
-
-        $scope.patients = patients;
-
-    }, function errorCallback() {
-        console.log("Oops error from server :(");
-    });
-
-});
-
 
 docuSimApp.controller('NavbarController', function ($scope, $location, $routeParams) {
     
@@ -206,27 +104,5 @@ docuSimApp.filter("localTime", function($filter) {
 
         return localTime;
     }; 
-
-});
-
-$('#responsive-menu-button').sidr({
-    name: 'sidr-main',
-    source: '#navigation'
-});
-
-//$('#simple-menu').sidr();
-
-$(document).ready(function() {
-
-    //$('#simple-menu').sidr();
-
-    
-    //$("#nav").mmenu({
-        // options go here...
-    //});
-
-     //var offset = $('.navbar').height();
-
-      //$("table").stickyTableHeaders({fixedOffset: offset});
 
 });
