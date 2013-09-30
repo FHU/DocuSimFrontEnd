@@ -198,7 +198,7 @@ table{
 }
 
 .assessmentArea tr td:nth-child(1){
-	width: 200px;
+	width: 200px!important;
 	min-width: 200px;
 	max-width: 200px;
 }
