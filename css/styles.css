@@ -132,6 +132,7 @@ html, body {
 @media (max-width: 767px) {
 	#scenario{
 		padding:0px;
+		margin-top:60px;
 	}
 }
 
@@ -464,13 +465,19 @@ textarea.nurseNote{
 
 .nav-icon{
 	height: 30px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .nav-tabs a:hover {
   color: #ffffff;
   background-color: #1abc9c;
+}
+
+@media (max-width:768px){
+	#SideNav  li span{
+		display:none;
+	}
 }
 /*--------------------------------*/
 
