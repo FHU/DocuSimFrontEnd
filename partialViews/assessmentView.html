@@ -86,7 +86,7 @@
 
 	<!-- Table Content -->
 	<!-- Vitals -->
-	<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
+	<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertVitals(); insertCardio(); insertDaily(); insertGi(); insertGu(); insertIo(); insertNeurological(); insertRespiratory(); insertSafety()"><i class="icon-pencil"></i> Sign</button>
 	<div class="row-fluid">
 		<section id="vitals" class="span12" data-ng-controller="vitalsController" >
 			<h1>Vitals</h1>
@@ -102,7 +102,6 @@
 						</th>
 		                <th data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
 		                	<span class="time" >{{vital.TimeStamp | localTime | date: 'H:mm'}}  </span>
-		               
 							<br />  
 							<span class="date" >{{vital.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
@@ -1007,7 +1006,7 @@
 		                </td>
         			</tr>
 					<tr>
-		                <td>Intake - IV(s) <br> <small>Solution, Amount</small> </td>
+		                <td>Intake - IV(s) Solution, Amount</td>
 						<td>
 							<!-- IV 1 -->
 							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>

@@ -9,7 +9,6 @@ docuSimApp.controller('assessmentsController', function($scope, assessmentsFacto
     function init() {
         $scope.assessments = assessmentsFactory.getAssessments();
     }
-
 });
 
 docuSimApp.factory('assessmentsFactory', function() {
@@ -26,5 +25,4 @@ docuSimApp.factory('assessmentsFactory', function() {
     };
 
     return factory;
-
 });
