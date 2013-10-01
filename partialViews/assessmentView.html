@@ -85,6 +85,17 @@
 	<!-- Patient/Scenario End -->
 
 	<!-- Table Content -->
+	<button class="btn btn-large btn-warning span4 offset4" onclick="
+		document.getElementById('submitVitals').click();
+		document.getElementById('submitNeurological').click();
+		document.getElementById('submitCardio').click();
+		document.getElementById('submitRespiratory').click();
+		document.getElementById('submitDaily').click();
+		document.getElementById('submitSafety').click();
+		document.getElementById('submitGu').click();
+		document.getElementById('submitGi').click();
+		document.getElementById('submitIo').click()
+	"><i class="icon-pencil"></i> Sign</button>
 	<!-- Vitals -->
 	<div class="row-fluid">
 		<section id="vitals" class="span12" data-ng-controller="vitalsController" >
@@ -180,7 +191,7 @@
       			</tbody>
     		</table>
 			</div>
-			<button class="btn btn-large btn-warning span4" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
+			<button id="submitVitals" class="hidden" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -310,7 +321,7 @@
       			</tbody>
     		</table>
 			</div>
-			<button class="btn btn-large btn-warning span4" data-ng-click="insertNeurological()"><i class="icon-pencil"></i> Sign</button>
+			<button id="submitNeurological" class="hidden" data-ng-click="insertNeurological()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearNeurological()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -441,7 +452,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4" data-ng-click="insertCardio()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitCardio" class="hidden" data-ng-click="insertCardio()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearCardio()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -572,7 +583,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertRespiratory()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitRespiratory" class="hidden" data-ng-click="insertRespiratory()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearRespiratory()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -756,7 +767,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertDaily()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitDaily" class="hidden" data-ng-click="insertDaily()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearDaily()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -833,7 +844,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertSafety()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitSafety" class="hidden" data-ng-click="insertSafety()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearSafety()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -896,7 +907,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertGu()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitGu" class="hidden" data-ng-click="insertGu()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearGu()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -968,7 +979,7 @@
         		</tbody>
         	</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertGi()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitGi" class="hidden" data-ng-click="insertGi()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearGi()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -1091,9 +1102,7 @@
         			<tr>
 		                <td>Output - Other</td>
 						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
-		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
-		                	{{i.Output_Other}}
-		                </td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Other}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Total</td>
@@ -1118,7 +1127,7 @@
       			</tbody>
     		</table>
     		</div>
-    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertIo()"><i class="icon-pencil"></i> Sign</button>
+    		<button id="submitIo" class="hidden" data-ng-click="insertIo()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearIo()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>

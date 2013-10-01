@@ -29,6 +29,10 @@ html, body {
 	display:none;
 }
 
+.hidden{
+	display: none;
+}
+
 #navigation {
 	display:none;	
 }
@@ -193,7 +197,7 @@ table{
 }
 
 .assessmentArea td:nth-child(n+3){
-	width: auto;
+	/*width: auto;*/
 	min-width: 110px;
 }
 
