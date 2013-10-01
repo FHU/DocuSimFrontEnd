@@ -1089,8 +1089,7 @@
 	<!-- End I/O -->
 </div> <!--end container-fluid -->
 
-	<footer class="footer row-fluid">
-		<div>
+	<div class="row-fluid" id="buttonBar"> 
 			<button class="btn btn-large btn-warning span4 offset5" onclick="
 				document.getElementById('submitVitals').click();
 				document.getElementById('submitNeurological').click();
@@ -1108,9 +1107,9 @@
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearIo()">
 				<i class="icon-remove"></i> Clear
 			</button>
+	</div>
 
-
-		</div>
+	<footer class="footer row-fluid">
 
 		<div class="span2">&copy; Freed Hardeman University</div>
 		<div  data-ng-controller="assessmentsController">

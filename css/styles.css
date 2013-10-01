@@ -1,6 +1,6 @@
 html, body {
 	height: 100%;
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased; }
 }
 
 .wrapper {
@@ -545,6 +545,20 @@ hr{
 
 
 /* Footer ------------------------*/
+
+#buttonBar {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	height: 55px;
+	line-height: 40px;
+	/*margin-top: 50px;*/
+
+	width: 100%;
+	position:fixed;
+	bottom: 45px;
+}
+
 .footer {
 padding-top: 0px;
 padding-bottom: 0px;
