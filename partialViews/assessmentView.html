@@ -1013,29 +1013,28 @@
 					<tr>
 		                <td>Intake - IV(s) Solution, Amount</td>
 						<td>
-							<!-- IV 1
+							<!-- IV 1 -->
 							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
 							<br>
 
-							<!-- IV 2
+							<!-- IV 2 -->
 							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
 							<br>
 
-							<!-- IV 3
+							<!-- IV 3 -->
 							<select ng-model="newIo.Intake_IV3_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV3_Amount"/>
 							<br>
 
-							<!-- IV 4 
+							<!-- IV 4 -->
 							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
--->
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	<span ng:show="i.Intake_IV1_Amount">
@@ -1081,23 +1080,21 @@
 					<tr>
 		                <td>Output - Chest Tube Drainage</td>
 						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_ChestTube"/></td>
-		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_ChestTube}}</td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_ChestTube}}</td>
         			</tr>
 					<tr>
 		                <td>Output - Drainage Other</td>
 						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Drainage_Other"/></td>
-		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">{{i.Output_Drainage_Other}}</td>
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">{{i.Output_Drainage_Other}}</td>
         			</tr>
 
         			<tr>
 		                <td>Output - Other</td>
 						<td><input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Output_Other"/></td>
-		                <td data-ng-repeat="i in io | orderBy:'TimeStamp':true">
+		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	{{i.Output_Other}}
 		                </td>
         			</tr>
-
-
 					<tr>
 		                <td>Output - Total</td>
 						<td>{{ sumArguments(newIo.Output_Emesis, newIo.Output_Urine, newIo.Output_Stool, newIo.Output_ChestTube, newIo.Output_Drainage_Other, newIo.Output_Other) }}</td>
