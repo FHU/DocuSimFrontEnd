@@ -459,8 +459,9 @@ textarea.nurseNote{
 
 #BaseNav li {
 	height: 34px;
-	width: 10%;
+	max-width: 10%;
 	padding-left: 5px;
+	font-size: .75em;
 }
 
 .nav-icon{
