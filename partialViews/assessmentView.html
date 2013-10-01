@@ -967,7 +967,7 @@
 	</div>
 	<!-- End GI -->
 
-	<!-- I/O -->
+	<!-- I/O 
 	<div class="row-fluid">
 		<section id="io" class="span12" data-ng-controller="isosController">
 			<h1>I's/O's</h1>
@@ -981,10 +981,8 @@
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}} </span>
 						</th>
-
 						<th data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 							<span class="time" >{{i.TimeStamp | localTime | date: 'H:mm'}}  </span>
-		               
 							<br />  
 							<span class="date" >{{i.TimeStamp | localTime | date:'M/d/yy'}} </span>
 		                </th>
@@ -1008,25 +1006,25 @@
 					<tr>
 		                <td>Intake - IV(s) Solution, Amount</td>
 						<td>
-							<!-- IV 1 -->
+							<!-- IV 1 
 							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
 							<br>
 
-							<!-- IV 2 -->
+							<!-- IV 2 
 							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
 							<br>
 
-							<!-- IV 3 -->
+							<!-- IV 3
 							<select ng-model="newIo.Intake_IV3_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV3_Amount"/>
 							<br>
 
-							<!-- IV 4 -->
+							<!-- IV 4 
 							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
