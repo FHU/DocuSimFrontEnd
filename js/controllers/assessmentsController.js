@@ -1,17 +1,23 @@
 
 
 
-docuSimApp.controller('assessmentsController', function($scope, assessmentsFactory){
-    $scope.assessments = [];
+docuSimApp.controller('assessmentsController', function($scope, $location, $anchorScroll){
+    /*$scope.assessments = [];
 
     init();
 
     function init() {
         $scope.assessments = assessmentsFactory.getAssessments();
+    }*/
+
+    $scope.scrollTo = function(id){
+        $location.hash(id);
+        $anchorScroll();
     }
+}
 });
 
-docuSimApp.factory('assessmentsFactory', function() {
+/*docuSimApp.factory('assessmentsFactory', function() {
 
     var factory = {};
 
@@ -25,4 +31,4 @@ docuSimApp.factory('assessmentsFactory', function() {
     };
 
     return factory;
-});
+});*/
