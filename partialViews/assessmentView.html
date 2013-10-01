@@ -1091,7 +1091,7 @@
 
 <div class="container-fluid" > 
 	<div class="row-fluid" > 
-			<button class="btn btn-large btn-warning span4 offset4" onclick="
+			<button id="signButton" class="btn btn-large btn-warning span4 offset4" onclick="
 				document.getElementById('submitVitals').click();
 				document.getElementById('submitNeurological').click();
 				document.getElementById('submitCardio').click();
@@ -1133,7 +1133,7 @@
    					<img class="nav-icon" src="img/icons/cardio.png"> <span> Cardio </span> </a>
    				</li>
        			<li>
-       				<a data-ng-click="scrollTo('respiratory'); scrollTo('respiratory')">
+       				<a data-ng-click="scrollTo('respiratory')">
        				<img class="nav-icon" src="img/icons/resp.png"> <span> Respiratory </span> </a>
        			</li>
 				<li>
@@ -1153,8 +1153,12 @@
     				<img class="nav-icon" src="img/icons/gi.png"> <span> GI </span> </a>
     			</li>
 	    		<li>
-	    			<a data-ng-click="scrollTo('io'); scrollTo('io')">
+	    			<a data-ng-click="scrollTo('io')">
     				<img class="nav-icon" src="img/icons/isos.png"> <span> Is/Os </span> </a>
+    			</li>
+    			<li>
+	    			<a data-ng-click="scrollTo('signButton')">
+    				<img class="nav-icon" src="img/icons/sign.png"><i class="icon-pencil"></i> </img></a>
     			</li>
        		</ul>
 		</div>
