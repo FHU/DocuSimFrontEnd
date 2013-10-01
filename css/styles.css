@@ -482,9 +482,7 @@ textarea.nurseNote{
 		padding: 0 0 0 0;
 		font-size: .75em;
 	}
-}
 
-@media (max-width:768px){
 	#BaseNav  li a span{
 		display:none;
 	}
