@@ -231,8 +231,7 @@ table{
 }
 
 #io .assessmentArea td:nth-child(2){
-	min-width: 152px;
-	width: 152px;
+	white-space: nowrap;
 }
 
 .assessmentArea td:nth-child(1), .assessmentArea td:nth-child(2), .assessmentArea th:nth-child(2) {
