@@ -86,7 +86,6 @@
 
 	<!-- Table Content -->
 	<!-- Vitals -->
-	<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertVitals(); insertCardio(); insertDaily(); insertGi(); insertGu(); insertIo(); insertNeurological(); insertRespiratory(); insertSafety()"><i class="icon-pencil"></i> Sign</button>
 	<div class="row-fluid">
 		<section id="vitals" class="span12" data-ng-controller="vitalsController" >
 			<h1>Vitals</h1>
@@ -181,6 +180,7 @@
       			</tbody>
     		</table>
 			</div>
+			<button class="btn btn-large btn-warning span4" data-ng-click="insertVitals()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -310,6 +310,7 @@
       			</tbody>
     		</table>
 			</div>
+			<button class="btn btn-large btn-warning span4" data-ng-click="insertNeurological()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearNeurological()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -440,6 +441,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4" data-ng-click="insertCardio()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearCardio()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -570,6 +572,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertRespiratory()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearRespiratory()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -753,6 +756,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertDaily()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearDaily()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -829,6 +833,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertSafety()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearSafety()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -891,6 +896,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertGu()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearGu()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
@@ -962,12 +968,13 @@
         		</tbody>
         	</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertGi()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearGi()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
 	<!-- End GI -->
 
-	<!-- I/O 
+	<!-- I/O -->
 	<div class="row-fluid">
 		<section id="io" class="span12" data-ng-controller="isosController">
 			<h1>I's/O's</h1>
@@ -1006,13 +1013,13 @@
 					<tr>
 		                <td>Intake - IV(s) Solution, Amount</td>
 						<td>
-							<!-- IV 1 
+							<!-- IV 1
 							<select ng-model="newIo.Intake_IV1_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV1_Amount"/>
 							<br>
 
-							<!-- IV 2 
+							<!-- IV 2
 							<select ng-model="newIo.Intake_IV2_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV2_Amount"/>
@@ -1028,7 +1035,7 @@
 							<select ng-model="newIo.Intake_IV4_Solution" ng-options="value.id as value.name for (key, value) in ioOpts.Intake_IV_Solution" bs-select></select>
 
 							<input type="tel" pattern="[0-9]*.[0-9]*"  ng-model="newIo.Intake_IV4_Amount"/>
-
+-->
 						</td>
 		                <td data-ng-repeat="i in isos | orderBy:'TimeStamp':true">
 		                	<span ng:show="i.Intake_IV1_Amount">
@@ -1114,6 +1121,7 @@
       			</tbody>
     		</table>
     		</div>
+    		<button class="btn btn-large btn-warning span4 offset4" data-ng-click="insertIo()"><i class="icon-pencil"></i> Sign</button>
 			<button class="btn btn-large btn-primary span3" data-ng-click="clearIo()"><i class="icon-remove"></i> Clear</button>
 		</section>
 	</div>
