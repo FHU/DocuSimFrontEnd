@@ -468,7 +468,7 @@ textarea.nurseNote{
 }
 
 #BaseNav li a i{
-	left: -20;
+	left: -40;
 }
 
 .nav-icon{
@@ -482,10 +482,15 @@ textarea.nurseNote{
   background-color: #1abc9c;
 }
 
-@media (max-width:1230px){
+@media (max-width:1335px){
 	#BaseNav li {
 		padding: 0 0 0 0;
 		font-size: .7em;
+	}
+
+	#BaseNav li a{
+		padding-left:1px;
+		padding-right:1px;
 	}
 }
 @media (max-width:800px){
