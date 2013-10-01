@@ -14,7 +14,6 @@ docuSimApp.controller('assessmentsController', function($scope, $location, $anch
         $location.hash(id);
         $anchorScroll();
     }
-}
 });
 
 /*docuSimApp.factory('assessmentsFactory', function() {
