@@ -457,7 +457,7 @@ textarea.nurseNote{
 	padding-top: 0px;
 }
 
-#SideNav li {
+#BaseNav li {
 	height: 34px;
 	width: 10%;
 	padding-left: 10px;
@@ -475,7 +475,7 @@ textarea.nurseNote{
 }
 
 @media (max-width:768px){
-	#SideNav  li span{
+	#BaseNav  li a span{
 		display:none;
 	}
 }
