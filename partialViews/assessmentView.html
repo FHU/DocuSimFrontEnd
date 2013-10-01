@@ -38,7 +38,8 @@
 	<!-- Patient/Scenario End -->
 
 	<!-- Table Content -->
-	<button class="btn btn-large btn-warning span4 offset4" data-spy="affix" data-offset-top="100" onclick="
+	<div data-spy="affix" data-offset-top="100">
+	<button class="btn btn-large btn-warning span4 offset4" onclick="
 		document.getElementById('submitVitals').click();
 		document.getElementById('submitNeurological').click();
 		document.getElementById('submitCardio').click();
@@ -49,6 +50,7 @@
 		document.getElementById('submitGi').click();
 		document.getElementById('submitIo').click()
 	"><i class="icon-pencil"></i> Sign</button>
+	</div>
 	<!-- Vitals -->
 	<div class="row-fluid">
 		<section id="vitals" class="span12" data-ng-controller="vitalsController" >
