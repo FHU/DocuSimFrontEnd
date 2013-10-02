@@ -3,6 +3,8 @@ html, body {
 	-webkit-font-smoothing: antialiased; }
 }
 
+body input::-webkit-inner-spin-button,body input::-webkit-outer-spin-button{-webkit-appearance:button;} /* Solved */
+
 .wrapper {
     min-height: 100%;
     height: auto !important;
