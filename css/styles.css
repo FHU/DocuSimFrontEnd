@@ -604,11 +604,11 @@ hr{
 }
 
 #footerCopy{
-	float:right;
+	float:left;
 }
 
 #footerNav{
-	float: left;
+	float:right;
 }
 /*--------------------------------*/
 
