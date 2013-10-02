@@ -506,7 +506,11 @@ textarea.nurseNote{
 		padding-right:1px;
 	}
 }
-@media (max-width:865px){
+@media (max-width:930px){
+	#footerNav{
+		padding-right: 30px;
+	}
+
 	#BaseNav  li a span{
 		display:none;
 	}
