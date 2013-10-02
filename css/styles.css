@@ -468,8 +468,11 @@ textarea.nurseNote{
 }
 
 #BaseNav li a i{
-	left: -40;
+	bottom: 20px;
+	left: 10px;
 	z-index: 2;
+	position: relative;
+	display: block;
 }
 
 .nav-icon{
