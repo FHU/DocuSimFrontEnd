@@ -11,8 +11,8 @@ docuSimApp.controller('assessmentsController', function($scope, $location, $anch
     }*/
 
     $scope.scrollTo = function(id){
-        $location.hash(id);
         $(document).ready(function(){
+            $location.hash(id);
             $anchorScroll();
         })
     }
