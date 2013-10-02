@@ -12,7 +12,7 @@ docuSimApp.controller('assessmentsController', function($scope, $location, $anch
 
     $scope.scrollTo = function(id){
         $location.hash(id);
-        setTimeout(function(){$anchorScroll,1000);
+        setTimeout(function(){$anchorScroll},1000);
     }
 });
 
