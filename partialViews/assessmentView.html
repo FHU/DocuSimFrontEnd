@@ -85,7 +85,7 @@
 								
 							</div>-->
 
-							<input type="number" pattern="[0-9]*.[0-9]*" min="70" max="110" data-ng-model="newVitals.Temperature"/>
+							<input type="tel" pattern="[0-9]*.[0-9]*" min="70" max="110" data-ng-model="newVitals.Temperature"/>
 							 
 							<select ng-model="newVitals.TemperatureRoute" ng-options="value.id as value.name for (key, value) in vitalsOpts.temp" ></select>
 
@@ -98,7 +98,7 @@
 	                </tr>
 	                <tr>
 		                <td>HR</td>
-						<td><input type="number" pattern="[0-9]*" min="0" max="300" data-ng-model="newVitals.HR"/></td>
+						<td><input type="tel" pattern="[0-9]*" min="0" max="300" data-ng-model="newVitals.HR"/></td>
 		                <td data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">{{vital.HR}}</td>
         			</tr>
         			<tr>
