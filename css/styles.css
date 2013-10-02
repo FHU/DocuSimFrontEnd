@@ -110,14 +110,18 @@ html, body {
 	color: #fff;
 }
 
-/*@media (max-width: 699px) {
-	/* Responsive Login/User
+@media (max-width: 699px) {
+	/* Responsive Login/User */
 	.navbar-text.pull-right {
 		float: none;
 		padding-left: 5px;
 		padding-right: 5px;
 	}
-}*/
+
+	.brand{
+		float:left;
+	}
+}
 
 /*--------------------------------*/
 
@@ -132,7 +136,7 @@ html, body {
 
 @media (max-width: 767px) {
 	#scenario{
-		padding:70px;
+		padding:60px;
 		margin-top:0px;
 	}
 }
