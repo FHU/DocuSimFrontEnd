@@ -602,5 +602,13 @@ hr{
 	position:fixed;
 	bottom: 0;
 }
+
+#footerCopy{
+	float:right;
+}
+
+#footerNav{
+	float: left;
+}
 /*--------------------------------*/
 
