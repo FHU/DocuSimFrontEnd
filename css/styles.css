@@ -160,7 +160,7 @@ html, body {
 
 @media (max-width: 869px) {
 	section{
-		padding-top:100px;
+		padding-top:100px!important;
 	}
 }
 
