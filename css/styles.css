@@ -110,12 +110,16 @@ html, body {
 	color: #fff;
 }
 
-@media (max-width: 699px) {
+@media (max-width: 767px) {
 	/* Responsive Login/User */
 	.navbar-text.pull-right {
 		float: none;
 		padding-left: 5px;
 		padding-right: 5px;
+	}
+
+	.brand{
+		float: left;
 	}
 }
 
