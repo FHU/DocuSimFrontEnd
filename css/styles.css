@@ -158,8 +158,8 @@ html, body {
 	padding-top:60px;
 }
 
-@media (max-width: 767px) {
-	#scenario{
+@media (max-width: 869px) {
+	section{
 		padding:100px;
 	}
 }
