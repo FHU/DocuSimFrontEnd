@@ -457,6 +457,7 @@ textarea.nurseNote{
 #BaseNav{
 	padding: 0 0 0 0;
 	height: 45px;
+	width: 100%;
 }
 
 #BaseNav li {
@@ -502,7 +503,7 @@ textarea.nurseNote{
 		display:none;
 	}
 
-	.footer:nth-child(1){
+	.copyRight(1){
 		font-size:.7em;
 	}
 }
