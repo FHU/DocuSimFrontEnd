@@ -497,7 +497,7 @@ textarea.nurseNote{
 		padding-right:1px;
 	}
 }
-@media (max-width:55px){
+@media (max-width:865px){
 	#BaseNav  li a span{
 		display:none;
 	}

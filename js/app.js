@@ -78,9 +78,9 @@ docuSimApp.controller('NavbarController', function ($scope, $location, $routePar
 
     $scope.getHidden = function () {
         if ($location.path() == '/patients'){
-            return false
-        } else {
             return true
+        } else {
+            return false
         }
     }
 });
