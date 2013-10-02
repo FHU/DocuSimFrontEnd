@@ -160,8 +160,7 @@ html, body {
 
 @media (max-width: 767px) {
 	#scenario{
-		padding:60px;
-		margin-top:0px;
+		padding:1000px;
 	}
 }
 
