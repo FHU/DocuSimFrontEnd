@@ -458,6 +458,7 @@ textarea.nurseNote{
 	padding: 0 0 0 0;
 	height: 45px;
 	width: 100%;
+	float:right;
 }
 
 #BaseNav li {
@@ -487,6 +488,14 @@ textarea.nurseNote{
   background-color: #1abc9c;
 }
 
+.copyRight{
+	display: inline;
+}
+
+.copyRight2 {
+	display:none;
+}
+
 @media (max-width:1335px){
 	#BaseNav li {
 		padding: 0 0 0 0;
@@ -503,8 +512,12 @@ textarea.nurseNote{
 		display:none;
 	}
 
-	.copyRight(1){
-		font-size:.7em;
+	.copyRight{
+		display: none;
+	}
+
+	.copyRight2{
+		display: inline;
 	}
 }
 /*--------------------------------*/
