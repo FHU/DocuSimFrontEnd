@@ -469,6 +469,7 @@ textarea.nurseNote{
 
 #BaseNav li a i{
 	left: -40;
+	z-index: 2;
 }
 
 .nav-icon{

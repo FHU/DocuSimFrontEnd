@@ -65,10 +65,14 @@ docuSimApp.directive("stickyTableHeaders", function () {
 docuSimApp.controller('NavbarController', function ($scope, $location, $routeParams) {
     
     $scope.getClass = function (path) {
-        if ($location.path().substr(0, path.length) == path) {
-            return true
+        if ($location.path().substr(0, path.length) == path && path == 'patients'){
+            return "active"
+        } else if ($location.path().substr(0, path.length) != path && path == 'patients'){
+            return "hidden"
+        } else if ($location.path().substr(0, path.length) == path) {
+            return "active"
         } else {
-            return false;
+            return "";
         }
     }
 
