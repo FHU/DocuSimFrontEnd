@@ -59,7 +59,9 @@
 			<table class="table table-striped" data-sticky-table-headers>
       			<thead>
 	                <tr>
-        			    <th></th>
+        			    <th>
+        			    	<button class="btn btn-large btn-primary" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
+        			    </th>
 						<th ng-controller="clock"> 
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
