@@ -1091,20 +1091,18 @@
 
 <div class="container-fluid" > 
 	<div class="row-fluid" > 
-			<button id="signButton" class="btn btn-large btn-warning span10 offset1" onclick="
-				document.getElementById('submitVitals').click();
-				document.getElementById('submitNeurological').click();
-				document.getElementById('submitCardio').click();
-				document.getElementById('submitRespiratory').click();
-				document.getElementById('submitDaily').click();
-				document.getElementById('submitSafety').click();
-				document.getElementById('submitGu').click();
-				document.getElementById('submitGi').click();
-				document.getElementById('submitIo').click()">
-
-				<i class="icon-pencil"></i> Sign
-			</button>
-
+		<button id="signButton" class="btn btn-large btn-warning span10 offset1" bs-modal="'partialViews/areYouSureModalView.html'"> <!--onclick="
+			document.getElementById('submitVitals').click();
+			document.getElementById('submitNeurological').click();
+			document.getElementById('submitCardio').click();
+			document.getElementById('submitRespiratory').click();
+			document.getElementById('submitDaily').click();
+			document.getElementById('submitSafety').click();
+			document.getElementById('submitGu').click();
+			document.getElementById('submitGi').click();
+			document.getElementById('submitIo').click()" -->
+			<i class="icon-pencil"></i> Sign
+		</button>
 	</div>
 </div > <!--end container-fluid -->
 
