@@ -55,7 +55,6 @@
 	<div class="row-fluid">
 		<section id="vitals" class="span12" data-ng-controller="vitalsController" >
 			<h1>Vitals</h1>
-			<button class="btn btn-large btn-primary span3" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 			<div class="assessmentArea">
 			<table class="table table-striped" data-sticky-table-headers>
       			<thead>
@@ -65,6 +64,7 @@
 							<span class="time" >{{time | date:'H:mm'}}  </span> 
 							<br />  
 							<span class="date" >{{time | date:'M/d/yy'}}
+							<button class="btn btn-large btn-primary" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 						</th>
 		                <th data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
 		                	<span class="time" >{{vital.TimeStamp | localTime | date: 'H:mm'}}  </span>
