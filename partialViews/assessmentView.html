@@ -61,9 +61,11 @@
 	                <tr>
         			    <th></th>
 						<th ng-controller="clock"> 
-							<span class="time" >{{time | date:'H:mm'}}  </span> 
-							<br />  
-							<span class="date" >{{time | date:'M/d/yy'}}
+							<div>
+								<span class="time" >{{time | date:'H:mm'}}  </span> 
+								<br />  
+								<span class="date" >{{time | date:'M/d/yy'}}</span>
+								</div>
 							<button class="btn btn-large btn-primary" data-ng-click="clearVitals()"><i class="icon-remove"></i> Clear</button>
 						</th>
 		                <th data-ng-repeat="vital in vitals | orderBy:'TimeStamp':true">
