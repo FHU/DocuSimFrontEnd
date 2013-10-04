@@ -503,6 +503,7 @@ textarea.nurseNote{
 	z-index: 2;
 	position: relative;
 	display: block;
+	color: #2c3e50;
 }
 
 .nav-icon{
