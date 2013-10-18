@@ -89,6 +89,9 @@ body input::-webkit-inner-spin-button,body input::-webkit-outer-spin-button{-web
 	margin-left: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.navbar .brand img {
 	vertical-align: sub;
 }
 
