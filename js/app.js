@@ -42,9 +42,14 @@ docuSimApp.config(function ($routeProvider, $locationProvider, RestangularProvid
                 controller: 'patientsController',
                 templateUrl: partialViewsUrlBase +'adminEditView.html'
             })
+        .when('/loginPage',
+            {
+                controller: 'loginController',
+                templateUrl: partialViewsUrlBase + 'loginPage.html'
+            })
 
 
-        .otherwise({ redirectTo: '/patients' });
+        .otherwise({ redirectTo: '/loginPage' });
 
         RestangularProvider.setBaseUrl('http://docusimapi.azurewebsites.net/api');
 });
