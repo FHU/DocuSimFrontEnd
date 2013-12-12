@@ -655,11 +655,11 @@ hr{
 /* Login -------------------------*/
 #loginContainer div{
 	margin-top: 10px;
-
 }
 
 #loginContainer input{
 	float: right;
+	width: 70px;
 }
 /*--------------------------------*/
 
